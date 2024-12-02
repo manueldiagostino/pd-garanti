@@ -1,0 +1,14 @@
+name: "garanti"
+
+services:
+  garanti:
+    build:
+      context: .
+    volumes:
+      - ../:/home/clingo/project
+    hostname: PD
+    deploy:
+      resources:
+        limits:
+          cpus: 2.5
+          memory: 1024M
