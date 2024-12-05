@@ -2,76 +2,83 @@ import pandas as pd
 import unicodedata
 
 
-class CSVLoaderError(Exception):
+class ErroreCaricamentoCSV(Exception):
     """Eccezione base per errori di caricamento CSV."""
     pass
 
 
-class FileNotFoundError(CSVLoaderError):
+class FileNonTrovatoErrore(ErroreCaricamentoCSV):
     """Eccezione sollevata quando il file CSV non viene trovato."""
     pass
 
 
-class EmptyDataError(CSVLoaderError):
+class CSVVuotoErrore(ErroreCaricamentoCSV):
     """Eccezione sollevata quando il CSV è vuoto."""
     pass
 
 
-class InvalidCSVFormatError(CSVLoaderError):
+class FormatoCSVNonValidoErrore(ErroreCaricamentoCSV):
     """Eccezione sollevata per errori di formato del CSV."""
     pass
 
 
-class DataCleaningError(CSVLoaderError):
+class PuliziaDatiErrore(ErroreCaricamentoCSV):
     """Eccezione sollevata per errori nella pulizia dei dati."""
     pass
 
-# Definisci un'eccezione personalizzata
-class ColumnNotFoundError(Exception):
-    """Eccezione per quando una colonna non viene trovata nel DataFrame."""
+
+class ColonnaNonTrovataErrore(Exception):
+    """Eccezione sollevata quando una colonna non viene trovata nel DataFrame."""
     pass
 
-def check_columns_exist(df: pd.DataFrame, column_names: list[str]):
+
+def verifica_colonne_esistenti(df: pd.DataFrame, nomi_colonne: list[str]):
     """Controlla se tutte le colonne specificate esistono nel DataFrame. Se una o più non esistono, lancia un'eccezione."""
+    colonne_mancanti = [
+        colonna for colonna in nomi_colonne if colonna not in df.columns]
+    if colonne_mancanti:
+        raise ColonnaNonTrovataErrore(f"Le seguenti colonne non esistono nel DataFrame: {
+                                      ', '.join(colonne_mancanti)}.")
 
-    missing_columns = [col for col in column_names if col not in df.columns]
 
-    if missing_columns:
-        raise ColumnNotFoundError(f"Le seguenti colonne non esistono nel DataFrame: {', '.join(missing_columns)}.")
-
-def clean_text(text: str) -> str:
-    """Pulisce i dati da caratteri non standard come spazi non separabili."""
-    if isinstance(text, str):
+def pulisci_testo(testo: str) -> str:
+    """Pulisce i dati rimuovendo caratteri non standard come spazi non separabili."""
+    if isinstance(testo, str):
         try:
             # Normalizza i caratteri Unicode e rimuove spazi non separabili
-            text = unicodedata.normalize(
-                "NFKC", text).replace("\xa0", " ").strip()
+            testo = unicodedata.normalize(
+                "NFKC", testo).replace("\xa0", " ").strip()
         except Exception as e:
-            raise DataCleaningError(f"Errore nella pulizia del testo: {e}")
-    return text
+            raise PuliziaDatiErrore(f"Errore nella pulizia del testo: {e}")
+    return testo
 
 
-def load_csv_data(csv_file: str) -> pd.DataFrame:
+def carica_dati_csv(file_csv: str) -> pd.DataFrame:
     """Carica i dati da un file CSV e li pulisce."""
     try:
         # Legge il CSV in un DataFrame
-        df = pd.read_csv(csv_file, delimiter=',')
+        df = pd.read_csv(file_csv, delimiter=',')
 
         if df.empty:
-            raise EmptyDataError(f"Il file '{csv_file}' è vuoto.")
+            raise CSVVuotoErrore(f"Il file '{file_csv}' è vuoto.")
 
         # Pulisce i dati nel DataFrame
-        df = df.apply(lambda col: col.map(clean_text) if col.dtype == 'object' else col)
+        df = df.apply(lambda colonna: colonna.map(pulisci_testo)
+                      if colonna.dtype == 'object' else colonna)
 
         return df
     except FileNotFoundError:
-        raise FileNotFoundError(
-            f"Errore: Il file '{csv_file}' non è stato trovato.")
+        raise FileNonTrovatoErrore(
+            f"Errore: Il file '{file_csv}' non è stato trovato.")
     except pd.errors.EmptyDataError:
-        raise EmptyDataError(f"Errore: Il file '{csv_file}' è vuoto.")
+        raise CSVVuotoErrore(f"Errore: Il file '{file_csv}' è vuoto.")
     except pd.errors.ParserError:
-        raise InvalidCSVFormatError(
-            f"Errore: Formato CSV non valido nel file '{csv_file}'.")
+        raise FormatoCSVNonValidoErrore(
+            f"Errore: Formato CSV non valido nel file '{file_csv}'.")
     except Exception as e:
-        raise CSVLoaderError(
+        raise ErroreCaricamentoCSV(
             f"Errore durante il caricamento del file CSV: {e}")
+
+
+def normalizza_nome(nome: str) -> str:
+    return nome.lower().replace('-', '_').replace(' ', '_')
