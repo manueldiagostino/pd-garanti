@@ -1,43 +1,54 @@
-corso(1..3).
+settore(inf).
+settore(mat).
+settore(ing_inf).
 
-settore(1..4).
+categoria(l).
+categoria(lm).
+categoria(lmcu5).
+categoria(lmcu6).
 
-insegnamento(1, settore(1)).
-insegnamento(2, settore(1)).
-insegnamento(3, settore(1)).
-insegnamento(4, settore(1)).
-insegnamento(5, settore(2)).
-insegnamento(6, settore(2)).
+corso(1, categoria(l)).
+corso(2, categoria(l)).
+corso(3, categoria(lm)).
+
+insegnamento(1, settore(inf)).
+insegnamento(2, settore(inf)).
+insegnamento(3, settore(inf)).
+insegnamento(4, settore(mat)).
+insegnamento(5, settore(mat)).
+insegnamento(6, settore(mat)).
 
 % LT info
-di_riferimento(settore(1), corso(1)).
-di_riferimento(settore(2), corso(1)).
+di_riferimento(settore(inf), corso(1, categoria(l))).
+di_riferimento(settore(mat), corso(1, categoria(l))).
 
-di_riferimento(settore(1), corso(3)).
-di_riferimento(settore(3), corso(2)).
+di_riferimento(settore(mat), corso(3, categoria(lm))).
+di_riferimento(settore(ing_inf), corso(2, categoria(l))).
+di_riferimento(settore(mat), corso(2, categoria(l))).
 
-docente(33657, settore(1)).
-docente(5145, settore(1)).
-docente(204741, settore(1)).
-docente(32990, settore(1)).
-docente(34181, settore(1)).
-docente(6625, settore(1)).
-docente(13027, settore(1)).
-docente(36662, settore(1)).
-docente(5602, settore(1)).
+docente(33657, settore(inf)).
+docente(5145, settore(inf)).
+docente(204741, settore(inf)).
+docente(32990, settore(inf)).
+docente(34181, settore(inf)).
+docente(6625, settore(inf)).
+docente(13027, settore(inf)).
+docente(36662, settore(inf)).
+docente(5602, settore(inf)).
 
-docente(10285, settore(2)).
-docente(15988, settore(2)).
-docente(4609, settore(2)).
-docente(26131, settore(2)).
+docente(10285, settore(mat)).
+docente(15988, settore(mat)).
+docente(4609, settore(mat)).
+docente(26131, settore(mat)).
 
-insegna(docente(33657, settore(1)), insegnamento(1, settore(1)), corso(1)).
-insegna(docente(32990, settore(1)), insegnamento(2, settore(1)), corso(1)).
-insegna(docente(15988, settore(2)), insegnamento(3, settore(1)), corso(1)).
-insegna(docente(26131, settore(2)), insegnamento(4, settore(1)), corso(2)).
+insegna(docente(33657, settore(inf)), insegnamento(1, settore(inf)), corso(1, categoria(l))).
+insegna(docente(32990, settore(inf)), insegnamento(2, settore(inf)), corso(1, categoria(l))).
+insegna(docente(15988, settore(inf)), insegnamento(3, settore(inf)), corso(1, categoria(l))).
+insegna(docente(26131, settore(mat)), insegnamento(4, settore(mat)), corso(2, categoria(l))).
+insegna(docente(26131, settore(mat)), insegnamento(4, settore(mat)), corso(1, categoria(l))).
 
-2{ garante(docente(X, settore(Y)), corso(Z)) : 
-    insegna(docente(X, settore(Y)), insegnamento(A, settore(B)), corso(Z)), 
-    di_riferimento(settore(B), corso(Z)) }.
+2{ garante(docente(X, settore(Y)), corso(Z, categoria(W))) :
+    insegna(docente(X, settore(Y)), insegnamento(A, settore(B)), corso(Z, categoria(W))), 
+    di_riferimento(settore(Y), corso(Z, categoria(W))) }2.
 
 #show garante/2.
