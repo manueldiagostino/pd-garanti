@@ -1,187 +1,5 @@
-import argparse
 import csv_loader  # Importa il modulo per caricare e pulire i dati
 import os
-import re
-
-
-def genera_fatti_da_nome(df, file_output, nome_fatto, colonne):
-    """Genera i fatti a partire dal DataFrame e li scrive nel file di output."""
-    try:
-        # Verifica che tutte le colonne richieste esistano nel DataFrame
-        csv_loader.verifica_colonne_esistenti(df, colonne)
-
-        # Scrivi i fatti nel file di output
-        with open(file_output, 'w', encoding='utf-8') as f:
-            fatti_unici = set()  # Usa un set per memorizzare i fatti unici
-
-            for _, riga in df.iterrows():
-                # Estrai i valori delle colonne specificate per generare il fatto
-                valori = []
-                for colonna in colonne:
-                    valore = riga[colonna]
-
-                    # Controlla se il valore è NaN
-                    if csv_loader.pd.isna(valore):
-                        continue  # Salta i valori NaN
-
-                    # Prova a convertire il valore in intero, altrimenti usa il valore originale
-                    try:
-                        valore = int(valore)
-                    except (ValueError, TypeError):
-                        pass
-
-                    valori.append(valore)
-
-                # Genera il fatto ASP se ci sono valori validi
-                if valori:  # Controlla che ci siano valori da scrivere
-                    fatto = f"{nome_fatto}({', '.join(map(str, valori))})."
-                    fatti_unici.add(fatto)  # Aggiungi al set
-
-            # Scrivi i fatti unici nel file
-            for fatto in sorted(fatti_unici):  # Ordina per leggibilità (opzionale)
-                f.write(fatto + '\n')
-
-        print(f"Fatti unici `{nome_fatto}\\{
-              len(colonne)}` scritti in {file_output}")
-
-    except csv_loader.ColonnaNonTrovataErrore as e:
-        print(e)
-    except Exception as e:
-        print(f"Errore durante la scrittura dei fatti `{
-              nome_fatto}\\{len(colonne)}`: {e}")
-
-
-def genera_fatti_settori(df, file_output, mappa_ssd_int):
-    """
-    Genera i fatti a partire dalla mappa `mappa_ssd_int` e li scrive nel file di output.
-
-    :param df: DataFrame (non utilizzato direttamente, ma mantenuto per uniformità con altri metodi).
-    :param file_output: Percorso del file di output.
-    :param mappa_ssd_int: Dizionario con chiavi come codici SSD e valori come interi progressivi.
-    """
-    nome_fatto = 'settore'
-
-    try:
-        # Scrivi i fatti nel file di output
-        with open(file_output, 'w', encoding='utf-8') as f:
-            for ssd, valore_intero in mappa_ssd_int.items():
-                # Genera il fatto ASP
-                fatto = f"{nome_fatto}({valore_intero})."
-                f.write(fatto + '\n')  # Scrivi il fatto nel file
-
-        print(f"Fatti `{nome_fatto}` scritti con successo in {file_output}")
-    except Exception as e:
-        print(f"Errore durante la scrittura dei fatti `{nome_fatto}`: {e}")
-
-
-def genera_fatti_docenti(df, file_output, mappa_ssd, mappa_ssd_int):
-    """Genera i fatti a partire dal DataFrame e li scrive nel file di output."""
-
-    colonne = ['Matricola', 'Cod. Settore Docente']
-    nome_fatto = 'docente'
-
-    try:
-        # Verifica che tutte le colonne richieste esistano nel DataFrame
-        csv_loader.verifica_colonne_esistenti(df, colonne)
-
-        # Scrivi i fatti nel file di output
-        with open(file_output, 'w', encoding='utf-8') as f:
-            fatti_unici = set()  # Usa un set per memorizzare i fatti unici
-
-            for _, riga in df.iterrows():
-                # Estrai i valori delle colonne specificate per generare il fatto
-                valori = []
-
-                # Leggo matricola
-                valore = riga[colonne[0]]
-                if csv_loader.pd.isna(valore):
-                    continue  # Salta i valori NaN
-
-                valore = int(valore)
-                valori.append(valore)
-
-                # Leggo Cod. Settore Docente
-                valore = riga[colonne[1]]
-                if csv_loader.pd.isna(valore):
-                    valore = 'NULL/'  # Salta i valori NaN
-
-                if (valore in mappa_ssd):
-                    nuova_chiave = mappa_ssd[valore]
-                    valore = mappa_ssd_int[nuova_chiave.split('/')[0]]
-                else:
-                    valore = valore.split('/')[0]
-                    valore = mappa_ssd_int[valore]
-
-                valori.append(valore)
-
-                fatto = f"{nome_fatto}({valori[0]}, settore({valori[1]}))."
-                fatti_unici.add(fatto)  # Aggiungi al set
-
-            # Scrivi i fatti unici nel file
-            for fatto in sorted(fatti_unici):
-                f.write(fatto + '\n')
-
-        print(f"Fatti unici `{nome_fatto}\\{
-            len(colonne)}` scritti in {file_output}")
-
-    except csv_loader.ColonnaNonTrovataErrore as e:
-        print(e)
-    except Exception as e:
-        print(f"Errore durante la scrittura dei fatti `{
-              nome_fatto}\\{len(colonne)}`: {e}")
-
-
-def genera_fatti_corsi(df, file_output):
-    """
-    Genera i fatti a partire dalla mappa `mappa_ssd_int` e li scrive nel file di output.
-
-    :param df: DataFrame (non utilizzato direttamente, ma mantenuto per uniformità con altri metodi).
-    :param file_output: Percorso del file di output.
-    :param mappa_ssd_int: Dizionario con chiavi come codici SSD e valori come interi progressivi.
-    """
-    nome_fatto = 'corso'
-    colonne = ['Cod. Corso di Studio', 'Cod. Tipo Corso']
-
-    try:
-        # Verifica che tutte le colonne richieste esistano nel DataFrame
-        csv_loader.verifica_colonne_esistenti(df, colonne)
-
-        # Scrivi i fatti nel file di output
-        with open(file_output, 'w', encoding='utf-8') as f:
-            fatti_unici = set()  # Usa un set per memorizzare i fatti unici
-
-            for _, riga in df.iterrows():
-                # Estrai i valori delle colonne specificate per generare il fatto
-                valori = []
-
-                # Leggo matricola
-                valore = riga[colonne[0]]
-                if csv_loader.pd.isna(valore):
-                    continue  # Salta i valori NaN
-
-                valore = int(valore)
-                valori.append(valore)
-
-                # Leggo Cod. Settore Docente
-                valore = riga[colonne[1]]
-                valore = csv_loader.normalizza_nome(valore)
-                valori.append(valore)
-
-                fatto = f"{nome_fatto}({valori[0]}, categoria({valori[1]}))."
-                fatti_unici.add(fatto)  # Aggiungi al set
-
-            # Scrivi i fatti unici nel file
-            for fatto in sorted(fatti_unici):
-                f.write(fatto + '\n')
-
-        print(f"Fatti unici `{nome_fatto}\\{
-            len(colonne)}` scritti in {file_output}")
-
-    except csv_loader.ColonnaNonTrovataErrore as e:
-        print(e)
-    except Exception as e:
-        print(f"Errore durante la scrittura dei fatti `{
-              nome_fatto}\\{len(colonne)}`: {e}")
 
 
 def mappa_settori_nuovi_vecchi(df):
@@ -203,8 +21,8 @@ def mappa_settori_nuovi_vecchi(df):
 
 def mappa_settori_termini(mappa_ssd):
     """
-    Genera una mappa dove le chiavi sono i codici SSD 2015 senza il suffisso 
-    dopo '/' e i valori sono le stesse stringhe in formato modificato: 
+    Genera una mappa dove le chiavi sono i codici SSD 2015 senza il suffisso
+    dopo '/' e i valori sono le stesse stringhe in formato modificato:
     minuscolo e con underscore al posto di trattini o spazi.
 
     :param mappa_ssd: Dizionario esistente con chiavi e valori SSD (ad esempio: {SSD 2024: SSD 2015}).
@@ -232,76 +50,149 @@ def mappa_settori_termini(mappa_ssd):
     return mappa_progressiva
 
 
-def indeterminato(fascia):
-    # Compila la regex
-    pattern = r'\b(Ordinario|Associato)\b'
-    return bool(re.search(pattern, str(fascia)))
+def genera_fatti_settori(df, file_output, mappa_ssd):
+    """
+    Genera i fatti a partire dalla mappa `mappa_ssd` e li scrive nel file di output.
 
+    :param df: DataFrame (non utilizzato direttamente, ma mantenuto per uniformità con altri metodi).
+    :param file_output: Percorso del file di output.
+    :param mappa_ssd: Dizionario con chiavi come codici SSD e valori come terminali rappresentanti i settori.
+    """
+    nome_fatto = 'settore'
 
-def ricercatore(fascia):
-    # Compila la regex
-    pattern = r'\b(Ricercatore)\b'
-    return bool(re.search(pattern, str(fascia)))
-
-
-def contratto(fascia):
-    # TODO: sistemare regex
-    pattern = r'\b(L. 240/10)\b'
-    return bool(re.search(pattern, str(fascia)))
-
-
-def genera_fatti_docenti_indeterminato(df, file_output, colonne=['Matricola', 'Fascia']):
-    """Genera i fatti per i docenti indeterminati a partire dal DataFrame e li scrive nel file di output."""
     try:
-        # Verifica che tutte le colonne richieste esistano nel DataFrame
-        csv_loader.verifica_colonne_esistenti(df, colonne)
-
         # Scrivi i fatti nel file di output
         with open(file_output, 'w', encoding='utf-8') as f:
-            fatti_unici = set()  # Usa un set per memorizzare i fatti unici
+            for ssd, valore_intero in mappa_ssd.items():
+                # Genera il fatto ASP
+                fatto = f"{nome_fatto}({valore_intero})."
+                f.write(fatto + '\n')  # Scrivi il fatto nel file
 
-            for _, riga in df.iterrows():
-                # Estrai i valori delle colonne specificate per generare il fatto
-                valori = []
-                for colonna in colonne:
-                    valore = riga[colonna]
-
-                    # Controlla se il valore è NaN
-                    if csv_loader.pd.isna(valore):
-                        continue  # Salta i valori NaN
-
-                    # Prova a convertire il valore in intero, altrimenti usa il valore originale
-                    try:
-                        valore = int(valore)
-                    except (ValueError, TypeError):
-                        pass
-
-                    valori.append(valore)
-
-                # Verifica la "Fascia" e determina lo stato del docente
-                if indeterminato(valori[1]):
-                    fatto = f"docente_indeterminato({valori[0]})"
-                elif ricercatore(valori[1]):
-                    fatto = f"docente_ricercatore({valori[0]})"
-                elif contratto(valori[1]):
-                    fatto = f"docente_contratto({valori[0]})"
-                else:
-                    fatto = f"docente_determinato({valori[0]})"
-
-                fatti_unici.add(fatto)  # Aggiungi al set
-
-            # Scrivi i fatti unici nel file
-            for fatto in sorted(fatti_unici):  # Ordina per leggibilità (opzionale)
-                f.write(fatto + '\n')
-
-        print(f"Fatti unici `docente_[in]determinato\\1` scritti in {
-              file_output}")
-
-    except csv_loader.ColonnaNonTrovataErrore as e:
-        print(e)
+        print(f"Fatti `{nome_fatto}` scritti con successo in {file_output}")
     except Exception as e:
-        print(
-            f"Errore durante la scrittura dei fatti `docente_[in]determinato\\1`: {e}")
+        print(f"Errore durante la scrittura dei fatti `{nome_fatto}`: {e}")
+
+
+def docente(fatti_docenti, riga, mappa_ssd, mappa_ssd_termine):
+    valori = []
+    valore = riga['Matricola']
+    if csv_loader.pd.isna(valore):
+        return None
+
+    valore = int(valore)
+    valori.append(valore)
+
+    # Leggo Cod. Settore Docente
+    valore = riga['Cod. Settore Docente']
+    if csv_loader.pd.isna(valore) and (valori[0] not in fatti_docenti):
+        # default per valori null (settore non valorizzato)
+        valore = 'NULL/'
+    elif csv_loader.pd.isna(valore) and valori[0] in fatti_docenti:
+        return None
+
+    # `valore` un SSD 2024, converto direttamente in SSD2015
+    if (valore in mappa_ssd):
+        nuova_chiave = mappa_ssd[valore]
+        valore = mappa_ssd_termine[nuova_chiave.split('/')[0]]
+    # altrimenti, rimuovo da '/' in poi e considero il termine
+    # corrispondente al SSD
+    else:
+        valore = valore.split('/')[0]
+        valore = mappa_ssd_termine[valore]
+
+    valori.append(valore)
+
+    fatto = f"docente({valori[0]}, settore({valori[1]}))."
+    fatti_docenti[valori[0]] = fatto
+
+    return fatto
+
+
+def categoria_corso(fatti_categorie, riga):
+    valore = riga['Cod. Tipo Corso']
+
+    if csv_loader.pd.isna(valore):
+        return None
+    if valore in fatti_categorie:
+        return None
+
+    fatto = f"categoria_corso({csv_loader.normalizza_nome(valore)})."
+    fatti_categorie[valore] = fatto
+
+    return fatto
+
+
+def corso_di_studio(fatti_corsi, riga):
+    valori = []
+    valore = riga['Cod. Corso di Studio']
+    if csv_loader.pd.isna(valore):
+        return None
+
+    valore = int(valore)
+    valori.append(valore)
+
+    # Leggo Cod. Settore Docente
+    valore = riga['Cod. Tipo Corso']
+    if csv_loader.pd.isna(valore):
+        return None
+
+    valori.append(csv_loader.normalizza_nome(valore))
+
+    fatto = f"corso_di_studio({valori[0]}, categoria_corso({valori[1]}))."
+    fatti_corsi[valori[0]] = fatto
+
+    return fatto
+
+
+def docente_indeterminato_ricercatore(fatti_docenti_tipo_contratto, riga, fatti_docenti):
+    valori = []
+    valore = riga['Matricola']
+    if csv_loader.pd.isna(valore):
+        return None
+
+    valore = int(valore)
+    if (valore in fatti_docenti_tipo_contratto and ('contratto' not in fatti_docenti_tipo_contratto[valore])):
+        return None
+
+    valori.append(valore)
+
+    valore = riga['Fascia']
+    if csv_loader.pd.isna(valore):
+        return None
+
+    if 'ricercatore' in csv_loader.normalizza_nome(valore):
+        valori.append('ricercatore')
+    else:
+        valori.append('indeterminato')
+
+    # Docente che non insegna nessuna materia
+    if not valori[0] in fatti_docenti:
+        return None
+
+    fatto = f"{valori[1]}({fatti_docenti[valori[0]][:-1]})."
+    fatti_docenti_tipo_contratto[valori[0]] = fatto
+
+    return fatto
+
+
+def docente_contratto(fatti_docenti_tipo_contratto, riga, fatti_docenti):
+    valore = riga['Cod. Settore Docente']
+
+    if not csv_loader.pd.isna(valore):
+        return None
+
+    valore = riga['Matricola']
+    if csv_loader.pd.isna(valore):
+        return None
+    valore = int(valore)
+
+    if valore in fatti_docenti_tipo_contratto:
+        return None
+
+    fatto = f"contratto({fatti_docenti[valore][:-1]})."
+    fatti_docenti_tipo_contratto[valore] = fatto
+
+    return fatto
 
 
 def genera_fatti():
@@ -319,7 +210,7 @@ def genera_fatti():
         return
 
     mappa_ssd = mappa_settori_nuovi_vecchi(df)
-    mappa_ssd_int = mappa_settori_termini(mappa_ssd)
+    mappa_ssd_termine = mappa_settori_termini(mappa_ssd)
 
     print('Mappa ssd nuovi-vecchi generata')
 
@@ -331,28 +222,62 @@ def genera_fatti():
         return
 
     genera_fatti_settori(df, os.path.join(
-        dir_output, 'settori.asp'), mappa_ssd_int)
-    genera_fatti_docenti(df, os.path.join(
-        dir_output, 'docenti.asp'), mappa_ssd, mappa_ssd_int)
-    genera_fatti_corsi(df, os.path.join(
-        dir_output, 'corsi.asp'))
+        dir_output, 'settori.asp'), mappa_ssd_termine)
 
-    # genera_fatti_docenti_indeterminato(
-    #     df, os.path.join(dir_output, 'tipologia_contratti.asp'))
-    # genera_fatti_da_nome(df, os.path.join(
-    #     dir_output, 'corsi_di_studio.asp'), 'corso_di_studio', ['Cod. Corso di Studio'])
+    fatti_corsi_di_studio = {}
+    fatti_categorie_corso = {}
+    fatti_docenti = {}
+    fatti_docenti_tipo_contratto = {}
 
+    for _, riga in df.iterrows():
+        # Estraggo i docenti
+        docente(fatti_docenti, riga, mappa_ssd, mappa_ssd_termine)
+        # Estraggo le categoria_corso
+        categoria_corso(fatti_categorie_corso, riga)
+        # Estraggo i corsi
+        corso_di_studio(fatti_corsi_di_studio, riga)
+        # Estraggo docenti a contratto
+        docente_contratto(fatti_docenti_tipo_contratto, riga, fatti_docenti)
 
-def configura_parser():
-    """Configura e restituisce il parser degli argomenti."""
-    parser = argparse.ArgumentParser(
-        description="Genera fatti ASP utili al solver")
-    parser.add_argument(
-        "file_csv",  # Il CSV di input
-        type=str,
-        help="Il percorso del file CSV da leggere"
-    )
-    return parser
+    file_csv_docenti = '../../input/docenti.csv'
+    df = csv_loader.carica_dati_csv(file_csv_docenti)
+    if df is None:
+        print("Errore nel caricamento dei dati.")
+        return
+
+    for _, riga in df.iterrows():
+        # Estraggo i docenti ricercatori/tempo indeterminato
+        docente_indeterminato_ricercatore(fatti_docenti_tipo_contratto, riga,
+                                          fatti_docenti)
+
+    file_output = os.path.join(
+        dir_output, 'categorie_corso.asp')
+    with open(file_output, 'w', encoding='utf-8') as f:
+        for fatto in fatti_categorie_corso.values():
+            f.write(f"{fatto}\n")
+    print(f"Fatti `categoria_corso\\1` scritti in {file_output}")
+
+    file_output = os.path.join(
+        dir_output, 'docenti.asp')
+    with open(file_output, 'w', encoding='utf-8') as f:
+        for fatto in fatti_docenti.values():
+            f.write(f"{fatto}\n")
+    print(f"Fatti `docente\\2` scritti in {file_output}")
+
+    file_output = os.path.join(
+        dir_output, 'corsi_di_studio.asp')
+    with open(file_output, 'w', encoding='utf-8') as f:
+        for fatto in fatti_corsi_di_studio.values():
+            f.write(f"{fatto}\n")
+    print(f"Fatti `corso_di_studio\\2` scritti in {file_output}")
+
+    file_output = os.path.join(
+        dir_output, 'contratti_docenti.asp')
+    with open(file_output, 'w', encoding='utf-8') as f:
+        for fatto in fatti_docenti_tipo_contratto.values():
+            f.write(f"{fatto}\n")
+        print(f"Fatti `indeterminato\\1`, `ricercatore\\1` scritti in {
+            file_output}")
 
 
 def main():
