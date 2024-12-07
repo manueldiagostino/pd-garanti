@@ -74,22 +74,13 @@ insegna(docente(8, settore(inf)), insegnamento(8, settore(mat)), corso_di_studio
 insegna(docente(9, settore(inf)), insegnamento(9, settore(mat)), corso_di_studio(2, categoria_corso(l))).
 insegna(docente(10, settore(null)), insegnamento(10, settore(mat)), corso_di_studio(2, categoria_corso(l))).
 
-%2{ garante(docente(X, settore(Y)), corso_di_studio(Z, categoria_corso(W))) :
-%    insegna(docente(X, settore(Y)), insegnamento(A, settore(B)),
-%		corso_di_studio(Z, categoria_corso(W))), 
-%    di_riferimento(settore(Y), corso_di_studio(Z, categoria_corso(W))),
-%}2.
-%
-
-
-5{
+4{
 	garante(docente(Matricola, settore(Settore)), corso_di_studio(Corso, categoria_corso(Categoria_corso))) :
 	docente(Matricola, settore(Settore))
-}5 :- corso_di_studio(Corso, categoria_corso(Categoria_corso)), Categoria_corso = l.
-
+} :- corso_di_studio(Corso, categoria_corso(Categoria_corso)), Categoria_corso = l.
 
 % almeno 4 garanti a tempo indeterminato
-4{garante(docente(Matricola, settore(Settore)), corso_di_studio(Corso, categoria_corso(Categoria_corso))) :
+2{garante(docente(Matricola, settore(Settore)), corso_di_studio(Corso, categoria_corso(Categoria_corso))) :
 	insegna(docente(Matricola, settore(Settore)), insegnamento(Insegnamento, settore(Settore_insegnamento)), corso_di_studio(Corso, categoria_corso(Categoria_corso))),
 	di_riferimento(settore(Settore), corso_di_studio(Corso, categoria_corso(Categoria_corso))),
 	indeterminato(docente(Matricola, settore(Settore))),
@@ -105,5 +96,10 @@ insegna(docente(10, settore(null)), insegnamento(10, settore(mat)), corso_di_stu
 	Categoria_corso=l,
 	corso_di_studio(Corso, categoria_corso(Categoria_corso))
 }1.
+
+% un docente è garante al più una volta
+{garante(docente(Matricola, settore(Settore)), corso_di_studio(Corso, categoria_corso(Categoria_corso))) :
+	corso_di_studio(Corso, categoria_corso(Categoria_corso))
+}1 :- docente(Matricola, settore(Settore)).
 
 #show garante/2.
