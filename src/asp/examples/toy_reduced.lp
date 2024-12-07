@@ -122,6 +122,3 @@ insegna(docente(10), insegnamento(10), corso_di_studio(2)).
 	afferisce(corso_di_studio(Corso1), categoria_corso(Categoria1)).
 
 #show garante/2.
-%#show afferisce/2.
-%#show corso_di_studio/1.
-
