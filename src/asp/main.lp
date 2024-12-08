@@ -4,7 +4,11 @@
 	insegnamento(I).
 *%
 
-:- garante(docente(Matricola), corso(Corso)), not insegna(docente(Matricola), insegnamento(_), corso(Corso)).
+%:- garante(docente(Matricola), corso(Corso)), not insegna(docente(Matricola), insegnamento(_), corso(Corso)).
+1{
+	insegnamento(I) : insegna(docente(Matricola), insegnamento(I), corso(Corso))
+} :-
+	garante(docente(Matricola), corso(Corso)).
 
 % numero garanti per laurea triennale
 6{
