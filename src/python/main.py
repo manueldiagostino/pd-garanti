@@ -50,7 +50,7 @@ def mappa_settori_termini(mappa_ssd):
     return mappa_progressiva
 
 
-def genera_fatti_settori(df, file_output, mappa_ssd):
+def genera_fatti_settori(file_output, mappa_ssd):
     """
     Genera i fatti a partire dalla mappa `mappa_ssd` e li scrive nel file di output.
 
@@ -87,6 +87,7 @@ def docente(fatti_docenti, riga, mappa_ssd, mappa_ssd_termine):
     if csv_loader.pd.isna(valore) and (valori[0] not in fatti_docenti):
         # default per valori null (settore non valorizzato)
         valore = 'NULL/'
+    # ho già valorizzato il settore del docente con un valore non null
     elif csv_loader.pd.isna(valore) and valori[0] in fatti_docenti:
         return None
 
@@ -180,6 +181,7 @@ def docente_indeterminato_ricercatore(fatti_docenti_tipo_contratto, riga, fatti_
 def docente_contratto(fatti_docenti_tipo_contratto, riga, fatti_docenti):
     valore = riga['Cod. Settore Docente']
 
+    # TODO: aggiungere qui 'ricercatore/indeterminato
     if not csv_loader.pd.isna(valore):
         return None
 

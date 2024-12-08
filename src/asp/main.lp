@@ -2,9 +2,56 @@
 9{
 	garante(docente(Matricola), corso(Corso)) :
 	docente(Matricola)
-}11 :-
+}12 :-
 	corso(Corso),
 	afferisce(corso(Corso), categoria_corso(l)).
+
+% numero garanti per laurea magistrale
+6{
+	garante(docente(Matricola), corso(Corso)) :
+	docente(Matricola)
+}9 :-
+	corso(Corso),
+	afferisce(corso(Corso), categoria_corso(lm)).
+
+% numero garanti per laurea magistrale cu 5
+15{
+	garante(docente(Matricola), corso(Corso)) :
+	docente(Matricola)
+}18 :-
+	corso(Corso),
+	afferisce(corso(Corso), categoria_corso(lm5)).
+
+% numero garanti per laurea magistrale cu 6
+18{
+	garante(docente(Matricola), corso(Corso)) :
+	docente(Matricola)
+}21 :-
+	corso(Corso),
+	afferisce(corso(Corso), categoria_corso(lm6)).
+
+% numero garanti per LM Scienze Infermieristiche
+3{
+	garante(docente(Matricola), corso(Corso)) :
+	docente(Matricola)
+}6 :-
+	corso(Corso),
+	afferisce(corso(Corso), categoria_corso(lm6)),
+	Corso=5050.
+
+% TODO:identificare tutte le LT professioni sanitarie e 
+% LT a orient. professionale
+
+% numero garanti per LM Scienze Infermieristiche
+4{
+	garante(docente(Matricola), corso(Corso)) :
+	docente(Matricola)
+}7 :-
+	corso(Corso),
+	afferisce(corso(Corso), categoria_corso(lm6)),
+	Corso = 5050 ; Corso = 5028 ; Corso = 5010.
+
+
 
 % almeno X garanti a tempo indeterminato
 5{
@@ -50,8 +97,6 @@
 }1 :-
 	garante(docente(Matricola), corso(Corso1)),
 	afferisce(corso(Corso1), categoria_corso(Categoria1)).
-
-%ok(docente(Matricola), corso(Corso), categoria_corso(l)) :- garante(docente(Matricola), corso(Corso)), afferisce(corso(Corso), categoria_corso(l)).
 
 #show garante/2.
 %#show ok/3.
