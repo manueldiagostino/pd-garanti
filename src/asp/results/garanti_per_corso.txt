@@ -1,0 +1,109 @@
+[995]: {docente(100359), docente(8822), docente(19742), docente(142679), docente(4739), docente(13637), docente(6716), docente(18241), docente(28096), docente(35050), docente(18477), docente(3948), docente(5565), docente(20361), docente(3848)}
+[3000]: {docente(4303), docente(46198), docente(15939), docente(4732), docente(10283), docente(5520), docente(100560), docente(3697), docente(6117)}
+[3004]: {docente(4696), docente(8862), docente(4253), docente(11624), docente(10714), docente(28030), docente(20279), docente(6507), docente(12799)}
+[3006]: {docente(26957), docente(6427), docente(10279), docente(5415), docente(6307), docente(8869), docente(11346), docente(29353), docente(5383)}
+[3007]: {docente(10761), docente(4617), docente(46154), docente(19544), docente(4484), docente(4751), docente(3701), docente(5827), docente(6627)}
+[3010]: {docente(7577), docente(5709), docente(6969), docente(11332), docente(5792), docente(39460), docente(4611), docente(36302), docente(41442)}
+[3011]: {docente(5254), docente(5920), docente(38136), docente(3708), docente(4915), docente(10441), docente(42667), docente(206905), docente(4397)}
+[3013]: {docente(6096), docente(5352), docente(6350), docente(43827), docente(6786), docente(21487), docente(6407), docente(23239), docente(6652)}
+[3014]: {docente(100437), docente(6602), docente(5482), docente(10290), docente(4510), docente(31490), docente(23816), docente(206027), docente(6747)}
+[3017]: {docente(6124), docente(5237), docente(28502), docente(7278), docente(5713), docente(6746), docente(25283), docente(41813), docente(100479)}
+[3019]: {docente(164352), docente(6580), docente(5517), docente(34196), docente(6391), docente(47766), docente(204071), docente(11279), docente(11517)}
+[3020]: {docente(11122), docente(5539), docente(10745), docente(15339), docente(21089), docente(30685), docente(5541), docente(26502), docente(5837)}
+[3021]: {docente(205057), docente(6429), docente(5205), docente(10463), docente(10588), docente(45057), docente(6569), docente(206823), docente(4858)}
+[3022]: {docente(9870), docente(32821), docente(10214), docente(103141), docente(8831), docente(5462), docente(4855), docente(4526), docente(4328)}
+[3023]: {docente(48683), docente(11350), docente(5860), docente(4174), docente(6313), docente(5557), docente(6590), docente(5489), docente(4295)}
+[3024]: {docente(5663), docente(7224), docente(3811), docente(6687), docente(18623), docente(22263), docente(4800), docente(3700), docente(6591)}
+[3026]: {docente(7535), docente(6104), docente(46211), docente(206887), docente(29948), docente(5555), docente(4271), docente(5428), docente(6527)}
+[3027]: {docente(6100), docente(22073), docente(5887), docente(6801), docente(44117), docente(5536), docente(6625), docente(34181), docente(204741)}
+[3028]: {docente(6581), docente(100280), docente(3905), docente(206035), docente(6101), docente(5052), docente(4614), docente(7234), docente(4613)}
+[3029]: {docente(17862), docente(25179), docente(100162), docente(37944), docente(6793), docente(34499), docente(5704), docente(100652), docente(5442)}
+[3030]: {docente(5252), docente(6086), docente(10089), docente(8791), docente(13727), docente(42168), docente(4768), docente(29217), docente(4642)}
+[3032]: {docente(7031), docente(22328), docente(39631), docente(36662), docente(26111), docente(6519), docente(206911), docente(32121), docente(18934)}
+[3038]: {docente(48304), docente(9980), docente(5535), docente(5406), docente(6623), docente(4537), docente(5589), docente(206829), docente(33517)}
+[3040]: {docente(5879), docente(205023), docente(3717), docente(10639), docente(38375), docente(20095), docente(6118), docente(19220), docente(4270)}
+[3041]: {docente(4588), docente(31627), docente(156582), docente(17997), docente(5711), docente(10549), docente(205005), docente(22313), docente(149461)}
+[3042]: {docente(29717), docente(5886), docente(5417), docente(5481), docente(5891), docente(32834), docente(7258), docente(5548), docente(7306)}
+[3043]: {docente(36560), docente(6583), docente(7358), docente(4612), docente(6177), docente(164526), docente(102887), docente(5721), docente(11111)}
+[3044]: {docente(5670), docente(5545), docente(40841), docente(8719), docente(4057), docente(4891), docente(6584), docente(5136), docente(5547)}
+[3046]: {docente(5501), docente(10455), docente(36477), docente(6576), docente(13638), docente(4274), docente(253674), docente(4369), docente(5356)}
+[3047]: {docente(40837), docente(4257), docente(5794), docente(4860), docente(5475), docente(5728), docente(5187), docente(47878), docente(5813)}
+[3048]: {docente(30782), docente(4033), docente(11316), docente(1582), docente(13454), docente(36062), docente(6522), docente(6496), docente(30445)}
+[3049]: {docente(40505), docente(8011), docente(42233), docente(6049), docente(40342), docente(33934), docente(6285), docente(16729), docente(6544)}
+[3050]: {docente(43287), docente(18676), docente(4831), docente(7015), docente(4850), docente(26134), docente(5260), docente(42918), docente(26131)}
+[3051]: {docente(35825), docente(17498), docente(5496), docente(5569), docente(4801), docente(18956), docente(14358), docente(206019), docente(6504)}
+[3052]: {docente(41440), docente(31076), docente(6071), docente(20360), docente(4533), docente(6917), docente(5385), docente(6510), docente(4535)}
+[3054]: {docente(5515), docente(10186), docente(22304), docente(6056), docente(3651), docente(9966), docente(10808), docente(33787), docente(4351)}
+[3055]: {docente(21173), docente(5486), docente(205065), docente(4625), docente(6432), docente(5051), docente(6054), docente(205064), docente(17902)}
+[3057]: {docente(33726), docente(4615), docente(5007), docente(20656), docente(6274), docente(5553), docente(15764), docente(13412), docente(5613)}
+[3059]: {docente(207044), docente(8888), docente(4698), docente(204036), docente(6383), docente(6768), docente(43819), docente(41944), docente(42213)}
+[3060]: {docente(7055), docente(46124), docente(39489), docente(13190), docente(10293), docente(100200), docente(3702), docente(7158), docente(5046)}
+[3061]: {docente(1842), docente(3718), docente(41750), docente(100310), docente(205095), docente(4348), docente(5079), docente(207094), docente(207089)}
+[3062]: {docente(11022), docente(26644), docente(30342), docente(11013), docente(11154), docente(4720), docente(4575), docente(207068), docente(10705)}
+[3063]: {docente(5257), docente(31051), docente(206854), docente(8844), docente(9775), docente(6942), docente(6582), docente(4530), docente(14669)}
+[3064]: {docente(6983), docente(11379), docente(206868), docente(4288), docente(5556), docente(207009), docente(13968), docente(205007), docente(4702)}
+[3065]: {docente(20129), docente(31618), docente(207024), docente(203910), docente(5892), docente(10684), docente(9455), docente(4474), docente(20424)}
+[3066]: {docente(5476), docente(206793), docente(5487), docente(6745), docente(34132), docente(6433), docente(1085), docente(6642), docente(5526)}
+[3067]: {docente(9709), docente(4536), docente(156616), docente(4420), docente(4349), docente(40348), docente(46776), docente(7208), docente(44391)}
+[3068]: {docente(5537), docente(4324), docente(5889), docente(8811), docente(19876), docente(6515), docente(47767), docente(206006), docente(11130)}
+[3069]: {docente(207021), docente(206063), docente(6382), docente(6511), docente(4875), docente(21862), docente(5145), docente(172930), docente(4457)}
+[3070]: {docente(9722), docente(6306), docente(6247), docente(26137), docente(4224), docente(5896), docente(4953), docente(6006), docente(8732)}
+[3071]: {docente(156573), docente(9912), docente(6536), docente(11103), docente(4322), docente(6128), docente(6120), docente(43777), docente(22836)}
+[3072]: {docente(253728), docente(4829), docente(6282), docente(5561), docente(6288), docente(35930), docente(100796), docente(5062), docente(34500)}
+[5000]: {docente(28879), docente(7355), docente(5124), docente(36563), docente(23210), docente(36480)}
+[5003]: {docente(5996), docente(5542), docente(10285), docente(48185), docente(205053), docente(10282)}
+[5005]: {docente(14533), docente(10344), docente(33235), docente(37558), docente(40250), docente(30474)}
+[5008]: {docente(5571), docente(206099), docente(6385), docente(4455), docente(5646), docente(5490), docente(100286), docente(6513), docente(5069), docente(6578), docente(5137), docente(8960), docente(41972), docente(205009), docente(19040)}
+[5009]: {docente(6057), docente(6629), docente(30801), docente(4837), docente(6121), docente(5986), docente(11296), docente(4767), docente(4493), docente(42181), docente(206856), docente(7165), docente(6126), docente(6603), docente(15874)}
+[5010]: {docente(4276), docente(6255), docente(41832), docente(6200), docente(43598), docente(30734)}
+[5011]: {docente(45283), docente(6749), docente(36447), docente(10736), docente(6505), docente(20872)}
+[5013]: {docente(11339), docente(7035), docente(45849), docente(37716), docente(6406), docente(6600)}
+[5014]: {docente(8858), docente(36481), docente(39490), docente(11329), docente(100415), docente(12923)}
+[5015]: {docente(11642), docente(100607), docente(48423), docente(5088), docente(5552), docente(6214)}
+[5016]: {docente(13673), docente(41687), docente(10329), docente(100507), docente(10669), docente(100308)}
+[5018]: {docente(40797), docente(30503), docente(41811), docente(39306), docente(44929), docente(33370)}
+[5025]: {docente(6125), docente(21537), docente(100657), docente(11301), docente(100613), docente(36469)}
+[5026]: {docente(5715), docente(4565), docente(41701), docente(206029), docente(5551), docente(205079), docente(44307), docente(6123), docente(36391), docente(7157), docente(30300), docente(39993), docente(6517), docente(22377), docente(3611), docente(20382), docente(100787), docente(100576)}
+[5027]: {docente(5280), docente(36441), docente(7576), docente(14316), docente(18693), docente(11466), docente(6122), docente(6022), docente(11750), docente(25587), docente(20096), docente(4528), docente(26483), docente(33350), docente(14369), docente(3175), docente(22006), docente(7437)}
+[5028]: {docente(38817), docente(40485), docente(16381), docente(37828), docente(100801), docente(10592)}
+[5029]: {docente(100765), docente(39883), docente(39875), docente(21986), docente(39374), docente(15493), docente(44900), docente(6598), docente(6508), docente(45333), docente(4282), docente(8816), docente(46902), docente(25818), docente(22345)}
+[5036]: {docente(6370), docente(14069), docente(100386), docente(7114), docente(6877), docente(6994)}
+[5037]: {docente(3730), docente(44390), docente(6980), docente(11003), docente(44931), docente(100825)}
+[5039]: {docente(20105), docente(46900), docente(36444), docente(4610), docente(28103), docente(11488)}
+[5041]: {docente(206820), docente(38138), docente(9895), docente(28994), docente(11483), docente(6454)}
+[5043]: {docente(5504), docente(6624), docente(4470), docente(6446), docente(18296), docente(38830)}
+[5044]: {docente(17254), docente(47792), docente(10930), docente(14441), docente(6570), docente(14634)}
+[5045]: {docente(22324), docente(6913), docente(4605), docente(46380), docente(41979), docente(6059)}
+[5046]: {docente(4609), docente(4559), docente(40792), docente(4973), docente(5146), docente(10788)}
+[5047]: {docente(8887), docente(6038), docente(24612), docente(11792), docente(11311), docente(33657)}
+[5048]: {docente(39372), docente(22825), docente(5799), docente(7057), docente(46516), docente(33756)}
+[5049]: {docente(42428), docente(10091), docente(5364), docente(25917), docente(3813), docente(7293)}
+[5050]: {docente(48579), docente(44216), docente(38137), docente(5349), docente(205032), docente(181398)}
+[5051]: {docente(20022), docente(20414), docente(48861), docente(207001), docente(6099), docente(4490)}
+[5052]: {docente(10307), docente(11071), docente(48344), docente(9949), docente(5869), docente(10073)}
+[5053]: {docente(6528), docente(37909), docente(6204), docente(30417), docente(164267), docente(204061)}
+[5054]: {docente(35351), docente(5673), docente(17651), docente(44292), docente(20533), docente(5087)}
+[5055]: {docente(6094), docente(100557), docente(31517), docente(46204), docente(11425), docente(5894)}
+[5057]: {docente(3896), docente(11348), docente(29839), docente(206824), docente(34175), docente(4148)}
+[5059]: {docente(5867), docente(35353), docente(25946), docente(6093), docente(103159), docente(11305)}
+[5061]: {docente(24617), docente(6119), docente(5522), docente(21030), docente(38598), docente(6451)}
+[5062]: {docente(5664), docente(19637), docente(6106), docente(5897), docente(46901), docente(100649)}
+[5063]: {docente(100736), docente(36443), docente(10791), docente(5795), docente(6105), docente(44471)}
+[5064]: {docente(5523), docente(5602), docente(5474), docente(6500), docente(5220), docente(10601)}
+[5065]: {docente(41673), docente(10188), docente(4932), docente(205050), docente(5479), docente(14117)}
+[5066]: {docente(12506), docente(47577), docente(5634), docente(100222), docente(19634), docente(15601)}
+[5068]: {docente(4607), docente(4464), docente(12997), docente(45831), docente(13506), docente(31508)}
+[5069]: {docente(40835), docente(22309), docente(39528), docente(40849), docente(20832), docente(44237)}
+[5070]: {docente(20667), docente(100501), docente(5885), docente(41684), docente(18862), docente(16176)}
+[5071]: {docente(36474), docente(46863), docente(43632), docente(5214), docente(15245), docente(6389)}
+[5072]: {docente(21794), docente(17066), docente(44930), docente(33255), docente(6594), docente(6912)}
+[5073]: {docente(5809), docente(11484), docente(20765), docente(100768), docente(6112), docente(48562)}
+[5074]: {docente(6521), docente(37978), docente(20752), docente(22761), docente(100165), docente(100311), docente(17253), docente(41739), docente(39370), docente(25123), docente(41740), docente(11384), docente(22301), docente(25852), docente(13436), docente(37787), docente(9893), docente(15547)}
+[5075]: {docente(30740), docente(33240), docente(17240), docente(18767), docente(6067), docente(11439)}
+[5076]: {docente(4515), docente(6435), docente(5008), docente(35726), docente(9220), docente(15950)}
+[5077]: {docente(5405), docente(28483), docente(5808), docente(6577), docente(7512), docente(16509)}
+[5078]: {docente(18353), docente(31478), docente(24483), docente(41501), docente(5789), docente(4974)}
+[5079]: {docente(26126), docente(32477), docente(26130), docente(11355), docente(33507), docente(999976), docente(42214), docente(41973), docente(32479), docente(3698), docente(6782), docente(6191), docente(5668), docente(6381), docente(5320)}
+[5080]: {docente(38880), docente(5125), docente(33569), docente(44211), docente(5599), docente(11629), docente(6644), docente(26424), docente(48303), docente(44238), docente(26527), docente(4624), docente(44413), docente(41954), docente(36346)}
+[5081]: {docente(5194), docente(11280), docente(35185), docente(5788), docente(4468), docente(164218)}
+[5082]: {docente(207095), docente(6514), docente(28101), docente(42122), docente(5426), docente(4854)}
