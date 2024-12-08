@@ -1,1601 +1,1601 @@
-docente(6527, settore(fis)).
-docente(22345, settore(agr)).
-docente(4397, settore(mat)).
-docente(25818, settore(l_art)).
-docente(34500, settore(ius)).
-docente(46902, settore(null)).
-docente(15950, settore(mat)).
-docente(8816, settore(bio)).
-docente(4282, settore(med)).
-docente(45333, settore(null)).
-docente(6508, settore(l_fil_let)).
-docente(6598, settore(med)).
-docente(4642, settore(mat)).
-docente(44900, settore(null)).
-docente(15493, settore(secs_p)).
-docente(39374, settore(null)).
-docente(21986, settore(null)).
-docente(3848, settore(med)).
-docente(20361, settore(m_psi)).
-docente(207089, settore(ing_inf)).
-docente(5565, settore(med)).
-docente(3948, settore(null)).
-docente(18477, settore(agr)).
-docente(35050, settore(secs_s)).
-docente(28096, settore(null)).
-docente(6627, settore(fis)).
-docente(16176, settore(null)).
-docente(18862, settore(secs_p)).
-docente(18241, settore(null)).
-docente(41684, settore(null)).
-docente(5885, settore(ius)).
-docente(100501, settore(null)).
-docente(6652, settore(m_fil)).
-docente(207094, settore(ing_inf)).
-docente(20667, settore(null)).
-docente(164218, settore(med)).
-docente(39875, settore(ius)).
-docente(4468, settore(secs_p)).
-docente(5788, settore(med)).
-docente(35185, settore(null)).
-docente(6504, settore(ius)).
-docente(6454, settore(l_lin)).
-docente(11280, settore(null)).
-docente(11483, settore(null)).
-docente(5194, settore(null)).
-docente(28994, settore(m_ped)).
-docente(29217, settore(mat)).
-docente(9895, settore(null)).
-docente(38138, settore(bio)).
-docente(5813, settore(med)).
-docente(5087, settore(bio)).
-docente(33657, settore(inf)).
-docente(11311, settore(null)).
-docente(20533, settore(secs_p)).
-docente(11792, settore(m_psi)).
-docente(24612, settore(ing_inf)).
-docente(44292, settore(null)).
-docente(15601, settore(null)).
-docente(4535, settore(agr)).
-docente(14634, settore(m_ped)).
-docente(17651, settore(vet)).
-docente(5673, settore(null)).
-docente(19634, settore(null)).
-docente(35351, settore(sps)).
-docente(100222, settore(null)).
-docente(5442, settore(geo)).
-docente(5526, settore(l_lin)).
-docente(5634, settore(icar)).
-docente(47577, settore(null)).
-docente(12506, settore(icar)).
-docente(4466, settore(secs_p)).
-docente(20856, settore(null)).
-docente(5320, settore(chim)).
-docente(15547, settore(null)).
-docente(5837, settore(vet)).
-docente(6642, settore(med)).
-docente(4457, settore(null)).
-docente(172930, settore(med)).
-docente(11305, settore(sps)).
-docente(5145, settore(inf)).
-docente(12799, settore(secs_p)).
-docente(21862, settore(null)).
-docente(6381, settore(chim)).
-docente(40152, settore(null)).
-docente(21528, settore(null)).
-docente(5073, settore(bio)).
-docente(100223, settore(null)).
-docente(6038, settore(secs_p)).
-docente(10592, settore(geo)).
-docente(11130, settore(agr)).
-docente(5428, settore(fis)).
-docente(40341, settore(null)).
-docente(6451, settore(null)).
-docente(10788, settore(null)).
-docente(4702, settore(vet)).
-docente(19040, settore(null)).
-docente(6117, settore(agr)).
-docente(3899, settore(null)).
-docente(11157, settore(bio)).
-docente(36480, settore(null)).
-docente(36420, settore(null)).
-docente(4880, settore(secs_p)).
-docente(23210, settore(med)).
-docente(6544, settore(med)).
-docente(3697, settore(bio)).
-docente(1085, settore(null)).
-docente(16512, settore(null)).
-docente(15874, settore(mat)).
-docente(5668, settore(bio)).
-docente(6754, settore(bio)).
-docente(33517, settore(m_ped)).
-docente(205009, settore(bio)).
-docente(8949, settore(null)).
-docente(4889, settore(vet)).
-docente(5519, settore(ius)).
-docente(26502, settore(null)).
-docente(32717, settore(ing_ind)).
-docente(5541, settore(chim)).
-docente(36442, settore(null)).
-docente(205007, settore(agr)).
-docente(48529, settore(null)).
-docente(41972, settore(ing_inf)).
-docente(33756, settore(null)).
-docente(36346, settore(null)).
-docente(5827, settore(icar)).
-docente(11111, settore(ing_inf)).
-docente(12185, settore(fis)).
-docente(14669, settore(med)).
-docente(6507, settore(secs_p)).
-docente(4768, settore(mat)).
-docente(17902, settore(null)).
-docente(8960, settore(null)).
-docente(20279, settore(ius)).
-docente(5390, settore(ius)).
-docente(5356, settore(null)).
-docente(100225, settore(null)).
-docente(26131, settore(mat)).
-docente(36439, settore(null)).
-docente(5234, settore(vet)).
-docente(18307, settore(null)).
-docente(5383, settore(l_lin)).
-docente(20374, settore(null)).
-docente(10706, settore(chim)).
-docente(204741, settore(inf)).
-docente(5062, settore(null)).
-docente(6214, settore(null)).
-docente(39887, settore(null)).
-docente(6270, settore(icar)).
-docente(204061, settore(agr)).
-docente(149461, settore(med)).
-docente(5046, settore(fis)).
-docente(33648, settore(icar)).
-docente(22313, settore(m_psi)).
-docente(39583, settore(chim)).
-docente(32990, settore(inf)).
-docente(5447, settore(vet)).
-docente(40340, settore(null)).
-docente(12390, settore(null)).
-docente(5836, settore(bio)).
-docente(100801, settore(null)).
-docente(5137, settore(ing_inf)).
-docente(10705, settore(chim)).
-docente(39371, settore(sps)).
-docente(6585, settore(l_lin)).
-docente(5613, settore(fis)).
-docente(20907, settore(agr)).
-docente(5146, settore(chim)).
-docente(8984, settore(null)).
-docente(41442, settore(null)).
-docente(42213, settore(bio)).
-docente(8885, settore(chim)).
-docente(5655, settore(vet)).
-docente(6639, settore(ius)).
-docente(206829, settore(ius)).
-docente(13412, settore(null)).
-docente(8765, settore(ing_inf)).
-docente(6191, settore(chim)).
-docente(6782, settore(m_fil)).
-docente(205005, settore(med)).
-docente(15764, settore(med)).
-docente(7306, settore(med)).
-docente(3698, settore(chim)).
-docente(6578, settore(ing_ind)).
-docente(22836, settore(med)).
-docente(7136, settore(null)).
-docente(33370, settore(null)).
-docente(44929, settore(null)).
-docente(23239, settore(m_fil)).
-docente(6591, settore(chim)).
-docente(6563, settore(null)).
-docente(4613, settore(bio)).
-docente(4295, settore(bio)).
-docente(30169, settore(ius)).
-docente(253750, settore(bio)).
-docente(46719, settore(sps)).
-docente(38830, settore(med)).
-docente(15482, settore(ius)).
-docente(4858, settore(vet)).
-docente(3731, settore(null)).
-docente(5721, settore(med)).
-docente(10700, settore(null)).
-docente(11517, settore(null)).
-docente(42168, settore(med)).
-docente(5069, settore(ing_inf)).
-docente(18200, settore(null)).
-docente(4490, settore(fis)).
-docente(34181, settore(inf)).
-docente(35359, settore(ius)).
-docente(4854, settore(ing_inf)).
-docente(4658, settore(null)).
-docente(12129, settore(chim)).
-docente(4501, settore(vet)).
-docente(11279, settore(null)).
-docente(204071, settore(bio)).
-docente(32479, settore(l_art)).
-docente(6388, settore(geo)).
-docente(21150, settore(ius)).
-docente(37946, settore(null)).
-docente(4271, settore(fis)).
-docente(35350, settore(agr)).
-docente(6513, settore(ing_ind)).
-docente(206006, settore(agr)).
-docente(40855, settore(null)).
-docente(206905, settore(ing_ind)).
-docente(39306, settore(null)).
-docente(47878, settore(null)).
-docente(44391, settore(null)).
-docente(41811, settore(null)).
-docente(4715, settore(null)).
-docente(13386, settore(null)).
-docente(11083, settore(null)).
-docente(6603, settore(vet)).
-docente(28122, settore(null)).
-docente(25842, settore(null)).
-docente(5924, settore(null)).
-docente(4973, settore(null)).
-docente(47766, settore(null)).
-docente(6126, settore(bio)).
-docente(8732, settore(m_psi)).
-docente(6391, settore(bio)).
-docente(7240, settore(null)).
-docente(37828, settore(null)).
-docente(43777, settore(med)).
-docente(42360, settore(null)).
-docente(25625, settore(null)).
-docente(5555, settore(fis)).
-docente(5489, settore(med)).
-docente(4328, settore(med)).
-docente(164267, settore(med)).
-docente(6389, settore(chim)).
-docente(6433, settore(l_lin)).
-docente(5548, settore(med)).
-docente(4526, settore(vet)).
-docente(4586, settore(vet)).
-docente(5880, settore(secs_p)).
-docente(207068, settore(chim)).
-docente(4974, settore(ius)).
-docente(30503, settore(null)).
-docente(4369, settore(med)).
-docente(41973, settore(mat)).
-docente(5079, settore(ing_inf)).
-docente(15245, settore(med)).
-docente(11439, settore(bio)).
-docente(5299, settore(med)).
-docente(9049, settore(null)).
-docente(6510, settore(chim)).
-docente(40797, settore(null)).
-docente(41688, settore(null)).
-docente(40347, settore(secs_s)).
-docente(30445, settore(med)).
-docente(3700, settore(chim)).
-docente(100479, settore(null)).
-docente(9051, settore(null)).
-docente(36469, settore(null)).
-docente(41954, settore(null)).
-docente(100286, settore(null)).
-docente(204544, settore(bio)).
-docente(7222, settore(null)).
-docente(29948, settore(null)).
-docente(14117, settore(null)).
-docente(33684, settore(secs_p)).
-docente(6407, settore(l_lin)).
-docente(42916, settore(null)).
-docente(20424, settore(med)).
-docente(3701, settore(mat)).
-docente(100238, settore(null)).
-docente(42214, settore(chim)).
-docente(24005, settore(null)).
-docente(30479, settore(bio)).
-docente(41813, settore(null)).
-docente(29354, settore(secs_p)).
-docente(41635, settore(null)).
-docente(5589, settore(l_art)).
-docente(42667, settore(med)).
-docente(44413, settore(null)).
-docente(19635, settore(null)).
-docente(7234, settore(bio)).
-docente(4500, settore(med)).
-docente(4624, settore(chim)).
-docente(5770, settore(secs_p)).
-docente(4575, settore(chim)).
-docente(206019, settore(m_psi)).
-docente(205064, settore(agr)).
-docente(41944, settore(med)).
-docente(164415, settore(null)).
-docente(42918, settore(null)).
-docente(10710, settore(bio)).
-docente(18934, settore(ius)).
-docente(4751, settore(icar)).
-docente(206887, settore(fis)).
-docente(5547, settore(med)).
-docente(205052, settore(null)).
-docente(10282, settore(null)).
-docente(35833, settore(null)).
-docente(6747, settore(l_ant)).
-docente(38598, settore(null)).
-docente(19365, settore(ing_ind)).
-docente(20872, settore(null)).
-docente(11496, settore(icar)).
-docente(4348, settore(ing_inf)).
-docente(16113, settore(ing_inf)).
-docente(21847, settore(icar)).
-docente(7158, settore(l_art)).
-docente(4720, settore(chim)).
-docente(4433, settore(ing_ind)).
-docente(3702, settore(chim)).
-docente(4875, settore(fis)).
-docente(20068, settore(ius)).
-docente(32121, settore(sps)).
-docente(49772, settore(null)).
-docente(206911, settore(sps)).
-docente(9930, settore(chim)).
-docente(14829, settore(null)).
-docente(206823, settore(null)).
-docente(100767, settore(null)).
-docente(206027, settore(l_fil_let)).
-docente(13727, settore(mat)).
-docente(46009, settore(null)).
-docente(47362, settore(secs_p)).
-docente(10712, settore(ing_ind)).
-docente(36515, settore(null)).
-docente(4800, settore(chim)).
-docente(100576, settore(null)).
-docente(7208, settore(null)).
-docente(28030, settore(null)).
-docente(7165, settore(chim)).
-docente(253674, settore(med)).
-docente(3704, settore(vet)).
-docente(207077, settore(null)).
-docente(41737, settore(null)).
-docente(6496, settore(med)).
-docente(11367, settore(bio)).
-docente(5426, settore(mat)).
-docente(100652, settore(geo)).
-docente(35758, settore(l_lin)).
-docente(26527, settore(null)).
-docente(10709, settore(l_fil_let)).
-docente(5350, settore(null)).
-docente(22263, settore(chim)).
-docente(36296, settore(null)).
-docente(37903, settore(null)).
-docente(4270, settore(med)).
-docente(4579, settore(secs_s)).
-docente(4351, settore(icar)).
-docente(11337, settore(ing_ind)).
-docente(6558, settore(null)).
-docente(5704, settore(geo)).
-docente(41942, settore(sps)).
-docente(42122, settore(null)).
-docente(13968, settore(agr)).
-docente(6912, settore(icar)).
-docente(999976, settore(null)).
-docente(44286, settore(null)).
-docente(6054, settore(agr)).
-docente(11047, settore(fis)).
-docente(36514, settore(null)).
-docente(4421, settore(ing_inf)).
-docente(36302, settore(null)).
-docente(12923, settore(med)).
-docente(5260, settore(ing_inf)).
-docente(28101, settore(null)).
-docente(18296, settore(null)).
-docente(6006, settore(m_psi)).
-docente(10441, settore(null)).
-docente(5214, settore(secs_p)).
-docente(7480, settore(null)).
-docente(10008, settore(null)).
-docente(30685, settore(null)).
-docente(7258, settore(med)).
-docente(21089, settore(agr)).
-docente(100560, settore(chim)).
-docente(30400, settore(null)).
-docente(500108, settore(null)).
-docente(5490, settore(ius)).
-docente(206856, settore(icar)).
-docente(21487, settore(null)).
-docente(5187, settore(ing_inf)).
-docente(100787, settore(null)).
-docente(40354, settore(null)).
-docente(6514, settore(null)).
-docente(207037, settore(med)).
-docente(36472, settore(null)).
-docente(30734, settore(null)).
-docente(6519, settore(ius)).
-docente(14362, settore(null)).
-docente(5725, settore(chim)).
-docente(207095, settore(ing_ind)).
-docente(34196, settore(m_edf)).
-docente(16181, settore(null)).
-docente(46211, settore(null)).
-docente(6570, settore(ing_inf)).
-docente(48562, settore(ius)).
-docente(6112, settore(vet)).
-docente(4474, settore(med)).
-docente(4719, settore(null)).
-docente(16562, settore(null)).
-docente(100415, settore(null)).
-docente(44471, settore(null)).
-docente(48694, settore(null)).
-docente(6505, settore(ius)).
-docente(36545, settore(null)).
-docente(5385, settore(secs_s)).
-docente(16729, settore(null)).
-docente(30736, settore(sps)).
-docente(30417, settore(null)).
-docente(41812, settore(null)).
-docente(3707, settore(vet)).
-docente(5728, settore(med)).
-docente(6285, settore(med)).
-docente(7293, settore(null)).
-docente(4855, settore(chim)).
-docente(4537, settore(m_psi)).
-docente(17274, settore(vet)).
-docente(18623, settore(null)).
-docente(33787, settore(icar)).
-docente(4611, settore(mat)).
-docente(29312, settore(null)).
-docente(6105, settore(med)).
-docente(6917, settore(chim)).
-docente(5795, settore(med)).
-docente(6067, settore(icar)).
-docente(45771, settore(null)).
-docente(4915, settore(ing_inf)).
-docente(4530, settore(med)).
-docente(4375, settore(med)).
-docente(6516, settore(med)).
-docente(39034, settore(null)).
-docente(4533, settore(secs_p)).
-docente(5163, settore(fis)).
-docente(42181, settore(secs_p)).
-docente(11202, settore(null)).
-docente(6120, settore(fis)).
-docente(26144, settore(null)).
-docente(11329, settore(vet)).
-docente(34132, settore(null)).
-docente(35155, settore(null)).
-docente(31596, settore(secs_p)).
-docente(5419, settore(ing_inf)).
-docente(43157, settore(med)).
-docente(11488, settore(fis)).
-docente(5637, settore(secs_p)).
-docente(6511, settore(chim)).
-docente(6625, settore(inf)).
-docente(4326, settore(chim)).
-docente(12027, settore(null)).
-docente(100796, settore(null)).
-docente(4274, settore(med)).
-docente(6994, settore(bio)).
-docente(4809, settore(secs_p)).
-docente(6687, settore(null)).
-docente(6382, settore(chim)).
-docente(10549, settore(med)).
-docente(1326, settore(null)).
-docente(30624, settore(null)).
-docente(5711, settore(ius)).
-docente(23816, settore(l_lin)).
-docente(47767, settore(null)).
-docente(30062, settore(null)).
-docente(26134, settore(fis)).
-docente(45334, settore(null)).
-docente(25283, settore(m_sto)).
-docente(37910, settore(null)).
-docente(13368, settore(ing_inf)).
-docente(100671, settore(null)).
-docente(11057, settore(icar)).
-docente(5475, settore(med)).
-docente(29433, settore(null)).
-docente(34499, settore(mat)).
-docente(6522, settore(med)).
-docente(13331, settore(l_lin)).
-docente(46776, settore(null)).
-docente(11516, settore(ius)).
-docente(12057, settore(null)).
-docente(40847, settore(null)).
-docente(4850, settore(ing_inf)).
-docente(45847, settore(null)).
-docente(102887, settore(med)).
-docente(24008, settore(null)).
-docente(5536, settore(fis)).
-docente(4493, settore(vet)).
-docente(3708, settore(fis)).
-docente(100195, settore(secs_p)).
-docente(36765, settore(null)).
-docente(10791, settore(null)).
-docente(103159, settore(med)).
-docente(23789, settore(null)).
-docente(6093, settore(med)).
-docente(6319, settore(med)).
-docente(6446, settore(null)).
-docente(3811, settore(null)).
-docente(6594, settore(chim)).
-docente(10714, settore(chim)).
-docente(29803, settore(null)).
-docente(36475, settore(null)).
-docente(27888, settore(null)).
-docente(39490, settore(med)).
-docente(34130, settore(null)).
-docente(6569, settore(ing_inf)).
-docente(100249, settore(null)).
-docente(15441, settore(null)).
-docente(6457, settore(null)).
-docente(36481, settore(null)).
-docente(38136, settore(med)).
-docente(46191, settore(null)).
-docente(37774, settore(l_lin)).
-docente(41689, settore(null)).
-docente(206553, settore(sps)).
-docente(5001, settore(null)).
-docente(44926, settore(null)).
-docente(5920, settore(fis)).
-docente(6582, settore(med)).
-docente(181398, settore(null)).
-docente(10321, settore(bio)).
-docente(19220, settore(mat)).
-docente(23179, settore(null)).
-docente(9963, settore(vet)).
-docente(164526, settore(med)).
-docente(20382, settore(null)).
-docente(13638, settore(null)).
-docente(14454, settore(chim)).
-docente(44238, settore(bio)).
-docente(5517, settore(ius)).
-docente(35930, settore(null)).
-docente(6590, settore(med)).
-docente(44237, settore(secs_p)).
-docente(5470, settore(fis)).
-docente(31490, settore(null)).
-docente(36563, settore(null)).
-docente(36443, settore(null)).
-docente(100620, settore(null)).
-docente(5124, settore(bio)).
-docente(3611, settore(null)).
-docente(41298, settore(null)).
-docente(47520, settore(null)).
-docente(6118, settore(med)).
-docente(6399, settore(agr)).
-docente(4767, settore(vet)).
-docente(4953, settore(vet)).
-docente(7034, settore(icar)).
-docente(100736, settore(null)).
-docente(100596, settore(null)).
-docente(1365, settore(null)).
-docente(5896, settore(chim)).
-docente(26146, settore(null)).
-docente(14358, settore(bio)).
-docente(100739, settore(ius)).
-docente(20832, settore(ius)).
-docente(28252, settore(med)).
-docente(33934, settore(agr)).
-docente(6786, settore(m_fil)).
-docente(4510, settore(secs_p)).
-docente(43819, settore(null)).
-docente(100200, settore(l_art)).
-docente(39624, settore(null)).
-docente(206063, settore(bio)).
-docente(9893, settore(med)).
-docente(11689, settore(null)).
-docente(36062, settore(bio)).
-docente(43827, settore(l_or)).
-docente(7437, settore(null)).
-docente(40342, settore(null)).
-docente(32309, settore(null)).
-docente(100825, settore(secs_p)).
-docente(16042, settore(null)).
-docente(19595, settore(med)).
-docente(4484, settore(ing_ind)).
-docente(22006, settore(null)).
-docente(3813, settore(null)).
-docente(20360, settore(med)).
-docente(5494, settore(bio)).
-docente(8791, settore(secs_s)).
-docente(18956, settore(null)).
-docente(20095, settore(ing_ind)).
-docente(11336, settore(med)).
-docente(6623, settore(m_ped)).
-docente(6144, settore(geo)).
-docente(45057, settore(agr)).
-docente(6810, settore(null)).
-docente(36565, settore(null)).
-docente(6099, settore(ing_inf)).
-docente(6128, settore(med)).
-docente(5646, settore(bio)).
-docente(10293, settore(l_art)).
-docente(10588, settore(m_psi)).
-docente(37787, settore(null)).
-docente(9220, settore(null)).
-docente(16608, settore(icar)).
-docente(3175, settore(null)).
-docente(207001, settore(bio)).
-docente(22377, settore(null)).
-docente(14369, settore(icar)).
-docente(36433, settore(null)).
-docente(33505, settore(ing_inf)).
-docente(6517, settore(bio)).
-docente(6288, settore(secs_p)).
-docente(5031, settore(null)).
-docente(11319, settore(null)).
-docente(4470, settore(med)).
-docente(100252, settore(null)).
-docente(25592, settore(ing_ind)).
-docente(33350, settore(agr)).
-docente(18767, settore(null)).
-docente(11127, settore(null)).
-docente(40792, settore(null)).
-docente(26483, settore(null)).
-docente(33507, settore(m_fil)).
-docente(35726, settore(icar)).
-docente(39993, settore(null)).
-docente(4224, settore(bio)).
-docente(205095, settore(ing_inf)).
-docente(100768, settore(null)).
-docente(5520, settore(bio)).
-docente(206828, settore(null)).
-docente(20765, settore(ing_inf)).
-docente(11484, settore(ing_ind)).
-docente(36609, settore(null)).
-docente(5828, settore(null)).
-docente(30300, settore(med)).
-docente(21030, settore(ius)).
-docente(39890, settore(null)).
-docente(7017, settore(secs_p)).
-docente(11154, settore(fis)).
-docente(8390, settore(null)).
-docente(19544, settore(fis)).
-docente(23839, settore(agr)).
-docente(44117, settore(null)).
-docente(21129, settore(null)).
-docente(18476, settore(chim)).
-docente(10463, settore(m_psi)).
-docente(6793, settore(geo)).
-docente(30339, settore(null)).
-docente(5008, settore(null)).
-docente(4652, settore(bio)).
-docente(48119, settore(null)).
-docente(46154, settore(null)).
-docente(10808, settore(null)).
-docente(6768, settore(icar)).
-docente(17104, settore(med)).
-docente(18253, settore(null)).
-docente(19630, settore(med)).
-docente(29353, settore(sps)).
-docente(100710, settore(null)).
-docente(7015, settore(secs_p)).
-docente(29550, settore(secs_p)).
-docente(18131, settore(med)).
-docente(100308, settore(null)).
-docente(5051, settore(chim)).
-docente(4801, settore(m_psi)).
-docente(205032, settore(bio)).
-docente(5349, settore(ius)).
-docente(38137, settore(ing_ind)).
-docente(44216, settore(secs_p)).
-docente(30448, settore(bio)).
-docente(41357, settore(null)).
-docente(10361, settore(icar)).
-docente(6049, settore(ing_ind)).
-docente(5433, settore(secs_p)).
-docente(11296, settore(icar)).
-docente(42014, settore(null)).
-docente(207009, settore(agr)).
-docente(39883, settore(null)).
-docente(46516, settore(null)).
-docente(5849, settore(ius)).
-docente(28754, settore(null)).
-docente(40791, settore(null)).
-docente(11355, settore(fis)).
-docente(100765, settore(null)).
-docente(4455, settore(ing_ind)).
-docente(103224, settore(null)).
-docente(11289, settore(ius)).
-docente(6515, settore(agr)).
-docente(36804, settore(null)).
-docente(17499, settore(null)).
-docente(48303, settore(null)).
-docente(4280, settore(vet)).
-docente(11264, settore(null)).
-docente(16509, settore(null)).
-docente(100613, settore(m_ggr)).
-docente(15339, settore(vet)).
-docente(5569, settore(m_sto)).
-docente(35121, settore(null)).
-docente(10290, settore(m_sto)).
-docente(205053, settore(bio)).
-docente(12507, settore(bio)).
-docente(26130, settore(sps)).
-docente(9966, settore(icar)).
-docente(100256, settore(null)).
-docente(19553, settore(med)).
-docente(5463, settore(fis)).
-docente(7057, settore(l_lin)).
-docente(10669, settore(ius)).
-docente(28143, settore(ing_ind)).
-docente(100310, settore(null)).
-docente(26424, settore(null)).
-docente(40662, settore(null)).
-docente(41937, settore(vet)).
-docente(3651, settore(icar)).
-docente(18697, settore(bio)).
-docente(5799, settore(chim)).
-docente(8858, settore(l_fil_let)).
-docente(39715, settore(sps)).
-docente(4860, settore(med)).
-docente(7245, settore(bio)).
-docente(39027, settore(null)).
-docente(206026, settore(med)).
-docente(25291, settore(null)).
-docente(19890, settore(m_dea)).
-docente(5794, settore(med)).
-docente(5056, settore(icar)).
-docente(37772, settore(null)).
-docente(4451, settore(vet)).
-docente(6580, settore(m_edf)).
-docente(100410, settore(null)).
-docente(100257, settore(null)).
-docente(26302, settore(null)).
-docente(100449, settore(null)).
-docente(43632, settore(null)).
-docente(4327, settore(null)).
-docente(30358, settore(null)).
-docente(6435, settore(ius)).
-docente(5553, settore(chim)).
-docente(31089, settore(null)).
-docente(5561, settore(secs_p)).
-docente(17997, settore(secs_p)).
-docente(4604, settore(vet)).
-docente(5556, settore(bio)).
-docente(15906, settore(m_psi)).
-docente(41995, settore(null)).
-docente(25917, settore(null)).
-docente(164325, settore(null)).
-docente(11346, settore(ius)).
-docente(5441, settore(fis)).
-docente(4515, settore(bio)).
-docente(4912, settore(mat)).
-docente(4993, settore(secs_s)).
-docente(25177, settore(null)).
-docente(32566, settore(null)).
-docente(6801, settore(mat)).
-docente(44931, settore(null)).
-docente(4831, settore(ing_inf)).
-docente(40521, settore(null)).
-docente(14405, settore(null)).
-docente(4322, settore(bio)).
-docente(5114, settore(agr)).
-docente(34195, settore(null)).
-docente(43598, settore(ing_inf)).
-docente(25837, settore(agr)).
-docente(45724, settore(null)).
-docente(36990, settore(ing_inf)).
-docente(48185, settore(null)).
-docente(6715, settore(m_fil)).
-docente(6746, settore(l_fil_let)).
-docente(5610, settore(geo)).
-docente(42199, settore(geo)).
-docente(6432, settore(vet)).
-docente(100507, settore(null)).
-docente(11003, settore(secs_p)).
-docente(149513, settore(null)).
-docente(22825, settore(m_psi)).
-docente(6069, settore(chim)).
-docente(26111, settore(ius)).
-docente(47910, settore(null)).
-docente(11347, settore(m_fil)).
-docente(48682, settore(null)).
-docente(10329, settore(l_ant)).
-docente(13027, settore(inf)).
-docente(6716, settore(agr)).
-docente(17172, settore(bio)).
-docente(5406, settore(vet)).
-docente(207008, settore(med)).
-docente(100627, settore(null)).
-docente(11310, settore(null)).
-docente(30289, settore(null)).
-docente(4288, settore(med)).
-docente(40846, settore(null)).
-docente(37950, settore(null)).
-docente(28103, settore(null)).
-docente(14713, settore(null)).
-docente(13637, settore(secs_p)).
-docente(37944, settore(null)).
-docente(17240, settore(chim)).
-docente(13659, settore(bio)).
-docente(32477, settore(chim)).
-docente(5479, settore(secs_p)).
-docente(24121, settore(ing_inf)).
-docente(5986, settore(secs_p)).
-docente(10073, settore(med)).
-docente(13436, settore(ing_inf)).
-docente(6644, settore(secs_s)).
-docente(48186, settore(null)).
-docente(48861, settore(bio)).
-docente(6274, settore(agr)).
-docente(25852, settore(med)).
-docente(11629, settore(null)).
-docente(22301, settore(fis)).
-docente(5462, settore(bio)).
-docente(26126, settore(geo)).
-docente(39460, settore(fis)).
-docente(11384, settore(agr)).
-docente(41740, settore(null)).
-docente(38375, settore(med)).
-docente(25123, settore(null)).
-docente(6385, settore(mat)).
-docente(39370, settore(secs_p)).
-docente(206099, settore(ing_inf)).
-docente(6593, settore(chim)).
-docente(41739, settore(null)).
-docente(17253, settore(chim)).
-docente(100311, settore(null)).
-docente(22348, settore(ing_inf)).
-docente(100165, settore(l_lin)).
-docente(5254, settore(icar)).
-docente(20414, settore(null)).
-docente(5599, settore(mat)).
-docente(10283, settore(ing_ind)).
-docente(6121, settore(fis)).
-docente(22761, settore(null)).
-docente(20752, settore(null)).
-docente(4837, settore(secs_p)).
-docente(7157, settore(null)).
-docente(36391, settore(null)).
-docente(4528, settore(bio)).
-docente(11368, settore(bio)).
-docente(6942, settore(med)).
-docente(5571, settore(bio)).
-docente(4257, settore(bio)).
-docente(20096, settore(ing_ind)).
-docente(19924, settore(fis)).
-docente(25587, settore(agr)).
-docente(44211, settore(sps)).
-docente(11750, settore(m_ped)).
-docente(1535, settore(null)).
-docente(33569, settore(null)).
-docente(4614, settore(bio)).
-docente(7224, settore(chim)).
-docente(33407, settore(sps)).
-docente(156582, settore(med)).
-docente(30801, settore(secs_p)).
-docente(6877, settore(null)).
-docente(31614, settore(null)).
-docente(6022, settore(secs_p)).
-docente(5052, settore(chim)).
-docente(6624, settore(med)).
-docente(8460, settore(med)).
-docente(6122, settore(med)).
-docente(6629, settore(secs_p)).
-docente(7114, settore(null)).
-docente(37978, settore(null)).
-docente(11466, settore(fis)).
-docente(5482, settore(l_fil_let)).
-docente(28059, settore(null)).
-docente(18693, settore(null)).
-docente(25053, settore(ius)).
-docente(16381, settore(null)).
-docente(6071, settore(agr)).
-docente(5125, settore(agr)).
-docente(36541, settore(null)).
-docente(41750, settore(null)).
-docente(40348, settore(med)).
-docente(14316, settore(l_art)).
-docente(11251, settore(null)).
-docente(6056, settore(icar)).
-docente(13967, settore(bio)).
-docente(5205, settore(m_psi)).
-docente(5496, settore(agr)).
-docente(205050, settore(ing_ind)).
-docente(5789, settore(med)).
-docente(7576, settore(med)).
-docente(37050, settore(null)).
-docente(5557, settore(secs_s)).
-docente(44463, settore(null)).
-docente(36768, settore(null)).
-docente(8831, settore(chim)).
-docente(20022, settore(null)).
-docente(32834, settore(med)).
-docente(4739, settore(ius)).
-docente(10043, settore(geo)).
-docente(6313, settore(geo)).
-docente(142679, settore(null)).
-docente(11885, settore(m_psi)).
-docente(6383, settore(icar)).
-docente(28116, settore(null)).
-docente(35522, settore(null)).
-docente(41447, settore(null)).
-docente(35874, settore(ing_inf)).
-docente(4349, settore(med)).
-docente(136411, settore(med)).
-docente(10736, settore(fis)).
-docente(100555, settore(null)).
-docente(40339, settore(null)).
-docente(6023, settore(secs_p)).
-docente(5546, settore(chim)).
-docente(41501, settore(null)).
-docente(37824, settore(null)).
-docente(6685, settore(icar)).
-docente(35524, settore(null)).
-docente(40147, settore(icar)).
-docente(13454, settore(null)).
-docente(6204, settore(bio)).
-docente(1582, settore(null)).
-docente(11316, settore(null)).
-docente(33666, settore(null)).
-docente(25624, settore(l_fil_let)).
-docente(18084, settore(vet)).
-docente(4033, settore(vet)).
-docente(19742, settore(agr)).
-docente(37036, settore(null)).
-docente(33255, settore(null)).
-docente(17498, settore(l_art)).
-docente(6745, settore(l_fil_let)).
-docente(5713, settore(l_lin)).
-docente(5360, settore(vet)).
-docente(4732, settore(agr)).
-docente(44681, settore(null)).
-docente(12583, settore(null)).
-docente(38880, settore(null)).
-docente(5894, settore(chim)).
-docente(206832, settore(med)).
-docente(36763, settore(null)).
-docente(7355, settore(bio)).
-docente(5540, settore(chim)).
-docente(6145, settore(ing_inf)).
-docente(44517, settore(null)).
-docente(7278, settore(chim)).
-docente(28879, settore(ing_inf)).
-docente(40837, settore(null)).
-docente(10739, settore(secs_p)).
-docente(8869, settore(ius)).
-docente(20426, settore(chim)).
-docente(28502, settore(icar)).
-docente(100690, settore(null)).
-docente(28366, settore(fis)).
-docente(6602, settore(null)).
-docente(13725, settore(secs_p)).
-docente(5104, settore(mat)).
-docente(9775, settore(med)).
-docente(5136, settore(geo)).
-docente(33239, settore(null)).
-docente(6177, settore(icar)).
-docente(6059, settore(null)).
-docente(11294, settore(med)).
-docente(6057, settore(secs_p)).
-docente(33665, settore(fis)).
-docente(6101, settore(vet)).
-docente(207021, settore(agr)).
-docente(11309, settore(null)).
-docente(4610, settore(ing_inf)).
-docente(5504, settore(bio)).
-docente(24159, settore(null)).
-docente(30399, settore(null)).
-docente(15098, settore(med)).
-docente(5895, settore(med)).
-docente(100386, settore(null)).
-docente(206032, settore(null)).
-docente(5887, settore(med)).
-docente(36471, settore(null)).
-docente(6350, settore(m_fil)).
-docente(36444, settore(null)).
-docente(35688, settore(null)).
-docente(6502, settore(l_lin)).
-docente(6980, settore(chim)).
-docente(204036, settore(icar)).
-docente(5138, settore(null)).
-docente(5586, settore(ius)).
-docente(100733, settore(null)).
-docente(30312, settore(null)).
-docente(4562, settore(icar)).
-docente(22304, settore(icar)).
-docente(10914, settore(med)).
-docente(20656, settore(ing_ind)).
-docente(8822, settore(l_art)).
-docente(14914, settore(bio)).
-docente(4356, settore(secs_s)).
-docente(36441, settore(null)).
-docente(9450, settore(null)).
-docente(100267, settore(null)).
-docente(5036, settore(mat)).
-docente(9455, settore(med)).
-docente(5891, settore(bio)).
-docente(7512, settore(null)).
-docente(39477, settore(m_psi)).
-docente(5327, settore(secs_s)).
-docente(31558, settore(null)).
-docente(41297, settore(icar)).
-docente(6429, settore(m_psi)).
-docente(44392, settore(null)).
-docente(6761, settore(m_psi)).
-docente(6714, settore(null)).
-docente(4066, settore(geo)).
-docente(12141, settore(ing_inf)).
-docente(32785, settore(null)).
-docente(5792, settore(ing_ind)).
-docente(6307, settore(ius)).
-docente(41979, settore(null)).
-docente(22073, settore(med)).
-docente(253676, settore(bio)).
-docente(4698, settore(geo)).
-docente(4559, settore(icar)).
-docente(42915, settore(null)).
-docente(4620, settore(chim)).
-docente(4878, settore(agr)).
-docente(6584, settore(med)).
-docente(5804, settore(mat)).
-docente(5552, settore(ing_inf)).
-docente(40493, settore(null)).
-docente(100531, settore(secs_s)).
-docente(44390, settore(null)).
-docente(31508, settore(null)).
-docente(19612, settore(null)).
-docente(11020, settore(bio)).
-docente(44901, settore(null)).
-docente(4174, settore(bio)).
-docente(6434, settore(l_ant)).
-docente(11332, settore(ing_ind)).
-docente(10285, settore(mat)).
-docente(8733, settore(mat)).
-docente(5415, settore(vet)).
-docente(33096, settore(bio)).
-docente(6969, settore(ing_ind)).
-docente(47795, settore(null)).
-docente(33649, settore(bio)).
-docente(41823, settore(sps)).
-docente(6123, settore(secs_p)).
-docente(100411, settore(null)).
-docente(5567, settore(chim)).
-docente(49026, settore(bio)).
-docente(5672, settore(med)).
-docente(5389, settore(secs_p)).
-docente(5319, settore(mat)).
-docente(36662, settore(inf)).
-docente(11307, settore(null)).
-docente(100436, settore(null)).
-docente(5377, settore(chim)).
-docente(31084, settore(l_lin)).
-docente(10813, settore(m_psi)).
-docente(15939, settore(ing_ind)).
-docente(136509, settore(null)).
-docente(42233, settore(inf)).
-docente(37922, settore(null)).
-docente(10139, settore(null)).
-docente(30478, settore(icar)).
-docente(46152, settore(null)).
-docente(42092, settore(null)).
-docente(10684, settore(bio)).
-docente(5614, settore(ius)).
-docente(48531, settore(null)).
-docente(35187, settore(null)).
-docente(42179, settore(geo)).
-docente(42217, settore(ing_ind)).
-docente(20567, settore(null)).
-docente(21304, settore(null)).
-docente(31627, settore(med)).
-docente(5706, settore(chim)).
-docente(5643, settore(med)).
-docente(5709, settore(mat)).
-docente(204023, settore(l_fil_let)).
-docente(36465, settore(null)).
-docente(206625, settore(bio)).
-docente(6573, settore(null)).
-docente(5410, settore(bio)).
-docente(15925, settore(null)).
-docente(164352, settore(med)).
-docente(39488, settore(bio)).
-docente(6538, settore(secs_p)).
-docente(26450, settore(null)).
-docente(11253, settore(null)).
-docente(5699, settore(secs_s)).
-docente(42157, settore(null)).
-docente(17206, settore(fis)).
-docente(100359, settore(null)).
-docente(10089, settore(null)).
-docente(8854, settore(fis)).
-docente(37820, settore(null)).
-docente(4853, settore(vet)).
-docente(9899, settore(med)).
-docente(13506, settore(null)).
-docente(206035, settore(icar)).
-docente(10745, settore(agr)).
-docente(30365, settore(null)).
-docente(206820, settore(chim)).
-docente(48348, settore(null)).
-docente(30937, settore(ius)).
-docente(11425, settore(null)).
-docente(33240, settore(null)).
-docente(19876, settore(l_ant)).
-docente(44930, settore(null)).
-docente(3606, settore(null)).
-docente(24483, settore(ing_ind)).
-docente(4189, settore(null)).
-docente(27469, settore(med)).
-docente(15010, settore(sps)).
-docente(4473, settore(chim)).
-docente(500640, settore(null)).
-docente(5024, settore(bio)).
-docente(10666, settore(mat)).
-docente(6576, settore(ius)).
-docente(206855, settore(null)).
-docente(205057, settore(m_psi)).
-docente(4499, settore(mat)).
-docente(46863, settore(null)).
-docente(10279, settore(ius)).
-docente(31478, settore(null)).
-docente(253680, settore(bio)).
-docente(5237, settore(m_ggr)).
-docente(25630, settore(bio)).
-docente(39467, settore(agr)).
-docente(14289, settore(null)).
-docente(18680, settore(null)).
-docente(4336, settore(fis)).
-docente(1701, settore(null)).
-docente(4891, settore(med)).
-docente(4612, settore(med)).
-docente(46900, settore(null)).
-docente(30715, settore(null)).
-docente(5869, settore(med)).
-docente(4625, settore(mat)).
-docente(5539, settore(vet)).
-docente(5542, settore(med)).
-docente(11364, settore(bio)).
-docente(9949, settore(null)).
-docente(40849, settore(null)).
-docente(48344, settore(null)).
-docente(10602, settore(null)).
-docente(20665, settore(null)).
-docente(10186, settore(null)).
-docente(6653, settore(fis)).
-docente(4448, settore(null)).
-docente(8882, settore(null)).
-docente(6427, settore(ius)).
-docente(4057, settore(fis)).
-docente(11103, settore(chim)).
-docente(5382, settore(chim)).
-docente(103143, settore(null)).
-docente(5809, settore(ius)).
-docente(5387, settore(secs_p)).
-docente(10639, settore(sps)).
-docente(11320, settore(null)).
-docente(6200, settore(m_psi)).
-docente(4495, settore(chim)).
-docente(33113, settore(null)).
-docente(46380, settore(med)).
-docente(5281, settore(bio)).
-docente(16566, settore(med)).
-docente(5860, settore(bio)).
-docente(36522, settore(null)).
-docente(7358, settore(med)).
-docente(30740, settore(null)).
-docente(6152, settore(l_lin)).
-docente(5341, settore(bio)).
-docente(27018, settore(med)).
-docente(6539, settore(geo)).
-docente(6619, settore(bio)).
-docente(36477, settore(null)).
-docente(100162, settore(null)).
-docente(9953, settore(chim)).
-docente(4588, settore(l_lin)).
-docente(4148, settore(l_lin)).
-docente(34175, settore(ius)).
-docente(206824, settore(bio)).
-docente(29839, settore(null)).
-docente(11348, settore(geo)).
-docente(48734, settore(null)).
-docente(4869, settore(ing_ind)).
-docente(3896, settore(med)).
-docente(42659, settore(med)).
-docente(17528, settore(null)).
-docente(206868, settore(l_fil_let)).
-docente(4543, settore(ing_inf)).
-docente(41350, settore(null)).
-docente(47874, settore(null)).
-docente(7287, settore(ing_inf)).
-docente(39464, settore(chim)).
-docente(10641, settore(chim)).
-docente(11250, settore(null)).
-docente(46198, settore(null)).
-docente(100649, settore(fis)).
-docente(205817, settore(chim)).
-docente(15329, settore(null)).
-docente(4300, settore(ius)).
-docente(5481, settore(m_psi)).
-docente(17562, settore(m_ped)).
-docente(5054, settore(ing_ind)).
-docente(46114, settore(null)).
-docente(17262, settore(geo)).
-docente(4299, settore(med)).
-docente(45831, settore(null)).
-docente(5627, settore(secs_p)).
-docente(4617, settore(ing_inf)).
-docente(6521, settore(med)).
-docente(6282, settore(secs_p)).
-docente(3717, settore(bio)).
-docente(207088, settore(ing_inf)).
-docente(6583, settore(med)).
-docente(5787, settore(null)).
-docente(6086, settore(fis)).
-docente(41642, settore(null)).
-docente(30474, settore(null)).
-docente(253752, settore(fis)).
-docente(26137, settore(bio)).
-docente(17964, settore(null)).
-docente(18391, settore(null)).
-docente(205023, settore(bio)).
-docente(31076, settore(null)).
-docente(18164, settore(bio)).
-docente(6620, settore(null)).
-docente(4859, settore(bio)).
-docente(6641, settore(icar)).
-docente(10455, settore(chim)).
-docente(36937, settore(null)).
-docente(17401, settore(ing_inf)).
-docente(14069, settore(secs_p)).
-docente(21802, settore(m_edf)).
-docente(37909, settore(null)).
-docente(30265, settore(null)).
-docente(30343, settore(null)).
-docente(5879, settore(m_psi)).
-docente(17066, settore(null)).
-docente(40250, settore(null)).
-docente(5144, settore(ius)).
-docente(37558, settore(null)).
-docente(23798, settore(chim)).
-docente(31178, settore(med)).
-docente(3718, settore(vet)).
-docente(5535, settore(vet)).
-docente(5619, settore(icar)).
-docente(10619, settore(bio)).
-docente(10672, settore(chim)).
-docente(33235, settore(null)).
-docente(5424, settore(vet)).
-docente(33646, settore(l_lin)).
-docente(4444, settore(ing_inf)).
-docente(5007, settore(ing_ind)).
-docente(8811, settore(bio)).
-docente(4411, settore(bio)).
-docente(28115, settore(null)).
-docente(19640, settore(med)).
-docente(10400, settore(null)).
-docente(25652, settore(icar)).
-docente(100275, settore(null)).
-docente(6058, settore(secs_p)).
-docente(26127, settore(null)).
-docente(8011, settore(med)).
-docente(20469, settore(bio)).
-docente(48579, settore(null)).
-docente(4932, settore(secs_s)).
-docente(14441, settore(chim)).
-docente(10930, settore(null)).
-docente(47792, settore(null)).
-docente(17254, settore(agr)).
-docente(4311, settore(bio)).
-docente(19943, settore(null)).
-docente(4370, settore(fis)).
-docente(33280, settore(null)).
-docente(6129, settore(med)).
-docente(6577, settore(agr)).
-docente(5674, settore(chim)).
-docente(37046, settore(m_fil)).
-docente(207081, settore(agr)).
-docente(5890, settore(l_fil_let)).
-docente(39631, settore(null)).
-docente(5522, settore(ing_ind)).
-docente(5352, settore(chim)).
-docente(6392, settore(chim)).
-docente(5288, settore(bio)).
-docente(7577, settore(bio)).
-docente(5055, settore(ing_ind)).
-docente(22328, settore(null)).
-docente(3905, settore(chim)).
-docente(30366, settore(null)).
-docente(11088, settore(agr)).
-docente(6119, settore(chim)).
-docente(36474, settore(null)).
-docente(6944, settore(null)).
-docente(6247, settore(m_psi)).
-docente(10022, settore(ing_ind)).
-docente(17575, settore(null)).
-docente(24617, settore(null)).
-docente(8888, settore(icar)).
-docente(207044, settore(icar)).
-docente(37831, settore(null)).
-docente(6142, settore(secs_p)).
-docente(8719, settore(fis)).
-docente(5487, settore(med)).
-docente(12997, settore(null)).
-docente(38886, settore(secs_p)).
-docente(32925, settore(ius)).
-docente(11379, settore(med)).
-docente(5078, settore(bio)).
-docente(25057, settore(icar)).
-docente(48724, settore(null)).
-docente(15646, settore(null)).
-docente(5554, settore(chim)).
-docente(4615, settore(bio)).
-docente(205024, settore(l_fil_let)).
-docente(19896, settore(med)).
-docente(4420, settore(med)).
-docente(39528, settore(fis)).
-docente(26700, settore(null)).
-docente(36447, settore(null)).
-docente(5088, settore(icar)).
-docente(6536, settore(bio)).
-docente(5793, settore(med)).
-docente(103141, settore(null)).
-docente(10214, settore(null)).
-docente(7295, settore(bio)).
-docente(32821, settore(null)).
-docente(5889, settore(null)).
-docente(4324, settore(agr)).
-docente(9870, settore(null)).
-docente(5280, settore(l_lin)).
-docente(4605, settore(med)).
-docente(5231, settore(m_sto)).
-docente(5500, settore(vet)).
-docente(22309, settore(ing_ind)).
-docente(6556, settore(m_ped)).
-docente(11376, settore(med)).
-docente(30074, settore(secs_p)).
-docente(46034, settore(null)).
-docente(3729, settore(geo)).
-docente(15911, settore(null)).
-docente(4829, settore(secs_s)).
-docente(30475, settore(null)).
-docente(26957, settore(null)).
-docente(41687, settore(null)).
-docente(5211, settore(chim)).
-docente(4464, settore(chim)).
-docente(6762, settore(fis)).
-docente(35259, settore(null)).
-docente(36461, settore(null)).
-docente(8887, settore(mat)).
-docente(39372, settore(sps)).
-docente(6537, settore(chim)).
-docente(205035, settore(bio)).
-docente(6039, settore(ius)).
-docente(36560, settore(null)).
-docente(48533, settore(null)).
-docente(11013, settore(chim)).
-docente(33506, settore(null)).
-docente(40047, settore(m_ped)).
-docente(18394, settore(null)).
-docente(205065, settore(bio)).
-docente(1842, settore(null)).
-docente(41832, settore(null)).
-docente(6306, settore(secs_p)).
-docente(21794, settore(ing_ind)).
-docente(6913, settore(sps)).
-docente(46872, settore(null)).
-docente(45232, settore(med)).
-docente(5417, settore(chim)).
-docente(5663, settore(null)).
-docente(4607, settore(med)).
-docente(35727, settore(sps)).
-docente(33687, settore(sps)).
-docente(1853, settore(null)).
-docente(6228, settore(ing_inf)).
-docente(17970, settore(null)).
-docente(30433, settore(null)).
-docente(100315, settore(null)).
-docente(38664, settore(l_fil_let)).
-docente(21201, settore(null)).
-docente(5273, settore(bio)).
-docente(36486, settore(null)).
-docente(35352, settore(icar)).
-docente(6749, settore(med)).
-docente(4035, settore(chim)).
-docente(9912, settore(med)).
-docente(6107, settore(ing_ind)).
-docente(11069, settore(bio)).
-docente(10188, settore(null)).
-docente(11498, settore(icar)).
-docente(6983, settore(chim)).
-docente(11071, settore(secs_p)).
-docente(12922, settore(agr)).
-docente(10344, settore(ing_ind)).
-docente(14533, settore(ing_ind)).
-docente(39722, settore(null)).
-docente(100280, settore(null)).
-docente(11301, settore(null)).
-docente(4373, settore(fis)).
-docente(21526, settore(null)).
-docente(6581, settore(chim)).
-docente(26323, settore(null)).
-docente(6104, settore(ing_inf)).
-docente(7535, settore(null)).
-docente(4848, settore(icar)).
-docente(10516, settore(null)).
-docente(25179, settore(null)).
-docente(30359, settore(null)).
-docente(35825, settore(fis)).
-docente(37082, settore(null)).
-docente(10781, settore(null)).
-docente(35356, settore(l_lin)).
-docente(100495, settore(null)).
-docente(41956, settore(null)).
-docente(41673, settore(null)).
-docente(41356, settore(null)).
-docente(11624, settore(m_fil)).
-docente(15541, settore(med)).
-docente(30342, settore(null)).
-docente(26035, settore(ing_ind)).
-docente(37822, settore(null)).
-docente(4724, settore(null)).
-docente(25974, settore(icar)).
-docente(26644, settore(agr)).
-docente(6370, settore(null)).
-docente(9980, settore(med)).
-docente(10307, settore(geo)).
-docente(5501, settore(med)).
-docente(10761, settore(null)).
-docente(253728, settore(null)).
-docente(5537, settore(agr)).
-docente(156573, settore(med)).
-docente(30354, settore(null)).
-docente(5116, settore(vet)).
-docente(100744, settore(null)).
-docente(7279, settore(med)).
-docente(100766, settore(null)).
-docente(4253, settore(secs_p)).
-docente(46901, settore(null)).
-docente(33726, settore(icar)).
-docente(5897, settore(icar)).
-docente(15988, settore(mat)).
-docente(6106, settore(null)).
-docente(19637, settore(null)).
-docente(5664, settore(icar)).
-docente(19109, settore(ing_ind)).
-docente(100215, settore(null)).
-docente(6528, settore(chim)).
-docente(16501, settore(null)).
-docente(40505, settore(med)).
-docente(6084, settore(null)).
-docente(6100, settore(chim)).
-docente(100512, settore(null)).
-docente(11072, settore(null)).
-docente(17744, settore(null)).
-docente(6303, settore(chim)).
-docente(40485, settore(null)).
-docente(19538, settore(null)).
-docente(34246, settore(null)).
-docente(5364, settore(sps)).
-docente(36435, settore(null)).
-docente(6347, settore(m_fil)).
-docente(47631, settore(null)).
-docente(100804, settore(null)).
-docente(206793, settore(secs_p)).
-docente(10142, settore(med)).
-docente(44307, settore(ius)).
-docente(5730, settore(geo)).
-docente(37762, settore(null)).
-docente(46817, settore(null)).
-docente(10091, settore(med)).
-docente(5808, settore(bio)).
-docente(6085, settore(ing_inf)).
-docente(5252, settore(mat)).
-docente(36549, settore(null)).
-docente(156616, settore(med)).
-docente(6600, settore(med)).
-docente(4297, settore(bio)).
-docente(41440, settore(null)).
-docente(6406, settore(ius)).
-docente(33346, settore(m_fil)).
-docente(3730, settore(geo)).
-docente(205079, settore(ing_ind)).
-docente(40841, settore(null)).
-docente(25946, settore(m_dea)).
-docente(11022, settore(null)).
-docente(37716, settore(null)).
-docente(100299, settore(null)).
-docente(18353, settore(null)).
-docente(6491, settore(m_sto)).
-docente(40835, settore(null)).
-docente(17963, settore(null)).
-docente(6386, settore(ius)).
-docente(5545, settore(geo)).
-docente(5670, settore(geo)).
-docente(10360, settore(bio)).
-docente(45849, settore(null)).
-docente(42428, settore(null)).
-docente(10960, settore(ing_inf)).
-docente(6096, settore(bio)).
-docente(5886, settore(chim)).
-docente(7035, settore(icar)).
-docente(5515, settore(secs_p)).
-docente(4536, settore(med)).
-docente(7031, settore(ius)).
-docente(11339, settore(l_lin)).
-docente(43528, settore(null)).
-docente(6765, settore(icar)).
-docente(6124, settore(l_lin)).
-docente(45283, settore(null)).
-docente(25654, settore(icar)).
-docente(4335, settore(bio)).
-docente(48423, settore(null)).
-docente(10601, settore(ing_ind)).
-docente(100607, settore(null)).
-docente(35353, settore(bio)).
-docente(5220, settore(ing_inf)).
-docente(6500, settore(icar)).
-docente(13673, settore(l_fil_let)).
-docente(7138, settore(l_fil_let)).
-docente(22324, settore(vet)).
-docente(5474, settore(ius)).
-docente(100657, settore(null)).
-docente(21537, settore(null)).
-docente(6125, settore(ing_inf)).
-docente(11525, settore(null)).
-docente(11642, settore(agr)).
-docente(5867, settore(ius)).
-docente(9709, settore(m_psi)).
-docente(20798, settore(null)).
-docente(6255, settore(null)).
-docente(6605, settore(bio)).
-docente(18676, settore(l_art)).
-docente(46204, settore(null)).
-docente(44235, settore(null)).
-docente(8862, settore(secs_p)).
-docente(5778, settore(icar)).
-docente(5892, settore(med)).
-docente(13190, settore(icar)).
-docente(5551, settore(med)).
-docente(31517, settore(ius)).
-docente(100557, settore(null)).
-docente(39489, settore(bio)).
-docente(6094, settore(null)).
-docente(46124, settore(null)).
-docente(4696, settore(fis)).
-docente(7055, settore(ing_ind)).
-docente(36582, settore(null)).
-docente(43287, settore(l_art)).
-docente(23227, settore(null)).
-docente(20105, settore(l_ant)).
-docente(5476, settore(med)).
-docente(30782, settore(med)).
-docente(100437, settore(null)).
-docente(5486, settore(bio)).
-docente(11122, settore(vet)).
-docente(5684, settore(null)).
-docente(17862, settore(ius)).
-docente(33462, settore(null)).
-docente(8844, settore(ing_ind)).
-docente(48304, settore(null)).
-docente(6555, settore(l_fil_let)).
-docente(14399, settore(chim)).
-docente(206029, settore(ing_ind)).
-docente(38817, settore(m_sto)).
-docente(9722, settore(null)).
-docente(206854, settore(vet)).
-docente(41701, settore(null)).
-docente(35760, settore(null)).
-docente(4276, settore(null)).
-docente(11350, settore(fis)).
-docente(31051, settore(agr)).
-docente(4609, settore(mat)).
-docente(5602, settore(inf)).
-docente(37728, settore(null)).
-docente(5257, settore(null)).
-docente(36585, settore(null)).
-docente(28483, settore(null)).
-docente(10680, settore(ing_ind)).
-docente(29717, settore(null)).
-docente(5253, settore(chim)).
-docente(5523, settore(vet)).
-docente(30237, settore(null)).
-docente(4565, settore(secs_p)).
-docente(5405, settore(bio)).
-docente(4701, settore(ing_inf)).
-docente(21173, settore(icar)).
-docente(207045, settore(icar)).
-docente(203910, settore(bio)).
-docente(5996, settore(icar)).
-docente(15248, settore(mat)).
-docente(13451, settore(null)).
-docente(5832, settore(icar)).
-docente(48683, settore(null)).
-docente(10772, settore(secs_p)).
-docente(5591, settore(secs_p)).
-docente(207024, settore(bio)).
-docente(31618, settore(null)).
-docente(20129, settore(null)).
-docente(4303, settore(med)).
-docente(5715, settore(chim)).
+docente(6527). afferisce(docente(6527), settore(fis)).
+docente(22345). afferisce(docente(22345), settore(agr)).
+docente(4397). afferisce(docente(4397), settore(mat)).
+docente(25818). afferisce(docente(25818), settore(l_art)).
+docente(34500). afferisce(docente(34500), settore(ius)).
+docente(46902). afferisce(docente(46902), settore(null)).
+docente(15950). afferisce(docente(15950), settore(mat)).
+docente(8816). afferisce(docente(8816), settore(bio)).
+docente(4282). afferisce(docente(4282), settore(med)).
+docente(45333). afferisce(docente(45333), settore(null)).
+docente(6508). afferisce(docente(6508), settore(l_fil_let)).
+docente(6598). afferisce(docente(6598), settore(med)).
+docente(4642). afferisce(docente(4642), settore(mat)).
+docente(44900). afferisce(docente(44900), settore(null)).
+docente(15493). afferisce(docente(15493), settore(secs_p)).
+docente(39374). afferisce(docente(39374), settore(null)).
+docente(21986). afferisce(docente(21986), settore(null)).
+docente(3848). afferisce(docente(3848), settore(med)).
+docente(20361). afferisce(docente(20361), settore(m_psi)).
+docente(207089). afferisce(docente(207089), settore(ing_inf)).
+docente(5565). afferisce(docente(5565), settore(med)).
+docente(3948). afferisce(docente(3948), settore(null)).
+docente(18477). afferisce(docente(18477), settore(agr)).
+docente(35050). afferisce(docente(35050), settore(secs_s)).
+docente(28096). afferisce(docente(28096), settore(null)).
+docente(6627). afferisce(docente(6627), settore(fis)).
+docente(16176). afferisce(docente(16176), settore(null)).
+docente(18862). afferisce(docente(18862), settore(secs_p)).
+docente(18241). afferisce(docente(18241), settore(null)).
+docente(41684). afferisce(docente(41684), settore(null)).
+docente(5885). afferisce(docente(5885), settore(ius)).
+docente(100501). afferisce(docente(100501), settore(null)).
+docente(6652). afferisce(docente(6652), settore(m_fil)).
+docente(207094). afferisce(docente(207094), settore(ing_inf)).
+docente(20667). afferisce(docente(20667), settore(null)).
+docente(164218). afferisce(docente(164218), settore(med)).
+docente(39875). afferisce(docente(39875), settore(ius)).
+docente(4468). afferisce(docente(4468), settore(secs_p)).
+docente(5788). afferisce(docente(5788), settore(med)).
+docente(35185). afferisce(docente(35185), settore(null)).
+docente(6504). afferisce(docente(6504), settore(ius)).
+docente(6454). afferisce(docente(6454), settore(l_lin)).
+docente(11280). afferisce(docente(11280), settore(null)).
+docente(11483). afferisce(docente(11483), settore(null)).
+docente(5194). afferisce(docente(5194), settore(null)).
+docente(28994). afferisce(docente(28994), settore(m_ped)).
+docente(29217). afferisce(docente(29217), settore(mat)).
+docente(9895). afferisce(docente(9895), settore(null)).
+docente(38138). afferisce(docente(38138), settore(bio)).
+docente(5813). afferisce(docente(5813), settore(med)).
+docente(5087). afferisce(docente(5087), settore(bio)).
+docente(33657). afferisce(docente(33657), settore(inf)).
+docente(11311). afferisce(docente(11311), settore(null)).
+docente(20533). afferisce(docente(20533), settore(secs_p)).
+docente(11792). afferisce(docente(11792), settore(m_psi)).
+docente(24612). afferisce(docente(24612), settore(ing_inf)).
+docente(44292). afferisce(docente(44292), settore(null)).
+docente(15601). afferisce(docente(15601), settore(null)).
+docente(4535). afferisce(docente(4535), settore(agr)).
+docente(14634). afferisce(docente(14634), settore(m_ped)).
+docente(17651). afferisce(docente(17651), settore(vet)).
+docente(5673). afferisce(docente(5673), settore(null)).
+docente(19634). afferisce(docente(19634), settore(null)).
+docente(35351). afferisce(docente(35351), settore(sps)).
+docente(100222). afferisce(docente(100222), settore(null)).
+docente(5442). afferisce(docente(5442), settore(geo)).
+docente(5526). afferisce(docente(5526), settore(l_lin)).
+docente(5634). afferisce(docente(5634), settore(icar)).
+docente(47577). afferisce(docente(47577), settore(null)).
+docente(12506). afferisce(docente(12506), settore(icar)).
+docente(4466). afferisce(docente(4466), settore(secs_p)).
+docente(20856). afferisce(docente(20856), settore(null)).
+docente(5320). afferisce(docente(5320), settore(chim)).
+docente(15547). afferisce(docente(15547), settore(null)).
+docente(5837). afferisce(docente(5837), settore(vet)).
+docente(6642). afferisce(docente(6642), settore(med)).
+docente(4457). afferisce(docente(4457), settore(null)).
+docente(172930). afferisce(docente(172930), settore(med)).
+docente(11305). afferisce(docente(11305), settore(sps)).
+docente(5145). afferisce(docente(5145), settore(inf)).
+docente(12799). afferisce(docente(12799), settore(secs_p)).
+docente(21862). afferisce(docente(21862), settore(null)).
+docente(6381). afferisce(docente(6381), settore(chim)).
+docente(40152). afferisce(docente(40152), settore(null)).
+docente(21528). afferisce(docente(21528), settore(null)).
+docente(5073). afferisce(docente(5073), settore(bio)).
+docente(100223). afferisce(docente(100223), settore(null)).
+docente(6038). afferisce(docente(6038), settore(secs_p)).
+docente(10592). afferisce(docente(10592), settore(geo)).
+docente(11130). afferisce(docente(11130), settore(agr)).
+docente(5428). afferisce(docente(5428), settore(fis)).
+docente(40341). afferisce(docente(40341), settore(null)).
+docente(6451). afferisce(docente(6451), settore(null)).
+docente(10788). afferisce(docente(10788), settore(null)).
+docente(4702). afferisce(docente(4702), settore(vet)).
+docente(19040). afferisce(docente(19040), settore(null)).
+docente(6117). afferisce(docente(6117), settore(agr)).
+docente(3899). afferisce(docente(3899), settore(null)).
+docente(11157). afferisce(docente(11157), settore(bio)).
+docente(36480). afferisce(docente(36480), settore(null)).
+docente(36420). afferisce(docente(36420), settore(null)).
+docente(4880). afferisce(docente(4880), settore(secs_p)).
+docente(23210). afferisce(docente(23210), settore(med)).
+docente(6544). afferisce(docente(6544), settore(med)).
+docente(3697). afferisce(docente(3697), settore(bio)).
+docente(1085). afferisce(docente(1085), settore(null)).
+docente(16512). afferisce(docente(16512), settore(null)).
+docente(15874). afferisce(docente(15874), settore(mat)).
+docente(5668). afferisce(docente(5668), settore(bio)).
+docente(6754). afferisce(docente(6754), settore(bio)).
+docente(33517). afferisce(docente(33517), settore(m_ped)).
+docente(205009). afferisce(docente(205009), settore(bio)).
+docente(8949). afferisce(docente(8949), settore(null)).
+docente(4889). afferisce(docente(4889), settore(vet)).
+docente(5519). afferisce(docente(5519), settore(ius)).
+docente(26502). afferisce(docente(26502), settore(null)).
+docente(32717). afferisce(docente(32717), settore(ing_ind)).
+docente(5541). afferisce(docente(5541), settore(chim)).
+docente(36442). afferisce(docente(36442), settore(null)).
+docente(205007). afferisce(docente(205007), settore(agr)).
+docente(48529). afferisce(docente(48529), settore(null)).
+docente(41972). afferisce(docente(41972), settore(ing_inf)).
+docente(33756). afferisce(docente(33756), settore(null)).
+docente(36346). afferisce(docente(36346), settore(null)).
+docente(5827). afferisce(docente(5827), settore(icar)).
+docente(11111). afferisce(docente(11111), settore(ing_inf)).
+docente(12185). afferisce(docente(12185), settore(fis)).
+docente(14669). afferisce(docente(14669), settore(med)).
+docente(6507). afferisce(docente(6507), settore(secs_p)).
+docente(4768). afferisce(docente(4768), settore(mat)).
+docente(17902). afferisce(docente(17902), settore(null)).
+docente(8960). afferisce(docente(8960), settore(null)).
+docente(20279). afferisce(docente(20279), settore(ius)).
+docente(5390). afferisce(docente(5390), settore(ius)).
+docente(5356). afferisce(docente(5356), settore(null)).
+docente(100225). afferisce(docente(100225), settore(null)).
+docente(26131). afferisce(docente(26131), settore(mat)).
+docente(36439). afferisce(docente(36439), settore(null)).
+docente(5234). afferisce(docente(5234), settore(vet)).
+docente(18307). afferisce(docente(18307), settore(null)).
+docente(5383). afferisce(docente(5383), settore(l_lin)).
+docente(20374). afferisce(docente(20374), settore(null)).
+docente(10706). afferisce(docente(10706), settore(chim)).
+docente(204741). afferisce(docente(204741), settore(inf)).
+docente(5062). afferisce(docente(5062), settore(null)).
+docente(6214). afferisce(docente(6214), settore(null)).
+docente(39887). afferisce(docente(39887), settore(null)).
+docente(6270). afferisce(docente(6270), settore(icar)).
+docente(204061). afferisce(docente(204061), settore(agr)).
+docente(149461). afferisce(docente(149461), settore(med)).
+docente(5046). afferisce(docente(5046), settore(fis)).
+docente(33648). afferisce(docente(33648), settore(icar)).
+docente(22313). afferisce(docente(22313), settore(m_psi)).
+docente(39583). afferisce(docente(39583), settore(chim)).
+docente(32990). afferisce(docente(32990), settore(inf)).
+docente(5447). afferisce(docente(5447), settore(vet)).
+docente(40340). afferisce(docente(40340), settore(null)).
+docente(12390). afferisce(docente(12390), settore(null)).
+docente(5836). afferisce(docente(5836), settore(bio)).
+docente(100801). afferisce(docente(100801), settore(null)).
+docente(5137). afferisce(docente(5137), settore(ing_inf)).
+docente(10705). afferisce(docente(10705), settore(chim)).
+docente(39371). afferisce(docente(39371), settore(sps)).
+docente(6585). afferisce(docente(6585), settore(l_lin)).
+docente(5613). afferisce(docente(5613), settore(fis)).
+docente(20907). afferisce(docente(20907), settore(agr)).
+docente(5146). afferisce(docente(5146), settore(chim)).
+docente(8984). afferisce(docente(8984), settore(null)).
+docente(41442). afferisce(docente(41442), settore(null)).
+docente(42213). afferisce(docente(42213), settore(bio)).
+docente(8885). afferisce(docente(8885), settore(chim)).
+docente(5655). afferisce(docente(5655), settore(vet)).
+docente(6639). afferisce(docente(6639), settore(ius)).
+docente(206829). afferisce(docente(206829), settore(ius)).
+docente(13412). afferisce(docente(13412), settore(null)).
+docente(8765). afferisce(docente(8765), settore(ing_inf)).
+docente(6191). afferisce(docente(6191), settore(chim)).
+docente(6782). afferisce(docente(6782), settore(m_fil)).
+docente(205005). afferisce(docente(205005), settore(med)).
+docente(15764). afferisce(docente(15764), settore(med)).
+docente(7306). afferisce(docente(7306), settore(med)).
+docente(3698). afferisce(docente(3698), settore(chim)).
+docente(6578). afferisce(docente(6578), settore(ing_ind)).
+docente(22836). afferisce(docente(22836), settore(med)).
+docente(7136). afferisce(docente(7136), settore(null)).
+docente(33370). afferisce(docente(33370), settore(null)).
+docente(44929). afferisce(docente(44929), settore(null)).
+docente(23239). afferisce(docente(23239), settore(m_fil)).
+docente(6591). afferisce(docente(6591), settore(chim)).
+docente(6563). afferisce(docente(6563), settore(null)).
+docente(4613). afferisce(docente(4613), settore(bio)).
+docente(4295). afferisce(docente(4295), settore(bio)).
+docente(30169). afferisce(docente(30169), settore(ius)).
+docente(253750). afferisce(docente(253750), settore(bio)).
+docente(46719). afferisce(docente(46719), settore(sps)).
+docente(38830). afferisce(docente(38830), settore(med)).
+docente(15482). afferisce(docente(15482), settore(ius)).
+docente(4858). afferisce(docente(4858), settore(vet)).
+docente(3731). afferisce(docente(3731), settore(null)).
+docente(5721). afferisce(docente(5721), settore(med)).
+docente(10700). afferisce(docente(10700), settore(null)).
+docente(11517). afferisce(docente(11517), settore(null)).
+docente(42168). afferisce(docente(42168), settore(med)).
+docente(5069). afferisce(docente(5069), settore(ing_inf)).
+docente(18200). afferisce(docente(18200), settore(null)).
+docente(4490). afferisce(docente(4490), settore(fis)).
+docente(34181). afferisce(docente(34181), settore(inf)).
+docente(35359). afferisce(docente(35359), settore(ius)).
+docente(4854). afferisce(docente(4854), settore(ing_inf)).
+docente(4658). afferisce(docente(4658), settore(null)).
+docente(12129). afferisce(docente(12129), settore(chim)).
+docente(4501). afferisce(docente(4501), settore(vet)).
+docente(11279). afferisce(docente(11279), settore(null)).
+docente(204071). afferisce(docente(204071), settore(bio)).
+docente(32479). afferisce(docente(32479), settore(l_art)).
+docente(6388). afferisce(docente(6388), settore(geo)).
+docente(21150). afferisce(docente(21150), settore(ius)).
+docente(37946). afferisce(docente(37946), settore(null)).
+docente(4271). afferisce(docente(4271), settore(fis)).
+docente(35350). afferisce(docente(35350), settore(agr)).
+docente(6513). afferisce(docente(6513), settore(ing_ind)).
+docente(206006). afferisce(docente(206006), settore(agr)).
+docente(40855). afferisce(docente(40855), settore(null)).
+docente(206905). afferisce(docente(206905), settore(ing_ind)).
+docente(39306). afferisce(docente(39306), settore(null)).
+docente(47878). afferisce(docente(47878), settore(null)).
+docente(44391). afferisce(docente(44391), settore(null)).
+docente(41811). afferisce(docente(41811), settore(null)).
+docente(4715). afferisce(docente(4715), settore(null)).
+docente(13386). afferisce(docente(13386), settore(null)).
+docente(11083). afferisce(docente(11083), settore(null)).
+docente(6603). afferisce(docente(6603), settore(vet)).
+docente(28122). afferisce(docente(28122), settore(null)).
+docente(25842). afferisce(docente(25842), settore(null)).
+docente(5924). afferisce(docente(5924), settore(null)).
+docente(4973). afferisce(docente(4973), settore(null)).
+docente(47766). afferisce(docente(47766), settore(null)).
+docente(6126). afferisce(docente(6126), settore(bio)).
+docente(8732). afferisce(docente(8732), settore(m_psi)).
+docente(6391). afferisce(docente(6391), settore(bio)).
+docente(7240). afferisce(docente(7240), settore(null)).
+docente(37828). afferisce(docente(37828), settore(null)).
+docente(43777). afferisce(docente(43777), settore(med)).
+docente(42360). afferisce(docente(42360), settore(null)).
+docente(25625). afferisce(docente(25625), settore(null)).
+docente(5555). afferisce(docente(5555), settore(fis)).
+docente(5489). afferisce(docente(5489), settore(med)).
+docente(4328). afferisce(docente(4328), settore(med)).
+docente(164267). afferisce(docente(164267), settore(med)).
+docente(6389). afferisce(docente(6389), settore(chim)).
+docente(6433). afferisce(docente(6433), settore(l_lin)).
+docente(5548). afferisce(docente(5548), settore(med)).
+docente(4526). afferisce(docente(4526), settore(vet)).
+docente(4586). afferisce(docente(4586), settore(vet)).
+docente(5880). afferisce(docente(5880), settore(secs_p)).
+docente(207068). afferisce(docente(207068), settore(chim)).
+docente(4974). afferisce(docente(4974), settore(ius)).
+docente(30503). afferisce(docente(30503), settore(null)).
+docente(4369). afferisce(docente(4369), settore(med)).
+docente(41973). afferisce(docente(41973), settore(mat)).
+docente(5079). afferisce(docente(5079), settore(ing_inf)).
+docente(15245). afferisce(docente(15245), settore(med)).
+docente(11439). afferisce(docente(11439), settore(bio)).
+docente(5299). afferisce(docente(5299), settore(med)).
+docente(9049). afferisce(docente(9049), settore(null)).
+docente(6510). afferisce(docente(6510), settore(chim)).
+docente(40797). afferisce(docente(40797), settore(null)).
+docente(41688). afferisce(docente(41688), settore(null)).
+docente(40347). afferisce(docente(40347), settore(secs_s)).
+docente(30445). afferisce(docente(30445), settore(med)).
+docente(3700). afferisce(docente(3700), settore(chim)).
+docente(100479). afferisce(docente(100479), settore(null)).
+docente(9051). afferisce(docente(9051), settore(null)).
+docente(36469). afferisce(docente(36469), settore(null)).
+docente(41954). afferisce(docente(41954), settore(null)).
+docente(100286). afferisce(docente(100286), settore(null)).
+docente(204544). afferisce(docente(204544), settore(bio)).
+docente(7222). afferisce(docente(7222), settore(null)).
+docente(29948). afferisce(docente(29948), settore(null)).
+docente(14117). afferisce(docente(14117), settore(null)).
+docente(33684). afferisce(docente(33684), settore(secs_p)).
+docente(6407). afferisce(docente(6407), settore(l_lin)).
+docente(42916). afferisce(docente(42916), settore(null)).
+docente(20424). afferisce(docente(20424), settore(med)).
+docente(3701). afferisce(docente(3701), settore(mat)).
+docente(100238). afferisce(docente(100238), settore(null)).
+docente(42214). afferisce(docente(42214), settore(chim)).
+docente(24005). afferisce(docente(24005), settore(null)).
+docente(30479). afferisce(docente(30479), settore(bio)).
+docente(41813). afferisce(docente(41813), settore(null)).
+docente(29354). afferisce(docente(29354), settore(secs_p)).
+docente(41635). afferisce(docente(41635), settore(null)).
+docente(5589). afferisce(docente(5589), settore(l_art)).
+docente(42667). afferisce(docente(42667), settore(med)).
+docente(44413). afferisce(docente(44413), settore(null)).
+docente(19635). afferisce(docente(19635), settore(null)).
+docente(7234). afferisce(docente(7234), settore(bio)).
+docente(4500). afferisce(docente(4500), settore(med)).
+docente(4624). afferisce(docente(4624), settore(chim)).
+docente(5770). afferisce(docente(5770), settore(secs_p)).
+docente(4575). afferisce(docente(4575), settore(chim)).
+docente(206019). afferisce(docente(206019), settore(m_psi)).
+docente(205064). afferisce(docente(205064), settore(agr)).
+docente(41944). afferisce(docente(41944), settore(med)).
+docente(164415). afferisce(docente(164415), settore(null)).
+docente(42918). afferisce(docente(42918), settore(null)).
+docente(10710). afferisce(docente(10710), settore(bio)).
+docente(18934). afferisce(docente(18934), settore(ius)).
+docente(4751). afferisce(docente(4751), settore(icar)).
+docente(206887). afferisce(docente(206887), settore(fis)).
+docente(5547). afferisce(docente(5547), settore(med)).
+docente(205052). afferisce(docente(205052), settore(null)).
+docente(10282). afferisce(docente(10282), settore(null)).
+docente(35833). afferisce(docente(35833), settore(null)).
+docente(6747). afferisce(docente(6747), settore(l_ant)).
+docente(38598). afferisce(docente(38598), settore(null)).
+docente(19365). afferisce(docente(19365), settore(ing_ind)).
+docente(20872). afferisce(docente(20872), settore(null)).
+docente(11496). afferisce(docente(11496), settore(icar)).
+docente(4348). afferisce(docente(4348), settore(ing_inf)).
+docente(16113). afferisce(docente(16113), settore(ing_inf)).
+docente(21847). afferisce(docente(21847), settore(icar)).
+docente(7158). afferisce(docente(7158), settore(l_art)).
+docente(4720). afferisce(docente(4720), settore(chim)).
+docente(4433). afferisce(docente(4433), settore(ing_ind)).
+docente(3702). afferisce(docente(3702), settore(chim)).
+docente(4875). afferisce(docente(4875), settore(fis)).
+docente(20068). afferisce(docente(20068), settore(ius)).
+docente(32121). afferisce(docente(32121), settore(sps)).
+docente(49772). afferisce(docente(49772), settore(null)).
+docente(206911). afferisce(docente(206911), settore(sps)).
+docente(9930). afferisce(docente(9930), settore(chim)).
+docente(14829). afferisce(docente(14829), settore(null)).
+docente(206823). afferisce(docente(206823), settore(null)).
+docente(100767). afferisce(docente(100767), settore(null)).
+docente(206027). afferisce(docente(206027), settore(l_fil_let)).
+docente(13727). afferisce(docente(13727), settore(mat)).
+docente(46009). afferisce(docente(46009), settore(null)).
+docente(47362). afferisce(docente(47362), settore(secs_p)).
+docente(10712). afferisce(docente(10712), settore(ing_ind)).
+docente(36515). afferisce(docente(36515), settore(null)).
+docente(4800). afferisce(docente(4800), settore(chim)).
+docente(100576). afferisce(docente(100576), settore(null)).
+docente(7208). afferisce(docente(7208), settore(null)).
+docente(28030). afferisce(docente(28030), settore(null)).
+docente(7165). afferisce(docente(7165), settore(chim)).
+docente(253674). afferisce(docente(253674), settore(med)).
+docente(3704). afferisce(docente(3704), settore(vet)).
+docente(207077). afferisce(docente(207077), settore(null)).
+docente(41737). afferisce(docente(41737), settore(null)).
+docente(6496). afferisce(docente(6496), settore(med)).
+docente(11367). afferisce(docente(11367), settore(bio)).
+docente(5426). afferisce(docente(5426), settore(mat)).
+docente(100652). afferisce(docente(100652), settore(geo)).
+docente(35758). afferisce(docente(35758), settore(l_lin)).
+docente(26527). afferisce(docente(26527), settore(null)).
+docente(10709). afferisce(docente(10709), settore(l_fil_let)).
+docente(5350). afferisce(docente(5350), settore(null)).
+docente(22263). afferisce(docente(22263), settore(chim)).
+docente(36296). afferisce(docente(36296), settore(null)).
+docente(37903). afferisce(docente(37903), settore(null)).
+docente(4270). afferisce(docente(4270), settore(med)).
+docente(4579). afferisce(docente(4579), settore(secs_s)).
+docente(4351). afferisce(docente(4351), settore(icar)).
+docente(11337). afferisce(docente(11337), settore(ing_ind)).
+docente(6558). afferisce(docente(6558), settore(null)).
+docente(5704). afferisce(docente(5704), settore(geo)).
+docente(41942). afferisce(docente(41942), settore(sps)).
+docente(42122). afferisce(docente(42122), settore(null)).
+docente(13968). afferisce(docente(13968), settore(agr)).
+docente(6912). afferisce(docente(6912), settore(icar)).
+docente(999976). afferisce(docente(999976), settore(null)).
+docente(44286). afferisce(docente(44286), settore(null)).
+docente(6054). afferisce(docente(6054), settore(agr)).
+docente(11047). afferisce(docente(11047), settore(fis)).
+docente(36514). afferisce(docente(36514), settore(null)).
+docente(4421). afferisce(docente(4421), settore(ing_inf)).
+docente(36302). afferisce(docente(36302), settore(null)).
+docente(12923). afferisce(docente(12923), settore(med)).
+docente(5260). afferisce(docente(5260), settore(ing_inf)).
+docente(28101). afferisce(docente(28101), settore(null)).
+docente(18296). afferisce(docente(18296), settore(null)).
+docente(6006). afferisce(docente(6006), settore(m_psi)).
+docente(10441). afferisce(docente(10441), settore(null)).
+docente(5214). afferisce(docente(5214), settore(secs_p)).
+docente(7480). afferisce(docente(7480), settore(null)).
+docente(10008). afferisce(docente(10008), settore(null)).
+docente(30685). afferisce(docente(30685), settore(null)).
+docente(7258). afferisce(docente(7258), settore(med)).
+docente(21089). afferisce(docente(21089), settore(agr)).
+docente(100560). afferisce(docente(100560), settore(chim)).
+docente(30400). afferisce(docente(30400), settore(null)).
+docente(500108). afferisce(docente(500108), settore(null)).
+docente(5490). afferisce(docente(5490), settore(ius)).
+docente(206856). afferisce(docente(206856), settore(icar)).
+docente(21487). afferisce(docente(21487), settore(null)).
+docente(5187). afferisce(docente(5187), settore(ing_inf)).
+docente(100787). afferisce(docente(100787), settore(null)).
+docente(40354). afferisce(docente(40354), settore(null)).
+docente(6514). afferisce(docente(6514), settore(null)).
+docente(207037). afferisce(docente(207037), settore(med)).
+docente(36472). afferisce(docente(36472), settore(null)).
+docente(30734). afferisce(docente(30734), settore(null)).
+docente(6519). afferisce(docente(6519), settore(ius)).
+docente(14362). afferisce(docente(14362), settore(null)).
+docente(5725). afferisce(docente(5725), settore(chim)).
+docente(207095). afferisce(docente(207095), settore(ing_ind)).
+docente(34196). afferisce(docente(34196), settore(m_edf)).
+docente(16181). afferisce(docente(16181), settore(null)).
+docente(46211). afferisce(docente(46211), settore(null)).
+docente(6570). afferisce(docente(6570), settore(ing_inf)).
+docente(48562). afferisce(docente(48562), settore(ius)).
+docente(6112). afferisce(docente(6112), settore(vet)).
+docente(4474). afferisce(docente(4474), settore(med)).
+docente(4719). afferisce(docente(4719), settore(null)).
+docente(16562). afferisce(docente(16562), settore(null)).
+docente(100415). afferisce(docente(100415), settore(null)).
+docente(44471). afferisce(docente(44471), settore(null)).
+docente(48694). afferisce(docente(48694), settore(null)).
+docente(6505). afferisce(docente(6505), settore(ius)).
+docente(36545). afferisce(docente(36545), settore(null)).
+docente(5385). afferisce(docente(5385), settore(secs_s)).
+docente(16729). afferisce(docente(16729), settore(null)).
+docente(30736). afferisce(docente(30736), settore(sps)).
+docente(30417). afferisce(docente(30417), settore(null)).
+docente(41812). afferisce(docente(41812), settore(null)).
+docente(3707). afferisce(docente(3707), settore(vet)).
+docente(5728). afferisce(docente(5728), settore(med)).
+docente(6285). afferisce(docente(6285), settore(med)).
+docente(7293). afferisce(docente(7293), settore(null)).
+docente(4855). afferisce(docente(4855), settore(chim)).
+docente(4537). afferisce(docente(4537), settore(m_psi)).
+docente(17274). afferisce(docente(17274), settore(vet)).
+docente(18623). afferisce(docente(18623), settore(null)).
+docente(33787). afferisce(docente(33787), settore(icar)).
+docente(4611). afferisce(docente(4611), settore(mat)).
+docente(29312). afferisce(docente(29312), settore(null)).
+docente(6105). afferisce(docente(6105), settore(med)).
+docente(6917). afferisce(docente(6917), settore(chim)).
+docente(5795). afferisce(docente(5795), settore(med)).
+docente(6067). afferisce(docente(6067), settore(icar)).
+docente(45771). afferisce(docente(45771), settore(null)).
+docente(4915). afferisce(docente(4915), settore(ing_inf)).
+docente(4530). afferisce(docente(4530), settore(med)).
+docente(4375). afferisce(docente(4375), settore(med)).
+docente(6516). afferisce(docente(6516), settore(med)).
+docente(39034). afferisce(docente(39034), settore(null)).
+docente(4533). afferisce(docente(4533), settore(secs_p)).
+docente(5163). afferisce(docente(5163), settore(fis)).
+docente(42181). afferisce(docente(42181), settore(secs_p)).
+docente(11202). afferisce(docente(11202), settore(null)).
+docente(6120). afferisce(docente(6120), settore(fis)).
+docente(26144). afferisce(docente(26144), settore(null)).
+docente(11329). afferisce(docente(11329), settore(vet)).
+docente(34132). afferisce(docente(34132), settore(null)).
+docente(35155). afferisce(docente(35155), settore(null)).
+docente(31596). afferisce(docente(31596), settore(secs_p)).
+docente(5419). afferisce(docente(5419), settore(ing_inf)).
+docente(43157). afferisce(docente(43157), settore(med)).
+docente(11488). afferisce(docente(11488), settore(fis)).
+docente(5637). afferisce(docente(5637), settore(secs_p)).
+docente(6511). afferisce(docente(6511), settore(chim)).
+docente(6625). afferisce(docente(6625), settore(inf)).
+docente(4326). afferisce(docente(4326), settore(chim)).
+docente(12027). afferisce(docente(12027), settore(null)).
+docente(100796). afferisce(docente(100796), settore(null)).
+docente(4274). afferisce(docente(4274), settore(med)).
+docente(6994). afferisce(docente(6994), settore(bio)).
+docente(4809). afferisce(docente(4809), settore(secs_p)).
+docente(6687). afferisce(docente(6687), settore(null)).
+docente(6382). afferisce(docente(6382), settore(chim)).
+docente(10549). afferisce(docente(10549), settore(med)).
+docente(1326). afferisce(docente(1326), settore(null)).
+docente(30624). afferisce(docente(30624), settore(null)).
+docente(5711). afferisce(docente(5711), settore(ius)).
+docente(23816). afferisce(docente(23816), settore(l_lin)).
+docente(47767). afferisce(docente(47767), settore(null)).
+docente(30062). afferisce(docente(30062), settore(null)).
+docente(26134). afferisce(docente(26134), settore(fis)).
+docente(45334). afferisce(docente(45334), settore(null)).
+docente(25283). afferisce(docente(25283), settore(m_sto)).
+docente(37910). afferisce(docente(37910), settore(null)).
+docente(13368). afferisce(docente(13368), settore(ing_inf)).
+docente(100671). afferisce(docente(100671), settore(null)).
+docente(11057). afferisce(docente(11057), settore(icar)).
+docente(5475). afferisce(docente(5475), settore(med)).
+docente(29433). afferisce(docente(29433), settore(null)).
+docente(34499). afferisce(docente(34499), settore(mat)).
+docente(6522). afferisce(docente(6522), settore(med)).
+docente(13331). afferisce(docente(13331), settore(l_lin)).
+docente(46776). afferisce(docente(46776), settore(null)).
+docente(11516). afferisce(docente(11516), settore(ius)).
+docente(12057). afferisce(docente(12057), settore(null)).
+docente(40847). afferisce(docente(40847), settore(null)).
+docente(4850). afferisce(docente(4850), settore(ing_inf)).
+docente(45847). afferisce(docente(45847), settore(null)).
+docente(102887). afferisce(docente(102887), settore(med)).
+docente(24008). afferisce(docente(24008), settore(null)).
+docente(5536). afferisce(docente(5536), settore(fis)).
+docente(4493). afferisce(docente(4493), settore(vet)).
+docente(3708). afferisce(docente(3708), settore(fis)).
+docente(100195). afferisce(docente(100195), settore(secs_p)).
+docente(36765). afferisce(docente(36765), settore(null)).
+docente(10791). afferisce(docente(10791), settore(null)).
+docente(103159). afferisce(docente(103159), settore(med)).
+docente(23789). afferisce(docente(23789), settore(null)).
+docente(6093). afferisce(docente(6093), settore(med)).
+docente(6319). afferisce(docente(6319), settore(med)).
+docente(6446). afferisce(docente(6446), settore(null)).
+docente(3811). afferisce(docente(3811), settore(null)).
+docente(6594). afferisce(docente(6594), settore(chim)).
+docente(10714). afferisce(docente(10714), settore(chim)).
+docente(29803). afferisce(docente(29803), settore(null)).
+docente(36475). afferisce(docente(36475), settore(null)).
+docente(27888). afferisce(docente(27888), settore(null)).
+docente(39490). afferisce(docente(39490), settore(med)).
+docente(34130). afferisce(docente(34130), settore(null)).
+docente(6569). afferisce(docente(6569), settore(ing_inf)).
+docente(100249). afferisce(docente(100249), settore(null)).
+docente(15441). afferisce(docente(15441), settore(null)).
+docente(6457). afferisce(docente(6457), settore(null)).
+docente(36481). afferisce(docente(36481), settore(null)).
+docente(38136). afferisce(docente(38136), settore(med)).
+docente(46191). afferisce(docente(46191), settore(null)).
+docente(37774). afferisce(docente(37774), settore(l_lin)).
+docente(41689). afferisce(docente(41689), settore(null)).
+docente(206553). afferisce(docente(206553), settore(sps)).
+docente(5001). afferisce(docente(5001), settore(null)).
+docente(44926). afferisce(docente(44926), settore(null)).
+docente(5920). afferisce(docente(5920), settore(fis)).
+docente(6582). afferisce(docente(6582), settore(med)).
+docente(181398). afferisce(docente(181398), settore(null)).
+docente(10321). afferisce(docente(10321), settore(bio)).
+docente(19220). afferisce(docente(19220), settore(mat)).
+docente(23179). afferisce(docente(23179), settore(null)).
+docente(9963). afferisce(docente(9963), settore(vet)).
+docente(164526). afferisce(docente(164526), settore(med)).
+docente(20382). afferisce(docente(20382), settore(null)).
+docente(13638). afferisce(docente(13638), settore(null)).
+docente(14454). afferisce(docente(14454), settore(chim)).
+docente(44238). afferisce(docente(44238), settore(bio)).
+docente(5517). afferisce(docente(5517), settore(ius)).
+docente(35930). afferisce(docente(35930), settore(null)).
+docente(6590). afferisce(docente(6590), settore(med)).
+docente(44237). afferisce(docente(44237), settore(secs_p)).
+docente(5470). afferisce(docente(5470), settore(fis)).
+docente(31490). afferisce(docente(31490), settore(null)).
+docente(36563). afferisce(docente(36563), settore(null)).
+docente(36443). afferisce(docente(36443), settore(null)).
+docente(100620). afferisce(docente(100620), settore(null)).
+docente(5124). afferisce(docente(5124), settore(bio)).
+docente(3611). afferisce(docente(3611), settore(null)).
+docente(41298). afferisce(docente(41298), settore(null)).
+docente(47520). afferisce(docente(47520), settore(null)).
+docente(6118). afferisce(docente(6118), settore(med)).
+docente(6399). afferisce(docente(6399), settore(agr)).
+docente(4767). afferisce(docente(4767), settore(vet)).
+docente(4953). afferisce(docente(4953), settore(vet)).
+docente(7034). afferisce(docente(7034), settore(icar)).
+docente(100736). afferisce(docente(100736), settore(null)).
+docente(100596). afferisce(docente(100596), settore(null)).
+docente(1365). afferisce(docente(1365), settore(null)).
+docente(5896). afferisce(docente(5896), settore(chim)).
+docente(26146). afferisce(docente(26146), settore(null)).
+docente(14358). afferisce(docente(14358), settore(bio)).
+docente(100739). afferisce(docente(100739), settore(ius)).
+docente(20832). afferisce(docente(20832), settore(ius)).
+docente(28252). afferisce(docente(28252), settore(med)).
+docente(33934). afferisce(docente(33934), settore(agr)).
+docente(6786). afferisce(docente(6786), settore(m_fil)).
+docente(4510). afferisce(docente(4510), settore(secs_p)).
+docente(43819). afferisce(docente(43819), settore(null)).
+docente(100200). afferisce(docente(100200), settore(l_art)).
+docente(39624). afferisce(docente(39624), settore(null)).
+docente(206063). afferisce(docente(206063), settore(bio)).
+docente(9893). afferisce(docente(9893), settore(med)).
+docente(11689). afferisce(docente(11689), settore(null)).
+docente(36062). afferisce(docente(36062), settore(bio)).
+docente(43827). afferisce(docente(43827), settore(l_or)).
+docente(7437). afferisce(docente(7437), settore(null)).
+docente(40342). afferisce(docente(40342), settore(null)).
+docente(32309). afferisce(docente(32309), settore(null)).
+docente(100825). afferisce(docente(100825), settore(secs_p)).
+docente(16042). afferisce(docente(16042), settore(null)).
+docente(19595). afferisce(docente(19595), settore(med)).
+docente(4484). afferisce(docente(4484), settore(ing_ind)).
+docente(22006). afferisce(docente(22006), settore(null)).
+docente(3813). afferisce(docente(3813), settore(null)).
+docente(20360). afferisce(docente(20360), settore(med)).
+docente(5494). afferisce(docente(5494), settore(bio)).
+docente(8791). afferisce(docente(8791), settore(secs_s)).
+docente(18956). afferisce(docente(18956), settore(null)).
+docente(20095). afferisce(docente(20095), settore(ing_ind)).
+docente(11336). afferisce(docente(11336), settore(med)).
+docente(6623). afferisce(docente(6623), settore(m_ped)).
+docente(6144). afferisce(docente(6144), settore(geo)).
+docente(45057). afferisce(docente(45057), settore(agr)).
+docente(6810). afferisce(docente(6810), settore(null)).
+docente(36565). afferisce(docente(36565), settore(null)).
+docente(6099). afferisce(docente(6099), settore(ing_inf)).
+docente(6128). afferisce(docente(6128), settore(med)).
+docente(5646). afferisce(docente(5646), settore(bio)).
+docente(10293). afferisce(docente(10293), settore(l_art)).
+docente(10588). afferisce(docente(10588), settore(m_psi)).
+docente(37787). afferisce(docente(37787), settore(null)).
+docente(9220). afferisce(docente(9220), settore(null)).
+docente(16608). afferisce(docente(16608), settore(icar)).
+docente(3175). afferisce(docente(3175), settore(null)).
+docente(207001). afferisce(docente(207001), settore(bio)).
+docente(22377). afferisce(docente(22377), settore(null)).
+docente(14369). afferisce(docente(14369), settore(icar)).
+docente(36433). afferisce(docente(36433), settore(null)).
+docente(33505). afferisce(docente(33505), settore(ing_inf)).
+docente(6517). afferisce(docente(6517), settore(bio)).
+docente(6288). afferisce(docente(6288), settore(secs_p)).
+docente(5031). afferisce(docente(5031), settore(null)).
+docente(11319). afferisce(docente(11319), settore(null)).
+docente(4470). afferisce(docente(4470), settore(med)).
+docente(100252). afferisce(docente(100252), settore(null)).
+docente(25592). afferisce(docente(25592), settore(ing_ind)).
+docente(33350). afferisce(docente(33350), settore(agr)).
+docente(18767). afferisce(docente(18767), settore(null)).
+docente(11127). afferisce(docente(11127), settore(null)).
+docente(40792). afferisce(docente(40792), settore(null)).
+docente(26483). afferisce(docente(26483), settore(null)).
+docente(33507). afferisce(docente(33507), settore(m_fil)).
+docente(35726). afferisce(docente(35726), settore(icar)).
+docente(39993). afferisce(docente(39993), settore(null)).
+docente(4224). afferisce(docente(4224), settore(bio)).
+docente(205095). afferisce(docente(205095), settore(ing_inf)).
+docente(100768). afferisce(docente(100768), settore(null)).
+docente(5520). afferisce(docente(5520), settore(bio)).
+docente(206828). afferisce(docente(206828), settore(null)).
+docente(20765). afferisce(docente(20765), settore(ing_inf)).
+docente(11484). afferisce(docente(11484), settore(ing_ind)).
+docente(36609). afferisce(docente(36609), settore(null)).
+docente(5828). afferisce(docente(5828), settore(null)).
+docente(30300). afferisce(docente(30300), settore(med)).
+docente(21030). afferisce(docente(21030), settore(ius)).
+docente(39890). afferisce(docente(39890), settore(null)).
+docente(7017). afferisce(docente(7017), settore(secs_p)).
+docente(11154). afferisce(docente(11154), settore(fis)).
+docente(8390). afferisce(docente(8390), settore(null)).
+docente(19544). afferisce(docente(19544), settore(fis)).
+docente(23839). afferisce(docente(23839), settore(agr)).
+docente(44117). afferisce(docente(44117), settore(null)).
+docente(21129). afferisce(docente(21129), settore(null)).
+docente(18476). afferisce(docente(18476), settore(chim)).
+docente(10463). afferisce(docente(10463), settore(m_psi)).
+docente(6793). afferisce(docente(6793), settore(geo)).
+docente(30339). afferisce(docente(30339), settore(null)).
+docente(5008). afferisce(docente(5008), settore(null)).
+docente(4652). afferisce(docente(4652), settore(bio)).
+docente(48119). afferisce(docente(48119), settore(null)).
+docente(46154). afferisce(docente(46154), settore(null)).
+docente(10808). afferisce(docente(10808), settore(null)).
+docente(6768). afferisce(docente(6768), settore(icar)).
+docente(17104). afferisce(docente(17104), settore(med)).
+docente(18253). afferisce(docente(18253), settore(null)).
+docente(19630). afferisce(docente(19630), settore(med)).
+docente(29353). afferisce(docente(29353), settore(sps)).
+docente(100710). afferisce(docente(100710), settore(null)).
+docente(7015). afferisce(docente(7015), settore(secs_p)).
+docente(29550). afferisce(docente(29550), settore(secs_p)).
+docente(18131). afferisce(docente(18131), settore(med)).
+docente(100308). afferisce(docente(100308), settore(null)).
+docente(5051). afferisce(docente(5051), settore(chim)).
+docente(4801). afferisce(docente(4801), settore(m_psi)).
+docente(205032). afferisce(docente(205032), settore(bio)).
+docente(5349). afferisce(docente(5349), settore(ius)).
+docente(38137). afferisce(docente(38137), settore(ing_ind)).
+docente(44216). afferisce(docente(44216), settore(secs_p)).
+docente(30448). afferisce(docente(30448), settore(bio)).
+docente(41357). afferisce(docente(41357), settore(null)).
+docente(10361). afferisce(docente(10361), settore(icar)).
+docente(6049). afferisce(docente(6049), settore(ing_ind)).
+docente(5433). afferisce(docente(5433), settore(secs_p)).
+docente(11296). afferisce(docente(11296), settore(icar)).
+docente(42014). afferisce(docente(42014), settore(null)).
+docente(207009). afferisce(docente(207009), settore(agr)).
+docente(39883). afferisce(docente(39883), settore(null)).
+docente(46516). afferisce(docente(46516), settore(null)).
+docente(5849). afferisce(docente(5849), settore(ius)).
+docente(28754). afferisce(docente(28754), settore(null)).
+docente(40791). afferisce(docente(40791), settore(null)).
+docente(11355). afferisce(docente(11355), settore(fis)).
+docente(100765). afferisce(docente(100765), settore(null)).
+docente(4455). afferisce(docente(4455), settore(ing_ind)).
+docente(103224). afferisce(docente(103224), settore(null)).
+docente(11289). afferisce(docente(11289), settore(ius)).
+docente(6515). afferisce(docente(6515), settore(agr)).
+docente(36804). afferisce(docente(36804), settore(null)).
+docente(17499). afferisce(docente(17499), settore(null)).
+docente(48303). afferisce(docente(48303), settore(null)).
+docente(4280). afferisce(docente(4280), settore(vet)).
+docente(11264). afferisce(docente(11264), settore(null)).
+docente(16509). afferisce(docente(16509), settore(null)).
+docente(100613). afferisce(docente(100613), settore(m_ggr)).
+docente(15339). afferisce(docente(15339), settore(vet)).
+docente(5569). afferisce(docente(5569), settore(m_sto)).
+docente(35121). afferisce(docente(35121), settore(null)).
+docente(10290). afferisce(docente(10290), settore(m_sto)).
+docente(205053). afferisce(docente(205053), settore(bio)).
+docente(12507). afferisce(docente(12507), settore(bio)).
+docente(26130). afferisce(docente(26130), settore(sps)).
+docente(9966). afferisce(docente(9966), settore(icar)).
+docente(100256). afferisce(docente(100256), settore(null)).
+docente(19553). afferisce(docente(19553), settore(med)).
+docente(5463). afferisce(docente(5463), settore(fis)).
+docente(7057). afferisce(docente(7057), settore(l_lin)).
+docente(10669). afferisce(docente(10669), settore(ius)).
+docente(28143). afferisce(docente(28143), settore(ing_ind)).
+docente(100310). afferisce(docente(100310), settore(null)).
+docente(26424). afferisce(docente(26424), settore(null)).
+docente(40662). afferisce(docente(40662), settore(null)).
+docente(41937). afferisce(docente(41937), settore(vet)).
+docente(3651). afferisce(docente(3651), settore(icar)).
+docente(18697). afferisce(docente(18697), settore(bio)).
+docente(5799). afferisce(docente(5799), settore(chim)).
+docente(8858). afferisce(docente(8858), settore(l_fil_let)).
+docente(39715). afferisce(docente(39715), settore(sps)).
+docente(4860). afferisce(docente(4860), settore(med)).
+docente(7245). afferisce(docente(7245), settore(bio)).
+docente(39027). afferisce(docente(39027), settore(null)).
+docente(206026). afferisce(docente(206026), settore(med)).
+docente(25291). afferisce(docente(25291), settore(null)).
+docente(19890). afferisce(docente(19890), settore(m_dea)).
+docente(5794). afferisce(docente(5794), settore(med)).
+docente(5056). afferisce(docente(5056), settore(icar)).
+docente(37772). afferisce(docente(37772), settore(null)).
+docente(4451). afferisce(docente(4451), settore(vet)).
+docente(6580). afferisce(docente(6580), settore(m_edf)).
+docente(100410). afferisce(docente(100410), settore(null)).
+docente(100257). afferisce(docente(100257), settore(null)).
+docente(26302). afferisce(docente(26302), settore(null)).
+docente(100449). afferisce(docente(100449), settore(null)).
+docente(43632). afferisce(docente(43632), settore(null)).
+docente(4327). afferisce(docente(4327), settore(null)).
+docente(30358). afferisce(docente(30358), settore(null)).
+docente(6435). afferisce(docente(6435), settore(ius)).
+docente(5553). afferisce(docente(5553), settore(chim)).
+docente(31089). afferisce(docente(31089), settore(null)).
+docente(5561). afferisce(docente(5561), settore(secs_p)).
+docente(17997). afferisce(docente(17997), settore(secs_p)).
+docente(4604). afferisce(docente(4604), settore(vet)).
+docente(5556). afferisce(docente(5556), settore(bio)).
+docente(15906). afferisce(docente(15906), settore(m_psi)).
+docente(41995). afferisce(docente(41995), settore(null)).
+docente(25917). afferisce(docente(25917), settore(null)).
+docente(164325). afferisce(docente(164325), settore(null)).
+docente(11346). afferisce(docente(11346), settore(ius)).
+docente(5441). afferisce(docente(5441), settore(fis)).
+docente(4515). afferisce(docente(4515), settore(bio)).
+docente(4912). afferisce(docente(4912), settore(mat)).
+docente(4993). afferisce(docente(4993), settore(secs_s)).
+docente(25177). afferisce(docente(25177), settore(null)).
+docente(32566). afferisce(docente(32566), settore(null)).
+docente(6801). afferisce(docente(6801), settore(mat)).
+docente(44931). afferisce(docente(44931), settore(null)).
+docente(4831). afferisce(docente(4831), settore(ing_inf)).
+docente(40521). afferisce(docente(40521), settore(null)).
+docente(14405). afferisce(docente(14405), settore(null)).
+docente(4322). afferisce(docente(4322), settore(bio)).
+docente(5114). afferisce(docente(5114), settore(agr)).
+docente(34195). afferisce(docente(34195), settore(null)).
+docente(43598). afferisce(docente(43598), settore(ing_inf)).
+docente(25837). afferisce(docente(25837), settore(agr)).
+docente(45724). afferisce(docente(45724), settore(null)).
+docente(36990). afferisce(docente(36990), settore(ing_inf)).
+docente(48185). afferisce(docente(48185), settore(null)).
+docente(6715). afferisce(docente(6715), settore(m_fil)).
+docente(6746). afferisce(docente(6746), settore(l_fil_let)).
+docente(5610). afferisce(docente(5610), settore(geo)).
+docente(42199). afferisce(docente(42199), settore(geo)).
+docente(6432). afferisce(docente(6432), settore(vet)).
+docente(100507). afferisce(docente(100507), settore(null)).
+docente(11003). afferisce(docente(11003), settore(secs_p)).
+docente(149513). afferisce(docente(149513), settore(null)).
+docente(22825). afferisce(docente(22825), settore(m_psi)).
+docente(6069). afferisce(docente(6069), settore(chim)).
+docente(26111). afferisce(docente(26111), settore(ius)).
+docente(47910). afferisce(docente(47910), settore(null)).
+docente(11347). afferisce(docente(11347), settore(m_fil)).
+docente(48682). afferisce(docente(48682), settore(null)).
+docente(10329). afferisce(docente(10329), settore(l_ant)).
+docente(13027). afferisce(docente(13027), settore(inf)).
+docente(6716). afferisce(docente(6716), settore(agr)).
+docente(17172). afferisce(docente(17172), settore(bio)).
+docente(5406). afferisce(docente(5406), settore(vet)).
+docente(207008). afferisce(docente(207008), settore(med)).
+docente(100627). afferisce(docente(100627), settore(null)).
+docente(11310). afferisce(docente(11310), settore(null)).
+docente(30289). afferisce(docente(30289), settore(null)).
+docente(4288). afferisce(docente(4288), settore(med)).
+docente(40846). afferisce(docente(40846), settore(null)).
+docente(37950). afferisce(docente(37950), settore(null)).
+docente(28103). afferisce(docente(28103), settore(null)).
+docente(14713). afferisce(docente(14713), settore(null)).
+docente(13637). afferisce(docente(13637), settore(secs_p)).
+docente(37944). afferisce(docente(37944), settore(null)).
+docente(17240). afferisce(docente(17240), settore(chim)).
+docente(13659). afferisce(docente(13659), settore(bio)).
+docente(32477). afferisce(docente(32477), settore(chim)).
+docente(5479). afferisce(docente(5479), settore(secs_p)).
+docente(24121). afferisce(docente(24121), settore(ing_inf)).
+docente(5986). afferisce(docente(5986), settore(secs_p)).
+docente(10073). afferisce(docente(10073), settore(med)).
+docente(13436). afferisce(docente(13436), settore(ing_inf)).
+docente(6644). afferisce(docente(6644), settore(secs_s)).
+docente(48186). afferisce(docente(48186), settore(null)).
+docente(48861). afferisce(docente(48861), settore(bio)).
+docente(6274). afferisce(docente(6274), settore(agr)).
+docente(25852). afferisce(docente(25852), settore(med)).
+docente(11629). afferisce(docente(11629), settore(null)).
+docente(22301). afferisce(docente(22301), settore(fis)).
+docente(5462). afferisce(docente(5462), settore(bio)).
+docente(26126). afferisce(docente(26126), settore(geo)).
+docente(39460). afferisce(docente(39460), settore(fis)).
+docente(11384). afferisce(docente(11384), settore(agr)).
+docente(41740). afferisce(docente(41740), settore(null)).
+docente(38375). afferisce(docente(38375), settore(med)).
+docente(25123). afferisce(docente(25123), settore(null)).
+docente(6385). afferisce(docente(6385), settore(mat)).
+docente(39370). afferisce(docente(39370), settore(secs_p)).
+docente(206099). afferisce(docente(206099), settore(ing_inf)).
+docente(6593). afferisce(docente(6593), settore(chim)).
+docente(41739). afferisce(docente(41739), settore(null)).
+docente(17253). afferisce(docente(17253), settore(chim)).
+docente(100311). afferisce(docente(100311), settore(null)).
+docente(22348). afferisce(docente(22348), settore(ing_inf)).
+docente(100165). afferisce(docente(100165), settore(l_lin)).
+docente(5254). afferisce(docente(5254), settore(icar)).
+docente(20414). afferisce(docente(20414), settore(null)).
+docente(5599). afferisce(docente(5599), settore(mat)).
+docente(10283). afferisce(docente(10283), settore(ing_ind)).
+docente(6121). afferisce(docente(6121), settore(fis)).
+docente(22761). afferisce(docente(22761), settore(null)).
+docente(20752). afferisce(docente(20752), settore(null)).
+docente(4837). afferisce(docente(4837), settore(secs_p)).
+docente(7157). afferisce(docente(7157), settore(null)).
+docente(36391). afferisce(docente(36391), settore(null)).
+docente(4528). afferisce(docente(4528), settore(bio)).
+docente(11368). afferisce(docente(11368), settore(bio)).
+docente(6942). afferisce(docente(6942), settore(med)).
+docente(5571). afferisce(docente(5571), settore(bio)).
+docente(4257). afferisce(docente(4257), settore(bio)).
+docente(20096). afferisce(docente(20096), settore(ing_ind)).
+docente(19924). afferisce(docente(19924), settore(fis)).
+docente(25587). afferisce(docente(25587), settore(agr)).
+docente(44211). afferisce(docente(44211), settore(sps)).
+docente(11750). afferisce(docente(11750), settore(m_ped)).
+docente(1535). afferisce(docente(1535), settore(null)).
+docente(33569). afferisce(docente(33569), settore(null)).
+docente(4614). afferisce(docente(4614), settore(bio)).
+docente(7224). afferisce(docente(7224), settore(chim)).
+docente(33407). afferisce(docente(33407), settore(sps)).
+docente(156582). afferisce(docente(156582), settore(med)).
+docente(30801). afferisce(docente(30801), settore(secs_p)).
+docente(6877). afferisce(docente(6877), settore(null)).
+docente(31614). afferisce(docente(31614), settore(null)).
+docente(6022). afferisce(docente(6022), settore(secs_p)).
+docente(5052). afferisce(docente(5052), settore(chim)).
+docente(6624). afferisce(docente(6624), settore(med)).
+docente(8460). afferisce(docente(8460), settore(med)).
+docente(6122). afferisce(docente(6122), settore(med)).
+docente(6629). afferisce(docente(6629), settore(secs_p)).
+docente(7114). afferisce(docente(7114), settore(null)).
+docente(37978). afferisce(docente(37978), settore(null)).
+docente(11466). afferisce(docente(11466), settore(fis)).
+docente(5482). afferisce(docente(5482), settore(l_fil_let)).
+docente(28059). afferisce(docente(28059), settore(null)).
+docente(18693). afferisce(docente(18693), settore(null)).
+docente(25053). afferisce(docente(25053), settore(ius)).
+docente(16381). afferisce(docente(16381), settore(null)).
+docente(6071). afferisce(docente(6071), settore(agr)).
+docente(5125). afferisce(docente(5125), settore(agr)).
+docente(36541). afferisce(docente(36541), settore(null)).
+docente(41750). afferisce(docente(41750), settore(null)).
+docente(40348). afferisce(docente(40348), settore(med)).
+docente(14316). afferisce(docente(14316), settore(l_art)).
+docente(11251). afferisce(docente(11251), settore(null)).
+docente(6056). afferisce(docente(6056), settore(icar)).
+docente(13967). afferisce(docente(13967), settore(bio)).
+docente(5205). afferisce(docente(5205), settore(m_psi)).
+docente(5496). afferisce(docente(5496), settore(agr)).
+docente(205050). afferisce(docente(205050), settore(ing_ind)).
+docente(5789). afferisce(docente(5789), settore(med)).
+docente(7576). afferisce(docente(7576), settore(med)).
+docente(37050). afferisce(docente(37050), settore(null)).
+docente(5557). afferisce(docente(5557), settore(secs_s)).
+docente(44463). afferisce(docente(44463), settore(null)).
+docente(36768). afferisce(docente(36768), settore(null)).
+docente(8831). afferisce(docente(8831), settore(chim)).
+docente(20022). afferisce(docente(20022), settore(null)).
+docente(32834). afferisce(docente(32834), settore(med)).
+docente(4739). afferisce(docente(4739), settore(ius)).
+docente(10043). afferisce(docente(10043), settore(geo)).
+docente(6313). afferisce(docente(6313), settore(geo)).
+docente(142679). afferisce(docente(142679), settore(null)).
+docente(11885). afferisce(docente(11885), settore(m_psi)).
+docente(6383). afferisce(docente(6383), settore(icar)).
+docente(28116). afferisce(docente(28116), settore(null)).
+docente(35522). afferisce(docente(35522), settore(null)).
+docente(41447). afferisce(docente(41447), settore(null)).
+docente(35874). afferisce(docente(35874), settore(ing_inf)).
+docente(4349). afferisce(docente(4349), settore(med)).
+docente(136411). afferisce(docente(136411), settore(med)).
+docente(10736). afferisce(docente(10736), settore(fis)).
+docente(100555). afferisce(docente(100555), settore(null)).
+docente(40339). afferisce(docente(40339), settore(null)).
+docente(6023). afferisce(docente(6023), settore(secs_p)).
+docente(5546). afferisce(docente(5546), settore(chim)).
+docente(41501). afferisce(docente(41501), settore(null)).
+docente(37824). afferisce(docente(37824), settore(null)).
+docente(6685). afferisce(docente(6685), settore(icar)).
+docente(35524). afferisce(docente(35524), settore(null)).
+docente(40147). afferisce(docente(40147), settore(icar)).
+docente(13454). afferisce(docente(13454), settore(null)).
+docente(6204). afferisce(docente(6204), settore(bio)).
+docente(1582). afferisce(docente(1582), settore(null)).
+docente(11316). afferisce(docente(11316), settore(null)).
+docente(33666). afferisce(docente(33666), settore(null)).
+docente(25624). afferisce(docente(25624), settore(l_fil_let)).
+docente(18084). afferisce(docente(18084), settore(vet)).
+docente(4033). afferisce(docente(4033), settore(vet)).
+docente(19742). afferisce(docente(19742), settore(agr)).
+docente(37036). afferisce(docente(37036), settore(null)).
+docente(33255). afferisce(docente(33255), settore(null)).
+docente(17498). afferisce(docente(17498), settore(l_art)).
+docente(6745). afferisce(docente(6745), settore(l_fil_let)).
+docente(5713). afferisce(docente(5713), settore(l_lin)).
+docente(5360). afferisce(docente(5360), settore(vet)).
+docente(4732). afferisce(docente(4732), settore(agr)).
+docente(44681). afferisce(docente(44681), settore(null)).
+docente(12583). afferisce(docente(12583), settore(null)).
+docente(38880). afferisce(docente(38880), settore(null)).
+docente(5894). afferisce(docente(5894), settore(chim)).
+docente(206832). afferisce(docente(206832), settore(med)).
+docente(36763). afferisce(docente(36763), settore(null)).
+docente(7355). afferisce(docente(7355), settore(bio)).
+docente(5540). afferisce(docente(5540), settore(chim)).
+docente(6145). afferisce(docente(6145), settore(ing_inf)).
+docente(44517). afferisce(docente(44517), settore(null)).
+docente(7278). afferisce(docente(7278), settore(chim)).
+docente(28879). afferisce(docente(28879), settore(ing_inf)).
+docente(40837). afferisce(docente(40837), settore(null)).
+docente(10739). afferisce(docente(10739), settore(secs_p)).
+docente(8869). afferisce(docente(8869), settore(ius)).
+docente(20426). afferisce(docente(20426), settore(chim)).
+docente(28502). afferisce(docente(28502), settore(icar)).
+docente(100690). afferisce(docente(100690), settore(null)).
+docente(28366). afferisce(docente(28366), settore(fis)).
+docente(6602). afferisce(docente(6602), settore(null)).
+docente(13725). afferisce(docente(13725), settore(secs_p)).
+docente(5104). afferisce(docente(5104), settore(mat)).
+docente(9775). afferisce(docente(9775), settore(med)).
+docente(5136). afferisce(docente(5136), settore(geo)).
+docente(33239). afferisce(docente(33239), settore(null)).
+docente(6177). afferisce(docente(6177), settore(icar)).
+docente(6059). afferisce(docente(6059), settore(null)).
+docente(11294). afferisce(docente(11294), settore(med)).
+docente(6057). afferisce(docente(6057), settore(secs_p)).
+docente(33665). afferisce(docente(33665), settore(fis)).
+docente(6101). afferisce(docente(6101), settore(vet)).
+docente(207021). afferisce(docente(207021), settore(agr)).
+docente(11309). afferisce(docente(11309), settore(null)).
+docente(4610). afferisce(docente(4610), settore(ing_inf)).
+docente(5504). afferisce(docente(5504), settore(bio)).
+docente(24159). afferisce(docente(24159), settore(null)).
+docente(30399). afferisce(docente(30399), settore(null)).
+docente(15098). afferisce(docente(15098), settore(med)).
+docente(5895). afferisce(docente(5895), settore(med)).
+docente(100386). afferisce(docente(100386), settore(null)).
+docente(206032). afferisce(docente(206032), settore(null)).
+docente(5887). afferisce(docente(5887), settore(med)).
+docente(36471). afferisce(docente(36471), settore(null)).
+docente(6350). afferisce(docente(6350), settore(m_fil)).
+docente(36444). afferisce(docente(36444), settore(null)).
+docente(35688). afferisce(docente(35688), settore(null)).
+docente(6502). afferisce(docente(6502), settore(l_lin)).
+docente(6980). afferisce(docente(6980), settore(chim)).
+docente(204036). afferisce(docente(204036), settore(icar)).
+docente(5138). afferisce(docente(5138), settore(null)).
+docente(5586). afferisce(docente(5586), settore(ius)).
+docente(100733). afferisce(docente(100733), settore(null)).
+docente(30312). afferisce(docente(30312), settore(null)).
+docente(4562). afferisce(docente(4562), settore(icar)).
+docente(22304). afferisce(docente(22304), settore(icar)).
+docente(10914). afferisce(docente(10914), settore(med)).
+docente(20656). afferisce(docente(20656), settore(ing_ind)).
+docente(8822). afferisce(docente(8822), settore(l_art)).
+docente(14914). afferisce(docente(14914), settore(bio)).
+docente(4356). afferisce(docente(4356), settore(secs_s)).
+docente(36441). afferisce(docente(36441), settore(null)).
+docente(9450). afferisce(docente(9450), settore(null)).
+docente(100267). afferisce(docente(100267), settore(null)).
+docente(5036). afferisce(docente(5036), settore(mat)).
+docente(9455). afferisce(docente(9455), settore(med)).
+docente(5891). afferisce(docente(5891), settore(bio)).
+docente(7512). afferisce(docente(7512), settore(null)).
+docente(39477). afferisce(docente(39477), settore(m_psi)).
+docente(5327). afferisce(docente(5327), settore(secs_s)).
+docente(31558). afferisce(docente(31558), settore(null)).
+docente(41297). afferisce(docente(41297), settore(icar)).
+docente(6429). afferisce(docente(6429), settore(m_psi)).
+docente(44392). afferisce(docente(44392), settore(null)).
+docente(6761). afferisce(docente(6761), settore(m_psi)).
+docente(6714). afferisce(docente(6714), settore(null)).
+docente(4066). afferisce(docente(4066), settore(geo)).
+docente(12141). afferisce(docente(12141), settore(ing_inf)).
+docente(32785). afferisce(docente(32785), settore(null)).
+docente(5792). afferisce(docente(5792), settore(ing_ind)).
+docente(6307). afferisce(docente(6307), settore(ius)).
+docente(41979). afferisce(docente(41979), settore(null)).
+docente(22073). afferisce(docente(22073), settore(med)).
+docente(253676). afferisce(docente(253676), settore(bio)).
+docente(4698). afferisce(docente(4698), settore(geo)).
+docente(4559). afferisce(docente(4559), settore(icar)).
+docente(42915). afferisce(docente(42915), settore(null)).
+docente(4620). afferisce(docente(4620), settore(chim)).
+docente(4878). afferisce(docente(4878), settore(agr)).
+docente(6584). afferisce(docente(6584), settore(med)).
+docente(5804). afferisce(docente(5804), settore(mat)).
+docente(5552). afferisce(docente(5552), settore(ing_inf)).
+docente(40493). afferisce(docente(40493), settore(null)).
+docente(100531). afferisce(docente(100531), settore(secs_s)).
+docente(44390). afferisce(docente(44390), settore(null)).
+docente(31508). afferisce(docente(31508), settore(null)).
+docente(19612). afferisce(docente(19612), settore(null)).
+docente(11020). afferisce(docente(11020), settore(bio)).
+docente(44901). afferisce(docente(44901), settore(null)).
+docente(4174). afferisce(docente(4174), settore(bio)).
+docente(6434). afferisce(docente(6434), settore(l_ant)).
+docente(11332). afferisce(docente(11332), settore(ing_ind)).
+docente(10285). afferisce(docente(10285), settore(mat)).
+docente(8733). afferisce(docente(8733), settore(mat)).
+docente(5415). afferisce(docente(5415), settore(vet)).
+docente(33096). afferisce(docente(33096), settore(bio)).
+docente(6969). afferisce(docente(6969), settore(ing_ind)).
+docente(47795). afferisce(docente(47795), settore(null)).
+docente(33649). afferisce(docente(33649), settore(bio)).
+docente(41823). afferisce(docente(41823), settore(sps)).
+docente(6123). afferisce(docente(6123), settore(secs_p)).
+docente(100411). afferisce(docente(100411), settore(null)).
+docente(5567). afferisce(docente(5567), settore(chim)).
+docente(49026). afferisce(docente(49026), settore(bio)).
+docente(5672). afferisce(docente(5672), settore(med)).
+docente(5389). afferisce(docente(5389), settore(secs_p)).
+docente(5319). afferisce(docente(5319), settore(mat)).
+docente(36662). afferisce(docente(36662), settore(inf)).
+docente(11307). afferisce(docente(11307), settore(null)).
+docente(100436). afferisce(docente(100436), settore(null)).
+docente(5377). afferisce(docente(5377), settore(chim)).
+docente(31084). afferisce(docente(31084), settore(l_lin)).
+docente(10813). afferisce(docente(10813), settore(m_psi)).
+docente(15939). afferisce(docente(15939), settore(ing_ind)).
+docente(136509). afferisce(docente(136509), settore(null)).
+docente(42233). afferisce(docente(42233), settore(inf)).
+docente(37922). afferisce(docente(37922), settore(null)).
+docente(10139). afferisce(docente(10139), settore(null)).
+docente(30478). afferisce(docente(30478), settore(icar)).
+docente(46152). afferisce(docente(46152), settore(null)).
+docente(42092). afferisce(docente(42092), settore(null)).
+docente(10684). afferisce(docente(10684), settore(bio)).
+docente(5614). afferisce(docente(5614), settore(ius)).
+docente(48531). afferisce(docente(48531), settore(null)).
+docente(35187). afferisce(docente(35187), settore(null)).
+docente(42179). afferisce(docente(42179), settore(geo)).
+docente(42217). afferisce(docente(42217), settore(ing_ind)).
+docente(20567). afferisce(docente(20567), settore(null)).
+docente(21304). afferisce(docente(21304), settore(null)).
+docente(31627). afferisce(docente(31627), settore(med)).
+docente(5706). afferisce(docente(5706), settore(chim)).
+docente(5643). afferisce(docente(5643), settore(med)).
+docente(5709). afferisce(docente(5709), settore(mat)).
+docente(204023). afferisce(docente(204023), settore(l_fil_let)).
+docente(36465). afferisce(docente(36465), settore(null)).
+docente(206625). afferisce(docente(206625), settore(bio)).
+docente(6573). afferisce(docente(6573), settore(null)).
+docente(5410). afferisce(docente(5410), settore(bio)).
+docente(15925). afferisce(docente(15925), settore(null)).
+docente(164352). afferisce(docente(164352), settore(med)).
+docente(39488). afferisce(docente(39488), settore(bio)).
+docente(6538). afferisce(docente(6538), settore(secs_p)).
+docente(26450). afferisce(docente(26450), settore(null)).
+docente(11253). afferisce(docente(11253), settore(null)).
+docente(5699). afferisce(docente(5699), settore(secs_s)).
+docente(42157). afferisce(docente(42157), settore(null)).
+docente(17206). afferisce(docente(17206), settore(fis)).
+docente(100359). afferisce(docente(100359), settore(null)).
+docente(10089). afferisce(docente(10089), settore(null)).
+docente(8854). afferisce(docente(8854), settore(fis)).
+docente(37820). afferisce(docente(37820), settore(null)).
+docente(4853). afferisce(docente(4853), settore(vet)).
+docente(9899). afferisce(docente(9899), settore(med)).
+docente(13506). afferisce(docente(13506), settore(null)).
+docente(206035). afferisce(docente(206035), settore(icar)).
+docente(10745). afferisce(docente(10745), settore(agr)).
+docente(30365). afferisce(docente(30365), settore(null)).
+docente(206820). afferisce(docente(206820), settore(chim)).
+docente(48348). afferisce(docente(48348), settore(null)).
+docente(30937). afferisce(docente(30937), settore(ius)).
+docente(11425). afferisce(docente(11425), settore(null)).
+docente(33240). afferisce(docente(33240), settore(null)).
+docente(19876). afferisce(docente(19876), settore(l_ant)).
+docente(44930). afferisce(docente(44930), settore(null)).
+docente(3606). afferisce(docente(3606), settore(null)).
+docente(24483). afferisce(docente(24483), settore(ing_ind)).
+docente(4189). afferisce(docente(4189), settore(null)).
+docente(27469). afferisce(docente(27469), settore(med)).
+docente(15010). afferisce(docente(15010), settore(sps)).
+docente(4473). afferisce(docente(4473), settore(chim)).
+docente(500640). afferisce(docente(500640), settore(null)).
+docente(5024). afferisce(docente(5024), settore(bio)).
+docente(10666). afferisce(docente(10666), settore(mat)).
+docente(6576). afferisce(docente(6576), settore(ius)).
+docente(206855). afferisce(docente(206855), settore(null)).
+docente(205057). afferisce(docente(205057), settore(m_psi)).
+docente(4499). afferisce(docente(4499), settore(mat)).
+docente(46863). afferisce(docente(46863), settore(null)).
+docente(10279). afferisce(docente(10279), settore(ius)).
+docente(31478). afferisce(docente(31478), settore(null)).
+docente(253680). afferisce(docente(253680), settore(bio)).
+docente(5237). afferisce(docente(5237), settore(m_ggr)).
+docente(25630). afferisce(docente(25630), settore(bio)).
+docente(39467). afferisce(docente(39467), settore(agr)).
+docente(14289). afferisce(docente(14289), settore(null)).
+docente(18680). afferisce(docente(18680), settore(null)).
+docente(4336). afferisce(docente(4336), settore(fis)).
+docente(1701). afferisce(docente(1701), settore(null)).
+docente(4891). afferisce(docente(4891), settore(med)).
+docente(4612). afferisce(docente(4612), settore(med)).
+docente(46900). afferisce(docente(46900), settore(null)).
+docente(30715). afferisce(docente(30715), settore(null)).
+docente(5869). afferisce(docente(5869), settore(med)).
+docente(4625). afferisce(docente(4625), settore(mat)).
+docente(5539). afferisce(docente(5539), settore(vet)).
+docente(5542). afferisce(docente(5542), settore(med)).
+docente(11364). afferisce(docente(11364), settore(bio)).
+docente(9949). afferisce(docente(9949), settore(null)).
+docente(40849). afferisce(docente(40849), settore(null)).
+docente(48344). afferisce(docente(48344), settore(null)).
+docente(10602). afferisce(docente(10602), settore(null)).
+docente(20665). afferisce(docente(20665), settore(null)).
+docente(10186). afferisce(docente(10186), settore(null)).
+docente(6653). afferisce(docente(6653), settore(fis)).
+docente(4448). afferisce(docente(4448), settore(null)).
+docente(8882). afferisce(docente(8882), settore(null)).
+docente(6427). afferisce(docente(6427), settore(ius)).
+docente(4057). afferisce(docente(4057), settore(fis)).
+docente(11103). afferisce(docente(11103), settore(chim)).
+docente(5382). afferisce(docente(5382), settore(chim)).
+docente(103143). afferisce(docente(103143), settore(null)).
+docente(5809). afferisce(docente(5809), settore(ius)).
+docente(5387). afferisce(docente(5387), settore(secs_p)).
+docente(10639). afferisce(docente(10639), settore(sps)).
+docente(11320). afferisce(docente(11320), settore(null)).
+docente(6200). afferisce(docente(6200), settore(m_psi)).
+docente(4495). afferisce(docente(4495), settore(chim)).
+docente(33113). afferisce(docente(33113), settore(null)).
+docente(46380). afferisce(docente(46380), settore(med)).
+docente(5281). afferisce(docente(5281), settore(bio)).
+docente(16566). afferisce(docente(16566), settore(med)).
+docente(5860). afferisce(docente(5860), settore(bio)).
+docente(36522). afferisce(docente(36522), settore(null)).
+docente(7358). afferisce(docente(7358), settore(med)).
+docente(30740). afferisce(docente(30740), settore(null)).
+docente(6152). afferisce(docente(6152), settore(l_lin)).
+docente(5341). afferisce(docente(5341), settore(bio)).
+docente(27018). afferisce(docente(27018), settore(med)).
+docente(6539). afferisce(docente(6539), settore(geo)).
+docente(6619). afferisce(docente(6619), settore(bio)).
+docente(36477). afferisce(docente(36477), settore(null)).
+docente(100162). afferisce(docente(100162), settore(null)).
+docente(9953). afferisce(docente(9953), settore(chim)).
+docente(4588). afferisce(docente(4588), settore(l_lin)).
+docente(4148). afferisce(docente(4148), settore(l_lin)).
+docente(34175). afferisce(docente(34175), settore(ius)).
+docente(206824). afferisce(docente(206824), settore(bio)).
+docente(29839). afferisce(docente(29839), settore(null)).
+docente(11348). afferisce(docente(11348), settore(geo)).
+docente(48734). afferisce(docente(48734), settore(null)).
+docente(4869). afferisce(docente(4869), settore(ing_ind)).
+docente(3896). afferisce(docente(3896), settore(med)).
+docente(42659). afferisce(docente(42659), settore(med)).
+docente(17528). afferisce(docente(17528), settore(null)).
+docente(206868). afferisce(docente(206868), settore(l_fil_let)).
+docente(4543). afferisce(docente(4543), settore(ing_inf)).
+docente(41350). afferisce(docente(41350), settore(null)).
+docente(47874). afferisce(docente(47874), settore(null)).
+docente(7287). afferisce(docente(7287), settore(ing_inf)).
+docente(39464). afferisce(docente(39464), settore(chim)).
+docente(10641). afferisce(docente(10641), settore(chim)).
+docente(11250). afferisce(docente(11250), settore(null)).
+docente(46198). afferisce(docente(46198), settore(null)).
+docente(100649). afferisce(docente(100649), settore(fis)).
+docente(205817). afferisce(docente(205817), settore(chim)).
+docente(15329). afferisce(docente(15329), settore(null)).
+docente(4300). afferisce(docente(4300), settore(ius)).
+docente(5481). afferisce(docente(5481), settore(m_psi)).
+docente(17562). afferisce(docente(17562), settore(m_ped)).
+docente(5054). afferisce(docente(5054), settore(ing_ind)).
+docente(46114). afferisce(docente(46114), settore(null)).
+docente(17262). afferisce(docente(17262), settore(geo)).
+docente(4299). afferisce(docente(4299), settore(med)).
+docente(45831). afferisce(docente(45831), settore(null)).
+docente(5627). afferisce(docente(5627), settore(secs_p)).
+docente(4617). afferisce(docente(4617), settore(ing_inf)).
+docente(6521). afferisce(docente(6521), settore(med)).
+docente(6282). afferisce(docente(6282), settore(secs_p)).
+docente(3717). afferisce(docente(3717), settore(bio)).
+docente(207088). afferisce(docente(207088), settore(ing_inf)).
+docente(6583). afferisce(docente(6583), settore(med)).
+docente(5787). afferisce(docente(5787), settore(null)).
+docente(6086). afferisce(docente(6086), settore(fis)).
+docente(41642). afferisce(docente(41642), settore(null)).
+docente(30474). afferisce(docente(30474), settore(null)).
+docente(253752). afferisce(docente(253752), settore(fis)).
+docente(26137). afferisce(docente(26137), settore(bio)).
+docente(17964). afferisce(docente(17964), settore(null)).
+docente(18391). afferisce(docente(18391), settore(null)).
+docente(205023). afferisce(docente(205023), settore(bio)).
+docente(31076). afferisce(docente(31076), settore(null)).
+docente(18164). afferisce(docente(18164), settore(bio)).
+docente(6620). afferisce(docente(6620), settore(null)).
+docente(4859). afferisce(docente(4859), settore(bio)).
+docente(6641). afferisce(docente(6641), settore(icar)).
+docente(10455). afferisce(docente(10455), settore(chim)).
+docente(36937). afferisce(docente(36937), settore(null)).
+docente(17401). afferisce(docente(17401), settore(ing_inf)).
+docente(14069). afferisce(docente(14069), settore(secs_p)).
+docente(21802). afferisce(docente(21802), settore(m_edf)).
+docente(37909). afferisce(docente(37909), settore(null)).
+docente(30265). afferisce(docente(30265), settore(null)).
+docente(30343). afferisce(docente(30343), settore(null)).
+docente(5879). afferisce(docente(5879), settore(m_psi)).
+docente(17066). afferisce(docente(17066), settore(null)).
+docente(40250). afferisce(docente(40250), settore(null)).
+docente(5144). afferisce(docente(5144), settore(ius)).
+docente(37558). afferisce(docente(37558), settore(null)).
+docente(23798). afferisce(docente(23798), settore(chim)).
+docente(31178). afferisce(docente(31178), settore(med)).
+docente(3718). afferisce(docente(3718), settore(vet)).
+docente(5535). afferisce(docente(5535), settore(vet)).
+docente(5619). afferisce(docente(5619), settore(icar)).
+docente(10619). afferisce(docente(10619), settore(bio)).
+docente(10672). afferisce(docente(10672), settore(chim)).
+docente(33235). afferisce(docente(33235), settore(null)).
+docente(5424). afferisce(docente(5424), settore(vet)).
+docente(33646). afferisce(docente(33646), settore(l_lin)).
+docente(4444). afferisce(docente(4444), settore(ing_inf)).
+docente(5007). afferisce(docente(5007), settore(ing_ind)).
+docente(8811). afferisce(docente(8811), settore(bio)).
+docente(4411). afferisce(docente(4411), settore(bio)).
+docente(28115). afferisce(docente(28115), settore(null)).
+docente(19640). afferisce(docente(19640), settore(med)).
+docente(10400). afferisce(docente(10400), settore(null)).
+docente(25652). afferisce(docente(25652), settore(icar)).
+docente(100275). afferisce(docente(100275), settore(null)).
+docente(6058). afferisce(docente(6058), settore(secs_p)).
+docente(26127). afferisce(docente(26127), settore(null)).
+docente(8011). afferisce(docente(8011), settore(med)).
+docente(20469). afferisce(docente(20469), settore(bio)).
+docente(48579). afferisce(docente(48579), settore(null)).
+docente(4932). afferisce(docente(4932), settore(secs_s)).
+docente(14441). afferisce(docente(14441), settore(chim)).
+docente(10930). afferisce(docente(10930), settore(null)).
+docente(47792). afferisce(docente(47792), settore(null)).
+docente(17254). afferisce(docente(17254), settore(agr)).
+docente(4311). afferisce(docente(4311), settore(bio)).
+docente(19943). afferisce(docente(19943), settore(null)).
+docente(4370). afferisce(docente(4370), settore(fis)).
+docente(33280). afferisce(docente(33280), settore(null)).
+docente(6129). afferisce(docente(6129), settore(med)).
+docente(6577). afferisce(docente(6577), settore(agr)).
+docente(5674). afferisce(docente(5674), settore(chim)).
+docente(37046). afferisce(docente(37046), settore(m_fil)).
+docente(207081). afferisce(docente(207081), settore(agr)).
+docente(5890). afferisce(docente(5890), settore(l_fil_let)).
+docente(39631). afferisce(docente(39631), settore(null)).
+docente(5522). afferisce(docente(5522), settore(ing_ind)).
+docente(5352). afferisce(docente(5352), settore(chim)).
+docente(6392). afferisce(docente(6392), settore(chim)).
+docente(5288). afferisce(docente(5288), settore(bio)).
+docente(7577). afferisce(docente(7577), settore(bio)).
+docente(5055). afferisce(docente(5055), settore(ing_ind)).
+docente(22328). afferisce(docente(22328), settore(null)).
+docente(3905). afferisce(docente(3905), settore(chim)).
+docente(30366). afferisce(docente(30366), settore(null)).
+docente(11088). afferisce(docente(11088), settore(agr)).
+docente(6119). afferisce(docente(6119), settore(chim)).
+docente(36474). afferisce(docente(36474), settore(null)).
+docente(6944). afferisce(docente(6944), settore(null)).
+docente(6247). afferisce(docente(6247), settore(m_psi)).
+docente(10022). afferisce(docente(10022), settore(ing_ind)).
+docente(17575). afferisce(docente(17575), settore(null)).
+docente(24617). afferisce(docente(24617), settore(null)).
+docente(8888). afferisce(docente(8888), settore(icar)).
+docente(207044). afferisce(docente(207044), settore(icar)).
+docente(37831). afferisce(docente(37831), settore(null)).
+docente(6142). afferisce(docente(6142), settore(secs_p)).
+docente(8719). afferisce(docente(8719), settore(fis)).
+docente(5487). afferisce(docente(5487), settore(med)).
+docente(12997). afferisce(docente(12997), settore(null)).
+docente(38886). afferisce(docente(38886), settore(secs_p)).
+docente(32925). afferisce(docente(32925), settore(ius)).
+docente(11379). afferisce(docente(11379), settore(med)).
+docente(5078). afferisce(docente(5078), settore(bio)).
+docente(25057). afferisce(docente(25057), settore(icar)).
+docente(48724). afferisce(docente(48724), settore(null)).
+docente(15646). afferisce(docente(15646), settore(null)).
+docente(5554). afferisce(docente(5554), settore(chim)).
+docente(4615). afferisce(docente(4615), settore(bio)).
+docente(205024). afferisce(docente(205024), settore(l_fil_let)).
+docente(19896). afferisce(docente(19896), settore(med)).
+docente(4420). afferisce(docente(4420), settore(med)).
+docente(39528). afferisce(docente(39528), settore(fis)).
+docente(26700). afferisce(docente(26700), settore(null)).
+docente(36447). afferisce(docente(36447), settore(null)).
+docente(5088). afferisce(docente(5088), settore(icar)).
+docente(6536). afferisce(docente(6536), settore(bio)).
+docente(5793). afferisce(docente(5793), settore(med)).
+docente(103141). afferisce(docente(103141), settore(null)).
+docente(10214). afferisce(docente(10214), settore(null)).
+docente(7295). afferisce(docente(7295), settore(bio)).
+docente(32821). afferisce(docente(32821), settore(null)).
+docente(5889). afferisce(docente(5889), settore(null)).
+docente(4324). afferisce(docente(4324), settore(agr)).
+docente(9870). afferisce(docente(9870), settore(null)).
+docente(5280). afferisce(docente(5280), settore(l_lin)).
+docente(4605). afferisce(docente(4605), settore(med)).
+docente(5231). afferisce(docente(5231), settore(m_sto)).
+docente(5500). afferisce(docente(5500), settore(vet)).
+docente(22309). afferisce(docente(22309), settore(ing_ind)).
+docente(6556). afferisce(docente(6556), settore(m_ped)).
+docente(11376). afferisce(docente(11376), settore(med)).
+docente(30074). afferisce(docente(30074), settore(secs_p)).
+docente(46034). afferisce(docente(46034), settore(null)).
+docente(3729). afferisce(docente(3729), settore(geo)).
+docente(15911). afferisce(docente(15911), settore(null)).
+docente(4829). afferisce(docente(4829), settore(secs_s)).
+docente(30475). afferisce(docente(30475), settore(null)).
+docente(26957). afferisce(docente(26957), settore(null)).
+docente(41687). afferisce(docente(41687), settore(null)).
+docente(5211). afferisce(docente(5211), settore(chim)).
+docente(4464). afferisce(docente(4464), settore(chim)).
+docente(6762). afferisce(docente(6762), settore(fis)).
+docente(35259). afferisce(docente(35259), settore(null)).
+docente(36461). afferisce(docente(36461), settore(null)).
+docente(8887). afferisce(docente(8887), settore(mat)).
+docente(39372). afferisce(docente(39372), settore(sps)).
+docente(6537). afferisce(docente(6537), settore(chim)).
+docente(205035). afferisce(docente(205035), settore(bio)).
+docente(6039). afferisce(docente(6039), settore(ius)).
+docente(36560). afferisce(docente(36560), settore(null)).
+docente(48533). afferisce(docente(48533), settore(null)).
+docente(11013). afferisce(docente(11013), settore(chim)).
+docente(33506). afferisce(docente(33506), settore(null)).
+docente(40047). afferisce(docente(40047), settore(m_ped)).
+docente(18394). afferisce(docente(18394), settore(null)).
+docente(205065). afferisce(docente(205065), settore(bio)).
+docente(1842). afferisce(docente(1842), settore(null)).
+docente(41832). afferisce(docente(41832), settore(null)).
+docente(6306). afferisce(docente(6306), settore(secs_p)).
+docente(21794). afferisce(docente(21794), settore(ing_ind)).
+docente(6913). afferisce(docente(6913), settore(sps)).
+docente(46872). afferisce(docente(46872), settore(null)).
+docente(45232). afferisce(docente(45232), settore(med)).
+docente(5417). afferisce(docente(5417), settore(chim)).
+docente(5663). afferisce(docente(5663), settore(null)).
+docente(4607). afferisce(docente(4607), settore(med)).
+docente(35727). afferisce(docente(35727), settore(sps)).
+docente(33687). afferisce(docente(33687), settore(sps)).
+docente(1853). afferisce(docente(1853), settore(null)).
+docente(6228). afferisce(docente(6228), settore(ing_inf)).
+docente(17970). afferisce(docente(17970), settore(null)).
+docente(30433). afferisce(docente(30433), settore(null)).
+docente(100315). afferisce(docente(100315), settore(null)).
+docente(38664). afferisce(docente(38664), settore(l_fil_let)).
+docente(21201). afferisce(docente(21201), settore(null)).
+docente(5273). afferisce(docente(5273), settore(bio)).
+docente(36486). afferisce(docente(36486), settore(null)).
+docente(35352). afferisce(docente(35352), settore(icar)).
+docente(6749). afferisce(docente(6749), settore(med)).
+docente(4035). afferisce(docente(4035), settore(chim)).
+docente(9912). afferisce(docente(9912), settore(med)).
+docente(6107). afferisce(docente(6107), settore(ing_ind)).
+docente(11069). afferisce(docente(11069), settore(bio)).
+docente(10188). afferisce(docente(10188), settore(null)).
+docente(11498). afferisce(docente(11498), settore(icar)).
+docente(6983). afferisce(docente(6983), settore(chim)).
+docente(11071). afferisce(docente(11071), settore(secs_p)).
+docente(12922). afferisce(docente(12922), settore(agr)).
+docente(10344). afferisce(docente(10344), settore(ing_ind)).
+docente(14533). afferisce(docente(14533), settore(ing_ind)).
+docente(39722). afferisce(docente(39722), settore(null)).
+docente(100280). afferisce(docente(100280), settore(null)).
+docente(11301). afferisce(docente(11301), settore(null)).
+docente(4373). afferisce(docente(4373), settore(fis)).
+docente(21526). afferisce(docente(21526), settore(null)).
+docente(6581). afferisce(docente(6581), settore(chim)).
+docente(26323). afferisce(docente(26323), settore(null)).
+docente(6104). afferisce(docente(6104), settore(ing_inf)).
+docente(7535). afferisce(docente(7535), settore(null)).
+docente(4848). afferisce(docente(4848), settore(icar)).
+docente(10516). afferisce(docente(10516), settore(null)).
+docente(25179). afferisce(docente(25179), settore(null)).
+docente(30359). afferisce(docente(30359), settore(null)).
+docente(35825). afferisce(docente(35825), settore(fis)).
+docente(37082). afferisce(docente(37082), settore(null)).
+docente(10781). afferisce(docente(10781), settore(null)).
+docente(35356). afferisce(docente(35356), settore(l_lin)).
+docente(100495). afferisce(docente(100495), settore(null)).
+docente(41956). afferisce(docente(41956), settore(null)).
+docente(41673). afferisce(docente(41673), settore(null)).
+docente(41356). afferisce(docente(41356), settore(null)).
+docente(11624). afferisce(docente(11624), settore(m_fil)).
+docente(15541). afferisce(docente(15541), settore(med)).
+docente(30342). afferisce(docente(30342), settore(null)).
+docente(26035). afferisce(docente(26035), settore(ing_ind)).
+docente(37822). afferisce(docente(37822), settore(null)).
+docente(4724). afferisce(docente(4724), settore(null)).
+docente(25974). afferisce(docente(25974), settore(icar)).
+docente(26644). afferisce(docente(26644), settore(agr)).
+docente(6370). afferisce(docente(6370), settore(null)).
+docente(9980). afferisce(docente(9980), settore(med)).
+docente(10307). afferisce(docente(10307), settore(geo)).
+docente(5501). afferisce(docente(5501), settore(med)).
+docente(10761). afferisce(docente(10761), settore(null)).
+docente(253728). afferisce(docente(253728), settore(null)).
+docente(5537). afferisce(docente(5537), settore(agr)).
+docente(156573). afferisce(docente(156573), settore(med)).
+docente(30354). afferisce(docente(30354), settore(null)).
+docente(5116). afferisce(docente(5116), settore(vet)).
+docente(100744). afferisce(docente(100744), settore(null)).
+docente(7279). afferisce(docente(7279), settore(med)).
+docente(100766). afferisce(docente(100766), settore(null)).
+docente(4253). afferisce(docente(4253), settore(secs_p)).
+docente(46901). afferisce(docente(46901), settore(null)).
+docente(33726). afferisce(docente(33726), settore(icar)).
+docente(5897). afferisce(docente(5897), settore(icar)).
+docente(15988). afferisce(docente(15988), settore(mat)).
+docente(6106). afferisce(docente(6106), settore(null)).
+docente(19637). afferisce(docente(19637), settore(null)).
+docente(5664). afferisce(docente(5664), settore(icar)).
+docente(19109). afferisce(docente(19109), settore(ing_ind)).
+docente(100215). afferisce(docente(100215), settore(null)).
+docente(6528). afferisce(docente(6528), settore(chim)).
+docente(16501). afferisce(docente(16501), settore(null)).
+docente(40505). afferisce(docente(40505), settore(med)).
+docente(6084). afferisce(docente(6084), settore(null)).
+docente(6100). afferisce(docente(6100), settore(chim)).
+docente(100512). afferisce(docente(100512), settore(null)).
+docente(11072). afferisce(docente(11072), settore(null)).
+docente(17744). afferisce(docente(17744), settore(null)).
+docente(6303). afferisce(docente(6303), settore(chim)).
+docente(40485). afferisce(docente(40485), settore(null)).
+docente(19538). afferisce(docente(19538), settore(null)).
+docente(34246). afferisce(docente(34246), settore(null)).
+docente(5364). afferisce(docente(5364), settore(sps)).
+docente(36435). afferisce(docente(36435), settore(null)).
+docente(6347). afferisce(docente(6347), settore(m_fil)).
+docente(47631). afferisce(docente(47631), settore(null)).
+docente(100804). afferisce(docente(100804), settore(null)).
+docente(206793). afferisce(docente(206793), settore(secs_p)).
+docente(10142). afferisce(docente(10142), settore(med)).
+docente(44307). afferisce(docente(44307), settore(ius)).
+docente(5730). afferisce(docente(5730), settore(geo)).
+docente(37762). afferisce(docente(37762), settore(null)).
+docente(46817). afferisce(docente(46817), settore(null)).
+docente(10091). afferisce(docente(10091), settore(med)).
+docente(5808). afferisce(docente(5808), settore(bio)).
+docente(6085). afferisce(docente(6085), settore(ing_inf)).
+docente(5252). afferisce(docente(5252), settore(mat)).
+docente(36549). afferisce(docente(36549), settore(null)).
+docente(156616). afferisce(docente(156616), settore(med)).
+docente(6600). afferisce(docente(6600), settore(med)).
+docente(4297). afferisce(docente(4297), settore(bio)).
+docente(41440). afferisce(docente(41440), settore(null)).
+docente(6406). afferisce(docente(6406), settore(ius)).
+docente(33346). afferisce(docente(33346), settore(m_fil)).
+docente(3730). afferisce(docente(3730), settore(geo)).
+docente(205079). afferisce(docente(205079), settore(ing_ind)).
+docente(40841). afferisce(docente(40841), settore(null)).
+docente(25946). afferisce(docente(25946), settore(m_dea)).
+docente(11022). afferisce(docente(11022), settore(null)).
+docente(37716). afferisce(docente(37716), settore(null)).
+docente(100299). afferisce(docente(100299), settore(null)).
+docente(18353). afferisce(docente(18353), settore(null)).
+docente(6491). afferisce(docente(6491), settore(m_sto)).
+docente(40835). afferisce(docente(40835), settore(null)).
+docente(17963). afferisce(docente(17963), settore(null)).
+docente(6386). afferisce(docente(6386), settore(ius)).
+docente(5545). afferisce(docente(5545), settore(geo)).
+docente(5670). afferisce(docente(5670), settore(geo)).
+docente(10360). afferisce(docente(10360), settore(bio)).
+docente(45849). afferisce(docente(45849), settore(null)).
+docente(42428). afferisce(docente(42428), settore(null)).
+docente(10960). afferisce(docente(10960), settore(ing_inf)).
+docente(6096). afferisce(docente(6096), settore(bio)).
+docente(5886). afferisce(docente(5886), settore(chim)).
+docente(7035). afferisce(docente(7035), settore(icar)).
+docente(5515). afferisce(docente(5515), settore(secs_p)).
+docente(4536). afferisce(docente(4536), settore(med)).
+docente(7031). afferisce(docente(7031), settore(ius)).
+docente(11339). afferisce(docente(11339), settore(l_lin)).
+docente(43528). afferisce(docente(43528), settore(null)).
+docente(6765). afferisce(docente(6765), settore(icar)).
+docente(6124). afferisce(docente(6124), settore(l_lin)).
+docente(45283). afferisce(docente(45283), settore(null)).
+docente(25654). afferisce(docente(25654), settore(icar)).
+docente(4335). afferisce(docente(4335), settore(bio)).
+docente(48423). afferisce(docente(48423), settore(null)).
+docente(10601). afferisce(docente(10601), settore(ing_ind)).
+docente(100607). afferisce(docente(100607), settore(null)).
+docente(35353). afferisce(docente(35353), settore(bio)).
+docente(5220). afferisce(docente(5220), settore(ing_inf)).
+docente(6500). afferisce(docente(6500), settore(icar)).
+docente(13673). afferisce(docente(13673), settore(l_fil_let)).
+docente(7138). afferisce(docente(7138), settore(l_fil_let)).
+docente(22324). afferisce(docente(22324), settore(vet)).
+docente(5474). afferisce(docente(5474), settore(ius)).
+docente(100657). afferisce(docente(100657), settore(null)).
+docente(21537). afferisce(docente(21537), settore(null)).
+docente(6125). afferisce(docente(6125), settore(ing_inf)).
+docente(11525). afferisce(docente(11525), settore(null)).
+docente(11642). afferisce(docente(11642), settore(agr)).
+docente(5867). afferisce(docente(5867), settore(ius)).
+docente(9709). afferisce(docente(9709), settore(m_psi)).
+docente(20798). afferisce(docente(20798), settore(null)).
+docente(6255). afferisce(docente(6255), settore(null)).
+docente(6605). afferisce(docente(6605), settore(bio)).
+docente(18676). afferisce(docente(18676), settore(l_art)).
+docente(46204). afferisce(docente(46204), settore(null)).
+docente(44235). afferisce(docente(44235), settore(null)).
+docente(8862). afferisce(docente(8862), settore(secs_p)).
+docente(5778). afferisce(docente(5778), settore(icar)).
+docente(5892). afferisce(docente(5892), settore(med)).
+docente(13190). afferisce(docente(13190), settore(icar)).
+docente(5551). afferisce(docente(5551), settore(med)).
+docente(31517). afferisce(docente(31517), settore(ius)).
+docente(100557). afferisce(docente(100557), settore(null)).
+docente(39489). afferisce(docente(39489), settore(bio)).
+docente(6094). afferisce(docente(6094), settore(null)).
+docente(46124). afferisce(docente(46124), settore(null)).
+docente(4696). afferisce(docente(4696), settore(fis)).
+docente(7055). afferisce(docente(7055), settore(ing_ind)).
+docente(36582). afferisce(docente(36582), settore(null)).
+docente(43287). afferisce(docente(43287), settore(l_art)).
+docente(23227). afferisce(docente(23227), settore(null)).
+docente(20105). afferisce(docente(20105), settore(l_ant)).
+docente(5476). afferisce(docente(5476), settore(med)).
+docente(30782). afferisce(docente(30782), settore(med)).
+docente(100437). afferisce(docente(100437), settore(null)).
+docente(5486). afferisce(docente(5486), settore(bio)).
+docente(11122). afferisce(docente(11122), settore(vet)).
+docente(5684). afferisce(docente(5684), settore(null)).
+docente(17862). afferisce(docente(17862), settore(ius)).
+docente(33462). afferisce(docente(33462), settore(null)).
+docente(8844). afferisce(docente(8844), settore(ing_ind)).
+docente(48304). afferisce(docente(48304), settore(null)).
+docente(6555). afferisce(docente(6555), settore(l_fil_let)).
+docente(14399). afferisce(docente(14399), settore(chim)).
+docente(206029). afferisce(docente(206029), settore(ing_ind)).
+docente(38817). afferisce(docente(38817), settore(m_sto)).
+docente(9722). afferisce(docente(9722), settore(null)).
+docente(206854). afferisce(docente(206854), settore(vet)).
+docente(41701). afferisce(docente(41701), settore(null)).
+docente(35760). afferisce(docente(35760), settore(null)).
+docente(4276). afferisce(docente(4276), settore(null)).
+docente(11350). afferisce(docente(11350), settore(fis)).
+docente(31051). afferisce(docente(31051), settore(agr)).
+docente(4609). afferisce(docente(4609), settore(mat)).
+docente(5602). afferisce(docente(5602), settore(inf)).
+docente(37728). afferisce(docente(37728), settore(null)).
+docente(5257). afferisce(docente(5257), settore(null)).
+docente(36585). afferisce(docente(36585), settore(null)).
+docente(28483). afferisce(docente(28483), settore(null)).
+docente(10680). afferisce(docente(10680), settore(ing_ind)).
+docente(29717). afferisce(docente(29717), settore(null)).
+docente(5253). afferisce(docente(5253), settore(chim)).
+docente(5523). afferisce(docente(5523), settore(vet)).
+docente(30237). afferisce(docente(30237), settore(null)).
+docente(4565). afferisce(docente(4565), settore(secs_p)).
+docente(5405). afferisce(docente(5405), settore(bio)).
+docente(4701). afferisce(docente(4701), settore(ing_inf)).
+docente(21173). afferisce(docente(21173), settore(icar)).
+docente(207045). afferisce(docente(207045), settore(icar)).
+docente(203910). afferisce(docente(203910), settore(bio)).
+docente(5996). afferisce(docente(5996), settore(icar)).
+docente(15248). afferisce(docente(15248), settore(mat)).
+docente(13451). afferisce(docente(13451), settore(null)).
+docente(5832). afferisce(docente(5832), settore(icar)).
+docente(48683). afferisce(docente(48683), settore(null)).
+docente(10772). afferisce(docente(10772), settore(secs_p)).
+docente(5591). afferisce(docente(5591), settore(secs_p)).
+docente(207024). afferisce(docente(207024), settore(bio)).
+docente(31618). afferisce(docente(31618), settore(null)).
+docente(20129). afferisce(docente(20129), settore(null)).
+docente(4303). afferisce(docente(4303), settore(med)).
+docente(5715). afferisce(docente(5715), settore(chim)).

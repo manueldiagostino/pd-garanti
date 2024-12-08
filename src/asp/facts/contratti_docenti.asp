@@ -1,1577 +1,1577 @@
-indeterminato(docente(25818, settore(l_art))).
-contratto(docente(46902, settore(null))).
-indeterminato(docente(34500, settore(ius))).
-contratto(docente(45333, settore(null))).
-contratto(docente(44900, settore(null))).
-indeterminato(docente(4642, settore(mat))).
-contratto(docente(39374, settore(null))).
-contratto(docente(21986, settore(null))).
-contratto(docente(3948, settore(null))).
-contratto(docente(28096, settore(null))).
-contratto(docente(16176, settore(null))).
-contratto(docente(18241, settore(null))).
-contratto(docente(41684, settore(null))).
-contratto(docente(100501, settore(null))).
-contratto(docente(20667, settore(null))).
-contratto(docente(35185, settore(null))).
-contratto(docente(11280, settore(null))).
-indeterminato(docente(11483, settore(null))).
-contratto(docente(5194, settore(null))).
-contratto(docente(9895, settore(null))).
-contratto(docente(11311, settore(null))).
-contratto(docente(44292, settore(null))).
-contratto(docente(15601, settore(null))).
-contratto(docente(5673, settore(null))).
-contratto(docente(19634, settore(null))).
-contratto(docente(100222, settore(null))).
-contratto(docente(47577, settore(null))).
-contratto(docente(20856, settore(null))).
-contratto(docente(15547, settore(null))).
-contratto(docente(4457, settore(null))).
-contratto(docente(21862, settore(null))).
-contratto(docente(40152, settore(null))).
-contratto(docente(21528, settore(null))).
-contratto(docente(100223, settore(null))).
-contratto(docente(40341, settore(null))).
-contratto(docente(6451, settore(null))).
-contratto(docente(10788, settore(null))).
-contratto(docente(19040, settore(null))).
-contratto(docente(3899, settore(null))).
-contratto(docente(36480, settore(null))).
-contratto(docente(36420, settore(null))).
-contratto(docente(1085, settore(null))).
-contratto(docente(16512, settore(null))).
-indeterminato(docente(33517, settore(m_ped))).
-contratto(docente(8949, settore(null))).
-contratto(docente(26502, settore(null))).
-contratto(docente(36442, settore(null))).
-contratto(docente(48529, settore(null))).
-contratto(docente(33756, settore(null))).
-contratto(docente(36346, settore(null))).
-indeterminato(docente(14669, settore(med))).
-contratto(docente(17902, settore(null))).
-contratto(docente(8960, settore(null))).
-contratto(docente(5356, settore(null))).
-contratto(docente(100225, settore(null))).
-contratto(docente(36439, settore(null))).
-contratto(docente(18307, settore(null))).
-contratto(docente(20374, settore(null))).
-contratto(docente(5062, settore(null))).
-contratto(docente(6214, settore(null))).
-contratto(docente(39887, settore(null))).
-indeterminato(docente(5046, settore(fis))).
-contratto(docente(40340, settore(null))).
-contratto(docente(12390, settore(null))).
-contratto(docente(100801, settore(null))).
-contratto(docente(8984, settore(null))).
-contratto(docente(41442, settore(null))).
-indeterminato(docente(8885, settore(chim))).
-contratto(docente(13412, settore(null))).
-indeterminato(docente(7136, settore(null))).
-contratto(docente(33370, settore(null))).
-contratto(docente(44929, settore(null))).
-indeterminato(docente(6563, settore(null))).
-contratto(docente(3731, settore(null))).
-contratto(docente(10700, settore(null))).
-contratto(docente(11517, settore(null))).
-contratto(docente(18200, settore(null))).
-contratto(docente(4658, settore(null))).
-contratto(docente(11279, settore(null))).
-contratto(docente(37946, settore(null))).
-contratto(docente(40855, settore(null))).
-contratto(docente(39306, settore(null))).
-contratto(docente(47878, settore(null))).
-contratto(docente(44391, settore(null))).
-contratto(docente(41811, settore(null))).
-contratto(docente(4715, settore(null))).
-contratto(docente(13386, settore(null))).
-indeterminato(docente(11083, settore(null))).
-contratto(docente(28122, settore(null))).
-contratto(docente(25842, settore(null))).
-contratto(docente(5924, settore(null))).
-contratto(docente(4973, settore(null))).
-contratto(docente(47766, settore(null))).
-contratto(docente(7240, settore(null))).
-contratto(docente(37828, settore(null))).
-contratto(docente(42360, settore(null))).
-contratto(docente(25625, settore(null))).
-contratto(docente(30503, settore(null))).
-contratto(docente(9049, settore(null))).
-contratto(docente(40797, settore(null))).
-contratto(docente(41688, settore(null))).
-contratto(docente(100479, settore(null))).
-contratto(docente(9051, settore(null))).
-contratto(docente(36469, settore(null))).
-contratto(docente(41954, settore(null))).
-contratto(docente(100286, settore(null))).
-contratto(docente(7222, settore(null))).
-contratto(docente(29948, settore(null))).
-contratto(docente(14117, settore(null))).
-contratto(docente(42916, settore(null))).
-contratto(docente(100238, settore(null))).
-contratto(docente(24005, settore(null))).
-contratto(docente(41813, settore(null))).
-contratto(docente(41635, settore(null))).
-contratto(docente(44413, settore(null))).
-contratto(docente(19635, settore(null))).
-contratto(docente(164415, settore(null))).
-contratto(docente(42918, settore(null))).
-indeterminato(docente(206887, settore(fis))).
-contratto(docente(205052, settore(null))).
-indeterminato(docente(10282, settore(null))).
-contratto(docente(35833, settore(null))).
-contratto(docente(38598, settore(null))).
-contratto(docente(20872, settore(null))).
-contratto(docente(49772, settore(null))).
-contratto(docente(14829, settore(null))).
-contratto(docente(206823, settore(null))).
-contratto(docente(100767, settore(null))).
-contratto(docente(46009, settore(null))).
-contratto(docente(36515, settore(null))).
-contratto(docente(100576, settore(null))).
-contratto(docente(7208, settore(null))).
-contratto(docente(28030, settore(null))).
-contratto(docente(207077, settore(null))).
-contratto(docente(41737, settore(null))).
-contratto(docente(26527, settore(null))).
-contratto(docente(5350, settore(null))).
-contratto(docente(36296, settore(null))).
-contratto(docente(37903, settore(null))).
-contratto(docente(6558, settore(null))).
-contratto(docente(42122, settore(null))).
-contratto(docente(999976, settore(null))).
-contratto(docente(44286, settore(null))).
-contratto(docente(36514, settore(null))).
-contratto(docente(36302, settore(null))).
-contratto(docente(28101, settore(null))).
-contratto(docente(18296, settore(null))).
-contratto(docente(10441, settore(null))).
-contratto(docente(7480, settore(null))).
-contratto(docente(10008, settore(null))).
-contratto(docente(30685, settore(null))).
-contratto(docente(30400, settore(null))).
-contratto(docente(500108, settore(null))).
-contratto(docente(21487, settore(null))).
-contratto(docente(100787, settore(null))).
-contratto(docente(40354, settore(null))).
-indeterminato(docente(6514, settore(null))).
-contratto(docente(36472, settore(null))).
-contratto(docente(30734, settore(null))).
-contratto(docente(14362, settore(null))).
-contratto(docente(16181, settore(null))).
-contratto(docente(46211, settore(null))).
-contratto(docente(4719, settore(null))).
-contratto(docente(16562, settore(null))).
-contratto(docente(100415, settore(null))).
-contratto(docente(44471, settore(null))).
-contratto(docente(48694, settore(null))).
-contratto(docente(36545, settore(null))).
-contratto(docente(16729, settore(null))).
-contratto(docente(30417, settore(null))).
-contratto(docente(41812, settore(null))).
-contratto(docente(7293, settore(null))).
-contratto(docente(18623, settore(null))).
-contratto(docente(29312, settore(null))).
-contratto(docente(45771, settore(null))).
-contratto(docente(39034, settore(null))).
-contratto(docente(11202, settore(null))).
-contratto(docente(26144, settore(null))).
-contratto(docente(34132, settore(null))).
-contratto(docente(35155, settore(null))).
-contratto(docente(12027, settore(null))).
-contratto(docente(100796, settore(null))).
-contratto(docente(6687, settore(null))).
-contratto(docente(1326, settore(null))).
-indeterminato(docente(6382, settore(chim))).
-contratto(docente(30624, settore(null))).
-contratto(docente(47767, settore(null))).
-contratto(docente(30062, settore(null))).
-contratto(docente(45334, settore(null))).
-indeterminato(docente(25283, settore(m_sto))).
-contratto(docente(37910, settore(null))).
-contratto(docente(100671, settore(null))).
-contratto(docente(29433, settore(null))).
-indeterminato(docente(34499, settore(mat))).
-contratto(docente(46776, settore(null))).
-contratto(docente(12057, settore(null))).
-contratto(docente(40847, settore(null))).
-contratto(docente(45847, settore(null))).
-contratto(docente(24008, settore(null))).
-contratto(docente(36765, settore(null))).
-contratto(docente(10791, settore(null))).
-contratto(docente(23789, settore(null))).
-contratto(docente(6446, settore(null))).
-contratto(docente(3811, settore(null))).
-contratto(docente(29803, settore(null))).
-contratto(docente(36475, settore(null))).
-contratto(docente(27888, settore(null))).
-contratto(docente(34130, settore(null))).
-contratto(docente(100249, settore(null))).
-contratto(docente(15441, settore(null))).
-contratto(docente(6457, settore(null))).
-contratto(docente(36481, settore(null))).
-contratto(docente(46191, settore(null))).
-contratto(docente(41689, settore(null))).
-contratto(docente(5001, settore(null))).
-contratto(docente(44926, settore(null))).
-contratto(docente(181398, settore(null))).
-ricercatore(docente(19220, settore(mat))).
-contratto(docente(23179, settore(null))).
-indeterminato(docente(164526, settore(med))).
-contratto(docente(20382, settore(null))).
-contratto(docente(13638, settore(null))).
-contratto(docente(35930, settore(null))).
-contratto(docente(31490, settore(null))).
-contratto(docente(36563, settore(null))).
-contratto(docente(36443, settore(null))).
-contratto(docente(100620, settore(null))).
-contratto(docente(3611, settore(null))).
-contratto(docente(41298, settore(null))).
-contratto(docente(47520, settore(null))).
-contratto(docente(100736, settore(null))).
-contratto(docente(100596, settore(null))).
-contratto(docente(1365, settore(null))).
-contratto(docente(26146, settore(null))).
-contratto(docente(43819, settore(null))).
-contratto(docente(39624, settore(null))).
-contratto(docente(11689, settore(null))).
-contratto(docente(7437, settore(null))).
-contratto(docente(40342, settore(null))).
-contratto(docente(32309, settore(null))).
-contratto(docente(16042, settore(null))).
-contratto(docente(22006, settore(null))).
-contratto(docente(3813, settore(null))).
-contratto(docente(18956, settore(null))).
-contratto(docente(6810, settore(null))).
-contratto(docente(36565, settore(null))).
-contratto(docente(37787, settore(null))).
-contratto(docente(9220, settore(null))).
-contratto(docente(3175, settore(null))).
-contratto(docente(22377, settore(null))).
-contratto(docente(36433, settore(null))).
-indeterminato(docente(5031, settore(null))).
-contratto(docente(11319, settore(null))).
-contratto(docente(100252, settore(null))).
-contratto(docente(18767, settore(null))).
-contratto(docente(11127, settore(null))).
-contratto(docente(40792, settore(null))).
-contratto(docente(26483, settore(null))).
-contratto(docente(39993, settore(null))).
-contratto(docente(100768, settore(null))).
-contratto(docente(206828, settore(null))).
-contratto(docente(36609, settore(null))).
-contratto(docente(5828, settore(null))).
-contratto(docente(39890, settore(null))).
-contratto(docente(8390, settore(null))).
-contratto(docente(44117, settore(null))).
-contratto(docente(21129, settore(null))).
-contratto(docente(30339, settore(null))).
-contratto(docente(5008, settore(null))).
-contratto(docente(48119, settore(null))).
-contratto(docente(46154, settore(null))).
-contratto(docente(10808, settore(null))).
-contratto(docente(18253, settore(null))).
-contratto(docente(100710, settore(null))).
-contratto(docente(100308, settore(null))).
-contratto(docente(41357, settore(null))).
-contratto(docente(42014, settore(null))).
-contratto(docente(39883, settore(null))).
-contratto(docente(46516, settore(null))).
-contratto(docente(28754, settore(null))).
-contratto(docente(40791, settore(null))).
-contratto(docente(100765, settore(null))).
-contratto(docente(103224, settore(null))).
-contratto(docente(36804, settore(null))).
-contratto(docente(17499, settore(null))).
-contratto(docente(48303, settore(null))).
-contratto(docente(11264, settore(null))).
-contratto(docente(16509, settore(null))).
-contratto(docente(35121, settore(null))).
-contratto(docente(100256, settore(null))).
-contratto(docente(100310, settore(null))).
-contratto(docente(26424, settore(null))).
-contratto(docente(40662, settore(null))).
-indeterminato(docente(8858, settore(l_fil_let))).
-contratto(docente(39027, settore(null))).
-contratto(docente(25291, settore(null))).
-contratto(docente(37772, settore(null))).
-contratto(docente(100410, settore(null))).
-contratto(docente(100257, settore(null))).
-contratto(docente(26302, settore(null))).
-contratto(docente(100449, settore(null))).
-contratto(docente(43632, settore(null))).
-contratto(docente(4327, settore(null))).
-contratto(docente(30358, settore(null))).
-contratto(docente(31089, settore(null))).
-contratto(docente(41995, settore(null))).
-contratto(docente(25917, settore(null))).
-contratto(docente(164325, settore(null))).
-contratto(docente(25177, settore(null))).
-contratto(docente(32566, settore(null))).
-contratto(docente(44931, settore(null))).
-contratto(docente(40521, settore(null))).
-contratto(docente(14405, settore(null))).
-contratto(docente(34195, settore(null))).
-contratto(docente(45724, settore(null))).
-contratto(docente(48185, settore(null))).
-contratto(docente(100507, settore(null))).
-contratto(docente(149513, settore(null))).
-indeterminato(docente(26111, settore(ius))).
-contratto(docente(47910, settore(null))).
-contratto(docente(48682, settore(null))).
-contratto(docente(100627, settore(null))).
-contratto(docente(11310, settore(null))).
-indeterminato(docente(30289, settore(null))).
-contratto(docente(40846, settore(null))).
-contratto(docente(37950, settore(null))).
-contratto(docente(28103, settore(null))).
-contratto(docente(14713, settore(null))).
-contratto(docente(37944, settore(null))).
-contratto(docente(48186, settore(null))).
-contratto(docente(11629, settore(null))).
-contratto(docente(41740, settore(null))).
-contratto(docente(25123, settore(null))).
-indeterminato(docente(6593, settore(chim))).
-contratto(docente(41739, settore(null))).
-contratto(docente(100311, settore(null))).
-contratto(docente(20414, settore(null))).
-contratto(docente(22761, settore(null))).
-contratto(docente(20752, settore(null))).
-contratto(docente(7157, settore(null))).
-contratto(docente(36391, settore(null))).
-contratto(docente(1535, settore(null))).
-contratto(docente(33569, settore(null))).
-indeterminato(docente(30801, settore(secs_p))).
-contratto(docente(6877, settore(null))).
-contratto(docente(31614, settore(null))).
-contratto(docente(7114, settore(null))).
-contratto(docente(37978, settore(null))).
-contratto(docente(28059, settore(null))).
-contratto(docente(18693, settore(null))).
-contratto(docente(16381, settore(null))).
-contratto(docente(36541, settore(null))).
-contratto(docente(41750, settore(null))).
-contratto(docente(11251, settore(null))).
-contratto(docente(37050, settore(null))).
-contratto(docente(44463, settore(null))).
-contratto(docente(36768, settore(null))).
-contratto(docente(20022, settore(null))).
-indeterminato(docente(10043, settore(geo))).
-contratto(docente(142679, settore(null))).
-contratto(docente(28116, settore(null))).
-contratto(docente(35522, settore(null))).
-contratto(docente(41447, settore(null))).
-contratto(docente(100555, settore(null))).
-contratto(docente(40339, settore(null))).
-contratto(docente(41501, settore(null))).
-contratto(docente(37824, settore(null))).
-contratto(docente(35524, settore(null))).
-contratto(docente(13454, settore(null))).
-contratto(docente(1582, settore(null))).
-contratto(docente(11316, settore(null))).
-contratto(docente(33666, settore(null))).
-contratto(docente(37036, settore(null))).
-contratto(docente(33255, settore(null))).
-contratto(docente(44681, settore(null))).
-contratto(docente(12583, settore(null))).
-contratto(docente(38880, settore(null))).
-contratto(docente(36763, settore(null))).
-contratto(docente(44517, settore(null))).
-contratto(docente(40837, settore(null))).
-contratto(docente(28502, settore(null))).
-contratto(docente(100690, settore(null))).
-contratto(docente(6602, settore(null))).
-contratto(docente(33239, settore(null))).
-contratto(docente(6059, settore(null))).
-indeterminato(docente(33665, settore(fis))).
-contratto(docente(11309, settore(null))).
-contratto(docente(24159, settore(null))).
-contratto(docente(30399, settore(null))).
-contratto(docente(100386, settore(null))).
-contratto(docente(206032, settore(null))).
-contratto(docente(36471, settore(null))).
-contratto(docente(36444, settore(null))).
-contratto(docente(35688, settore(null))).
-contratto(docente(5138, settore(null))).
-contratto(docente(100733, settore(null))).
-contratto(docente(30312, settore(null))).
-contratto(docente(36441, settore(null))).
-contratto(docente(9450, settore(null))).
-contratto(docente(100267, settore(null))).
-indeterminato(docente(7512, settore(null))).
-contratto(docente(31558, settore(null))).
-contratto(docente(44392, settore(null))).
-contratto(docente(6714, settore(null))).
-contratto(docente(32785, settore(null))).
-contratto(docente(41979, settore(null))).
-contratto(docente(42915, settore(null))).
-contratto(docente(40493, settore(null))).
-contratto(docente(44390, settore(null))).
-contratto(docente(31508, settore(null))).
-contratto(docente(19612, settore(null))).
-contratto(docente(44901, settore(null))).
-contratto(docente(47795, settore(null))).
-contratto(docente(100411, settore(null))).
-contratto(docente(11307, settore(null))).
-contratto(docente(100436, settore(null))).
-contratto(docente(136509, settore(null))).
-contratto(docente(37922, settore(null))).
-contratto(docente(10139, settore(null))).
-contratto(docente(46152, settore(null))).
-contratto(docente(42092, settore(null))).
-contratto(docente(48531, settore(null))).
-contratto(docente(35187, settore(null))).
-contratto(docente(20567, settore(null))).
-contratto(docente(21304, settore(null))).
-indeterminato(docente(5706, settore(chim))).
-contratto(docente(36465, settore(null))).
-indeterminato(docente(206625, settore(bio))).
-contratto(docente(6573, settore(null))).
-contratto(docente(15925, settore(null))).
-contratto(docente(26450, settore(null))).
-contratto(docente(11253, settore(null))).
-contratto(docente(42157, settore(null))).
-contratto(docente(100359, settore(null))).
-contratto(docente(10089, settore(null))).
-contratto(docente(37820, settore(null))).
-indeterminato(docente(9899, settore(med))).
-contratto(docente(13506, settore(null))).
-contratto(docente(30365, settore(null))).
-contratto(docente(48348, settore(null))).
-contratto(docente(11425, settore(null))).
-contratto(docente(33240, settore(null))).
-contratto(docente(44930, settore(null))).
-contratto(docente(3606, settore(null))).
-contratto(docente(4189, settore(null))).
-contratto(docente(500640, settore(null))).
-contratto(docente(206855, settore(null))).
-contratto(docente(46863, settore(null))).
-contratto(docente(31478, settore(null))).
-contratto(docente(14289, settore(null))).
-contratto(docente(18680, settore(null))).
-contratto(docente(1701, settore(null))).
-contratto(docente(46900, settore(null))).
-contratto(docente(30715, settore(null))).
-contratto(docente(9949, settore(null))).
-contratto(docente(40849, settore(null))).
-contratto(docente(48344, settore(null))).
-contratto(docente(10602, settore(null))).
-contratto(docente(20665, settore(null))).
-contratto(docente(10186, settore(null))).
-contratto(docente(4448, settore(null))).
-contratto(docente(8882, settore(null))).
-contratto(docente(103143, settore(null))).
-contratto(docente(11320, settore(null))).
-contratto(docente(33113, settore(null))).
-contratto(docente(36522, settore(null))).
-contratto(docente(30740, settore(null))).
-contratto(docente(36477, settore(null))).
-contratto(docente(100162, settore(null))).
-contratto(docente(29839, settore(null))).
-contratto(docente(48734, settore(null))).
-contratto(docente(17528, settore(null))).
-contratto(docente(41350, settore(null))).
-contratto(docente(47874, settore(null))).
-contratto(docente(11250, settore(null))).
-contratto(docente(46198, settore(null))).
-contratto(docente(15329, settore(null))).
-contratto(docente(46114, settore(null))).
-contratto(docente(45831, settore(null))).
-contratto(docente(5787, settore(null))).
-contratto(docente(41642, settore(null))).
-contratto(docente(30474, settore(null))).
-indeterminato(docente(253752, settore(fis))).
-contratto(docente(17964, settore(null))).
-contratto(docente(18391, settore(null))).
-contratto(docente(31076, settore(null))).
-contratto(docente(6620, settore(null))).
-contratto(docente(36937, settore(null))).
-contratto(docente(14069, settore(secs_p))).
-contratto(docente(37909, settore(null))).
-contratto(docente(30265, settore(null))).
-contratto(docente(30343, settore(null))).
-contratto(docente(17066, settore(null))).
-contratto(docente(40250, settore(null))).
-contratto(docente(37558, settore(null))).
-contratto(docente(33235, settore(null))).
-contratto(docente(28115, settore(null))).
-indeterminato(docente(10400, settore(null))).
-contratto(docente(100275, settore(null))).
-contratto(docente(26127, settore(null))).
-contratto(docente(48579, settore(null))).
-contratto(docente(10930, settore(null))).
-contratto(docente(47792, settore(null))).
-contratto(docente(19943, settore(null))).
-contratto(docente(33280, settore(null))).
-contratto(docente(39631, settore(null))).
-contratto(docente(22328, settore(null))).
-contratto(docente(30366, settore(null))).
-contratto(docente(36474, settore(null))).
-contratto(docente(6944, settore(null))).
-contratto(docente(17575, settore(null))).
-contratto(docente(24617, settore(null))).
-contratto(docente(37831, settore(null))).
-contratto(docente(12997, settore(null))).
-contratto(docente(48724, settore(null))).
-contratto(docente(15646, settore(null))).
-contratto(docente(26700, settore(null))).
-contratto(docente(36447, settore(null))).
-contratto(docente(103141, settore(null))).
-contratto(docente(10214, settore(null))).
-contratto(docente(32821, settore(null))).
-indeterminato(docente(5889, settore(null))).
-contratto(docente(9870, settore(null))).
-contratto(docente(46034, settore(null))).
-contratto(docente(15911, settore(null))).
-contratto(docente(30475, settore(null))).
-contratto(docente(26957, settore(null))).
-contratto(docente(41687, settore(null))).
-contratto(docente(35259, settore(null))).
-contratto(docente(36461, settore(null))).
-contratto(docente(36560, settore(null))).
-contratto(docente(48533, settore(null))).
-indeterminato(docente(33506, settore(null))).
-contratto(docente(18394, settore(null))).
-contratto(docente(1842, settore(null))).
-contratto(docente(41832, settore(null))).
-contratto(docente(46872, settore(null))).
-indeterminato(docente(5663, settore(null))).
-indeterminato(docente(33687, settore(sps))).
-contratto(docente(1853, settore(null))).
-contratto(docente(17970, settore(null))).
-contratto(docente(30433, settore(null))).
-contratto(docente(100315, settore(null))).
-contratto(docente(21201, settore(null))).
-contratto(docente(36486, settore(null))).
-contratto(docente(10188, settore(null))).
-contratto(docente(39722, settore(null))).
-contratto(docente(100280, settore(null))).
-contratto(docente(11301, settore(null))).
-contratto(docente(21526, settore(null))).
-contratto(docente(26323, settore(null))).
-contratto(docente(7535, settore(null))).
-contratto(docente(10516, settore(null))).
-contratto(docente(25179, settore(null))).
-contratto(docente(30359, settore(null))).
-contratto(docente(37082, settore(null))).
-contratto(docente(10781, settore(null))).
-contratto(docente(100495, settore(null))).
-contratto(docente(41956, settore(null))).
-contratto(docente(41673, settore(null))).
-contratto(docente(41356, settore(null))).
-contratto(docente(30342, settore(null))).
-contratto(docente(37822, settore(null))).
-contratto(docente(4724, settore(null))).
-contratto(docente(6370, settore(null))).
-contratto(docente(10761, settore(null))).
-contratto(docente(253728, settore(null))).
-contratto(docente(30354, settore(null))).
-contratto(docente(100744, settore(null))).
-contratto(docente(100766, settore(null))).
-contratto(docente(46901, settore(null))).
-indeterminato(docente(6106, settore(null))).
-contratto(docente(19637, settore(null))).
-contratto(docente(100215, settore(null))).
-contratto(docente(16501, settore(null))).
-contratto(docente(6084, settore(null))).
-contratto(docente(100512, settore(null))).
-contratto(docente(11072, settore(null))).
-contratto(docente(17744, settore(null))).
-contratto(docente(40485, settore(null))).
-contratto(docente(19538, settore(null))).
-contratto(docente(34246, settore(null))).
-contratto(docente(36435, settore(null))).
-contratto(docente(47631, settore(null))).
-contratto(docente(100804, settore(null))).
-indeterminato(docente(10142, settore(med))).
-contratto(docente(37762, settore(null))).
-contratto(docente(46817, settore(null))).
-indeterminato(docente(5808, settore(bio))).
-contratto(docente(36549, settore(null))).
-contratto(docente(41440, settore(null))).
-contratto(docente(40841, settore(null))).
-indeterminato(docente(25946, settore(m_dea))).
-contratto(docente(11022, settore(null))).
-contratto(docente(37716, settore(null))).
-contratto(docente(100299, settore(null))).
-contratto(docente(18353, settore(null))).
-contratto(docente(40835, settore(null))).
-contratto(docente(17963, settore(null))).
-contratto(docente(45849, settore(null))).
-contratto(docente(42428, settore(null))).
-contratto(docente(43528, settore(null))).
-contratto(docente(45283, settore(null))).
-contratto(docente(48423, settore(null))).
-indeterminato(docente(10601, settore(ing_ind))).
-contratto(docente(100607, settore(null))).
-contratto(docente(100657, settore(null))).
-contratto(docente(21537, settore(null))).
-contratto(docente(11525, settore(null))).
-contratto(docente(20798, settore(null))).
-contratto(docente(6255, settore(null))).
-contratto(docente(46204, settore(null))).
-contratto(docente(44235, settore(null))).
-contratto(docente(100557, settore(null))).
-contratto(docente(6094, settore(null))).
-contratto(docente(46124, settore(null))).
-indeterminato(docente(4696, settore(fis))).
-contratto(docente(36582, settore(null))).
-contratto(docente(23227, settore(null))).
-contratto(docente(100437, settore(null))).
-contratto(docente(5684, settore(null))).
-contratto(docente(33462, settore(null))).
-contratto(docente(48304, settore(null))).
-contratto(docente(9722, settore(null))).
-contratto(docente(41701, settore(null))).
-contratto(docente(35760, settore(null))).
-contratto(docente(4276, settore(null))).
-contratto(docente(37728, settore(null))).
-contratto(docente(5257, settore(null))).
-contratto(docente(36585, settore(null))).
-contratto(docente(28483, settore(null))).
-contratto(docente(29717, settore(null))).
-contratto(docente(30237, settore(null))).
-contratto(docente(13451, settore(null))).
-contratto(docente(48683, settore(null))).
-contratto(docente(31618, settore(null))).
-contratto(docente(20129, settore(null))).
-indeterminato(docente(6527, settore(fis))).
-ricercatore(docente(22345, settore(agr))).
-indeterminato(docente(4397, settore(mat))).
-ricercatore(docente(15950, settore(mat))).
-ricercatore(docente(8816, settore(bio))).
-indeterminato(docente(4282, settore(med))).
-indeterminato(docente(6508, settore(l_fil_let))).
-indeterminato(docente(6598, settore(med))).
-ricercatore(docente(15493, settore(secs_p))).
-ricercatore(docente(20361, settore(m_psi))).
-ricercatore(docente(3848, settore(med))).
-indeterminato(docente(207089, settore(ing_inf))).
-indeterminato(docente(5565, settore(med))).
-ricercatore(docente(18477, settore(agr))).
-ricercatore(docente(35050, settore(secs_s))).
-indeterminato(docente(6627, settore(fis))).
-ricercatore(docente(5885, settore(ius))).
-indeterminato(docente(6652, settore(m_fil))).
-indeterminato(docente(207094, settore(ing_inf))).
-indeterminato(docente(164218, settore(med))).
-indeterminato(docente(4468, settore(secs_p))).
-indeterminato(docente(5788, settore(med))).
-indeterminato(docente(6504, settore(ius))).
-indeterminato(docente(6454, settore(l_lin))).
-indeterminato(docente(28994, settore(m_ped))).
-indeterminato(docente(29217, settore(mat))).
-ricercatore(docente(38138, settore(bio))).
-indeterminato(docente(5813, settore(med))).
-indeterminato(docente(5087, settore(bio))).
-ricercatore(docente(33657, settore(inf))).
-ricercatore(docente(20533, settore(secs_p))).
-ricercatore(docente(11792, settore(m_psi))).
-indeterminato(docente(4535, settore(agr))).
-indeterminato(docente(14634, settore(m_ped))).
-ricercatore(docente(17651, settore(vet))).
-ricercatore(docente(35351, settore(sps))).
-indeterminato(docente(5442, settore(geo))).
-indeterminato(docente(5526, settore(l_lin))).
-indeterminato(docente(5634, settore(icar))).
-ricercatore(docente(12506, settore(icar))).
-indeterminato(docente(4466, settore(secs_p))).
-indeterminato(docente(5320, settore(chim))).
-indeterminato(docente(5837, settore(vet))).
-indeterminato(docente(6642, settore(med))).
-indeterminato(docente(172930, settore(med))).
-indeterminato(docente(11305, settore(sps))).
-indeterminato(docente(5145, settore(inf))).
-indeterminato(docente(12799, settore(secs_p))).
-indeterminato(docente(6381, settore(chim))).
-indeterminato(docente(5073, settore(bio))).
-indeterminato(docente(6038, settore(secs_p))).
-indeterminato(docente(10592, settore(geo))).
-indeterminato(docente(11130, settore(agr))).
-indeterminato(docente(5428, settore(fis))).
-indeterminato(docente(4702, settore(vet))).
-indeterminato(docente(6117, settore(agr))).
-ricercatore(docente(11157, settore(bio))).
-ricercatore(docente(4880, settore(secs_p))).
-ricercatore(docente(23210, settore(med))).
-indeterminato(docente(6544, settore(med))).
-indeterminato(docente(3697, settore(bio))).
-indeterminato(docente(15874, settore(mat))).
-indeterminato(docente(5668, settore(bio))).
-indeterminato(docente(6754, settore(bio))).
-indeterminato(docente(205009, settore(bio))).
-indeterminato(docente(5519, settore(ius))).
-indeterminato(docente(4889, settore(vet))).
-ricercatore(docente(32717, settore(ing_ind))).
-indeterminato(docente(5541, settore(chim))).
-indeterminato(docente(205007, settore(agr))).
-indeterminato(docente(41972, settore(ing_inf))).
-indeterminato(docente(5827, settore(icar))).
-ricercatore(docente(11111, settore(ing_inf))).
-ricercatore(docente(12185, settore(fis))).
-indeterminato(docente(6507, settore(secs_p))).
-indeterminato(docente(4768, settore(mat))).
-indeterminato(docente(20279, settore(ius))).
-ricercatore(docente(5390, settore(ius))).
-indeterminato(docente(26131, settore(mat))).
-ricercatore(docente(5234, settore(vet))).
-indeterminato(docente(5383, settore(l_lin))).
-ricercatore(docente(10706, settore(chim))).
-indeterminato(docente(204741, settore(inf))).
-indeterminato(docente(6270, settore(icar))).
-indeterminato(docente(204061, settore(agr))).
-indeterminato(docente(149461, settore(med))).
-ricercatore(docente(33648, settore(icar))).
-indeterminato(docente(39583, settore(chim))).
-ricercatore(docente(32990, settore(inf))).
-indeterminato(docente(5447, settore(vet))).
-indeterminato(docente(5836, settore(bio))).
-indeterminato(docente(5137, settore(ing_inf))).
-indeterminato(docente(10705, settore(chim))).
-ricercatore(docente(39371, settore(sps))).
-ricercatore(docente(6585, settore(l_lin))).
-indeterminato(docente(5613, settore(fis))).
-ricercatore(docente(20907, settore(agr))).
-indeterminato(docente(5146, settore(chim))).
-ricercatore(docente(42213, settore(bio))).
-indeterminato(docente(6782, settore(m_fil))).
-indeterminato(docente(5655, settore(vet))).
-indeterminato(docente(6191, settore(chim))).
-indeterminato(docente(6639, settore(ius))).
-indeterminato(docente(206829, settore(ius))).
-ricercatore(docente(205005, settore(med))).
-ricercatore(docente(8765, settore(ing_inf))).
-ricercatore(docente(15764, settore(med))).
-indeterminato(docente(7306, settore(med))).
-indeterminato(docente(3698, settore(chim))).
-indeterminato(docente(6578, settore(ing_ind))).
-indeterminato(docente(22836, settore(med))).
-indeterminato(docente(23239, settore(m_fil))).
-indeterminato(docente(6591, settore(chim))).
-indeterminato(docente(4613, settore(bio))).
-indeterminato(docente(4295, settore(bio))).
-ricercatore(docente(30169, settore(ius))).
-ricercatore(docente(253750, settore(bio))).
-indeterminato(docente(46719, settore(sps))).
-indeterminato(docente(38830, settore(med))).
-ricercatore(docente(15482, settore(ius))).
-indeterminato(docente(4858, settore(vet))).
-indeterminato(docente(5721, settore(med))).
-indeterminato(docente(5069, settore(ing_inf))).
-indeterminato(docente(42168, settore(med))).
-indeterminato(docente(4490, settore(fis))).
-indeterminato(docente(34181, settore(inf))).
-ricercatore(docente(35359, settore(ius))).
-indeterminato(docente(4854, settore(ing_inf))).
-ricercatore(docente(12129, settore(chim))).
-indeterminato(docente(4501, settore(vet))).
-indeterminato(docente(204071, settore(bio))).
-indeterminato(docente(32479, settore(l_art))).
-ricercatore(docente(6388, settore(geo))).
-indeterminato(docente(4271, settore(fis))).
-ricercatore(docente(35350, settore(agr))).
-indeterminato(docente(6513, settore(ing_ind))).
-indeterminato(docente(206006, settore(agr))).
-indeterminato(docente(206905, settore(ing_ind))).
-indeterminato(docente(6603, settore(vet))).
-indeterminato(docente(6126, settore(bio))).
-indeterminato(docente(8732, settore(m_psi))).
-indeterminato(docente(6391, settore(bio))).
-indeterminato(docente(43777, settore(med))).
-indeterminato(docente(5555, settore(fis))).
-indeterminato(docente(5489, settore(med))).
-indeterminato(docente(4328, settore(med))).
-ricercatore(docente(164267, settore(med))).
-indeterminato(docente(6389, settore(chim))).
-indeterminato(docente(5548, settore(med))).
-indeterminato(docente(4526, settore(vet))).
-indeterminato(docente(6433, settore(l_lin))).
-indeterminato(docente(4586, settore(vet))).
-indeterminato(docente(5880, settore(secs_p))).
-indeterminato(docente(207068, settore(chim))).
-indeterminato(docente(4974, settore(ius))).
-indeterminato(docente(4369, settore(med))).
-indeterminato(docente(41973, settore(mat))).
-indeterminato(docente(5079, settore(ing_inf))).
-indeterminato(docente(15245, settore(med))).
-ricercatore(docente(11439, settore(bio))).
-indeterminato(docente(5299, settore(med))).
-indeterminato(docente(6510, settore(chim))).
-ricercatore(docente(40347, settore(secs_s))).
-indeterminato(docente(30445, settore(med))).
-indeterminato(docente(3700, settore(chim))).
-indeterminato(docente(204544, settore(bio))).
-ricercatore(docente(33684, settore(secs_p))).
-indeterminato(docente(6407, settore(l_lin))).
-indeterminato(docente(20424, settore(med))).
-indeterminato(docente(3701, settore(mat))).
-ricercatore(docente(42214, settore(chim))).
-indeterminato(docente(30479, settore(bio))).
-indeterminato(docente(29354, settore(secs_p))).
-indeterminato(docente(5589, settore(l_art))).
-indeterminato(docente(42667, settore(med))).
-indeterminato(docente(7234, settore(bio))).
-indeterminato(docente(4624, settore(chim))).
-indeterminato(docente(5770, settore(secs_p))).
-indeterminato(docente(4575, settore(chim))).
-indeterminato(docente(206019, settore(m_psi))).
-indeterminato(docente(205064, settore(agr))).
-ricercatore(docente(41944, settore(med))).
-indeterminato(docente(10710, settore(bio))).
-indeterminato(docente(18934, settore(ius))).
-indeterminato(docente(4751, settore(icar))).
-indeterminato(docente(5547, settore(med))).
-indeterminato(docente(6747, settore(l_ant))).
-ricercatore(docente(19365, settore(ing_ind))).
-ricercatore(docente(11496, settore(icar))).
-ricercatore(docente(16113, settore(ing_inf))).
-indeterminato(docente(4348, settore(ing_inf))).
-indeterminato(docente(21847, settore(icar))).
-indeterminato(docente(7158, settore(l_art))).
-indeterminato(docente(4720, settore(chim))).
-indeterminato(docente(3702, settore(chim))).
-indeterminato(docente(4433, settore(ing_ind))).
-indeterminato(docente(4875, settore(fis))).
-indeterminato(docente(20068, settore(ius))).
-indeterminato(docente(32121, settore(sps))).
-indeterminato(docente(206911, settore(sps))).
-indeterminato(docente(9930, settore(chim))).
-indeterminato(docente(206027, settore(l_fil_let))).
-indeterminato(docente(13727, settore(mat))).
-ricercatore(docente(10712, settore(ing_ind))).
-ricercatore(docente(47362, settore(secs_p))).
-indeterminato(docente(4800, settore(chim))).
-indeterminato(docente(7165, settore(chim))).
-indeterminato(docente(253674, settore(med))).
-indeterminato(docente(3704, settore(vet))).
-indeterminato(docente(6496, settore(med))).
-ricercatore(docente(11367, settore(bio))).
-ricercatore(docente(5426, settore(mat))).
-indeterminato(docente(100652, settore(geo))).
-ricercatore(docente(35758, settore(l_lin))).
-ricercatore(docente(10709, settore(l_fil_let))).
-indeterminato(docente(22263, settore(chim))).
-indeterminato(docente(4270, settore(med))).
-indeterminato(docente(4579, settore(secs_s))).
-indeterminato(docente(4351, settore(icar))).
-indeterminato(docente(11337, settore(ing_ind))).
-indeterminato(docente(5704, settore(geo))).
-ricercatore(docente(41942, settore(sps))).
-indeterminato(docente(13968, settore(agr))).
-ricercatore(docente(6912, settore(icar))).
-indeterminato(docente(6054, settore(agr))).
-ricercatore(docente(11047, settore(fis))).
-indeterminato(docente(4421, settore(ing_inf))).
-ricercatore(docente(12923, settore(med))).
-indeterminato(docente(5260, settore(ing_inf))).
-indeterminato(docente(6006, settore(m_psi))).
-indeterminato(docente(5214, settore(secs_p))).
-indeterminato(docente(7258, settore(med))).
-indeterminato(docente(21089, settore(agr))).
-indeterminato(docente(100560, settore(chim))).
-indeterminato(docente(5490, settore(ius))).
-indeterminato(docente(206856, settore(icar))).
-indeterminato(docente(5187, settore(ing_inf))).
-ricercatore(docente(207037, settore(med))).
-indeterminato(docente(6519, settore(ius))).
-indeterminato(docente(5725, settore(chim))).
-indeterminato(docente(207095, settore(ing_ind))).
-indeterminato(docente(34196, settore(m_edf))).
-indeterminato(docente(6570, settore(ing_inf))).
-ricercatore(docente(48562, settore(ius))).
-ricercatore(docente(6112, settore(vet))).
-indeterminato(docente(4474, settore(med))).
-indeterminato(docente(6505, settore(ius))).
-indeterminato(docente(5385, settore(secs_s))).
-ricercatore(docente(30736, settore(sps))).
-indeterminato(docente(3707, settore(vet))).
-indeterminato(docente(5728, settore(med))).
-indeterminato(docente(6285, settore(med))).
-indeterminato(docente(4855, settore(chim))).
-indeterminato(docente(4537, settore(m_psi))).
-ricercatore(docente(17274, settore(vet))).
-indeterminato(docente(33787, settore(icar))).
-indeterminato(docente(4611, settore(mat))).
-indeterminato(docente(6105, settore(med))).
-indeterminato(docente(6917, settore(chim))).
-indeterminato(docente(6067, settore(icar))).
-indeterminato(docente(5795, settore(med))).
-indeterminato(docente(4915, settore(ing_inf))).
-indeterminato(docente(4530, settore(med))).
-ricercatore(docente(4375, settore(med))).
-ricercatore(docente(6516, settore(med))).
-indeterminato(docente(4533, settore(secs_p))).
-indeterminato(docente(5163, settore(fis))).
-indeterminato(docente(42181, settore(secs_p))).
-indeterminato(docente(6120, settore(fis))).
-indeterminato(docente(11329, settore(vet))).
-indeterminato(docente(31596, settore(secs_p))).
-indeterminato(docente(5419, settore(ing_inf))).
-indeterminato(docente(43157, settore(med))).
-ricercatore(docente(11488, settore(fis))).
-ricercatore(docente(5637, settore(secs_p))).
-indeterminato(docente(6511, settore(chim))).
-indeterminato(docente(5711, settore(ius))).
-indeterminato(docente(26134, settore(fis))).
-indeterminato(docente(7034, settore(icar))).
-indeterminato(docente(6625, settore(inf))).
-indeterminato(docente(4326, settore(chim))).
-ricercatore(docente(4809, settore(secs_p))).
-indeterminato(docente(10549, settore(med))).
-indeterminato(docente(4274, settore(med))).
-indeterminato(docente(6994, settore(bio))).
-indeterminato(docente(23816, settore(l_lin))).
-ricercatore(docente(13368, settore(ing_inf))).
-ricercatore(docente(11057, settore(icar))).
-indeterminato(docente(5475, settore(med))).
-indeterminato(docente(6522, settore(med))).
-ricercatore(docente(13331, settore(l_lin))).
-indeterminato(docente(11516, settore(ius))).
-indeterminato(docente(4850, settore(ing_inf))).
-indeterminato(docente(102887, settore(med))).
-indeterminato(docente(5536, settore(fis))).
-indeterminato(docente(4493, settore(vet))).
-indeterminato(docente(3708, settore(fis))).
-indeterminato(docente(100195, settore(secs_p))).
-indeterminato(docente(103159, settore(med))).
-indeterminato(docente(6319, settore(med))).
-indeterminato(docente(6093, settore(med))).
-ricercatore(docente(39490, settore(med))).
-indeterminato(docente(6594, settore(chim))).
-ricercatore(docente(10714, settore(chim))).
-indeterminato(docente(6569, settore(ing_inf))).
-ricercatore(docente(38136, settore(med))).
-ricercatore(docente(37774, settore(l_lin))).
-indeterminato(docente(206553, settore(sps))).
-ricercatore(docente(5920, settore(fis))).
-indeterminato(docente(6582, settore(med))).
-ricercatore(docente(10321, settore(bio))).
-indeterminato(docente(9963, settore(vet))).
-ricercatore(docente(14454, settore(chim))).
-ricercatore(docente(44238, settore(bio))).
-indeterminato(docente(5517, settore(ius))).
-indeterminato(docente(6590, settore(med))).
-ricercatore(docente(44237, settore(secs_p))).
-indeterminato(docente(5470, settore(fis))).
-indeterminato(docente(5124, settore(bio))).
-ricercatore(docente(6118, settore(med))).
-indeterminato(docente(6399, settore(agr))).
-indeterminato(docente(4767, settore(vet))).
-indeterminato(docente(4953, settore(vet))).
-indeterminato(docente(5896, settore(chim))).
-indeterminato(docente(100739, settore(ius))).
-ricercatore(docente(20832, settore(ius))).
-ricercatore(docente(33934, settore(agr))).
-indeterminato(docente(28252, settore(med))).
-indeterminato(docente(6786, settore(m_fil))).
-ricercatore(docente(4510, settore(secs_p))).
-indeterminato(docente(100200, settore(l_art))).
-indeterminato(docente(206063, settore(bio))).
-ricercatore(docente(9893, settore(med))).
-indeterminato(docente(36062, settore(bio))).
-indeterminato(docente(43827, settore(l_or))).
-indeterminato(docente(100825, settore(secs_p))).
-ricercatore(docente(19595, settore(med))).
-indeterminato(docente(4484, settore(ing_ind))).
-ricercatore(docente(20360, settore(med))).
-indeterminato(docente(5494, settore(bio))).
-ricercatore(docente(8791, settore(secs_s))).
-ricercatore(docente(20095, settore(ing_ind))).
-indeterminato(docente(11336, settore(med))).
-indeterminato(docente(6623, settore(m_ped))).
-ricercatore(docente(6144, settore(geo))).
-ricercatore(docente(45057, settore(agr))).
-ricercatore(docente(14369, settore(icar))).
-ricercatore(docente(33505, settore(ing_inf))).
-indeterminato(docente(5646, settore(bio))).
-ricercatore(docente(6517, settore(bio))).
-indeterminato(docente(6099, settore(ing_inf))).
-ricercatore(docente(16608, settore(icar))).
-indeterminato(docente(207001, settore(bio))).
-indeterminato(docente(6128, settore(med))).
-indeterminato(docente(10293, settore(l_art))).
-indeterminato(docente(10588, settore(m_psi))).
-indeterminato(docente(6288, settore(secs_p))).
-indeterminato(docente(4470, settore(med))).
-ricercatore(docente(25592, settore(ing_ind))).
-ricercatore(docente(33350, settore(agr))).
-indeterminato(docente(33507, settore(m_fil))).
-ricercatore(docente(35726, settore(icar))).
-indeterminato(docente(4224, settore(bio))).
-indeterminato(docente(205095, settore(ing_inf))).
-indeterminato(docente(5520, settore(bio))).
-ricercatore(docente(20765, settore(ing_inf))).
-ricercatore(docente(11484, settore(ing_ind))).
-indeterminato(docente(30300, settore(med))).
-ricercatore(docente(21030, settore(ius))).
-indeterminato(docente(7017, settore(secs_p))).
-indeterminato(docente(11154, settore(fis))).
-ricercatore(docente(19544, settore(fis))).
-ricercatore(docente(18476, settore(chim))).
-indeterminato(docente(10463, settore(m_psi))).
-indeterminato(docente(6793, settore(geo))).
-indeterminato(docente(4652, settore(bio))).
-indeterminato(docente(6768, settore(icar))).
-indeterminato(docente(17104, settore(med))).
-ricercatore(docente(19630, settore(med))).
-indeterminato(docente(29353, settore(sps))).
-indeterminato(docente(7015, settore(secs_p))).
-indeterminato(docente(18131, settore(med))).
-indeterminato(docente(5051, settore(chim))).
-indeterminato(docente(4801, settore(m_psi))).
-indeterminato(docente(205032, settore(bio))).
-indeterminato(docente(5349, settore(ius))).
-ricercatore(docente(38137, settore(ing_ind))).
-ricercatore(docente(44216, settore(secs_p))).
-ricercatore(docente(30448, settore(bio))).
-ricercatore(docente(10361, settore(icar))).
-indeterminato(docente(6049, settore(ing_ind))).
-indeterminato(docente(11296, settore(icar))).
-indeterminato(docente(5433, settore(secs_p))).
-indeterminato(docente(207009, settore(agr))).
-indeterminato(docente(5849, settore(ius))).
-ricercatore(docente(11355, settore(fis))).
-indeterminato(docente(4455, settore(ing_ind))).
-ricercatore(docente(11289, settore(ius))).
-indeterminato(docente(6515, settore(agr))).
-indeterminato(docente(4280, settore(vet))).
-indeterminato(docente(100613, settore(m_ggr))).
-indeterminato(docente(15339, settore(vet))).
-indeterminato(docente(5569, settore(m_sto))).
-indeterminato(docente(10290, settore(m_sto))).
-indeterminato(docente(205053, settore(bio))).
-ricercatore(docente(12507, settore(bio))).
-indeterminato(docente(26130, settore(sps))).
-indeterminato(docente(9966, settore(icar))).
-ricercatore(docente(19553, settore(med))).
-indeterminato(docente(7057, settore(l_lin))).
-indeterminato(docente(5463, settore(fis))).
-indeterminato(docente(10669, settore(ius))).
-ricercatore(docente(28143, settore(ing_ind))).
-indeterminato(docente(41937, settore(vet))).
-indeterminato(docente(3651, settore(icar))).
-ricercatore(docente(18697, settore(bio))).
-indeterminato(docente(5799, settore(chim))).
-ricercatore(docente(39715, settore(sps))).
-indeterminato(docente(4860, settore(med))).
-ricercatore(docente(7245, settore(bio))).
-indeterminato(docente(206026, settore(med))).
-indeterminato(docente(19890, settore(m_dea))).
-indeterminato(docente(5056, settore(icar))).
-indeterminato(docente(5794, settore(med))).
-indeterminato(docente(4451, settore(vet))).
-indeterminato(docente(6580, settore(m_edf))).
-indeterminato(docente(6435, settore(ius))).
-indeterminato(docente(5553, settore(chim))).
-indeterminato(docente(5561, settore(secs_p))).
-ricercatore(docente(17997, settore(secs_p))).
-indeterminato(docente(4604, settore(vet))).
-indeterminato(docente(5556, settore(bio))).
-ricercatore(docente(15906, settore(m_psi))).
-indeterminato(docente(11346, settore(ius))).
-indeterminato(docente(5441, settore(fis))).
-indeterminato(docente(4515, settore(bio))).
-indeterminato(docente(4912, settore(mat))).
-indeterminato(docente(4993, settore(secs_s))).
-indeterminato(docente(6801, settore(mat))).
-indeterminato(docente(4831, settore(ing_inf))).
-indeterminato(docente(4322, settore(bio))).
-indeterminato(docente(5114, settore(agr))).
-ricercatore(docente(43598, settore(ing_inf))).
-ricercatore(docente(25837, settore(agr))).
-ricercatore(docente(36990, settore(ing_inf))).
-indeterminato(docente(6715, settore(m_fil))).
-indeterminato(docente(6746, settore(l_fil_let))).
-indeterminato(docente(5610, settore(geo))).
-indeterminato(docente(42199, settore(geo))).
-indeterminato(docente(6432, settore(vet))).
-indeterminato(docente(11003, settore(secs_p))).
-ricercatore(docente(6069, settore(chim))).
-indeterminato(docente(11347, settore(m_fil))).
-ricercatore(docente(10329, settore(l_ant))).
-ricercatore(docente(13027, settore(inf))).
-ricercatore(docente(6716, settore(agr))).
-ricercatore(docente(17172, settore(bio))).
-indeterminato(docente(5406, settore(vet))).
-ricercatore(docente(207008, settore(med))).
-ricercatore(docente(4288, settore(med))).
-indeterminato(docente(13637, settore(secs_p))).
-ricercatore(docente(17240, settore(chim))).
-ricercatore(docente(13659, settore(bio))).
-indeterminato(docente(32477, settore(chim))).
-indeterminato(docente(5479, settore(secs_p))).
-ricercatore(docente(24121, settore(ing_inf))).
-indeterminato(docente(5986, settore(secs_p))).
-indeterminato(docente(10073, settore(med))).
-indeterminato(docente(6644, settore(secs_s))).
-ricercatore(docente(13436, settore(ing_inf))).
-ricercatore(docente(48861, settore(bio))).
-indeterminato(docente(6274, settore(agr))).
-ricercatore(docente(25852, settore(med))).
-ricercatore(docente(22301, settore(fis))).
-indeterminato(docente(5462, settore(bio))).
-indeterminato(docente(26126, settore(geo))).
-ricercatore(docente(39460, settore(fis))).
-ricercatore(docente(11384, settore(agr))).
-indeterminato(docente(38375, settore(med))).
-indeterminato(docente(6385, settore(mat))).
-ricercatore(docente(39370, settore(secs_p))).
-indeterminato(docente(206099, settore(ing_inf))).
-ricercatore(docente(17253, settore(chim))).
-ricercatore(docente(22348, settore(ing_inf))).
-ricercatore(docente(100165, settore(l_lin))).
-indeterminato(docente(5254, settore(icar))).
-indeterminato(docente(5599, settore(mat))).
-indeterminato(docente(10283, settore(ing_ind))).
-indeterminato(docente(6121, settore(fis))).
-indeterminato(docente(4837, settore(secs_p))).
-ricercatore(docente(11368, settore(bio))).
-ricercatore(docente(4528, settore(bio))).
-indeterminato(docente(6942, settore(med))).
-indeterminato(docente(5571, settore(bio))).
-indeterminato(docente(4257, settore(bio))).
-ricercatore(docente(20096, settore(ing_ind))).
-ricercatore(docente(19924, settore(fis))).
-ricercatore(docente(25587, settore(agr))).
-ricercatore(docente(44211, settore(sps))).
-ricercatore(docente(11750, settore(m_ped))).
-indeterminato(docente(4614, settore(bio))).
-indeterminato(docente(7224, settore(chim))).
-indeterminato(docente(156582, settore(med))).
-indeterminato(docente(6022, settore(secs_p))).
-indeterminato(docente(5052, settore(chim))).
-indeterminato(docente(6624, settore(med))).
-indeterminato(docente(8460, settore(med))).
-ricercatore(docente(6122, settore(med))).
-ricercatore(docente(11466, settore(fis))).
-indeterminato(docente(6629, settore(secs_p))).
-indeterminato(docente(5482, settore(l_fil_let))).
-ricercatore(docente(25053, settore(ius))).
-indeterminato(docente(6071, settore(agr))).
-ricercatore(docente(5125, settore(agr))).
-ricercatore(docente(14316, settore(l_art))).
-indeterminato(docente(40348, settore(med))).
-indeterminato(docente(6056, settore(icar))).
-ricercatore(docente(13967, settore(bio))).
-indeterminato(docente(5496, settore(agr))).
-indeterminato(docente(5205, settore(m_psi))).
-indeterminato(docente(205050, settore(ing_ind))).
-indeterminato(docente(7576, settore(med))).
-indeterminato(docente(5789, settore(med))).
-indeterminato(docente(5557, settore(secs_s))).
-indeterminato(docente(8831, settore(chim))).
-indeterminato(docente(32834, settore(med))).
-indeterminato(docente(4739, settore(ius))).
-indeterminato(docente(6313, settore(geo))).
-ricercatore(docente(11885, settore(m_psi))).
-indeterminato(docente(6383, settore(icar))).
-ricercatore(docente(35874, settore(ing_inf))).
-indeterminato(docente(4349, settore(med))).
-indeterminato(docente(136411, settore(med))).
-ricercatore(docente(10736, settore(fis))).
-indeterminato(docente(6023, settore(secs_p))).
-indeterminato(docente(5546, settore(chim))).
-indeterminato(docente(6685, settore(icar))).
-indeterminato(docente(6204, settore(bio))).
-indeterminato(docente(18084, settore(vet))).
-ricercatore(docente(19742, settore(agr))).
-indeterminato(docente(4033, settore(vet))).
-indeterminato(docente(17498, settore(l_art))).
-indeterminato(docente(6745, settore(l_fil_let))).
-indeterminato(docente(5713, settore(l_lin))).
-indeterminato(docente(5360, settore(vet))).
-indeterminato(docente(4732, settore(agr))).
-indeterminato(docente(5894, settore(chim))).
-ricercatore(docente(206832, settore(med))).
-indeterminato(docente(7355, settore(bio))).
-indeterminato(docente(5540, settore(chim))).
-indeterminato(docente(6145, settore(ing_inf))).
-indeterminato(docente(7278, settore(chim))).
-ricercatore(docente(28879, settore(ing_inf))).
-indeterminato(docente(10739, settore(secs_p))).
-indeterminato(docente(8869, settore(ius))).
-ricercatore(docente(20426, settore(chim))).
-ricercatore(docente(28366, settore(fis))).
-ricercatore(docente(13725, settore(secs_p))).
-indeterminato(docente(5104, settore(mat))).
-indeterminato(docente(9775, settore(med))).
-ricercatore(docente(5136, settore(geo))).
-ricercatore(docente(6177, settore(icar))).
-indeterminato(docente(11294, settore(med))).
-indeterminato(docente(6057, settore(secs_p))).
-indeterminato(docente(6101, settore(vet))).
-indeterminato(docente(207021, settore(agr))).
-indeterminato(docente(4610, settore(ing_inf))).
-indeterminato(docente(5504, settore(bio))).
-ricercatore(docente(15098, settore(med))).
-ricercatore(docente(5895, settore(med))).
-indeterminato(docente(5887, settore(med))).
-indeterminato(docente(6350, settore(m_fil))).
-indeterminato(docente(6980, settore(chim))).
-indeterminato(docente(6502, settore(l_lin))).
-indeterminato(docente(204036, settore(icar))).
-indeterminato(docente(5586, settore(ius))).
-indeterminato(docente(4562, settore(icar))).
-ricercatore(docente(22304, settore(icar))).
-indeterminato(docente(20656, settore(ing_ind))).
-ricercatore(docente(10914, settore(med))).
-indeterminato(docente(8822, settore(l_art))).
-indeterminato(docente(14914, settore(bio))).
-indeterminato(docente(4356, settore(secs_s))).
-indeterminato(docente(5036, settore(mat))).
-indeterminato(docente(9455, settore(med))).
-indeterminato(docente(5891, settore(bio))).
-ricercatore(docente(39477, settore(m_psi))).
-indeterminato(docente(5327, settore(secs_s))).
-indeterminato(docente(6429, settore(m_psi))).
-ricercatore(docente(6761, settore(m_psi))).
-ricercatore(docente(4066, settore(geo))).
-ricercatore(docente(12141, settore(ing_inf))).
-indeterminato(docente(6307, settore(ius))).
-indeterminato(docente(5792, settore(ing_ind))).
-ricercatore(docente(22073, settore(med))).
-indeterminato(docente(4698, settore(geo))).
-indeterminato(docente(253676, settore(bio))).
-indeterminato(docente(4559, settore(icar))).
-indeterminato(docente(4620, settore(chim))).
-indeterminato(docente(4878, settore(agr))).
-indeterminato(docente(6584, settore(med))).
-indeterminato(docente(5804, settore(mat))).
-indeterminato(docente(5552, settore(ing_inf))).
-ricercatore(docente(100531, settore(secs_s))).
-indeterminato(docente(4174, settore(bio))).
-ricercatore(docente(11020, settore(bio))).
-indeterminato(docente(6434, settore(l_ant))).
-ricercatore(docente(8733, settore(mat))).
-ricercatore(docente(5415, settore(vet))).
-indeterminato(docente(10285, settore(mat))).
-indeterminato(docente(11332, settore(ing_ind))).
-ricercatore(docente(33096, settore(bio))).
-indeterminato(docente(6969, settore(ing_ind))).
-ricercatore(docente(33649, settore(bio))).
-indeterminato(docente(41823, settore(sps))).
-indeterminato(docente(6123, settore(secs_p))).
-indeterminato(docente(5567, settore(chim))).
-indeterminato(docente(49026, settore(bio))).
-ricercatore(docente(5389, settore(secs_p))).
-indeterminato(docente(5672, settore(med))).
-indeterminato(docente(5319, settore(mat))).
-ricercatore(docente(36662, settore(inf))).
-indeterminato(docente(5377, settore(chim))).
-ricercatore(docente(31084, settore(l_lin))).
-ricercatore(docente(10813, settore(m_psi))).
-ricercatore(docente(15939, settore(ing_ind))).
-indeterminato(docente(30478, settore(icar))).
-indeterminato(docente(10684, settore(bio))).
-indeterminato(docente(5614, settore(ius))).
-indeterminato(docente(42179, settore(geo))).
-ricercatore(docente(42217, settore(ing_ind))).
-indeterminato(docente(31627, settore(med))).
-indeterminato(docente(5643, settore(med))).
-indeterminato(docente(5709, settore(mat))).
-indeterminato(docente(204023, settore(l_fil_let))).
-indeterminato(docente(5410, settore(bio))).
-indeterminato(docente(164352, settore(med))).
-ricercatore(docente(39488, settore(bio))).
-indeterminato(docente(6538, settore(secs_p))).
-indeterminato(docente(5699, settore(secs_s))).
-ricercatore(docente(17206, settore(fis))).
-indeterminato(docente(8854, settore(fis))).
-indeterminato(docente(4853, settore(vet))).
-indeterminato(docente(206035, settore(icar))).
-indeterminato(docente(10745, settore(agr))).
-indeterminato(docente(206820, settore(chim))).
-indeterminato(docente(30937, settore(ius))).
-indeterminato(docente(19876, settore(l_ant))).
-ricercatore(docente(27469, settore(med))).
-indeterminato(docente(4473, settore(chim))).
-indeterminato(docente(5024, settore(bio))).
-indeterminato(docente(10666, settore(mat))).
-indeterminato(docente(6576, settore(ius))).
-indeterminato(docente(205057, settore(m_psi))).
-ricercatore(docente(4499, settore(mat))).
-indeterminato(docente(10279, settore(ius))).
-indeterminato(docente(253680, settore(bio))).
-ricercatore(docente(25630, settore(bio))).
-indeterminato(docente(5237, settore(m_ggr))).
-ricercatore(docente(39467, settore(agr))).
-indeterminato(docente(4336, settore(fis))).
-indeterminato(docente(4891, settore(med))).
-indeterminato(docente(4612, settore(med))).
-indeterminato(docente(5869, settore(med))).
-ricercatore(docente(4625, settore(mat))).
-indeterminato(docente(5539, settore(vet))).
-indeterminato(docente(5542, settore(med))).
-ricercatore(docente(11364, settore(bio))).
-indeterminato(docente(6653, settore(fis))).
-indeterminato(docente(6427, settore(ius))).
-indeterminato(docente(4057, settore(fis))).
-ricercatore(docente(11103, settore(chim))).
-indeterminato(docente(5382, settore(chim))).
-indeterminato(docente(5809, settore(ius))).
-indeterminato(docente(5387, settore(secs_p))).
-indeterminato(docente(10639, settore(sps))).
-ricercatore(docente(6200, settore(m_psi))).
-indeterminato(docente(4495, settore(chim))).
-indeterminato(docente(46380, settore(med))).
-indeterminato(docente(5281, settore(bio))).
-indeterminato(docente(16566, settore(med))).
-indeterminato(docente(5860, settore(bio))).
-indeterminato(docente(7358, settore(med))).
-indeterminato(docente(6152, settore(l_lin))).
-indeterminato(docente(5341, settore(bio))).
-indeterminato(docente(27018, settore(med))).
-indeterminato(docente(6539, settore(geo))).
-indeterminato(docente(6619, settore(bio))).
-indeterminato(docente(9953, settore(chim))).
-indeterminato(docente(4588, settore(l_lin))).
-ricercatore(docente(4148, settore(l_lin))).
-ricercatore(docente(34175, settore(ius))).
-indeterminato(docente(206824, settore(bio))).
-indeterminato(docente(11348, settore(geo))).
-indeterminato(docente(4869, settore(ing_ind))).
-indeterminato(docente(3896, settore(med))).
-indeterminato(docente(206868, settore(l_fil_let))).
-indeterminato(docente(4543, settore(ing_inf))).
-indeterminato(docente(7287, settore(ing_inf))).
-ricercatore(docente(39464, settore(chim))).
-indeterminato(docente(10641, settore(chim))).
-indeterminato(docente(100649, settore(fis))).
-indeterminato(docente(205817, settore(chim))).
-indeterminato(docente(4300, settore(ius))).
-indeterminato(docente(5481, settore(m_psi))).
-indeterminato(docente(17562, settore(m_ped))).
-indeterminato(docente(5054, settore(ing_ind))).
-ricercatore(docente(17262, settore(geo))).
-indeterminato(docente(4299, settore(med))).
-indeterminato(docente(5627, settore(secs_p))).
-indeterminato(docente(4617, settore(ing_inf))).
-indeterminato(docente(6521, settore(med))).
-indeterminato(docente(6282, settore(secs_p))).
-indeterminato(docente(3717, settore(bio))).
-indeterminato(docente(207088, settore(ing_inf))).
-indeterminato(docente(6583, settore(med))).
-indeterminato(docente(6086, settore(fis))).
-indeterminato(docente(26137, settore(bio))).
-indeterminato(docente(205023, settore(bio))).
-ricercatore(docente(18164, settore(bio))).
-ricercatore(docente(4859, settore(bio))).
-ricercatore(docente(10455, settore(chim))).
-indeterminato(docente(6641, settore(icar))).
-indeterminato(docente(17401, settore(ing_inf))).
-ricercatore(docente(21802, settore(m_edf))).
-indeterminato(docente(5879, settore(m_psi))).
-indeterminato(docente(5144, settore(ius))).
-ricercatore(docente(23798, settore(chim))).
-ricercatore(docente(31178, settore(med))).
-indeterminato(docente(5535, settore(vet))).
-indeterminato(docente(3718, settore(vet))).
-indeterminato(docente(5619, settore(icar))).
-indeterminato(docente(10619, settore(bio))).
-indeterminato(docente(10672, settore(chim))).
-indeterminato(docente(5424, settore(vet))).
-ricercatore(docente(33646, settore(l_lin))).
-indeterminato(docente(4444, settore(ing_inf))).
-indeterminato(docente(5007, settore(ing_ind))).
-indeterminato(docente(8811, settore(bio))).
-indeterminato(docente(4411, settore(bio))).
-ricercatore(docente(19640, settore(med))).
-indeterminato(docente(6058, settore(secs_p))).
-indeterminato(docente(8011, settore(med))).
-indeterminato(docente(4932, settore(secs_s))).
-ricercatore(docente(14441, settore(chim))).
-indeterminato(docente(4311, settore(bio))).
-ricercatore(docente(17254, settore(agr))).
-indeterminato(docente(4370, settore(fis))).
-indeterminato(docente(6129, settore(med))).
-indeterminato(docente(6577, settore(agr))).
-indeterminato(docente(5674, settore(chim))).
-ricercatore(docente(37046, settore(m_fil))).
-indeterminato(docente(207081, settore(agr))).
-indeterminato(docente(5890, settore(l_fil_let))).
-indeterminato(docente(5522, settore(ing_ind))).
-ricercatore(docente(6392, settore(chim))).
-indeterminato(docente(5352, settore(chim))).
-indeterminato(docente(5288, settore(bio))).
-indeterminato(docente(5055, settore(ing_ind))).
-indeterminato(docente(7577, settore(bio))).
-indeterminato(docente(3905, settore(chim))).
-ricercatore(docente(11088, settore(agr))).
-indeterminato(docente(6119, settore(chim))).
-indeterminato(docente(6247, settore(m_psi))).
-indeterminato(docente(10022, settore(ing_ind))).
-indeterminato(docente(8888, settore(icar))).
-indeterminato(docente(207044, settore(icar))).
-indeterminato(docente(6142, settore(secs_p))).
-indeterminato(docente(8719, settore(fis))).
-ricercatore(docente(5487, settore(med))).
-ricercatore(docente(38886, settore(secs_p))).
-ricercatore(docente(32925, settore(ius))).
-ricercatore(docente(11379, settore(med))).
-indeterminato(docente(5078, settore(bio))).
-indeterminato(docente(25057, settore(icar))).
-indeterminato(docente(5554, settore(chim))).
-indeterminato(docente(4615, settore(bio))).
-indeterminato(docente(205024, settore(l_fil_let))).
-indeterminato(docente(19896, settore(med))).
-indeterminato(docente(4420, settore(med))).
-ricercatore(docente(39528, settore(fis))).
-indeterminato(docente(5088, settore(icar))).
-indeterminato(docente(6536, settore(bio))).
-ricercatore(docente(5793, settore(med))).
-indeterminato(docente(7295, settore(bio))).
-indeterminato(docente(4324, settore(agr))).
-indeterminato(docente(5280, settore(l_lin))).
-ricercatore(docente(4605, settore(med))).
-indeterminato(docente(5231, settore(m_sto))).
-indeterminato(docente(5500, settore(vet))).
-ricercatore(docente(22309, settore(ing_ind))).
-indeterminato(docente(6556, settore(m_ped))).
-indeterminato(docente(3729, settore(geo))).
-indeterminato(docente(4829, settore(secs_s))).
-indeterminato(docente(5211, settore(chim))).
-indeterminato(docente(4464, settore(chim))).
-indeterminato(docente(6762, settore(fis))).
-indeterminato(docente(8887, settore(mat))).
-ricercatore(docente(39372, settore(sps))).
-indeterminato(docente(6537, settore(chim))).
-indeterminato(docente(205035, settore(bio))).
-indeterminato(docente(6039, settore(ius))).
-ricercatore(docente(11013, settore(chim))).
-ricercatore(docente(40047, settore(m_ped))).
-indeterminato(docente(205065, settore(bio))).
-indeterminato(docente(6306, settore(secs_p))).
-ricercatore(docente(21794, settore(ing_ind))).
-indeterminato(docente(6913, settore(sps))).
-indeterminato(docente(45232, settore(med))).
-indeterminato(docente(5417, settore(chim))).
-ricercatore(docente(4607, settore(med))).
-ricercatore(docente(35727, settore(sps))).
-indeterminato(docente(6228, settore(ing_inf))).
-indeterminato(docente(5273, settore(bio))).
-ricercatore(docente(35352, settore(icar))).
-indeterminato(docente(6749, settore(med))).
-indeterminato(docente(4035, settore(chim))).
-indeterminato(docente(9912, settore(med))).
-indeterminato(docente(6107, settore(ing_ind))).
-ricercatore(docente(11069, settore(bio))).
-ricercatore(docente(11498, settore(icar))).
-indeterminato(docente(6983, settore(chim))).
-indeterminato(docente(11071, settore(secs_p))).
-indeterminato(docente(12922, settore(agr))).
-ricercatore(docente(10344, settore(ing_ind))).
-ricercatore(docente(14533, settore(ing_ind))).
-indeterminato(docente(4373, settore(fis))).
-indeterminato(docente(6581, settore(chim))).
-indeterminato(docente(6104, settore(ing_inf))).
-indeterminato(docente(4848, settore(icar))).
-ricercatore(docente(35825, settore(fis))).
-ricercatore(docente(35356, settore(l_lin))).
-indeterminato(docente(11624, settore(m_fil))).
-indeterminato(docente(15541, settore(med))).
-ricercatore(docente(26035, settore(ing_ind))).
-ricercatore(docente(26644, settore(agr))).
-indeterminato(docente(10307, settore(geo))).
-ricercatore(docente(9980, settore(med))).
-indeterminato(docente(5501, settore(med))).
-indeterminato(docente(5537, settore(agr))).
-indeterminato(docente(156573, settore(med))).
-indeterminato(docente(5116, settore(vet))).
-ricercatore(docente(7279, settore(med))).
-indeterminato(docente(4253, settore(secs_p))).
-indeterminato(docente(33726, settore(icar))).
-indeterminato(docente(5897, settore(icar))).
-ricercatore(docente(15988, settore(mat))).
-indeterminato(docente(5664, settore(icar))).
-ricercatore(docente(19109, settore(ing_ind))).
-indeterminato(docente(6528, settore(chim))).
-indeterminato(docente(40505, settore(med))).
-indeterminato(docente(6100, settore(chim))).
-indeterminato(docente(6303, settore(chim))).
-indeterminato(docente(5364, settore(sps))).
-indeterminato(docente(6347, settore(m_fil))).
-indeterminato(docente(206793, settore(secs_p))).
-indeterminato(docente(44307, settore(ius))).
-indeterminato(docente(5730, settore(geo))).
-indeterminato(docente(10091, settore(med))).
-ricercatore(docente(11376, settore(med))).
-indeterminato(docente(6085, settore(ing_inf))).
-indeterminato(docente(5252, settore(mat))).
-indeterminato(docente(156616, settore(med))).
-ricercatore(docente(4297, settore(bio))).
-indeterminato(docente(6600, settore(med))).
-indeterminato(docente(6406, settore(ius))).
-indeterminato(docente(33346, settore(m_fil))).
-ricercatore(docente(205079, settore(ing_ind))).
-indeterminato(docente(3730, settore(geo))).
-indeterminato(docente(6491, settore(m_sto))).
-indeterminato(docente(6386, settore(ius))).
-indeterminato(docente(5545, settore(geo))).
-indeterminato(docente(5670, settore(geo))).
-indeterminato(docente(10360, settore(bio))).
-ricercatore(docente(10960, settore(ing_inf))).
-indeterminato(docente(6096, settore(bio))).
-indeterminato(docente(5886, settore(chim))).
-indeterminato(docente(7035, settore(icar))).
-indeterminato(docente(5515, settore(secs_p))).
-indeterminato(docente(4536, settore(med))).
-indeterminato(docente(11339, settore(l_lin))).
-indeterminato(docente(7031, settore(ius))).
-indeterminato(docente(6765, settore(icar))).
-indeterminato(docente(6124, settore(l_lin))).
-ricercatore(docente(25654, settore(icar))).
-indeterminato(docente(4335, settore(bio))).
-ricercatore(docente(35353, settore(bio))).
-ricercatore(docente(5220, settore(ing_inf))).
-indeterminato(docente(6500, settore(icar))).
-indeterminato(docente(13673, settore(l_fil_let))).
-indeterminato(docente(7138, settore(l_fil_let))).
-ricercatore(docente(22324, settore(vet))).
-indeterminato(docente(5474, settore(ius))).
-indeterminato(docente(6125, settore(ing_inf))).
-indeterminato(docente(11642, settore(agr))).
-indeterminato(docente(5867, settore(ius))).
-indeterminato(docente(9709, settore(m_psi))).
-indeterminato(docente(6605, settore(bio))).
-indeterminato(docente(18676, settore(l_art))).
-indeterminato(docente(8862, settore(secs_p))).
-indeterminato(docente(5778, settore(icar))).
-indeterminato(docente(5892, settore(med))).
-indeterminato(docente(5551, settore(med))).
-indeterminato(docente(31517, settore(ius))).
-ricercatore(docente(39489, settore(bio))).
-indeterminato(docente(7055, settore(ing_ind))).
-ricercatore(docente(43287, settore(l_art))).
-indeterminato(docente(20105, settore(l_ant))).
-indeterminato(docente(5476, settore(med))).
-indeterminato(docente(30782, settore(med))).
-indeterminato(docente(5486, settore(bio))).
-ricercatore(docente(11122, settore(vet))).
-indeterminato(docente(17862, settore(ius))).
-ricercatore(docente(8844, settore(ing_ind))).
-ricercatore(docente(6555, settore(l_fil_let))).
-indeterminato(docente(206029, settore(ing_ind))).
-ricercatore(docente(14399, settore(chim))).
-indeterminato(docente(38817, settore(m_sto))).
-indeterminato(docente(206854, settore(vet))).
-indeterminato(docente(11350, settore(fis))).
-ricercatore(docente(31051, settore(agr))).
-indeterminato(docente(4609, settore(mat))).
-indeterminato(docente(5602, settore(inf))).
-indeterminato(docente(10680, settore(ing_ind))).
-indeterminato(docente(5523, settore(vet))).
-indeterminato(docente(5253, settore(chim))).
-indeterminato(docente(4565, settore(secs_p))).
-ricercatore(docente(5405, settore(bio))).
-ricercatore(docente(21173, settore(icar))).
-indeterminato(docente(4701, settore(ing_inf))).
-indeterminato(docente(207045, settore(icar))).
-indeterminato(docente(203910, settore(bio))).
-indeterminato(docente(5996, settore(icar))).
-indeterminato(docente(15248, settore(mat))).
-indeterminato(docente(5832, settore(icar))).
-indeterminato(docente(10772, settore(secs_p))).
-indeterminato(docente(5591, settore(secs_p))).
-indeterminato(docente(207024, settore(bio))).
-ricercatore(docente(4303, settore(med))).
-indeterminato(docente(5715, settore(chim))).
+indeterminato(docente(25818)).
+contratto(docente(46902)).
+indeterminato(docente(34500)).
+contratto(docente(45333)).
+contratto(docente(44900)).
+indeterminato(docente(4642)).
+contratto(docente(39374)).
+contratto(docente(21986)).
+contratto(docente(3948)).
+contratto(docente(28096)).
+contratto(docente(16176)).
+contratto(docente(18241)).
+contratto(docente(41684)).
+contratto(docente(100501)).
+contratto(docente(20667)).
+contratto(docente(35185)).
+contratto(docente(11280)).
+indeterminato(docente(11483)).
+contratto(docente(5194)).
+contratto(docente(9895)).
+contratto(docente(11311)).
+contratto(docente(44292)).
+contratto(docente(15601)).
+contratto(docente(5673)).
+contratto(docente(19634)).
+contratto(docente(100222)).
+contratto(docente(47577)).
+contratto(docente(20856)).
+contratto(docente(15547)).
+contratto(docente(4457)).
+contratto(docente(21862)).
+contratto(docente(40152)).
+contratto(docente(21528)).
+contratto(docente(100223)).
+contratto(docente(40341)).
+contratto(docente(6451)).
+contratto(docente(10788)).
+contratto(docente(19040)).
+contratto(docente(3899)).
+contratto(docente(36480)).
+contratto(docente(36420)).
+contratto(docente(1085)).
+contratto(docente(16512)).
+indeterminato(docente(33517)).
+contratto(docente(8949)).
+contratto(docente(26502)).
+contratto(docente(36442)).
+contratto(docente(48529)).
+contratto(docente(33756)).
+contratto(docente(36346)).
+indeterminato(docente(14669)).
+contratto(docente(17902)).
+contratto(docente(8960)).
+contratto(docente(5356)).
+contratto(docente(100225)).
+contratto(docente(36439)).
+contratto(docente(18307)).
+contratto(docente(20374)).
+contratto(docente(5062)).
+contratto(docente(6214)).
+contratto(docente(39887)).
+indeterminato(docente(5046)).
+contratto(docente(40340)).
+contratto(docente(12390)).
+contratto(docente(100801)).
+contratto(docente(8984)).
+contratto(docente(41442)).
+indeterminato(docente(8885)).
+contratto(docente(13412)).
+indeterminato(docente(7136)).
+contratto(docente(33370)).
+contratto(docente(44929)).
+indeterminato(docente(6563)).
+contratto(docente(3731)).
+contratto(docente(10700)).
+contratto(docente(11517)).
+contratto(docente(18200)).
+contratto(docente(4658)).
+contratto(docente(11279)).
+contratto(docente(37946)).
+contratto(docente(40855)).
+contratto(docente(39306)).
+contratto(docente(47878)).
+contratto(docente(44391)).
+contratto(docente(41811)).
+contratto(docente(4715)).
+contratto(docente(13386)).
+indeterminato(docente(11083)).
+contratto(docente(28122)).
+contratto(docente(25842)).
+contratto(docente(5924)).
+contratto(docente(4973)).
+contratto(docente(47766)).
+contratto(docente(7240)).
+contratto(docente(37828)).
+contratto(docente(42360)).
+contratto(docente(25625)).
+contratto(docente(30503)).
+contratto(docente(9049)).
+contratto(docente(40797)).
+contratto(docente(41688)).
+contratto(docente(100479)).
+contratto(docente(9051)).
+contratto(docente(36469)).
+contratto(docente(41954)).
+contratto(docente(100286)).
+contratto(docente(7222)).
+contratto(docente(29948)).
+contratto(docente(14117)).
+contratto(docente(42916)).
+contratto(docente(100238)).
+contratto(docente(24005)).
+contratto(docente(41813)).
+contratto(docente(41635)).
+contratto(docente(44413)).
+contratto(docente(19635)).
+contratto(docente(164415)).
+contratto(docente(42918)).
+indeterminato(docente(206887)).
+contratto(docente(205052)).
+indeterminato(docente(10282)).
+contratto(docente(35833)).
+contratto(docente(38598)).
+contratto(docente(20872)).
+contratto(docente(49772)).
+contratto(docente(14829)).
+contratto(docente(206823)).
+contratto(docente(100767)).
+contratto(docente(46009)).
+contratto(docente(36515)).
+contratto(docente(100576)).
+contratto(docente(7208)).
+contratto(docente(28030)).
+contratto(docente(207077)).
+contratto(docente(41737)).
+contratto(docente(26527)).
+contratto(docente(5350)).
+contratto(docente(36296)).
+contratto(docente(37903)).
+contratto(docente(6558)).
+contratto(docente(42122)).
+contratto(docente(999976)).
+contratto(docente(44286)).
+contratto(docente(36514)).
+contratto(docente(36302)).
+contratto(docente(28101)).
+contratto(docente(18296)).
+contratto(docente(10441)).
+contratto(docente(7480)).
+contratto(docente(10008)).
+contratto(docente(30685)).
+contratto(docente(30400)).
+contratto(docente(500108)).
+contratto(docente(21487)).
+contratto(docente(100787)).
+contratto(docente(40354)).
+indeterminato(docente(6514)).
+contratto(docente(36472)).
+contratto(docente(30734)).
+contratto(docente(14362)).
+contratto(docente(16181)).
+contratto(docente(46211)).
+contratto(docente(4719)).
+contratto(docente(16562)).
+contratto(docente(100415)).
+contratto(docente(44471)).
+contratto(docente(48694)).
+contratto(docente(36545)).
+contratto(docente(16729)).
+contratto(docente(30417)).
+contratto(docente(41812)).
+contratto(docente(7293)).
+contratto(docente(18623)).
+contratto(docente(29312)).
+contratto(docente(45771)).
+contratto(docente(39034)).
+contratto(docente(11202)).
+contratto(docente(26144)).
+contratto(docente(34132)).
+contratto(docente(35155)).
+contratto(docente(12027)).
+contratto(docente(100796)).
+contratto(docente(6687)).
+contratto(docente(1326)).
+indeterminato(docente(6382)).
+contratto(docente(30624)).
+contratto(docente(47767)).
+contratto(docente(30062)).
+contratto(docente(45334)).
+indeterminato(docente(25283)).
+contratto(docente(37910)).
+contratto(docente(100671)).
+contratto(docente(29433)).
+indeterminato(docente(34499)).
+contratto(docente(46776)).
+contratto(docente(12057)).
+contratto(docente(40847)).
+contratto(docente(45847)).
+contratto(docente(24008)).
+contratto(docente(36765)).
+contratto(docente(10791)).
+contratto(docente(23789)).
+contratto(docente(6446)).
+contratto(docente(3811)).
+contratto(docente(29803)).
+contratto(docente(36475)).
+contratto(docente(27888)).
+contratto(docente(34130)).
+contratto(docente(100249)).
+contratto(docente(15441)).
+contratto(docente(6457)).
+contratto(docente(36481)).
+contratto(docente(46191)).
+contratto(docente(41689)).
+contratto(docente(5001)).
+contratto(docente(44926)).
+contratto(docente(181398)).
+ricercatore(docente(19220)).
+contratto(docente(23179)).
+indeterminato(docente(164526)).
+contratto(docente(20382)).
+contratto(docente(13638)).
+contratto(docente(35930)).
+contratto(docente(31490)).
+contratto(docente(36563)).
+contratto(docente(36443)).
+contratto(docente(100620)).
+contratto(docente(3611)).
+contratto(docente(41298)).
+contratto(docente(47520)).
+contratto(docente(100736)).
+contratto(docente(100596)).
+contratto(docente(1365)).
+contratto(docente(26146)).
+contratto(docente(43819)).
+contratto(docente(39624)).
+contratto(docente(11689)).
+contratto(docente(7437)).
+contratto(docente(40342)).
+contratto(docente(32309)).
+contratto(docente(16042)).
+contratto(docente(22006)).
+contratto(docente(3813)).
+contratto(docente(18956)).
+contratto(docente(6810)).
+contratto(docente(36565)).
+contratto(docente(37787)).
+contratto(docente(9220)).
+contratto(docente(3175)).
+contratto(docente(22377)).
+contratto(docente(36433)).
+indeterminato(docente(5031)).
+contratto(docente(11319)).
+contratto(docente(100252)).
+contratto(docente(18767)).
+contratto(docente(11127)).
+contratto(docente(40792)).
+contratto(docente(26483)).
+contratto(docente(39993)).
+contratto(docente(100768)).
+contratto(docente(206828)).
+contratto(docente(36609)).
+contratto(docente(5828)).
+contratto(docente(39890)).
+contratto(docente(8390)).
+contratto(docente(44117)).
+contratto(docente(21129)).
+contratto(docente(30339)).
+contratto(docente(5008)).
+contratto(docente(48119)).
+contratto(docente(46154)).
+contratto(docente(10808)).
+contratto(docente(18253)).
+contratto(docente(100710)).
+contratto(docente(100308)).
+contratto(docente(41357)).
+contratto(docente(42014)).
+contratto(docente(39883)).
+contratto(docente(46516)).
+contratto(docente(28754)).
+contratto(docente(40791)).
+contratto(docente(100765)).
+contratto(docente(103224)).
+contratto(docente(36804)).
+contratto(docente(17499)).
+contratto(docente(48303)).
+contratto(docente(11264)).
+contratto(docente(16509)).
+contratto(docente(35121)).
+contratto(docente(100256)).
+contratto(docente(100310)).
+contratto(docente(26424)).
+contratto(docente(40662)).
+indeterminato(docente(8858)).
+contratto(docente(39027)).
+contratto(docente(25291)).
+contratto(docente(37772)).
+contratto(docente(100410)).
+contratto(docente(100257)).
+contratto(docente(26302)).
+contratto(docente(100449)).
+contratto(docente(43632)).
+contratto(docente(4327)).
+contratto(docente(30358)).
+contratto(docente(31089)).
+contratto(docente(41995)).
+contratto(docente(25917)).
+contratto(docente(164325)).
+contratto(docente(25177)).
+contratto(docente(32566)).
+contratto(docente(44931)).
+contratto(docente(40521)).
+contratto(docente(14405)).
+contratto(docente(34195)).
+contratto(docente(45724)).
+contratto(docente(48185)).
+contratto(docente(100507)).
+contratto(docente(149513)).
+indeterminato(docente(26111)).
+contratto(docente(47910)).
+contratto(docente(48682)).
+contratto(docente(100627)).
+contratto(docente(11310)).
+indeterminato(docente(30289)).
+contratto(docente(40846)).
+contratto(docente(37950)).
+contratto(docente(28103)).
+contratto(docente(14713)).
+contratto(docente(37944)).
+contratto(docente(48186)).
+contratto(docente(11629)).
+contratto(docente(41740)).
+contratto(docente(25123)).
+indeterminato(docente(6593)).
+contratto(docente(41739)).
+contratto(docente(100311)).
+contratto(docente(20414)).
+contratto(docente(22761)).
+contratto(docente(20752)).
+contratto(docente(7157)).
+contratto(docente(36391)).
+contratto(docente(1535)).
+contratto(docente(33569)).
+indeterminato(docente(30801)).
+contratto(docente(6877)).
+contratto(docente(31614)).
+contratto(docente(7114)).
+contratto(docente(37978)).
+contratto(docente(28059)).
+contratto(docente(18693)).
+contratto(docente(16381)).
+contratto(docente(36541)).
+contratto(docente(41750)).
+contratto(docente(11251)).
+contratto(docente(37050)).
+contratto(docente(44463)).
+contratto(docente(36768)).
+contratto(docente(20022)).
+indeterminato(docente(10043)).
+contratto(docente(142679)).
+contratto(docente(28116)).
+contratto(docente(35522)).
+contratto(docente(41447)).
+contratto(docente(100555)).
+contratto(docente(40339)).
+contratto(docente(41501)).
+contratto(docente(37824)).
+contratto(docente(35524)).
+contratto(docente(13454)).
+contratto(docente(1582)).
+contratto(docente(11316)).
+contratto(docente(33666)).
+contratto(docente(37036)).
+contratto(docente(33255)).
+contratto(docente(44681)).
+contratto(docente(12583)).
+contratto(docente(38880)).
+contratto(docente(36763)).
+contratto(docente(44517)).
+contratto(docente(40837)).
+contratto(docente(28502)).
+contratto(docente(100690)).
+contratto(docente(6602)).
+contratto(docente(33239)).
+contratto(docente(6059)).
+indeterminato(docente(33665)).
+contratto(docente(11309)).
+contratto(docente(24159)).
+contratto(docente(30399)).
+contratto(docente(100386)).
+contratto(docente(206032)).
+contratto(docente(36471)).
+contratto(docente(36444)).
+contratto(docente(35688)).
+contratto(docente(5138)).
+contratto(docente(100733)).
+contratto(docente(30312)).
+contratto(docente(36441)).
+contratto(docente(9450)).
+contratto(docente(100267)).
+indeterminato(docente(7512)).
+contratto(docente(31558)).
+contratto(docente(44392)).
+contratto(docente(6714)).
+contratto(docente(32785)).
+contratto(docente(41979)).
+contratto(docente(42915)).
+contratto(docente(40493)).
+contratto(docente(44390)).
+contratto(docente(31508)).
+contratto(docente(19612)).
+contratto(docente(44901)).
+contratto(docente(47795)).
+contratto(docente(100411)).
+contratto(docente(11307)).
+contratto(docente(100436)).
+contratto(docente(136509)).
+contratto(docente(37922)).
+contratto(docente(10139)).
+contratto(docente(46152)).
+contratto(docente(42092)).
+contratto(docente(48531)).
+contratto(docente(35187)).
+contratto(docente(20567)).
+contratto(docente(21304)).
+indeterminato(docente(5706)).
+contratto(docente(36465)).
+indeterminato(docente(206625)).
+contratto(docente(6573)).
+contratto(docente(15925)).
+contratto(docente(26450)).
+contratto(docente(11253)).
+contratto(docente(42157)).
+contratto(docente(100359)).
+contratto(docente(10089)).
+contratto(docente(37820)).
+indeterminato(docente(9899)).
+contratto(docente(13506)).
+contratto(docente(30365)).
+contratto(docente(48348)).
+contratto(docente(11425)).
+contratto(docente(33240)).
+contratto(docente(44930)).
+contratto(docente(3606)).
+contratto(docente(4189)).
+contratto(docente(500640)).
+contratto(docente(206855)).
+contratto(docente(46863)).
+contratto(docente(31478)).
+contratto(docente(14289)).
+contratto(docente(18680)).
+contratto(docente(1701)).
+contratto(docente(46900)).
+contratto(docente(30715)).
+contratto(docente(9949)).
+contratto(docente(40849)).
+contratto(docente(48344)).
+contratto(docente(10602)).
+contratto(docente(20665)).
+contratto(docente(10186)).
+contratto(docente(4448)).
+contratto(docente(8882)).
+contratto(docente(103143)).
+contratto(docente(11320)).
+contratto(docente(33113)).
+contratto(docente(36522)).
+contratto(docente(30740)).
+contratto(docente(36477)).
+contratto(docente(100162)).
+contratto(docente(29839)).
+contratto(docente(48734)).
+contratto(docente(17528)).
+contratto(docente(41350)).
+contratto(docente(47874)).
+contratto(docente(11250)).
+contratto(docente(46198)).
+contratto(docente(15329)).
+contratto(docente(46114)).
+contratto(docente(45831)).
+contratto(docente(5787)).
+contratto(docente(41642)).
+contratto(docente(30474)).
+indeterminato(docente(253752)).
+contratto(docente(17964)).
+contratto(docente(18391)).
+contratto(docente(31076)).
+contratto(docente(6620)).
+contratto(docente(36937)).
+contratto(docente(14069)).
+contratto(docente(37909)).
+contratto(docente(30265)).
+contratto(docente(30343)).
+contratto(docente(17066)).
+contratto(docente(40250)).
+contratto(docente(37558)).
+contratto(docente(33235)).
+contratto(docente(28115)).
+indeterminato(docente(10400)).
+contratto(docente(100275)).
+contratto(docente(26127)).
+contratto(docente(48579)).
+contratto(docente(10930)).
+contratto(docente(47792)).
+contratto(docente(19943)).
+contratto(docente(33280)).
+contratto(docente(39631)).
+contratto(docente(22328)).
+contratto(docente(30366)).
+contratto(docente(36474)).
+contratto(docente(6944)).
+contratto(docente(17575)).
+contratto(docente(24617)).
+contratto(docente(37831)).
+contratto(docente(12997)).
+contratto(docente(48724)).
+contratto(docente(15646)).
+contratto(docente(26700)).
+contratto(docente(36447)).
+contratto(docente(103141)).
+contratto(docente(10214)).
+contratto(docente(32821)).
+indeterminato(docente(5889)).
+contratto(docente(9870)).
+contratto(docente(46034)).
+contratto(docente(15911)).
+contratto(docente(30475)).
+contratto(docente(26957)).
+contratto(docente(41687)).
+contratto(docente(35259)).
+contratto(docente(36461)).
+contratto(docente(36560)).
+contratto(docente(48533)).
+indeterminato(docente(33506)).
+contratto(docente(18394)).
+contratto(docente(1842)).
+contratto(docente(41832)).
+contratto(docente(46872)).
+indeterminato(docente(5663)).
+indeterminato(docente(33687)).
+contratto(docente(1853)).
+contratto(docente(17970)).
+contratto(docente(30433)).
+contratto(docente(100315)).
+contratto(docente(21201)).
+contratto(docente(36486)).
+contratto(docente(10188)).
+contratto(docente(39722)).
+contratto(docente(100280)).
+contratto(docente(11301)).
+contratto(docente(21526)).
+contratto(docente(26323)).
+contratto(docente(7535)).
+contratto(docente(10516)).
+contratto(docente(25179)).
+contratto(docente(30359)).
+contratto(docente(37082)).
+contratto(docente(10781)).
+contratto(docente(100495)).
+contratto(docente(41956)).
+contratto(docente(41673)).
+contratto(docente(41356)).
+contratto(docente(30342)).
+contratto(docente(37822)).
+contratto(docente(4724)).
+contratto(docente(6370)).
+contratto(docente(10761)).
+contratto(docente(253728)).
+contratto(docente(30354)).
+contratto(docente(100744)).
+contratto(docente(100766)).
+contratto(docente(46901)).
+indeterminato(docente(6106)).
+contratto(docente(19637)).
+contratto(docente(100215)).
+contratto(docente(16501)).
+contratto(docente(6084)).
+contratto(docente(100512)).
+contratto(docente(11072)).
+contratto(docente(17744)).
+contratto(docente(40485)).
+contratto(docente(19538)).
+contratto(docente(34246)).
+contratto(docente(36435)).
+contratto(docente(47631)).
+contratto(docente(100804)).
+indeterminato(docente(10142)).
+contratto(docente(37762)).
+contratto(docente(46817)).
+indeterminato(docente(5808)).
+contratto(docente(36549)).
+contratto(docente(41440)).
+contratto(docente(40841)).
+indeterminato(docente(25946)).
+contratto(docente(11022)).
+contratto(docente(37716)).
+contratto(docente(100299)).
+contratto(docente(18353)).
+contratto(docente(40835)).
+contratto(docente(17963)).
+contratto(docente(45849)).
+contratto(docente(42428)).
+contratto(docente(43528)).
+contratto(docente(45283)).
+contratto(docente(48423)).
+indeterminato(docente(10601)).
+contratto(docente(100607)).
+contratto(docente(100657)).
+contratto(docente(21537)).
+contratto(docente(11525)).
+contratto(docente(20798)).
+contratto(docente(6255)).
+contratto(docente(46204)).
+contratto(docente(44235)).
+contratto(docente(100557)).
+contratto(docente(6094)).
+contratto(docente(46124)).
+indeterminato(docente(4696)).
+contratto(docente(36582)).
+contratto(docente(23227)).
+contratto(docente(100437)).
+contratto(docente(5684)).
+contratto(docente(33462)).
+contratto(docente(48304)).
+contratto(docente(9722)).
+contratto(docente(41701)).
+contratto(docente(35760)).
+contratto(docente(4276)).
+contratto(docente(37728)).
+contratto(docente(5257)).
+contratto(docente(36585)).
+contratto(docente(28483)).
+contratto(docente(29717)).
+contratto(docente(30237)).
+contratto(docente(13451)).
+contratto(docente(48683)).
+contratto(docente(31618)).
+contratto(docente(20129)).
+indeterminato(docente(6527)).
+ricercatore(docente(22345)).
+indeterminato(docente(4397)).
+ricercatore(docente(15950)).
+ricercatore(docente(8816)).
+indeterminato(docente(4282)).
+indeterminato(docente(6508)).
+indeterminato(docente(6598)).
+ricercatore(docente(15493)).
+ricercatore(docente(20361)).
+ricercatore(docente(3848)).
+indeterminato(docente(207089)).
+indeterminato(docente(5565)).
+ricercatore(docente(18477)).
+ricercatore(docente(35050)).
+indeterminato(docente(6627)).
+ricercatore(docente(5885)).
+indeterminato(docente(6652)).
+indeterminato(docente(207094)).
+indeterminato(docente(164218)).
+indeterminato(docente(4468)).
+indeterminato(docente(5788)).
+indeterminato(docente(6504)).
+indeterminato(docente(6454)).
+indeterminato(docente(28994)).
+indeterminato(docente(29217)).
+ricercatore(docente(38138)).
+indeterminato(docente(5813)).
+indeterminato(docente(5087)).
+ricercatore(docente(33657)).
+ricercatore(docente(20533)).
+ricercatore(docente(11792)).
+indeterminato(docente(4535)).
+indeterminato(docente(14634)).
+ricercatore(docente(17651)).
+ricercatore(docente(35351)).
+indeterminato(docente(5442)).
+indeterminato(docente(5526)).
+indeterminato(docente(5634)).
+ricercatore(docente(12506)).
+indeterminato(docente(4466)).
+indeterminato(docente(5320)).
+indeterminato(docente(5837)).
+indeterminato(docente(6642)).
+indeterminato(docente(172930)).
+indeterminato(docente(11305)).
+indeterminato(docente(5145)).
+indeterminato(docente(12799)).
+indeterminato(docente(6381)).
+indeterminato(docente(5073)).
+indeterminato(docente(6038)).
+indeterminato(docente(10592)).
+indeterminato(docente(11130)).
+indeterminato(docente(5428)).
+indeterminato(docente(4702)).
+indeterminato(docente(6117)).
+ricercatore(docente(11157)).
+ricercatore(docente(4880)).
+ricercatore(docente(23210)).
+indeterminato(docente(6544)).
+indeterminato(docente(3697)).
+indeterminato(docente(15874)).
+indeterminato(docente(5668)).
+indeterminato(docente(6754)).
+indeterminato(docente(205009)).
+indeterminato(docente(5519)).
+indeterminato(docente(4889)).
+ricercatore(docente(32717)).
+indeterminato(docente(5541)).
+indeterminato(docente(205007)).
+indeterminato(docente(41972)).
+indeterminato(docente(5827)).
+ricercatore(docente(11111)).
+ricercatore(docente(12185)).
+indeterminato(docente(6507)).
+indeterminato(docente(4768)).
+indeterminato(docente(20279)).
+ricercatore(docente(5390)).
+indeterminato(docente(26131)).
+ricercatore(docente(5234)).
+indeterminato(docente(5383)).
+ricercatore(docente(10706)).
+indeterminato(docente(204741)).
+indeterminato(docente(6270)).
+indeterminato(docente(204061)).
+indeterminato(docente(149461)).
+ricercatore(docente(33648)).
+indeterminato(docente(39583)).
+ricercatore(docente(32990)).
+indeterminato(docente(5447)).
+indeterminato(docente(5836)).
+indeterminato(docente(5137)).
+indeterminato(docente(10705)).
+ricercatore(docente(39371)).
+ricercatore(docente(6585)).
+indeterminato(docente(5613)).
+ricercatore(docente(20907)).
+indeterminato(docente(5146)).
+ricercatore(docente(42213)).
+indeterminato(docente(6782)).
+indeterminato(docente(5655)).
+indeterminato(docente(6191)).
+indeterminato(docente(6639)).
+indeterminato(docente(206829)).
+ricercatore(docente(205005)).
+ricercatore(docente(8765)).
+ricercatore(docente(15764)).
+indeterminato(docente(7306)).
+indeterminato(docente(3698)).
+indeterminato(docente(6578)).
+indeterminato(docente(22836)).
+indeterminato(docente(23239)).
+indeterminato(docente(6591)).
+indeterminato(docente(4613)).
+indeterminato(docente(4295)).
+ricercatore(docente(30169)).
+ricercatore(docente(253750)).
+indeterminato(docente(46719)).
+indeterminato(docente(38830)).
+ricercatore(docente(15482)).
+indeterminato(docente(4858)).
+indeterminato(docente(5721)).
+indeterminato(docente(5069)).
+indeterminato(docente(42168)).
+indeterminato(docente(4490)).
+indeterminato(docente(34181)).
+ricercatore(docente(35359)).
+indeterminato(docente(4854)).
+ricercatore(docente(12129)).
+indeterminato(docente(4501)).
+indeterminato(docente(204071)).
+indeterminato(docente(32479)).
+ricercatore(docente(6388)).
+indeterminato(docente(4271)).
+ricercatore(docente(35350)).
+indeterminato(docente(6513)).
+indeterminato(docente(206006)).
+indeterminato(docente(206905)).
+indeterminato(docente(6603)).
+indeterminato(docente(6126)).
+indeterminato(docente(8732)).
+indeterminato(docente(6391)).
+indeterminato(docente(43777)).
+indeterminato(docente(5555)).
+indeterminato(docente(5489)).
+indeterminato(docente(4328)).
+ricercatore(docente(164267)).
+indeterminato(docente(6389)).
+indeterminato(docente(5548)).
+indeterminato(docente(4526)).
+indeterminato(docente(6433)).
+indeterminato(docente(4586)).
+indeterminato(docente(5880)).
+indeterminato(docente(207068)).
+indeterminato(docente(4974)).
+indeterminato(docente(4369)).
+indeterminato(docente(41973)).
+indeterminato(docente(5079)).
+indeterminato(docente(15245)).
+ricercatore(docente(11439)).
+indeterminato(docente(5299)).
+indeterminato(docente(6510)).
+ricercatore(docente(40347)).
+indeterminato(docente(30445)).
+indeterminato(docente(3700)).
+indeterminato(docente(204544)).
+ricercatore(docente(33684)).
+indeterminato(docente(6407)).
+indeterminato(docente(20424)).
+indeterminato(docente(3701)).
+ricercatore(docente(42214)).
+indeterminato(docente(30479)).
+indeterminato(docente(29354)).
+indeterminato(docente(5589)).
+indeterminato(docente(42667)).
+indeterminato(docente(7234)).
+indeterminato(docente(4624)).
+indeterminato(docente(5770)).
+indeterminato(docente(4575)).
+indeterminato(docente(206019)).
+indeterminato(docente(205064)).
+ricercatore(docente(41944)).
+indeterminato(docente(10710)).
+indeterminato(docente(18934)).
+indeterminato(docente(4751)).
+indeterminato(docente(5547)).
+indeterminato(docente(6747)).
+ricercatore(docente(19365)).
+ricercatore(docente(11496)).
+ricercatore(docente(16113)).
+indeterminato(docente(4348)).
+indeterminato(docente(21847)).
+indeterminato(docente(7158)).
+indeterminato(docente(4720)).
+indeterminato(docente(3702)).
+indeterminato(docente(4433)).
+indeterminato(docente(4875)).
+indeterminato(docente(20068)).
+indeterminato(docente(32121)).
+indeterminato(docente(206911)).
+indeterminato(docente(9930)).
+indeterminato(docente(206027)).
+indeterminato(docente(13727)).
+ricercatore(docente(10712)).
+ricercatore(docente(47362)).
+indeterminato(docente(4800)).
+indeterminato(docente(7165)).
+indeterminato(docente(253674)).
+indeterminato(docente(3704)).
+indeterminato(docente(6496)).
+ricercatore(docente(11367)).
+ricercatore(docente(5426)).
+indeterminato(docente(100652)).
+ricercatore(docente(35758)).
+ricercatore(docente(10709)).
+indeterminato(docente(22263)).
+indeterminato(docente(4270)).
+indeterminato(docente(4579)).
+indeterminato(docente(4351)).
+indeterminato(docente(11337)).
+indeterminato(docente(5704)).
+ricercatore(docente(41942)).
+indeterminato(docente(13968)).
+ricercatore(docente(6912)).
+indeterminato(docente(6054)).
+ricercatore(docente(11047)).
+indeterminato(docente(4421)).
+ricercatore(docente(12923)).
+indeterminato(docente(5260)).
+indeterminato(docente(6006)).
+indeterminato(docente(5214)).
+indeterminato(docente(7258)).
+indeterminato(docente(21089)).
+indeterminato(docente(100560)).
+indeterminato(docente(5490)).
+indeterminato(docente(206856)).
+indeterminato(docente(5187)).
+ricercatore(docente(207037)).
+indeterminato(docente(6519)).
+indeterminato(docente(5725)).
+indeterminato(docente(207095)).
+indeterminato(docente(34196)).
+indeterminato(docente(6570)).
+ricercatore(docente(48562)).
+ricercatore(docente(6112)).
+indeterminato(docente(4474)).
+indeterminato(docente(6505)).
+indeterminato(docente(5385)).
+ricercatore(docente(30736)).
+indeterminato(docente(3707)).
+indeterminato(docente(5728)).
+indeterminato(docente(6285)).
+indeterminato(docente(4855)).
+indeterminato(docente(4537)).
+ricercatore(docente(17274)).
+indeterminato(docente(33787)).
+indeterminato(docente(4611)).
+indeterminato(docente(6105)).
+indeterminato(docente(6917)).
+indeterminato(docente(6067)).
+indeterminato(docente(5795)).
+indeterminato(docente(4915)).
+indeterminato(docente(4530)).
+ricercatore(docente(4375)).
+ricercatore(docente(6516)).
+indeterminato(docente(4533)).
+indeterminato(docente(5163)).
+indeterminato(docente(42181)).
+indeterminato(docente(6120)).
+indeterminato(docente(11329)).
+indeterminato(docente(31596)).
+indeterminato(docente(5419)).
+indeterminato(docente(43157)).
+ricercatore(docente(11488)).
+ricercatore(docente(5637)).
+indeterminato(docente(6511)).
+indeterminato(docente(5711)).
+indeterminato(docente(26134)).
+indeterminato(docente(7034)).
+indeterminato(docente(6625)).
+indeterminato(docente(4326)).
+ricercatore(docente(4809)).
+indeterminato(docente(10549)).
+indeterminato(docente(4274)).
+indeterminato(docente(6994)).
+indeterminato(docente(23816)).
+ricercatore(docente(13368)).
+ricercatore(docente(11057)).
+indeterminato(docente(5475)).
+indeterminato(docente(6522)).
+ricercatore(docente(13331)).
+indeterminato(docente(11516)).
+indeterminato(docente(4850)).
+indeterminato(docente(102887)).
+indeterminato(docente(5536)).
+indeterminato(docente(4493)).
+indeterminato(docente(3708)).
+indeterminato(docente(100195)).
+indeterminato(docente(103159)).
+indeterminato(docente(6319)).
+indeterminato(docente(6093)).
+ricercatore(docente(39490)).
+indeterminato(docente(6594)).
+ricercatore(docente(10714)).
+indeterminato(docente(6569)).
+ricercatore(docente(38136)).
+ricercatore(docente(37774)).
+indeterminato(docente(206553)).
+ricercatore(docente(5920)).
+indeterminato(docente(6582)).
+ricercatore(docente(10321)).
+indeterminato(docente(9963)).
+ricercatore(docente(14454)).
+ricercatore(docente(44238)).
+indeterminato(docente(5517)).
+indeterminato(docente(6590)).
+ricercatore(docente(44237)).
+indeterminato(docente(5470)).
+indeterminato(docente(5124)).
+ricercatore(docente(6118)).
+indeterminato(docente(6399)).
+indeterminato(docente(4767)).
+indeterminato(docente(4953)).
+indeterminato(docente(5896)).
+indeterminato(docente(100739)).
+ricercatore(docente(20832)).
+ricercatore(docente(33934)).
+indeterminato(docente(28252)).
+indeterminato(docente(6786)).
+ricercatore(docente(4510)).
+indeterminato(docente(100200)).
+indeterminato(docente(206063)).
+ricercatore(docente(9893)).
+indeterminato(docente(36062)).
+indeterminato(docente(43827)).
+indeterminato(docente(100825)).
+ricercatore(docente(19595)).
+indeterminato(docente(4484)).
+ricercatore(docente(20360)).
+indeterminato(docente(5494)).
+ricercatore(docente(8791)).
+ricercatore(docente(20095)).
+indeterminato(docente(11336)).
+indeterminato(docente(6623)).
+ricercatore(docente(6144)).
+ricercatore(docente(45057)).
+ricercatore(docente(14369)).
+ricercatore(docente(33505)).
+indeterminato(docente(5646)).
+ricercatore(docente(6517)).
+indeterminato(docente(6099)).
+ricercatore(docente(16608)).
+indeterminato(docente(207001)).
+indeterminato(docente(6128)).
+indeterminato(docente(10293)).
+indeterminato(docente(10588)).
+indeterminato(docente(6288)).
+indeterminato(docente(4470)).
+ricercatore(docente(25592)).
+ricercatore(docente(33350)).
+indeterminato(docente(33507)).
+ricercatore(docente(35726)).
+indeterminato(docente(4224)).
+indeterminato(docente(205095)).
+indeterminato(docente(5520)).
+ricercatore(docente(20765)).
+ricercatore(docente(11484)).
+indeterminato(docente(30300)).
+ricercatore(docente(21030)).
+indeterminato(docente(7017)).
+indeterminato(docente(11154)).
+ricercatore(docente(19544)).
+ricercatore(docente(18476)).
+indeterminato(docente(10463)).
+indeterminato(docente(6793)).
+indeterminato(docente(4652)).
+indeterminato(docente(6768)).
+indeterminato(docente(17104)).
+ricercatore(docente(19630)).
+indeterminato(docente(29353)).
+indeterminato(docente(7015)).
+indeterminato(docente(18131)).
+indeterminato(docente(5051)).
+indeterminato(docente(4801)).
+indeterminato(docente(205032)).
+indeterminato(docente(5349)).
+ricercatore(docente(38137)).
+ricercatore(docente(44216)).
+ricercatore(docente(30448)).
+ricercatore(docente(10361)).
+indeterminato(docente(6049)).
+indeterminato(docente(11296)).
+indeterminato(docente(5433)).
+indeterminato(docente(207009)).
+indeterminato(docente(5849)).
+ricercatore(docente(11355)).
+indeterminato(docente(4455)).
+ricercatore(docente(11289)).
+indeterminato(docente(6515)).
+indeterminato(docente(4280)).
+indeterminato(docente(100613)).
+indeterminato(docente(15339)).
+indeterminato(docente(5569)).
+indeterminato(docente(10290)).
+indeterminato(docente(205053)).
+ricercatore(docente(12507)).
+indeterminato(docente(26130)).
+indeterminato(docente(9966)).
+ricercatore(docente(19553)).
+indeterminato(docente(7057)).
+indeterminato(docente(5463)).
+indeterminato(docente(10669)).
+ricercatore(docente(28143)).
+indeterminato(docente(41937)).
+indeterminato(docente(3651)).
+ricercatore(docente(18697)).
+indeterminato(docente(5799)).
+ricercatore(docente(39715)).
+indeterminato(docente(4860)).
+ricercatore(docente(7245)).
+indeterminato(docente(206026)).
+indeterminato(docente(19890)).
+indeterminato(docente(5056)).
+indeterminato(docente(5794)).
+indeterminato(docente(4451)).
+indeterminato(docente(6580)).
+indeterminato(docente(6435)).
+indeterminato(docente(5553)).
+indeterminato(docente(5561)).
+ricercatore(docente(17997)).
+indeterminato(docente(4604)).
+indeterminato(docente(5556)).
+ricercatore(docente(15906)).
+indeterminato(docente(11346)).
+indeterminato(docente(5441)).
+indeterminato(docente(4515)).
+indeterminato(docente(4912)).
+indeterminato(docente(4993)).
+indeterminato(docente(6801)).
+indeterminato(docente(4831)).
+indeterminato(docente(4322)).
+indeterminato(docente(5114)).
+ricercatore(docente(43598)).
+ricercatore(docente(25837)).
+ricercatore(docente(36990)).
+indeterminato(docente(6715)).
+indeterminato(docente(6746)).
+indeterminato(docente(5610)).
+indeterminato(docente(42199)).
+indeterminato(docente(6432)).
+indeterminato(docente(11003)).
+ricercatore(docente(6069)).
+indeterminato(docente(11347)).
+ricercatore(docente(10329)).
+ricercatore(docente(13027)).
+ricercatore(docente(6716)).
+ricercatore(docente(17172)).
+indeterminato(docente(5406)).
+ricercatore(docente(207008)).
+ricercatore(docente(4288)).
+indeterminato(docente(13637)).
+ricercatore(docente(17240)).
+ricercatore(docente(13659)).
+indeterminato(docente(32477)).
+indeterminato(docente(5479)).
+ricercatore(docente(24121)).
+indeterminato(docente(5986)).
+indeterminato(docente(10073)).
+indeterminato(docente(6644)).
+ricercatore(docente(13436)).
+ricercatore(docente(48861)).
+indeterminato(docente(6274)).
+ricercatore(docente(25852)).
+ricercatore(docente(22301)).
+indeterminato(docente(5462)).
+indeterminato(docente(26126)).
+ricercatore(docente(39460)).
+ricercatore(docente(11384)).
+indeterminato(docente(38375)).
+indeterminato(docente(6385)).
+ricercatore(docente(39370)).
+indeterminato(docente(206099)).
+ricercatore(docente(17253)).
+ricercatore(docente(22348)).
+ricercatore(docente(100165)).
+indeterminato(docente(5254)).
+indeterminato(docente(5599)).
+indeterminato(docente(10283)).
+indeterminato(docente(6121)).
+indeterminato(docente(4837)).
+ricercatore(docente(11368)).
+ricercatore(docente(4528)).
+indeterminato(docente(6942)).
+indeterminato(docente(5571)).
+indeterminato(docente(4257)).
+ricercatore(docente(20096)).
+ricercatore(docente(19924)).
+ricercatore(docente(25587)).
+ricercatore(docente(44211)).
+ricercatore(docente(11750)).
+indeterminato(docente(4614)).
+indeterminato(docente(7224)).
+indeterminato(docente(156582)).
+indeterminato(docente(6022)).
+indeterminato(docente(5052)).
+indeterminato(docente(6624)).
+indeterminato(docente(8460)).
+ricercatore(docente(6122)).
+ricercatore(docente(11466)).
+indeterminato(docente(6629)).
+indeterminato(docente(5482)).
+ricercatore(docente(25053)).
+indeterminato(docente(6071)).
+ricercatore(docente(5125)).
+ricercatore(docente(14316)).
+indeterminato(docente(40348)).
+indeterminato(docente(6056)).
+ricercatore(docente(13967)).
+indeterminato(docente(5496)).
+indeterminato(docente(5205)).
+indeterminato(docente(205050)).
+indeterminato(docente(7576)).
+indeterminato(docente(5789)).
+indeterminato(docente(5557)).
+indeterminato(docente(8831)).
+indeterminato(docente(32834)).
+indeterminato(docente(4739)).
+indeterminato(docente(6313)).
+ricercatore(docente(11885)).
+indeterminato(docente(6383)).
+ricercatore(docente(35874)).
+indeterminato(docente(4349)).
+indeterminato(docente(136411)).
+ricercatore(docente(10736)).
+indeterminato(docente(6023)).
+indeterminato(docente(5546)).
+indeterminato(docente(6685)).
+indeterminato(docente(6204)).
+indeterminato(docente(18084)).
+ricercatore(docente(19742)).
+indeterminato(docente(4033)).
+indeterminato(docente(17498)).
+indeterminato(docente(6745)).
+indeterminato(docente(5713)).
+indeterminato(docente(5360)).
+indeterminato(docente(4732)).
+indeterminato(docente(5894)).
+ricercatore(docente(206832)).
+indeterminato(docente(7355)).
+indeterminato(docente(5540)).
+indeterminato(docente(6145)).
+indeterminato(docente(7278)).
+ricercatore(docente(28879)).
+indeterminato(docente(10739)).
+indeterminato(docente(8869)).
+ricercatore(docente(20426)).
+ricercatore(docente(28366)).
+ricercatore(docente(13725)).
+indeterminato(docente(5104)).
+indeterminato(docente(9775)).
+ricercatore(docente(5136)).
+ricercatore(docente(6177)).
+indeterminato(docente(11294)).
+indeterminato(docente(6057)).
+indeterminato(docente(6101)).
+indeterminato(docente(207021)).
+indeterminato(docente(4610)).
+indeterminato(docente(5504)).
+ricercatore(docente(15098)).
+ricercatore(docente(5895)).
+indeterminato(docente(5887)).
+indeterminato(docente(6350)).
+indeterminato(docente(6980)).
+indeterminato(docente(6502)).
+indeterminato(docente(204036)).
+indeterminato(docente(5586)).
+indeterminato(docente(4562)).
+ricercatore(docente(22304)).
+indeterminato(docente(20656)).
+ricercatore(docente(10914)).
+indeterminato(docente(8822)).
+indeterminato(docente(14914)).
+indeterminato(docente(4356)).
+indeterminato(docente(5036)).
+indeterminato(docente(9455)).
+indeterminato(docente(5891)).
+ricercatore(docente(39477)).
+indeterminato(docente(5327)).
+indeterminato(docente(6429)).
+ricercatore(docente(6761)).
+ricercatore(docente(4066)).
+ricercatore(docente(12141)).
+indeterminato(docente(6307)).
+indeterminato(docente(5792)).
+ricercatore(docente(22073)).
+indeterminato(docente(4698)).
+indeterminato(docente(253676)).
+indeterminato(docente(4559)).
+indeterminato(docente(4620)).
+indeterminato(docente(4878)).
+indeterminato(docente(6584)).
+indeterminato(docente(5804)).
+indeterminato(docente(5552)).
+ricercatore(docente(100531)).
+indeterminato(docente(4174)).
+ricercatore(docente(11020)).
+indeterminato(docente(6434)).
+ricercatore(docente(8733)).
+ricercatore(docente(5415)).
+indeterminato(docente(10285)).
+indeterminato(docente(11332)).
+ricercatore(docente(33096)).
+indeterminato(docente(6969)).
+ricercatore(docente(33649)).
+indeterminato(docente(41823)).
+indeterminato(docente(6123)).
+indeterminato(docente(5567)).
+indeterminato(docente(49026)).
+ricercatore(docente(5389)).
+indeterminato(docente(5672)).
+indeterminato(docente(5319)).
+ricercatore(docente(36662)).
+indeterminato(docente(5377)).
+ricercatore(docente(31084)).
+ricercatore(docente(10813)).
+ricercatore(docente(15939)).
+indeterminato(docente(30478)).
+indeterminato(docente(10684)).
+indeterminato(docente(5614)).
+indeterminato(docente(42179)).
+ricercatore(docente(42217)).
+indeterminato(docente(31627)).
+indeterminato(docente(5643)).
+indeterminato(docente(5709)).
+indeterminato(docente(204023)).
+indeterminato(docente(5410)).
+indeterminato(docente(164352)).
+ricercatore(docente(39488)).
+indeterminato(docente(6538)).
+indeterminato(docente(5699)).
+ricercatore(docente(17206)).
+indeterminato(docente(8854)).
+indeterminato(docente(4853)).
+indeterminato(docente(206035)).
+indeterminato(docente(10745)).
+indeterminato(docente(206820)).
+indeterminato(docente(30937)).
+indeterminato(docente(19876)).
+ricercatore(docente(27469)).
+indeterminato(docente(4473)).
+indeterminato(docente(5024)).
+indeterminato(docente(10666)).
+indeterminato(docente(6576)).
+indeterminato(docente(205057)).
+ricercatore(docente(4499)).
+indeterminato(docente(10279)).
+indeterminato(docente(253680)).
+ricercatore(docente(25630)).
+indeterminato(docente(5237)).
+ricercatore(docente(39467)).
+indeterminato(docente(4336)).
+indeterminato(docente(4891)).
+indeterminato(docente(4612)).
+indeterminato(docente(5869)).
+ricercatore(docente(4625)).
+indeterminato(docente(5539)).
+indeterminato(docente(5542)).
+ricercatore(docente(11364)).
+indeterminato(docente(6653)).
+indeterminato(docente(6427)).
+indeterminato(docente(4057)).
+ricercatore(docente(11103)).
+indeterminato(docente(5382)).
+indeterminato(docente(5809)).
+indeterminato(docente(5387)).
+indeterminato(docente(10639)).
+ricercatore(docente(6200)).
+indeterminato(docente(4495)).
+indeterminato(docente(46380)).
+indeterminato(docente(5281)).
+indeterminato(docente(16566)).
+indeterminato(docente(5860)).
+indeterminato(docente(7358)).
+indeterminato(docente(6152)).
+indeterminato(docente(5341)).
+indeterminato(docente(27018)).
+indeterminato(docente(6539)).
+indeterminato(docente(6619)).
+indeterminato(docente(9953)).
+indeterminato(docente(4588)).
+ricercatore(docente(4148)).
+ricercatore(docente(34175)).
+indeterminato(docente(206824)).
+indeterminato(docente(11348)).
+indeterminato(docente(4869)).
+indeterminato(docente(3896)).
+indeterminato(docente(206868)).
+indeterminato(docente(4543)).
+indeterminato(docente(7287)).
+ricercatore(docente(39464)).
+indeterminato(docente(10641)).
+indeterminato(docente(100649)).
+indeterminato(docente(205817)).
+indeterminato(docente(4300)).
+indeterminato(docente(5481)).
+indeterminato(docente(17562)).
+indeterminato(docente(5054)).
+ricercatore(docente(17262)).
+indeterminato(docente(4299)).
+indeterminato(docente(5627)).
+indeterminato(docente(4617)).
+indeterminato(docente(6521)).
+indeterminato(docente(6282)).
+indeterminato(docente(3717)).
+indeterminato(docente(207088)).
+indeterminato(docente(6583)).
+indeterminato(docente(6086)).
+indeterminato(docente(26137)).
+indeterminato(docente(205023)).
+ricercatore(docente(18164)).
+ricercatore(docente(4859)).
+ricercatore(docente(10455)).
+indeterminato(docente(6641)).
+indeterminato(docente(17401)).
+ricercatore(docente(21802)).
+indeterminato(docente(5879)).
+indeterminato(docente(5144)).
+ricercatore(docente(23798)).
+ricercatore(docente(31178)).
+indeterminato(docente(5535)).
+indeterminato(docente(3718)).
+indeterminato(docente(5619)).
+indeterminato(docente(10619)).
+indeterminato(docente(10672)).
+indeterminato(docente(5424)).
+ricercatore(docente(33646)).
+indeterminato(docente(4444)).
+indeterminato(docente(5007)).
+indeterminato(docente(8811)).
+indeterminato(docente(4411)).
+ricercatore(docente(19640)).
+indeterminato(docente(6058)).
+indeterminato(docente(8011)).
+indeterminato(docente(4932)).
+ricercatore(docente(14441)).
+indeterminato(docente(4311)).
+ricercatore(docente(17254)).
+indeterminato(docente(4370)).
+indeterminato(docente(6129)).
+indeterminato(docente(6577)).
+indeterminato(docente(5674)).
+ricercatore(docente(37046)).
+indeterminato(docente(207081)).
+indeterminato(docente(5890)).
+indeterminato(docente(5522)).
+ricercatore(docente(6392)).
+indeterminato(docente(5352)).
+indeterminato(docente(5288)).
+indeterminato(docente(5055)).
+indeterminato(docente(7577)).
+indeterminato(docente(3905)).
+ricercatore(docente(11088)).
+indeterminato(docente(6119)).
+indeterminato(docente(6247)).
+indeterminato(docente(10022)).
+indeterminato(docente(8888)).
+indeterminato(docente(207044)).
+indeterminato(docente(6142)).
+indeterminato(docente(8719)).
+ricercatore(docente(5487)).
+ricercatore(docente(38886)).
+ricercatore(docente(32925)).
+ricercatore(docente(11379)).
+indeterminato(docente(5078)).
+indeterminato(docente(25057)).
+indeterminato(docente(5554)).
+indeterminato(docente(4615)).
+indeterminato(docente(205024)).
+indeterminato(docente(19896)).
+indeterminato(docente(4420)).
+ricercatore(docente(39528)).
+indeterminato(docente(5088)).
+indeterminato(docente(6536)).
+ricercatore(docente(5793)).
+indeterminato(docente(7295)).
+indeterminato(docente(4324)).
+indeterminato(docente(5280)).
+ricercatore(docente(4605)).
+indeterminato(docente(5231)).
+indeterminato(docente(5500)).
+ricercatore(docente(22309)).
+indeterminato(docente(6556)).
+indeterminato(docente(3729)).
+indeterminato(docente(4829)).
+indeterminato(docente(5211)).
+indeterminato(docente(4464)).
+indeterminato(docente(6762)).
+indeterminato(docente(8887)).
+ricercatore(docente(39372)).
+indeterminato(docente(6537)).
+indeterminato(docente(205035)).
+indeterminato(docente(6039)).
+ricercatore(docente(11013)).
+ricercatore(docente(40047)).
+indeterminato(docente(205065)).
+indeterminato(docente(6306)).
+ricercatore(docente(21794)).
+indeterminato(docente(6913)).
+indeterminato(docente(45232)).
+indeterminato(docente(5417)).
+ricercatore(docente(4607)).
+ricercatore(docente(35727)).
+indeterminato(docente(6228)).
+indeterminato(docente(5273)).
+ricercatore(docente(35352)).
+indeterminato(docente(6749)).
+indeterminato(docente(4035)).
+indeterminato(docente(9912)).
+indeterminato(docente(6107)).
+ricercatore(docente(11069)).
+ricercatore(docente(11498)).
+indeterminato(docente(6983)).
+indeterminato(docente(11071)).
+indeterminato(docente(12922)).
+ricercatore(docente(10344)).
+ricercatore(docente(14533)).
+indeterminato(docente(4373)).
+indeterminato(docente(6581)).
+indeterminato(docente(6104)).
+indeterminato(docente(4848)).
+ricercatore(docente(35825)).
+ricercatore(docente(35356)).
+indeterminato(docente(11624)).
+indeterminato(docente(15541)).
+ricercatore(docente(26035)).
+ricercatore(docente(26644)).
+indeterminato(docente(10307)).
+ricercatore(docente(9980)).
+indeterminato(docente(5501)).
+indeterminato(docente(5537)).
+indeterminato(docente(156573)).
+indeterminato(docente(5116)).
+ricercatore(docente(7279)).
+indeterminato(docente(4253)).
+indeterminato(docente(33726)).
+indeterminato(docente(5897)).
+ricercatore(docente(15988)).
+indeterminato(docente(5664)).
+ricercatore(docente(19109)).
+indeterminato(docente(6528)).
+indeterminato(docente(40505)).
+indeterminato(docente(6100)).
+indeterminato(docente(6303)).
+indeterminato(docente(5364)).
+indeterminato(docente(6347)).
+indeterminato(docente(206793)).
+indeterminato(docente(44307)).
+indeterminato(docente(5730)).
+indeterminato(docente(10091)).
+ricercatore(docente(11376)).
+indeterminato(docente(6085)).
+indeterminato(docente(5252)).
+indeterminato(docente(156616)).
+ricercatore(docente(4297)).
+indeterminato(docente(6600)).
+indeterminato(docente(6406)).
+indeterminato(docente(33346)).
+ricercatore(docente(205079)).
+indeterminato(docente(3730)).
+indeterminato(docente(6491)).
+indeterminato(docente(6386)).
+indeterminato(docente(5545)).
+indeterminato(docente(5670)).
+indeterminato(docente(10360)).
+ricercatore(docente(10960)).
+indeterminato(docente(6096)).
+indeterminato(docente(5886)).
+indeterminato(docente(7035)).
+indeterminato(docente(5515)).
+indeterminato(docente(4536)).
+indeterminato(docente(11339)).
+indeterminato(docente(7031)).
+indeterminato(docente(6765)).
+indeterminato(docente(6124)).
+ricercatore(docente(25654)).
+indeterminato(docente(4335)).
+ricercatore(docente(35353)).
+ricercatore(docente(5220)).
+indeterminato(docente(6500)).
+indeterminato(docente(13673)).
+indeterminato(docente(7138)).
+ricercatore(docente(22324)).
+indeterminato(docente(5474)).
+indeterminato(docente(6125)).
+indeterminato(docente(11642)).
+indeterminato(docente(5867)).
+indeterminato(docente(9709)).
+indeterminato(docente(6605)).
+indeterminato(docente(18676)).
+indeterminato(docente(8862)).
+indeterminato(docente(5778)).
+indeterminato(docente(5892)).
+indeterminato(docente(5551)).
+indeterminato(docente(31517)).
+ricercatore(docente(39489)).
+indeterminato(docente(7055)).
+ricercatore(docente(43287)).
+indeterminato(docente(20105)).
+indeterminato(docente(5476)).
+indeterminato(docente(30782)).
+indeterminato(docente(5486)).
+ricercatore(docente(11122)).
+indeterminato(docente(17862)).
+ricercatore(docente(8844)).
+ricercatore(docente(6555)).
+indeterminato(docente(206029)).
+ricercatore(docente(14399)).
+indeterminato(docente(38817)).
+indeterminato(docente(206854)).
+indeterminato(docente(11350)).
+ricercatore(docente(31051)).
+indeterminato(docente(4609)).
+indeterminato(docente(5602)).
+indeterminato(docente(10680)).
+indeterminato(docente(5523)).
+indeterminato(docente(5253)).
+indeterminato(docente(4565)).
+ricercatore(docente(5405)).
+ricercatore(docente(21173)).
+indeterminato(docente(4701)).
+indeterminato(docente(207045)).
+indeterminato(docente(203910)).
+indeterminato(docente(5996)).
+indeterminato(docente(15248)).
+indeterminato(docente(5832)).
+indeterminato(docente(10772)).
+indeterminato(docente(5591)).
+indeterminato(docente(207024)).
+ricercatore(docente(4303)).
+indeterminato(docente(5715)).

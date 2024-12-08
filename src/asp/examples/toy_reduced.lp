@@ -34,10 +34,10 @@ categoria_corso(lm).
 categoria_corso(lm6).
 categoria_corso(lm5).
 
-corso_di_studio(1). % L Inf
-corso_di_studio(2). % L Mat
-afferisce(corso_di_studio(1), categoria_corso(l)).
-afferisce(corso_di_studio(2), categoria_corso(l)).
+corso(1). % L Inf
+corso(2). % L Mat
+afferisce(corso(1), categoria_corso(l)).
+afferisce(corso(2), categoria_corso(l)).
 
 insegnamento(1..10).
 
@@ -53,72 +53,85 @@ afferisce(insegnamento(9), settore(mat)).
 afferisce(insegnamento(10), settore(mat)).
 
 
-di_riferimento(settore(inf), corso_di_studio(1)).
-di_riferimento(settore(mat), corso_di_studio(1)).
-di_riferimento(settore(inf), corso_di_studio(2)).
-di_riferimento(settore(mat), corso_di_studio(2)).
+di_riferimento(settore(inf), corso(1)).
+di_riferimento(settore(mat), corso(1)).
+di_riferimento(settore(inf), corso(2)).
+di_riferimento(settore(mat), corso(2)).
 
-insegna(docente(1), insegnamento(1), corso_di_studio(1)).
-insegna(docente(2), insegnamento(2), corso_di_studio(1)).
-insegna(docente(3), insegnamento(3), corso_di_studio(1)).
-insegna(docente(4), insegnamento(4), corso_di_studio(1)).
-insegna(docente(5), insegnamento(5), corso_di_studio(1)).
-insegna(docente(6), insegnamento(6), corso_di_studio(1)).
-insegna(docente(7), insegnamento(7), corso_di_studio(1)).
-insegna(docente(8), insegnamento(8), corso_di_studio(1)).
-insegna(docente(9), insegnamento(9), corso_di_studio(1)).
-insegna(docente(10), insegnamento(10), corso_di_studio(1)).
+insegna(docente(1), insegnamento(1), corso(1)).
+insegna(docente(2), insegnamento(2), corso(1)).
+insegna(docente(3), insegnamento(3), corso(1)).
+insegna(docente(4), insegnamento(4), corso(1)).
+insegna(docente(5), insegnamento(5), corso(1)).
+insegna(docente(6), insegnamento(6), corso(1)).
+insegna(docente(7), insegnamento(7), corso(1)).
+insegna(docente(8), insegnamento(8), corso(1)).
+insegna(docente(9), insegnamento(9), corso(1)).
+insegna(docente(10), insegnamento(10), corso(1)).
 
-insegna(docente(1), insegnamento(1), corso_di_studio(2)).
-insegna(docente(2), insegnamento(2), corso_di_studio(2)).
-insegna(docente(3), insegnamento(3), corso_di_studio(2)).
-insegna(docente(4), insegnamento(4), corso_di_studio(2)).
-insegna(docente(5), insegnamento(5), corso_di_studio(2)).
-insegna(docente(6), insegnamento(6), corso_di_studio(2)).
-insegna(docente(7), insegnamento(7), corso_di_studio(2)).
-insegna(docente(8), insegnamento(8), corso_di_studio(2)).
-insegna(docente(9), insegnamento(9), corso_di_studio(2)).
-insegna(docente(10), insegnamento(10), corso_di_studio(2)).
+insegna(docente(1), insegnamento(1), corso(2)).
+insegna(docente(2), insegnamento(2), corso(2)).
+insegna(docente(3), insegnamento(3), corso(2)).
+insegna(docente(4), insegnamento(4), corso(2)).
+insegna(docente(5), insegnamento(5), corso(2)).
+insegna(docente(6), insegnamento(6), corso(2)).
+insegna(docente(7), insegnamento(7), corso(2)).
+insegna(docente(8), insegnamento(8), corso(2)).
+insegna(docente(9), insegnamento(9), corso(2)).
+insegna(docente(10), insegnamento(10), corso(2)).
 
 
+% numero garanti per laurea triennale
 4{
-	garante(docente(Matricola), corso_di_studio(Corso)) :
+	garante(docente(Matricola), corso(Corso)) :
 	docente(Matricola)
 } :-
-	corso_di_studio(Corso),
-	afferisce(corso_di_studio(Corso), categoria_corso(l)).
+	corso(Corso),
+	afferisce(corso(Corso), categoria_corso(l)).
 
 % almeno X garanti a tempo indeterminato
 3{
-	garante(docente(Matricola), corso_di_studio(Corso)) :
+	garante(docente(Matricola), corso(Corso)) :
 	docente(Matricola),
 	afferisce(docente(Matricola), settore(Settore)),
-	insegna(docente(Matricola), insegnamento(Insegnamento), corso_di_studio(Corso)),
-	di_riferimento(settore(Settore), corso_di_studio(Corso)),
+	insegna(docente(Matricola), insegnamento(Insegnamento), corso(Corso)),
+	di_riferimento(settore(Settore), corso(Corso)),
 	indeterminato(docente(Matricola))
 } :-
-	corso_di_studio(Corso),
-	afferisce(corso_di_studio(Corso), categoria_corso(l)).
+	corso(Corso),
+	afferisce(corso(Corso), categoria_corso(l)).
 
 % al più X garanti ricercatore
 {
-	garante(docente(Matricola), corso_di_studio(Corso)) :
+	garante(docente(Matricola), corso(Corso)) :
 	docente(Matricola),
 	afferisce(docente(Matricola), settore(Settore)),
-	insegna(docente(Matricola), insegnamento(Insegnamento), corso_di_studio(Corso)),
-	di_riferimento(settore(Settore), corso_di_studio(Corso)),
+	insegna(docente(Matricola), insegnamento(Insegnamento), corso(Corso)),
+	di_riferimento(settore(Settore), corso(Corso)),
 	ricercatore(docente(Matricola))
+}2 :-
+	corso(Corso),
+	afferisce(corso(Corso), categoria_corso(l)).
+
+% al più X garanti a contratto
+{
+	garante(docente(Matricola), corso(Corso)) :
+	docente(Matricola),
+	afferisce(docente(Matricola), settore(Settore)),
+	insegna(docente(Matricola), insegnamento(Insegnamento), corso(Corso)),
+	di_riferimento(settore(Settore), corso(Corso)),
+	contratto(docente(Matricola))
 }1 :-
-	corso_di_studio(Corso),
-	afferisce(corso_di_studio(Corso), categoria_corso(l)).
+	corso(Corso),
+	afferisce(corso(Corso), categoria_corso(l)).
 
 % un docente è garante al più una volta
 1{
-	garante(docente(Matricola), corso_di_studio(Corso2)) :
-	corso_di_studio(Corso2),
-	afferisce(corso_di_studio(Corso2), categoria_corso(Categoria2))
+	garante(docente(Matricola), corso(Corso2)) :
+	corso(Corso2),
+	afferisce(corso(Corso2), categoria_corso(Categoria2))
 }1 :-
-	garante(docente(Matricola), corso_di_studio(Corso1)),
-	afferisce(corso_di_studio(Corso1), categoria_corso(Categoria1)).
+	garante(docente(Matricola), corso(Corso1)),
+	afferisce(corso(Corso1), categoria_corso(Categoria1)).
 
 #show garante/2.

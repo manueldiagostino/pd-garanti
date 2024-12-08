@@ -1,109 +1,109 @@
-corso_di_studio(3023, categoria_corso(l)).
-corso_di_studio(3026, categoria_corso(l)).
-corso_di_studio(5036, categoria_corso(lm)).
-corso_di_studio(5045, categoria_corso(lm)).
-corso_di_studio(5065, categoria_corso(lm)).
-corso_di_studio(3068, categoria_corso(l)).
-corso_di_studio(3011, categoria_corso(l)).
-corso_di_studio(3057, categoria_corso(l)).
-corso_di_studio(5048, categoria_corso(lm)).
-corso_di_studio(5078, categoria_corso(lm)).
-corso_di_studio(3051, categoria_corso(l)).
-corso_di_studio(3072, categoria_corso(l)).
-corso_di_studio(3071, categoria_corso(l)).
-corso_di_studio(3004, categoria_corso(l)).
-corso_di_studio(3062, categoria_corso(l)).
-corso_di_studio(5053, categoria_corso(lm)).
-corso_di_studio(3044, categoria_corso(l)).
-corso_di_studio(3049, categoria_corso(l)).
-corso_di_studio(5074, categoria_corso(lm6)).
-corso_di_studio(5027, categoria_corso(lm6)).
-corso_di_studio(3041, categoria_corso(l)).
-corso_di_studio(3067, categoria_corso(l)).
-corso_di_studio(3047, categoria_corso(l)).
-corso_di_studio(5028, categoria_corso(lm)).
-corso_di_studio(3042, categoria_corso(l)).
-corso_di_studio(3040, categoria_corso(l)).
-corso_di_studio(3048, categoria_corso(l)).
-corso_di_studio(3014, categoria_corso(l)).
-corso_di_studio(5049, categoria_corso(lm)).
-corso_di_studio(5026, categoria_corso(lm6)).
-corso_di_studio(3046, categoria_corso(l)).
-corso_di_studio(3030, categoria_corso(l)).
-corso_di_studio(5037, categoria_corso(lm)).
-corso_di_studio(5077, categoria_corso(lm)).
-corso_di_studio(5059, categoria_corso(lm)).
-corso_di_studio(5076, categoria_corso(lm)).
-corso_di_studio(3019, categoria_corso(l)).
-corso_di_studio(5079, categoria_corso(lm5)).
-corso_di_studio(3070, categoria_corso(l)).
-corso_di_studio(5015, categoria_corso(lm)).
-corso_di_studio(3061, categoria_corso(l)).
-corso_di_studio(5008, categoria_corso(lm5)).
-corso_di_studio(3027, categoria_corso(l)).
-corso_di_studio(5009, categoria_corso(lm5)).
-corso_di_studio(3000, categoria_corso(l)).
-corso_di_studio(5068, categoria_corso(lm)).
-corso_di_studio(3007, categoria_corso(l)).
-corso_di_studio(5011, categoria_corso(lm)).
-corso_di_studio(5005, categoria_corso(lm)).
-corso_di_studio(5025, categoria_corso(lm)).
-corso_di_studio(3054, categoria_corso(l)).
-corso_di_studio(3006, categoria_corso(l)).
-corso_di_studio(5050, categoria_corso(lm)).
-corso_di_studio(3013, categoria_corso(l)).
-corso_di_studio(5010, categoria_corso(lm)).
-corso_di_studio(5003, categoria_corso(lm)).
-corso_di_studio(3043, categoria_corso(l)).
-corso_di_studio(5047, categoria_corso(lm)).
-corso_di_studio(3017, categoria_corso(l)).
-corso_di_studio(5063, categoria_corso(lm)).
-corso_di_studio(3064, categoria_corso(l)).
-corso_di_studio(3038, categoria_corso(l)).
-corso_di_studio(5046, categoria_corso(lm)).
-corso_di_studio(3066, categoria_corso(l)).
-corso_di_studio(3063, categoria_corso(l)).
-corso_di_studio(5080, categoria_corso(lm5)).
-corso_di_studio(3052, categoria_corso(l)).
-corso_di_studio(3021, categoria_corso(l)).
-corso_di_studio(5029, categoria_corso(lm5)).
-corso_di_studio(3010, categoria_corso(l)).
-corso_di_studio(3029, categoria_corso(l)).
-corso_di_studio(5072, categoria_corso(lm)).
-corso_di_studio(5061, categoria_corso(lm)).
-corso_di_studio(5018, categoria_corso(lm)).
-corso_di_studio(5066, categoria_corso(lm)).
-corso_di_studio(5039, categoria_corso(lm)).
-corso_di_studio(3024, categoria_corso(l)).
-corso_di_studio(3020, categoria_corso(l)).
-corso_di_studio(5069, categoria_corso(lm)).
-corso_di_studio(5075, categoria_corso(lm)).
-corso_di_studio(5000, categoria_corso(lm)).
-corso_di_studio(5014, categoria_corso(lm)).
-corso_di_studio(5071, categoria_corso(lm)).
-corso_di_studio(3022, categoria_corso(l)).
-corso_di_studio(5043, categoria_corso(lm)).
-corso_di_studio(3028, categoria_corso(l)).
-corso_di_studio(5073, categoria_corso(lm)).
-corso_di_studio(5062, categoria_corso(lm)).
-corso_di_studio(995, categoria_corso(lm5)).
-corso_di_studio(5064, categoria_corso(lm)).
-corso_di_studio(3050, categoria_corso(l)).
-corso_di_studio(5052, categoria_corso(lm)).
-corso_di_studio(3069, categoria_corso(l)).
-corso_di_studio(3065, categoria_corso(l)).
-corso_di_studio(3060, categoria_corso(l)).
-corso_di_studio(5054, categoria_corso(lm)).
-corso_di_studio(5055, categoria_corso(lm)).
-corso_di_studio(5013, categoria_corso(lm)).
-corso_di_studio(5041, categoria_corso(lm)).
-corso_di_studio(5081, categoria_corso(lm)).
-corso_di_studio(3055, categoria_corso(l)).
-corso_di_studio(3059, categoria_corso(l)).
-corso_di_studio(5016, categoria_corso(lm)).
-corso_di_studio(5044, categoria_corso(lm)).
-corso_di_studio(3032, categoria_corso(l)).
-corso_di_studio(5082, categoria_corso(lm)).
-corso_di_studio(5051, categoria_corso(lm)).
-corso_di_studio(5057, categoria_corso(lm)).
-corso_di_studio(5070, categoria_corso(lm)).
+corso(3023). afferisce(corso(3023), categoria_corso(l)).
+corso(3026). afferisce(corso(3026), categoria_corso(l)).
+corso(5036). afferisce(corso(5036), categoria_corso(lm)).
+corso(5045). afferisce(corso(5045), categoria_corso(lm)).
+corso(5065). afferisce(corso(5065), categoria_corso(lm)).
+corso(3068). afferisce(corso(3068), categoria_corso(l)).
+corso(3011). afferisce(corso(3011), categoria_corso(l)).
+corso(3057). afferisce(corso(3057), categoria_corso(l)).
+corso(5048). afferisce(corso(5048), categoria_corso(lm)).
+corso(5078). afferisce(corso(5078), categoria_corso(lm)).
+corso(3051). afferisce(corso(3051), categoria_corso(l)).
+corso(3072). afferisce(corso(3072), categoria_corso(l)).
+corso(3071). afferisce(corso(3071), categoria_corso(l)).
+corso(3004). afferisce(corso(3004), categoria_corso(l)).
+corso(3062). afferisce(corso(3062), categoria_corso(l)).
+corso(5053). afferisce(corso(5053), categoria_corso(lm)).
+corso(3044). afferisce(corso(3044), categoria_corso(l)).
+corso(3049). afferisce(corso(3049), categoria_corso(l)).
+corso(5074). afferisce(corso(5074), categoria_corso(lm6)).
+corso(5027). afferisce(corso(5027), categoria_corso(lm6)).
+corso(3041). afferisce(corso(3041), categoria_corso(l)).
+corso(3067). afferisce(corso(3067), categoria_corso(l)).
+corso(3047). afferisce(corso(3047), categoria_corso(l)).
+corso(5028). afferisce(corso(5028), categoria_corso(lm)).
+corso(3042). afferisce(corso(3042), categoria_corso(l)).
+corso(3040). afferisce(corso(3040), categoria_corso(l)).
+corso(3048). afferisce(corso(3048), categoria_corso(l)).
+corso(3014). afferisce(corso(3014), categoria_corso(l)).
+corso(5049). afferisce(corso(5049), categoria_corso(lm)).
+corso(5026). afferisce(corso(5026), categoria_corso(lm6)).
+corso(3046). afferisce(corso(3046), categoria_corso(l)).
+corso(3030). afferisce(corso(3030), categoria_corso(l)).
+corso(5037). afferisce(corso(5037), categoria_corso(lm)).
+corso(5077). afferisce(corso(5077), categoria_corso(lm)).
+corso(5059). afferisce(corso(5059), categoria_corso(lm)).
+corso(5076). afferisce(corso(5076), categoria_corso(lm)).
+corso(3019). afferisce(corso(3019), categoria_corso(l)).
+corso(5079). afferisce(corso(5079), categoria_corso(lm5)).
+corso(3070). afferisce(corso(3070), categoria_corso(l)).
+corso(5015). afferisce(corso(5015), categoria_corso(lm)).
+corso(3061). afferisce(corso(3061), categoria_corso(l)).
+corso(5008). afferisce(corso(5008), categoria_corso(lm5)).
+corso(3027). afferisce(corso(3027), categoria_corso(l)).
+corso(5009). afferisce(corso(5009), categoria_corso(lm5)).
+corso(3000). afferisce(corso(3000), categoria_corso(l)).
+corso(5068). afferisce(corso(5068), categoria_corso(lm)).
+corso(3007). afferisce(corso(3007), categoria_corso(l)).
+corso(5011). afferisce(corso(5011), categoria_corso(lm)).
+corso(5005). afferisce(corso(5005), categoria_corso(lm)).
+corso(5025). afferisce(corso(5025), categoria_corso(lm)).
+corso(3054). afferisce(corso(3054), categoria_corso(l)).
+corso(3006). afferisce(corso(3006), categoria_corso(l)).
+corso(5050). afferisce(corso(5050), categoria_corso(lm)).
+corso(3013). afferisce(corso(3013), categoria_corso(l)).
+corso(5010). afferisce(corso(5010), categoria_corso(lm)).
+corso(5003). afferisce(corso(5003), categoria_corso(lm)).
+corso(3043). afferisce(corso(3043), categoria_corso(l)).
+corso(5047). afferisce(corso(5047), categoria_corso(lm)).
+corso(3017). afferisce(corso(3017), categoria_corso(l)).
+corso(5063). afferisce(corso(5063), categoria_corso(lm)).
+corso(3064). afferisce(corso(3064), categoria_corso(l)).
+corso(3038). afferisce(corso(3038), categoria_corso(l)).
+corso(5046). afferisce(corso(5046), categoria_corso(lm)).
+corso(3066). afferisce(corso(3066), categoria_corso(l)).
+corso(3063). afferisce(corso(3063), categoria_corso(l)).
+corso(5080). afferisce(corso(5080), categoria_corso(lm5)).
+corso(3052). afferisce(corso(3052), categoria_corso(l)).
+corso(3021). afferisce(corso(3021), categoria_corso(l)).
+corso(5029). afferisce(corso(5029), categoria_corso(lm5)).
+corso(3010). afferisce(corso(3010), categoria_corso(l)).
+corso(3029). afferisce(corso(3029), categoria_corso(l)).
+corso(5072). afferisce(corso(5072), categoria_corso(lm)).
+corso(5061). afferisce(corso(5061), categoria_corso(lm)).
+corso(5018). afferisce(corso(5018), categoria_corso(lm)).
+corso(5066). afferisce(corso(5066), categoria_corso(lm)).
+corso(5039). afferisce(corso(5039), categoria_corso(lm)).
+corso(3024). afferisce(corso(3024), categoria_corso(l)).
+corso(3020). afferisce(corso(3020), categoria_corso(l)).
+corso(5069). afferisce(corso(5069), categoria_corso(lm)).
+corso(5075). afferisce(corso(5075), categoria_corso(lm)).
+corso(5000). afferisce(corso(5000), categoria_corso(lm)).
+corso(5014). afferisce(corso(5014), categoria_corso(lm)).
+corso(5071). afferisce(corso(5071), categoria_corso(lm)).
+corso(3022). afferisce(corso(3022), categoria_corso(l)).
+corso(5043). afferisce(corso(5043), categoria_corso(lm)).
+corso(3028). afferisce(corso(3028), categoria_corso(l)).
+corso(5073). afferisce(corso(5073), categoria_corso(lm)).
+corso(5062). afferisce(corso(5062), categoria_corso(lm)).
+corso(995). afferisce(corso(995), categoria_corso(lm5)).
+corso(5064). afferisce(corso(5064), categoria_corso(lm)).
+corso(3050). afferisce(corso(3050), categoria_corso(l)).
+corso(5052). afferisce(corso(5052), categoria_corso(lm)).
+corso(3069). afferisce(corso(3069), categoria_corso(l)).
+corso(3065). afferisce(corso(3065), categoria_corso(l)).
+corso(3060). afferisce(corso(3060), categoria_corso(l)).
+corso(5054). afferisce(corso(5054), categoria_corso(lm)).
+corso(5055). afferisce(corso(5055), categoria_corso(lm)).
+corso(5013). afferisce(corso(5013), categoria_corso(lm)).
+corso(5041). afferisce(corso(5041), categoria_corso(lm)).
+corso(5081). afferisce(corso(5081), categoria_corso(lm)).
+corso(3055). afferisce(corso(3055), categoria_corso(l)).
+corso(3059). afferisce(corso(3059), categoria_corso(l)).
+corso(5016). afferisce(corso(5016), categoria_corso(lm)).
+corso(5044). afferisce(corso(5044), categoria_corso(lm)).
+corso(3032). afferisce(corso(3032), categoria_corso(l)).
+corso(5082). afferisce(corso(5082), categoria_corso(lm)).
+corso(5051). afferisce(corso(5051), categoria_corso(lm)).
+corso(5057). afferisce(corso(5057), categoria_corso(lm)).
+corso(5070). afferisce(corso(5070), categoria_corso(lm)).

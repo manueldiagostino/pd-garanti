@@ -79,7 +79,7 @@ insegna(docente(10, settore(null)), insegnamento(10, settore(mat)), corso_di_stu
 	docente(Matricola, settore(Settore))
 } :- corso_di_studio(Corso, categoria_corso(Categoria_corso)), Categoria_corso = l.
 
-% almeno 4 garanti a tempo indeterminato
+% almeno X garanti a tempo indeterminato
 3{
 	garante(docente(Matricola, settore(Settore)), corso_di_studio(Corso, categoria_corso(Categoria_corso))) :
 	docente(Matricola, settore(Settore)),
@@ -89,7 +89,7 @@ insegna(docente(10, settore(null)), insegnamento(10, settore(mat)), corso_di_stu
 } :- corso_di_studio(Corso, categoria_corso(Categoria_corso)), Categoria_corso = l.
 
 
-% al più 1 garante ricercatore
+% al più X garanti ricercatore
 {
 	garante(docente(Matricola, settore(Settore)), corso_di_studio(Corso, categoria_corso(Categoria_corso))) :
 	docente(Matricola, settore(Settore)),

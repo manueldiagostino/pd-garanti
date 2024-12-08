@@ -56,16 +56,16 @@ def genera_fatti_settori(df, file_output, mappa_ssd):
 
     :param df: DataFrame (non utilizzato direttamente, ma mantenuto per uniformità con altri metodi).
     :param file_output: Percorso del file di output.
-    :param mappa_ssd: Dizionario con chiavi come codici SSD e valori come terminali rappresentanti i settori.
+    :param mappa_ssd: Dizionario con chiavi come codici SSD e valori come termini rappresentanti i settori.
     """
     nome_fatto = 'settore'
 
     try:
         # Scrivi i fatti nel file di output
         with open(file_output, 'w', encoding='utf-8') as f:
-            for ssd, valore_intero in mappa_ssd.items():
+            for ssd, termine in mappa_ssd.items():
                 # Genera il fatto ASP
-                fatto = f"{nome_fatto}({valore_intero})."
+                fatto = f"{nome_fatto}({termine})."
                 f.write(fatto + '\n')  # Scrivi il fatto nel file
 
         print(f"Fatti `{nome_fatto}` scritti con successo in {file_output}")
@@ -102,7 +102,8 @@ def docente(fatti_docenti, riga, mappa_ssd, mappa_ssd_termine):
 
     valori.append(valore)
 
-    fatto = f"docente({valori[0]}, settore({valori[1]}))."
+    fatto = f"docente({valori[0]}). afferisce(docente({
+        valori[0]}), settore({valori[1]}))."
     fatti_docenti[valori[0]] = fatto
 
     return fatto
@@ -122,7 +123,7 @@ def categoria_corso(fatti_categorie, riga):
     return fatto
 
 
-def corso_di_studio(fatti_corsi, riga):
+def corso(fatti_corsi, riga):
     valori = []
     valore = riga['Cod. Corso di Studio']
     if csv_loader.pd.isna(valore):
@@ -138,7 +139,8 @@ def corso_di_studio(fatti_corsi, riga):
 
     valori.append(csv_loader.normalizza_nome(valore))
 
-    fatto = f"corso_di_studio({valori[0]}, categoria_corso({valori[1]}))."
+    fatto = f"corso({valori[0]}). afferisce(corso({
+        valori[0]}), categoria_corso({valori[1]}))."
     fatti_corsi[valori[0]] = fatto
 
     return fatto
@@ -169,7 +171,7 @@ def docente_indeterminato_ricercatore(fatti_docenti_tipo_contratto, riga, fatti_
     if not valori[0] in fatti_docenti:
         return None
 
-    fatto = f"{valori[1]}({fatti_docenti[valori[0]][:-1]})."
+    fatto = f"{valori[1]}(docente({valori[0]}))."
     fatti_docenti_tipo_contratto[valori[0]] = fatto
 
     return fatto
@@ -189,8 +191,83 @@ def docente_contratto(fatti_docenti_tipo_contratto, riga, fatti_docenti):
     if valore in fatti_docenti_tipo_contratto:
         return None
 
-    fatto = f"contratto({fatti_docenti[valore][:-1]})."
+    fatto = f"contratto(docente({valore}))."
     fatti_docenti_tipo_contratto[valore] = fatto
+
+    return fatto
+
+
+def insegnamento(fatti_insegnamenti, riga):
+    valore = riga['Cod. Att. Form.']
+    if csv_loader.pd.isna(valore):
+        return None
+
+    valore = f"af_{valore}"
+    fatto = f"insegnamento({valore})."
+    fatti_insegnamenti[valore] = fatto
+
+    return fatto
+
+
+def insegna(fatti_insegna, riga):
+    matricola = riga['Matricola']
+    if csv_loader.pd.isna(matricola):
+        return None
+    matricola = int(matricola)
+
+    att_formativa = riga['Cod. Att. Form.']
+    if csv_loader.pd.isna(att_formativa):
+        return None
+    att_formativa = f"af_{att_formativa}"
+
+    corso = riga['Cod. Corso di Studio']
+    if csv_loader.pd.isna(corso):
+        return None
+    corso = int(corso)
+
+    fatto = f"insegna(docente({matricola}), insegnamento({
+        att_formativa}), corso({corso}))."
+    fatti_insegna.add(fatto)
+
+    return fatto
+
+
+def normalizza_settore(settore, mappa_ssd, mappa_ssd_termine):
+    if csv_loader.pd.isna(settore):
+        # default per valori null (settore non valorizzato)
+        settore = 'NULL/'
+
+    # `settore` un SSD 2024, converto direttamente in SSD2015
+    if (settore in mappa_ssd):
+        nuova_chiave = mappa_ssd[settore]
+        settore = mappa_ssd_termine[nuova_chiave.split('/')[0]]
+    # altrimenti, rimuovo da '/' in poi e considero il termine
+    # corrispondente al SSD
+    else:
+        settore = settore.split('/')[0]
+        settore = mappa_ssd_termine[settore]
+
+    return settore
+
+
+def settori_di_riferimento(fatti_settori_di_riferimento, riga, mappa_ssd, mappa_ssd_termine):
+    af = riga['Cod. Att. Form.']
+    if csv_loader.pd.isna(af):
+        return None
+    af = f"af_{af}"
+
+    corso = riga['Cod. Corso di Studio']
+    if csv_loader.pd.isna(corso):
+        return None
+    corso = int(corso)
+
+    settore = riga['Cod. Settore Docente']
+    settore = normalizza_settore(settore, mappa_ssd, mappa_ssd_termine)
+    if (settore == 'null'):
+        return None
+
+    fatto = f"di_riferimento(settore({settore}), corso({corso}))."
+    fatti_settori_di_riferimento.add(fatto)
 
     return fatto
 
@@ -228,6 +305,9 @@ def genera_fatti():
     fatti_categorie_corso = {}
     fatti_docenti = {}
     fatti_docenti_tipo_contratto = {}
+    fatti_insegnamenti = {}
+    fatti_insegna = set()
+    fatti_settori_di_riferimento = set()
 
     for _, riga in df.iterrows():
         # Estraggo i docenti
@@ -235,9 +315,16 @@ def genera_fatti():
         # Estraggo le categoria_corso
         categoria_corso(fatti_categorie_corso, riga)
         # Estraggo i corsi
-        corso_di_studio(fatti_corsi_di_studio, riga)
+        corso(fatti_corsi_di_studio, riga)
         # Estraggo docenti a contratto
         docente_contratto(fatti_docenti_tipo_contratto, riga, fatti_docenti)
+        # Estraggo insegnamenti
+        insegnamento(fatti_insegnamenti, riga)
+        # Estraggo fatti insegna
+        insegna(fatti_insegna, riga)
+        # Estraggo i settori di riferimento per i corsi
+        settori_di_riferimento(fatti_settori_di_riferimento, riga,
+                               mappa_ssd, mappa_ssd_termine)
 
     file_csv_docenti = '../../input/docenti.csv'
     df = csv_loader.carica_dati_csv(file_csv_docenti)
@@ -262,31 +349,49 @@ def genera_fatti():
     with open(file_output, 'w', encoding='utf-8') as f:
         for fatto in fatti_docenti.values():
             f.write(f"{fatto}\n")
-    print(f"Fatti `docente\\2` scritti in {file_output}")
+    print(f"Fatti `docente\\1` scritti in {file_output}")
 
     file_output = os.path.join(
         dir_output, 'corsi_di_studio.asp')
     with open(file_output, 'w', encoding='utf-8') as f:
         for fatto in fatti_corsi_di_studio.values():
             f.write(f"{fatto}\n")
-    print(f"Fatti `corso_di_studio\\2` scritti in {file_output}")
+    print(f"Fatti `corso\\1` scritti in {file_output}")
 
     file_output = os.path.join(
         dir_output, 'contratti_docenti.asp')
     with open(file_output, 'w', encoding='utf-8') as f:
         for fatto in fatti_docenti_tipo_contratto.values():
             f.write(f"{fatto}\n")
-        print(f"Fatti `indeterminato\\1`, `ricercatore\\1` scritti in {
+    print(f"Fatti `indeterminato\\1`, `ricercatore\\1`, `contratto\\1` scritti in {
+        file_output}")
+
+    file_output = os.path.join(
+        dir_output, 'insegnamenti.asp')
+    with open(file_output, 'w', encoding='utf-8') as f:
+        for fatto in fatti_insegnamenti.values():
+            f.write(f"{fatto}\n")
+        print(f"Fatti `insegnamento\\1` scritti in {
             file_output}")
+        for fatto in fatti_insegna:
+            f.write(f"{fatto}\n")
+        print(f"Fatti `insegna\\3` scritti in {
+            file_output}")
+
+        file_output = os.path.join(
+            dir_output, 'riferimenti.asp')
+    with open(file_output, 'w', encoding='utf-8') as f:
+        for fatto in fatti_settori_di_riferimento:
+            f.write(f"{fatto}\n")
+    print(f"Fatti `di_riferimento\\2` scritti in {file_output}")
 
 
 def main():
-
     try:
         # Genera i fatti
         genera_fatti()
-    except csv_loader.CaricamentoCSVErrore as e:
-        print(f"Errore durante il caricamento del CSV: {e}")
+    except Exception as e:
+        print(f"Errore durante l'elaborazione dati: {e}")
 
 
 if __name__ == "__main__":
