@@ -1,3 +1,10 @@
+% parametri per lauree triennali
+min_garanti(6) :- categoria_corso(l).
+max_garanti(12) :- categoria_corso(l).
+min_indeterminato(5) :- categoria_corso(l).
+max_ricercatori(4) :- categoria_corso(l).
+max_contratto(2) :- categoria_corso(l).
+
 %*
 :- garante(docente(Matricola), corso(Corso)), 
 	not insegna(docente(Matricola), insegnamento(I), corso(Corso)),
@@ -11,10 +18,12 @@
 	garante(docente(Matricola), corso(Corso)).
 
 % numero garanti per laurea triennale
-6{
+M{
 	garante(docente(Matricola), corso(Corso)) :
 	docente(Matricola)
-}12 :-
+}N :-
+	min_garanti(M),
+    max_garanti(N),
 	corso(Corso),
 	afferisce(corso(Corso), categoria_corso(l)).
 
@@ -67,12 +76,13 @@
 
 
 % almeno X garanti a tempo indeterminato
-5{
+X{
 	garante(docente(Matricola), corso(Corso)) :
 	docente(Matricola),
 	insegna(docente(Matricola), insegnamento(Insegnamento), corso(Corso)),
 	indeterminato(docente(Matricola))
 } :-
+	min_indeterminato(X),
 	corso(Corso),
 	afferisce(corso(Corso), categoria_corso(l)).
 
@@ -82,7 +92,8 @@
 	docente(Matricola),
 	insegna(docente(Matricola), insegnamento(Insegnamento), corso(Corso)),
 	ricercatore(docente(Matricola))
-}4 :-
+}X :-
+	max_ricercatori(X),
 	corso(Corso),
 	afferisce(corso(Corso), categoria_corso(l)).
 
@@ -92,7 +103,8 @@
 	docente(Matricola),
 	insegna(docente(Matricola), insegnamento(Insegnamento), corso(Corso)),
 	contratto(docente(Matricola))
-}2 :-
+}X :-
+	max_contratto(X),
 	corso(Corso),
 	afferisce(corso(Corso), categoria_corso(l)).
 
