@@ -1,0 +1,1 @@
+categoria_corso(l).

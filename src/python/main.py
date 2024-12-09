@@ -1,5 +1,6 @@
 import csv_loader  # Importa il modulo per caricare e pulire i dati
 import os
+import argparse
 
 
 def mappa_settori_nuovi_vecchi(df):
@@ -125,6 +126,7 @@ def categoria_corso(fatti_categorie, riga):
 
 
 def corso(fatti_corsi, riga):
+    print('OK2')
     valori = []
     valore = riga['Cod. Corso di Studio']
     if csv_loader.pd.isna(valore):
@@ -274,11 +276,11 @@ def settori_di_riferimento(fatti_settori_di_riferimento, riga, mappa_ssd, mappa_
     return fatto
 
 
-def genera_fatti():
+def genera_fatti(corsi_da_filtrare):
     """Legge il file CSV, genera i fatti per ogni gruppo e li scrive nel file."""
 
     # Path di output
-    dir_output = '../../src/asp/facts/'
+    dir_output = '../../src/asp/facts/test_filter'
 
     # Carica i dati
     file_csv_docenti = '../../input/docenti.csv'
@@ -300,7 +302,7 @@ def genera_fatti():
         print("Errore nel caricamento dei dati.")
         return
 
-    genera_fatti_settori(df, os.path.join(
+    genera_fatti_settori(os.path.join(
         dir_output, 'settori.asp'), mappa_ssd_termine)
 
     fatti_corsi_di_studio = {}
@@ -312,6 +314,17 @@ def genera_fatti():
     fatti_settori_di_riferimento = set()
 
     for _, riga in df.iterrows():
+        cod_corso = riga['Cod. Corso di Studio']
+        if csv_loader.pd.isna(cod_corso):
+            continue
+        cod_corso = int(cod_corso)
+
+        # Filtra i corsi
+        if corsi_da_filtrare and cod_corso not in corsi_da_filtrare:
+            print(f'{cod_corso} saltato')
+            continue
+
+        print(f'{cod_corso} elaborato')
         # Estraggo i docenti
         docente(fatti_docenti, riga, mappa_ssd, mappa_ssd_termine)
         # Estraggo le categoria_corso
@@ -327,7 +340,7 @@ def genera_fatti():
         # Estraggo i settori di riferimento per i corsi
         settori_di_riferimento(fatti_settori_di_riferimento, riga,
                                mappa_ssd, mappa_ssd_termine)
-
+        
     file_csv_docenti = '../../input/docenti.csv'
     df = csv_loader.carica_dati_csv(file_csv_docenti)
     if df is None:
@@ -388,12 +401,27 @@ def genera_fatti():
     print(f"Fatti `di_riferimento\\2` scritti in {file_output}")
 
 
+# def main():
+#     try:
+#         # Genera i fatti
+#         genera_fatti()
+#     except Exception as e:
+#         print(f"Errore durante l'elaborazione dati: {e}")
+
 def main():
+    parser = argparse.ArgumentParser(description="Genera fatti ASP.")
+    parser.add_argument("--filter", type=str, help="Lista di ID di corsi separati da virgola da considerare.", default=None)
+    args = parser.parse_args()
+
+    # Ottieni i filtri (se presenti)
+    corsi_da_filtrare = set(map(int, args.filter.split(','))) if args.filter else None
+
     try:
         # Genera i fatti
-        genera_fatti()
+        genera_fatti(corsi_da_filtrare)
     except Exception as e:
         print(f"Errore durante l'elaborazione dati: {e}")
+
 
 
 if __name__ == "__main__":
