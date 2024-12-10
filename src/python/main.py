@@ -54,7 +54,7 @@ def mappa_settori_termini(mappa_ssd):
     return mappa_progressiva
 
 
-def genera_fatti(corsi_da_filtrare, dir):
+def genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir):
     """Legge il file CSV, genera i fatti per ogni gruppo e li scrive nel file."""
 
     # Carica i dati
@@ -94,6 +94,9 @@ def genera_fatti(corsi_da_filtrare, dir):
 
         # Filtra i corsi
         if corsi_da_filtrare and cod_corso not in corsi_da_filtrare:
+            # print(f'{cod_corso} escluso')
+            continue
+        if corsi_da_escludere and cod_corso in corsi_da_escludere:
             print(f'{cod_corso} escluso')
             continue
 
@@ -125,30 +128,35 @@ def genera_fatti(corsi_da_filtrare, dir):
     write_dic(fatti_docenti, dir, 'docenti.asp')
     write_dic(fatti_corsi_di_studio, dir, 'corsi_di_studio.asp')
     write_dic(fatti_docenti_tipo_contratto, dir, 'contratti.asp')
-    write_dic(fatti_categorie_corso, dir, 'docenti.asp')
     write_dic(fatti_insegnamenti, dir, 'insegnamenti.asp')
     write_set(fatti_insegna, dir, 'insegna.asp')
     write_set(fatti_settori_di_riferimento, dir, 'settori_di_riferimento.asp')
 
 
 def main():
+    # Se un corso è presente in entrambi i filtri viene escluso
     parser = argparse.ArgumentParser(description="Genera fatti ASP.")
     parser.add_argument(
         "--filter", type=str, help="Lista di ID di corsi separati da virgola da considerare.", default=None)
+    parser.add_argument(
+        "--exclude", type=str, help="Lista di ID di corsi separati da virgola da escludere.", default=None)
     args = parser.parse_args()
 
     # Ottieni i filtri (se presenti)
     corsi_da_filtrare = set(
         map(int, args.filter.split(','))) if args.filter else None
 
-    dir = '../../src/asp/facts/test_filter'
+    corsi_da_escludere = set(
+        map(int, args.exclude.split(','))) if args.exclude else None
+
+    dir = '../../src/asp/facts/'
     try:
         # Creo cartella di output
         if not os.path.exists(dir):
             os.makedirs(dir)
 
         # Genera i fatti
-        genera_fatti(corsi_da_filtrare, dir)
+        genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir)
     except Exception as e:
         print(f"Errore durante l'elaborazione dati: {e}")
 
