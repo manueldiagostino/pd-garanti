@@ -1,12 +1,13 @@
-import csv_loader  # Importa il modulo per caricare e pulire i dati
 import os
 import argparse
+
+from .csv_loader import *  # Importa il modulo per caricare e pulire i dati
 
 
 def docente(fatti_docenti, riga, mappa_ssd, mappa_ssd_termine):
     valori = []
     valore = riga['Matricola']
-    if csv_loader.pd.isna(valore):
+    if pd.isna(valore):
         return None
 
     valore = int(valore)
@@ -14,11 +15,11 @@ def docente(fatti_docenti, riga, mappa_ssd, mappa_ssd_termine):
 
     # Leggo Cod. Settore Docente
     valore = riga['Cod. Settore Docente']
-    if csv_loader.pd.isna(valore) and (valori[0] not in fatti_docenti):
+    if pd.isna(valore) and (valori[0] not in fatti_docenti):
         # default per valori null (settore non valorizzato)
         valore = 'NULL/'
     # ho già valorizzato il settore del docente con un valore non null
-    elif csv_loader.pd.isna(valore) and valori[0] in fatti_docenti:
+    elif pd.isna(valore) and valori[0] in fatti_docenti:
         return None
 
     # `valore` un SSD 2024, converto direttamente in SSD2015
@@ -43,12 +44,12 @@ def docente(fatti_docenti, riga, mappa_ssd, mappa_ssd_termine):
 def categoria_corso(fatti_categorie, riga):
     valore = riga['Cod. Tipo Corso']
 
-    if csv_loader.pd.isna(valore):
+    if pd.isna(valore):
         return None
     if valore in fatti_categorie:
         return None
 
-    fatto = f"categoria_corso({csv_loader.normalizza_nome(valore)})."
+    fatto = f"categoria_corso({normalizza_nome(valore)})."
     fatti_categorie[valore] = fatto
 
     return fatto
@@ -57,7 +58,7 @@ def categoria_corso(fatti_categorie, riga):
 def corso(fatti_corsi, riga):
     valori = []
     valore = riga['Cod. Corso di Studio']
-    if csv_loader.pd.isna(valore):
+    if pd.isna(valore):
         return None
 
     valore = int(valore)
@@ -65,10 +66,10 @@ def corso(fatti_corsi, riga):
 
     # Leggo Cod. Settore Docente
     valore = riga['Cod. Tipo Corso']
-    if csv_loader.pd.isna(valore):
+    if pd.isna(valore):
         return None
 
-    valori.append(csv_loader.normalizza_nome(valore))
+    valori.append(normalizza_nome(valore))
 
     fatto = f"corso({valori[0]}). afferisce(corso({
         valori[0]}), categoria_corso({valori[1]}))."
@@ -80,7 +81,7 @@ def corso(fatti_corsi, riga):
 def docente_indeterminato_ricercatore(fatti_docenti_tipo_contratto, riga):
     valori = []
     valore = riga['Matricola']
-    if csv_loader.pd.isna(valore):
+    if pd.isna(valore):
         return None
 
     valore = int(valore)
@@ -90,10 +91,10 @@ def docente_indeterminato_ricercatore(fatti_docenti_tipo_contratto, riga):
     valori.append(valore)
 
     valore = riga['Fascia']
-    if csv_loader.pd.isna(valore):
+    if pd.isna(valore):
         return None
 
-    if 'ricercatore' in csv_loader.normalizza_nome(valore):
+    if 'ricercatore' in normalizza_nome(valore):
         valori.append('ricercatore')
     else:
         valori.append('indeterminato')
@@ -108,11 +109,11 @@ def docente_contratto(fatti_docenti_tipo_contratto, riga, fatti_docenti):
     valore = riga['Cod. Settore Docente']
 
     # TODO: aggiungere qui 'ricercatore/indeterminato
-    if not csv_loader.pd.isna(valore):
+    if not pd.isna(valore):
         return None
 
     valore = riga['Matricola']
-    if csv_loader.pd.isna(valore):
+    if pd.isna(valore):
         return None
     valore = int(valore)
 
@@ -127,7 +128,7 @@ def docente_contratto(fatti_docenti_tipo_contratto, riga, fatti_docenti):
 
 def insegnamento(fatti_insegnamenti, riga):
     valore = riga['Cod. Att. Form.']
-    if csv_loader.pd.isna(valore):
+    if pd.isna(valore):
         return None
 
     valore = f"af_{valore}"
@@ -139,17 +140,17 @@ def insegnamento(fatti_insegnamenti, riga):
 
 def insegna(fatti_insegna, riga):
     matricola = riga['Matricola']
-    if csv_loader.pd.isna(matricola):
+    if pd.isna(matricola):
         return None
     matricola = int(matricola)
 
     att_formativa = riga['Cod. Att. Form.']
-    if csv_loader.pd.isna(att_formativa):
+    if pd.isna(att_formativa):
         return None
     att_formativa = f"af_{att_formativa}"
 
     corso = riga['Cod. Corso di Studio']
-    if csv_loader.pd.isna(corso):
+    if pd.isna(corso):
         return None
     corso = int(corso)
 
@@ -161,7 +162,7 @@ def insegna(fatti_insegna, riga):
 
 
 def normalizza_settore(settore, mappa_ssd, mappa_ssd_termine):
-    if csv_loader.pd.isna(settore):
+    if pd.isna(settore):
         # default per valori null (settore non valorizzato)
         settore = 'NULL/'
 
@@ -180,12 +181,12 @@ def normalizza_settore(settore, mappa_ssd, mappa_ssd_termine):
 
 def settori_di_riferimento(fatti_settori_di_riferimento, riga, mappa_ssd, mappa_ssd_termine):
     af = riga['Cod. Att. Form.']
-    if csv_loader.pd.isna(af):
+    if pd.isna(af):
         return None
     af = f"af_{af}"
 
     corso = riga['Cod. Corso di Studio']
-    if csv_loader.pd.isna(corso):
+    if pd.isna(corso):
         return None
     corso = int(corso)
 

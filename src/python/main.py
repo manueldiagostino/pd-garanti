@@ -1,7 +1,7 @@
 import argparse
-import csv_loader  # Importa il modulo per caricare e pulire i dati
 import os
 
+from modules.csv_loader import *  # Importa il modulo per caricare e pulire i dati
 from modules.wfacts import *
 from modules.facts import *
 
@@ -18,7 +18,7 @@ def mappa_settori_nuovi_vecchi(df):
         ssd_2015 = row["SSD 2015"]
         ssd_2024 = row["SSD 2024"]
         # Evita valori mancanti
-        if csv_loader.pd.notna(ssd_2015) and csv_loader.pd.notna(ssd_2024):
+        if pd.notna(ssd_2015) and pd.notna(ssd_2024):
             mappa[ssd_2024] = ssd_2015
     return mappa
 
@@ -40,7 +40,7 @@ def mappa_settori_termini(mappa_ssd):
             # Rimuove tutto ciò che viene dopo '/'
             codice_troncato = ssd_2015.split('/')[0]
             # Trasforma il codice in minuscolo e sostituisce spazi o trattini con underscore
-            codice_modificato = csv_loader.normalizza_nome(codice_troncato)
+            codice_modificato = normalizza_nome(codice_troncato)
         else:
             # Gestisce valori non stringa
             codice_troncato = codice_modificato = ssd_2015
@@ -59,7 +59,7 @@ def genera_fatti(corsi_da_filtrare, dir):
 
     # Carica i dati
     file_csv_docenti = '../../input/docenti.csv'
-    df = csv_loader.carica_dati_csv(file_csv_docenti)
+    df = carica_dati_csv(file_csv_docenti)
     if df is None:
         print("Errore nel caricamento dei dati da `docenti.csv`")
         return
@@ -75,7 +75,7 @@ def genera_fatti(corsi_da_filtrare, dir):
             fatti_docenti_tipo_contratto, riga)
 
     file_csv_coperture = '../../input/coperture2425.csv'
-    df = csv_loader.carica_dati_csv(file_csv_coperture)
+    df = carica_dati_csv(file_csv_coperture)
     if df is None:
         print("Errore nel caricamento dei dati da `coperture2425.csv`")
         return
@@ -88,7 +88,7 @@ def genera_fatti(corsi_da_filtrare, dir):
     fatti_settori_di_riferimento = set()
     for _, riga in df.iterrows():
         cod_corso = riga['Cod. Corso di Studio']
-        if csv_loader.pd.isna(cod_corso):
+        if pd.isna(cod_corso):
             continue
         cod_corso = int(cod_corso)
 
@@ -115,7 +115,7 @@ def genera_fatti(corsi_da_filtrare, dir):
                                mappa_ssd, mappa_ssd_termine)
 
     file_csv_docenti = '../../input/docenti.csv'
-    df = csv_loader.carica_dati_csv(file_csv_docenti)
+    df = carica_dati_csv(file_csv_docenti)
     if df is None:
         print("Errore nel caricamento dei dati.")
         return
