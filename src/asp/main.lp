@@ -1,9 +1,3 @@
-% parametri per lauree triennali
-min_garanti(6) :- categoria_corso(l).
-max_garanti(12) :- categoria_corso(l).
-min_indeterminato(5) :- categoria_corso(l).
-max_ricercatori(4) :- categoria_corso(l).
-max_contratto(2) :- categoria_corso(l).
 
 %*
 :- garante(docente(Matricola), corso(Corso)), 
@@ -17,63 +11,15 @@ max_contratto(2) :- categoria_corso(l).
 } :-
 	garante(docente(Matricola), corso(Corso)).
 
-% numero garanti per laurea triennale
+% numero garanti
 M{
 	garante(docente(Matricola), corso(Corso)) :
 	docente(Matricola)
 }N :-
-	min_garanti(M),
-  max_garanti(N),
+	min_garanti(M, corso(Corso)),
+  max_garanti(N, corso(Corso)),
 	corso(Corso),
-	afferisce(corso(Corso), categoria_corso(l)).
-
-%*
-% numero garanti per laurea magistrale
-6{
-	garante(docente(Matricola), corso(Corso)) :
-	docente(Matricola)
-}9 :-
-	corso(Corso),
-	afferisce(corso(Corso), categoria_corso(lm)).
-
-% numero garanti per laurea magistrale cu 5
-15{
-	garante(docente(Matricola), corso(Corso)) :
-	docente(Matricola)
-}18 :-
-	corso(Corso),
-	afferisce(corso(Corso), categoria_corso(lm5)).
-
-% numero garanti per laurea magistrale cu 6
-18{
-	garante(docente(Matricola), corso(Corso)) :
-	docente(Matricola)
-}21 :-
-	corso(Corso),
-	afferisce(corso(Corso), categoria_corso(lm6)).
-
-% numero garanti per LM Scienze Infermieristiche
-3{
-	garante(docente(Matricola), corso(Corso)) :
-	docente(Matricola)
-}6 :-
-	corso(Corso),
-	afferisce(corso(Corso), categoria_corso(lm6)),
-	Corso=5050.
-
-% TODO:identificare tutte le LT professioni sanitarie e 
-% LT a orient. professionale
-
-% numero garanti per LM Scienze Infermieristiche
-4{
-	garante(docente(Matricola), corso(Corso)) :
-	docente(Matricola)
-}7 :-
-	corso(Corso),
-	afferisce(corso(Corso), categoria_corso(lm6)),
-	Corso = 5050 ; Corso = 5028 ; Corso = 5010.
-*%
-
+	afferisce(corso(Corso), categoria_corso(Categoria)).
 
 % almeno X garanti a tempo indeterminato
 X{
@@ -82,9 +28,9 @@ X{
 	insegna(docente(Matricola), insegnamento(Insegnamento), corso(Corso)),
 	indeterminato(docente(Matricola))
 } :-
-	min_indeterminato(X),
+	min_indeterminato(X, corso(Corso)),
 	corso(Corso),
-	afferisce(corso(Corso), categoria_corso(l)).
+	afferisce(corso(Corso), categoria_corso(Categoria)).
 
 % al più X garanti ricercatore
 {
@@ -93,9 +39,9 @@ X{
 	insegna(docente(Matricola), insegnamento(Insegnamento), corso(Corso)),
 	ricercatore(docente(Matricola))
 }X :-
-	max_ricercatori(X),
+	max_ricercatori(X, corso(Corso)),
 	corso(Corso),
-	afferisce(corso(Corso), categoria_corso(l)).
+	afferisce(corso(Corso), categoria_corso(Categoria)).
 
 % al più X garanti a contratto
 {
@@ -104,9 +50,9 @@ X{
 	insegna(docente(Matricola), insegnamento(Insegnamento), corso(Corso)),
 	contratto(docente(Matricola))
 }X :-
-	max_contratto(X),
+	max_contratto(X, corso(Corso)),
 	corso(Corso),
-	afferisce(corso(Corso), categoria_corso(l)).
+	afferisce(corso(Corso), categoria_corso(Categoria)).
 
 % un docente è scelto al più una volta
 1{
@@ -118,4 +64,3 @@ X{
 	afferisce(corso(Corso1), categoria_corso(Categoria1)).
 
 #show garante/2.
-#show insegna/3.
