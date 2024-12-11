@@ -199,3 +199,8 @@ def settori_di_riferimento(fatti_settori_di_riferimento, riga, mappa_ssd, mappa_
     fatti_settori_di_riferimento.add(fatto)
 
     return fatto
+
+
+def settori(fatti_settori, mappa_ssd_termine):
+    for chiave, termine in mappa_ssd_termine.items():
+        fatti_settori[chiave] = f"settore({termine})."
