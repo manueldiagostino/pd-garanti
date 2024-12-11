@@ -1,6 +1,6 @@
-min_garanti(44, corso(3004)) :- afferisce(corso(3004), categoria_corso(l)).
-max_garanti(44, corso(3004)) :- afferisce(corso(3004), categoria_corso(l)).
-min_indeterminato(40, corso(3004)) :- afferisce(corso(3004), categoria_corso(l)).
-max_ricercatori(4, corso(3004)) :- afferisce(corso(3004), categoria_corso(l)).
-max_contratto(2, corso(3004)) :- afferisce(corso(3004), categoria_corso(l)).
+min_garanti(6, corso(5069)) :- afferisce(corso(5069), categoria_corso(lm)).
+max_garanti(6, corso(5069)) :- afferisce(corso(5069), categoria_corso(lm)).
+min_indeterminato(4, corso(5069)) :- afferisce(corso(5069), categoria_corso(lm)).
+max_ricercatori(2, corso(5069)) :- afferisce(corso(5069), categoria_corso(lm)).
+max_contratto(1, corso(5069)) :- afferisce(corso(5069), categoria_corso(lm)).
 
