@@ -41,21 +41,35 @@ def docente(fatti_docenti, riga, mappa_ssd, mappa_ssd_termine):
     return fatto
 
 
-def categoria_corso(fatti_categorie, riga):
-    valore = riga['Cod. Tipo Corso']
+def categoria_corso_speciali(fatti_categorie):
+    fatti_categorie['g5'] = 'categoria_corso(g5).'
+    fatti_categorie['g4'] = 'categoria_corso(g4).'
+    fatti_categorie['g3'] = 'categoria_corso(g3).'
 
-    if pd.isna(valore):
-        return None
-    if valore in fatti_categorie:
+
+def categoria_corso(fatti_categorie, mappa_corso_categoria, riga):
+    categoria = riga['Cod. Tipo Corso']
+    corso = int(riga['Cod. Corso di Studio'])
+
+    if pd.isna(categoria):
         return None
 
-    fatto = f"categoria_corso({normalizza_nome(valore)})."
-    fatti_categorie[valore] = fatto
+    if (corso in [3006, 3019]):
+        categoria = 'G5'
+
+    categoria_norm = normalizza_nome(categoria)
+    mappa_corso_categoria[corso] = categoria_norm
+
+    if categoria in fatti_categorie:
+        return None
+
+    fatto = f"categoria_corso({categoria_norm})."
+    fatti_categorie[categoria] = fatto
 
     return fatto
 
 
-def corso(fatti_corsi, riga):
+def corso(fatti_corsi, riga, mappa_corso_categoria):
     valori = []
     valore = riga['Cod. Corso di Studio']
     if pd.isna(valore):
@@ -65,10 +79,7 @@ def corso(fatti_corsi, riga):
     valori.append(valore)
 
     # Leggo Cod. Settore Docente
-    valore = riga['Cod. Tipo Corso']
-    if pd.isna(valore):
-        return None
-
+    valore = mappa_corso_categoria[valori[0]]
     valori.append(normalizza_nome(valore))
 
     fatto = f"corso({valori[0]}). afferisce(corso({
@@ -199,3 +210,76 @@ def settori_di_riferimento(fatti_settori_di_riferimento, riga, mappa_ssd, mappa_
     fatti_settori_di_riferimento.add(fatto)
 
     return fatto
+
+
+def settori(fatti_settori, mappa_ssd_termine):
+    for chiave, termine in mappa_ssd_termine.items():
+        fatti_settori[chiave] = f"settore({termine})."
+
+
+def aggiorna_numerosita(soglia, num_studenti):
+    # num_studenti: [attuale, massima]
+
+    attuali = num_studenti[0]
+    massimi = num_studenti[1]
+
+    w = (attuali / massimi)
+
+    if int(w) == 0:
+        return None
+
+    delta = int(soglia[0] * (w - 1))
+    for i in range(3):
+        soglia[i] += delta
+
+
+def garanti_per_corso(fatti_garanti_per_corso, mappa_corso_categoria, mappa_numerosita):
+
+    soglie = {
+        "l": [9, 9, 5, 4, 2],
+        "lm": [6, 6, 4, 2, 1],
+        "lm5": [15, 12, 8, 7, 3],
+        "lm6": [18, 12, 10, 8, 4],
+        "g5": [5, 5, 3, 2, 1],
+        "g4": [4, 4, 2, 2, 1],
+        "g3": [3, 3, 1, 2, 1],
+    }
+
+    for corso, categoria in mappa_corso_categoria.items():
+        soglia = soglie[categoria].copy()
+
+        if (corso not in mappa_numerosita):
+            print(corso)
+            continue
+
+        aggiorna_numerosita(soglia, mappa_numerosita[corso])
+
+        min = soglia[0]
+        max = soglia[1]
+        min_indeterminato = soglia[2]
+        max_ricercatori = soglia[3]
+        max_contratto = soglia[4]
+
+        # fatto = f"min_garanti({
+        #     min}) :- afferisce(corso({corso}), categoria_corso({categoria})).\n"
+        # fatto += f"max_garanti({max}) :- afferisce(corso({
+        #     corso}), categoria_corso({categoria})).\n"
+        # fatto += f"min_indeterminato({min_indeterminato}) :- afferisce(corso({
+        #     corso}), categoria_corso({categoria})).\n"
+        # fatto += f"max_ricercatori({max_ricercatori}) :- afferisce(corso({
+        #     corso}), categoria_corso({categoria})).\n"
+        # fatto += f"max_contratto({max_contratto}) :- afferisce(corso({
+        #     corso}), categoria_corso({categoria})).\n"
+
+        fatto = f"min_garanti({min}, corso({
+            corso})) :- afferisce(corso({corso}), categoria_corso({categoria})).\n"
+        fatto += f"max_garanti({max}, corso({corso})) :- afferisce(corso({
+            corso}), categoria_corso({categoria})).\n"
+        fatto += f"min_indeterminato({min_indeterminato}, corso({
+            corso})) :- afferisce(corso({corso}), categoria_corso({categoria})).\n"
+        fatto += f"max_ricercatori({max_ricercatori}, corso({corso})) :- afferisce(corso({
+            corso}), categoria_corso({categoria})).\n"
+        fatto += f"max_contratto({max_contratto}, corso({corso})) :- afferisce(corso({
+            corso}), categoria_corso({categoria})).\n"
+
+        fatti_garanti_per_corso[corso] = fatto

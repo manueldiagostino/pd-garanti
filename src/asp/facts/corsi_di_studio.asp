@@ -1,1 +1,1 @@
-corso(3027). afferisce(corso(3027), categoria_corso(l)).
+corso(3004). afferisce(corso(3004), categoria_corso(l)).
