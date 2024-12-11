@@ -23,7 +23,7 @@ M{
 	docente(Matricola)
 }N :-
 	min_garanti(M),
-    max_garanti(N),
+  max_garanti(N),
 	corso(Corso),
 	afferisce(corso(Corso), categoria_corso(l)).
 
