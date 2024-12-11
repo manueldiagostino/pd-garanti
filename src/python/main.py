@@ -1,7 +1,7 @@
 import argparse
 import os
 
-from modules.csv_loader import *  # Importa il modulo per caricare e pulire i dati
+from modules.csv_loader import *
 from modules.wfacts import *
 from modules.facts import *
 
@@ -116,12 +116,6 @@ def genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir):
         # Estraggo i settori di riferimento per i corsi
         settori_di_riferimento(fatti_settori_di_riferimento, riga,
                                mappa_ssd, mappa_ssd_termine)
-
-    file_csv_docenti = '../../input/docenti.csv'
-    df = carica_dati_csv(file_csv_docenti)
-    if df is None:
-        print("Errore nel caricamento dei dati.")
-        return
 
     # Stampo i fatti nei rispettivi file
     write_dic(fatti_categorie_corso, dir, 'categorie_corso.asp')
