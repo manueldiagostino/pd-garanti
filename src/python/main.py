@@ -66,7 +66,10 @@ def genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir):
 
     mappa_ssd = mappa_settori_nuovi_vecchi(df)
     mappa_ssd_termine = mappa_settori_termini(mappa_ssd)
-    write_dic(mappa_ssd_termine, dir, 'settori.asp')
+
+    fatti_settori = {}
+    settori(fatti_settori, mappa_ssd_termine)
+    write_dic(fatti_settori, dir, 'settori.asp')
 
     fatti_docenti_tipo_contratto = {}
     for _, riga in df.iterrows():

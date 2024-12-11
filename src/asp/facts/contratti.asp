@@ -1017,5 +1017,7 @@ indeterminato(docente(5715)).
 contratto(docente(3948)).
 contratto(docente(5001)).
 contratto(docente(48119)).
+contratto(docente(37772)).
 contratto(docente(42092)).
 contratto(docente(4724)).
+contratto(docente(34246)).
