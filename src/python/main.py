@@ -1,5 +1,6 @@
 import argparse
 import os
+import re
 
 from modules.csv_loader import (
     carica_dati_csv,
@@ -23,7 +24,8 @@ from modules.facts import (
     settori_di_riferimento,
     settori,
     pd,
-    garanti_per_corso
+    garanti_per_corso,
+    presidenti
 )
 
 from modules.stats import (
@@ -79,6 +81,58 @@ def mappa_settori_termini(mappa_ssd):
     return mappa_progressiva
 
 
+# Funzione per trovare la matricola in base al nome del docente
+def find_matricola_by_name(nome_docente, mappa_docenti):
+    for matricola, nome in mappa_docenti.items():
+        # Usa regex per fare un match tra il nome e il nome completo nel CSV
+        # La regex è case-insensitive grazie a re.IGNORECASE
+        if re.search(r'\b' + re.escape(nome_docente) + r'\b', nome, re.IGNORECASE):
+            return matricola
+    return None  # Nessun match trovato
+
+
+def genera_mappa_docenti(df):
+    mappa_docenti = {}
+
+    for _, riga in df.iterrows():
+        matricola = int(riga['Matricola'])
+        nome = riga['Cognome e Nome']
+
+        mappa_docenti[matricola] = nome
+
+    return mappa_docenti
+
+
+def genera_mappa_presidenti(mappa_docenti):
+    mappa_presidenti = {}
+
+    file_csv_presidenti = '../../input/presidenti.csv'
+    df = carica_dati_csv(file_csv_presidenti)
+    if df is None:
+        print("Errore nel caricamento dei dati da `presidenti.csv`")
+        return None
+
+    for _, riga in df.iterrows():
+
+        corso = int(riga['Matricola'])
+
+        # Estrai il nome completo dalla seconda colonna (Nome Cognome)
+        nome_cognome = riga['Nome e Cognome'].strip()
+        if not nome_cognome:
+            continue
+
+        # Trova la matricola corrispondente
+        matricola = find_matricola_by_name(nome_cognome, mappa_docenti)
+
+        if not matricola:
+            print(f"Nome: {nome_cognome}, Matricola non trovata")
+            continue
+
+        mappa_presidenti[corso] = matricola
+
+    return mappa_presidenti
+
+
 def genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir):
     """Legge il file CSV, genera i fatti per ogni gruppo e li scrive nel file."""
 
@@ -95,6 +149,12 @@ def genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir):
     fatti_settori = {}
     settori(fatti_settori, mappa_ssd_termine)
     write_dic(fatti_settori, dir, 'settori.asp')
+
+    mappa_docenti = genera_mappa_docenti(df)
+    mappa_presidenti = genera_mappa_presidenti(mappa_docenti)
+    fatti_presidenti = {}
+    presidenti(fatti_presidenti, mappa_presidenti)
+    write_dic(fatti_presidenti, dir, 'presidenti.asp')
 
     fatti_docenti_tipo_contratto = {}
     for _, riga in df.iterrows():

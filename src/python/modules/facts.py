@@ -283,3 +283,9 @@ def garanti_per_corso(fatti_garanti_per_corso, mappa_corso_categoria, mappa_nume
             corso}), categoria_corso({categoria})).\n"
 
         fatti_garanti_per_corso[corso] = fatto
+
+
+def presidenti(fatti_presidenti, mappa_presidenti):
+    for corso, matricola in mappa_presidenti.items():
+        fatto = f"presidente(docente({matricola}), corso({corso}))."
+        fatti_presidenti[corso] = fatto
