@@ -254,8 +254,8 @@ def garanti_per_corso(fatti_garanti_per_corso, mappa_corso_categoria, mappa_nume
 
         aggiorna_numerosita(soglia, mappa_numerosita[corso])
 
-        min = soglia[0]
-        max = soglia[1]
+        max = soglia[0]
+        min = soglia[1]
         min_indeterminato = soglia[2]
         max_ricercatori = soglia[3]
         max_contratto = soglia[4]
