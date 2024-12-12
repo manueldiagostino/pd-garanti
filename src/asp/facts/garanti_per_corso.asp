@@ -58,15 +58,15 @@ min_indeterminato(4, corso(5078)) :- afferisce(corso(5078), categoria_corso(lm))
 max_ricercatori(2, corso(5078)) :- afferisce(corso(5078), categoria_corso(lm)).
 max_contratto(1, corso(5078)) :- afferisce(corso(5078), categoria_corso(lm)).
 
-min_garanti(9, corso(3051)) :- afferisce(corso(3051), categoria_corso(l)).
-max_garanti(9, corso(3051)) :- afferisce(corso(3051), categoria_corso(l)).
-min_indeterminato(5, corso(3051)) :- afferisce(corso(3051), categoria_corso(l)).
+min_garanti(14, corso(3051)) :- afferisce(corso(3051), categoria_corso(l)).
+max_garanti(14, corso(3051)) :- afferisce(corso(3051), categoria_corso(l)).
+min_indeterminato(10, corso(3051)) :- afferisce(corso(3051), categoria_corso(l)).
 max_ricercatori(4, corso(3051)) :- afferisce(corso(3051), categoria_corso(l)).
 max_contratto(2, corso(3051)) :- afferisce(corso(3051), categoria_corso(l)).
 
-min_garanti(17, corso(3004)) :- afferisce(corso(3004), categoria_corso(l)).
-max_garanti(17, corso(3004)) :- afferisce(corso(3004), categoria_corso(l)).
-min_indeterminato(13, corso(3004)) :- afferisce(corso(3004), categoria_corso(l)).
+min_garanti(37, corso(3004)) :- afferisce(corso(3004), categoria_corso(l)).
+max_garanti(37, corso(3004)) :- afferisce(corso(3004), categoria_corso(l)).
+min_indeterminato(33, corso(3004)) :- afferisce(corso(3004), categoria_corso(l)).
 max_ricercatori(4, corso(3004)) :- afferisce(corso(3004), categoria_corso(l)).
 max_contratto(2, corso(3004)) :- afferisce(corso(3004), categoria_corso(l)).
 
@@ -316,9 +316,9 @@ min_indeterminato(4, corso(5047)) :- afferisce(corso(5047), categoria_corso(lm))
 max_ricercatori(2, corso(5047)) :- afferisce(corso(5047), categoria_corso(lm)).
 max_contratto(1, corso(5047)) :- afferisce(corso(5047), categoria_corso(lm)).
 
-min_garanti(9, corso(3017)) :- afferisce(corso(3017), categoria_corso(l)).
-max_garanti(9, corso(3017)) :- afferisce(corso(3017), categoria_corso(l)).
-min_indeterminato(5, corso(3017)) :- afferisce(corso(3017), categoria_corso(l)).
+min_garanti(11, corso(3017)) :- afferisce(corso(3017), categoria_corso(l)).
+max_garanti(11, corso(3017)) :- afferisce(corso(3017), categoria_corso(l)).
+min_indeterminato(7, corso(3017)) :- afferisce(corso(3017), categoria_corso(l)).
 max_ricercatori(4, corso(3017)) :- afferisce(corso(3017), categoria_corso(l)).
 max_contratto(2, corso(3017)) :- afferisce(corso(3017), categoria_corso(l)).
 
@@ -328,9 +328,9 @@ min_indeterminato(5, corso(3064)) :- afferisce(corso(3064), categoria_corso(l)).
 max_ricercatori(4, corso(3064)) :- afferisce(corso(3064), categoria_corso(l)).
 max_contratto(2, corso(3064)) :- afferisce(corso(3064), categoria_corso(l)).
 
-min_garanti(9, corso(3038)) :- afferisce(corso(3038), categoria_corso(l)).
-max_garanti(9, corso(3038)) :- afferisce(corso(3038), categoria_corso(l)).
-min_indeterminato(5, corso(3038)) :- afferisce(corso(3038), categoria_corso(l)).
+min_garanti(15, corso(3038)) :- afferisce(corso(3038), categoria_corso(l)).
+max_garanti(15, corso(3038)) :- afferisce(corso(3038), categoria_corso(l)).
+min_indeterminato(11, corso(3038)) :- afferisce(corso(3038), categoria_corso(l)).
 max_ricercatori(4, corso(3038)) :- afferisce(corso(3038), categoria_corso(l)).
 max_contratto(2, corso(3038)) :- afferisce(corso(3038), categoria_corso(l)).
 
@@ -370,9 +370,9 @@ min_indeterminato(8, corso(5029)) :- afferisce(corso(5029), categoria_corso(lm5)
 max_ricercatori(7, corso(5029)) :- afferisce(corso(5029), categoria_corso(lm5)).
 max_contratto(3, corso(5029)) :- afferisce(corso(5029), categoria_corso(lm5)).
 
-min_garanti(9, corso(3010)) :- afferisce(corso(3010), categoria_corso(l)).
-max_garanti(9, corso(3010)) :- afferisce(corso(3010), categoria_corso(l)).
-min_indeterminato(5, corso(3010)) :- afferisce(corso(3010), categoria_corso(l)).
+min_garanti(13, corso(3010)) :- afferisce(corso(3010), categoria_corso(l)).
+max_garanti(13, corso(3010)) :- afferisce(corso(3010), categoria_corso(l)).
+min_indeterminato(9, corso(3010)) :- afferisce(corso(3010), categoria_corso(l)).
 max_ricercatori(4, corso(3010)) :- afferisce(corso(3010), categoria_corso(l)).
 max_contratto(2, corso(3010)) :- afferisce(corso(3010), categoria_corso(l)).
 
