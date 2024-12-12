@@ -5,7 +5,7 @@ def elabora_df(mappa_numerosita, df):
     for _, riga in df.iterrows():
         tipo, codice, valore = riga
         # Aggiungi il valore come intero
-        num_massima_default = 200
+        num_massima_default = 500
         mappa_numerosita[codice] = [int(valore), num_massima_default]
 
 
