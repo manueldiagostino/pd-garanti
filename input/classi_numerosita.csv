@@ -1,0 +1,122 @@
+Medico sanitaria,A,50,75
+Scientifico -,BI,15,100
+tecnologica,B2,,180
+Umanistico-,Cl,100,200
+sociale,C2,100,250
+Professionalizzanti,P,75,100
+Medico,A,50,50
+sanitaria,,,
+Scientifico-,BI,,65
+";",,65,
+tecnologica,B2,,80
+Umanistico-,Cc,80,100
+sociale,,,
+Medica,A,50,60
+sanitaria,,,
+Scientifico-,B,75,100
+tecnologico,,,
+Umanistico,Cc,100,230
+"-sociale",,,
+AREA,CLASSE,DENOMINAZIONE
+"",L/SNTI,"Professioni sanitarie, infermieristiche e professione sanitaria ostetrica"
+Medico-Sanitaria,L/SNT2,Professioni sanitarie della riabilitazione
+"(A)",L/SNT3,Professioni sanitarie tecniche
+"",L/SNT4,Professioni sanitarie della prevenzione
+"",L-2,Biotecnologie
+"",L-25,Scienze e tecnologie agrarie e forestali
+"",L-26,Scienze e tecnologie alimentari
+"",L-27,Scienze e tecnologie chimiche
+at,L-30,Scienze e tecnologie fisiche
+pesalificn,L-32,Scienze e tecnologie per l’ambiente e la natura
+tecnologico (B1),,7 DOgie P
+"",L-34,Scienze geologiche
+"",L-35,Scienze matematiche
+"",L-38,Scienze zootecniche e tecnologie delle produzioni animali
+"",L-41,Statistica
+"",L-43,Diagnostica per la conservazione dei beni culturali
+"",L-Sc. Mat.,Scienza dei materiali
+"",L-13,Scienze biologiche
+"",L-17,Scienze dell'architettura
+"",L-21,"Scienze della pianificazione territoriale, urbanistica, paesaggistica e ambientale"
+"",L-22,Scienze delle attività motorie e sportive
+"",L-23,Scienze e tecniche dell’edilizia
+Scientifico,L-28,Scienze e tecnologie della navigazione
+tecnologico (B2),L-29,Scienze e tecnologie farmaceutiche
+"",L-31,Scienze e tecnologie informatiche
+"",L-4,Disegno industriale
+"",L-7,Ingegneria civile e ambientale
+"",L-8,Ingegneria dell’informazione
+"",L-9,Ingegneria industriale
+"",L-1,Beni culturali
+"",L-42,Storia
+"",L-5,Filosofia
+"",L-37,"Scienze sociali per la cooperazione, lo sviluppo e la pace"
+"",L-10,Lettere
+nen,L-39,Servizio sociale
+Umanistico,,7 = DERCRESTE
+Sociale (C1),L-14,Scienze dei servizi giuridici
+"",L-15,Scienze del turismo
+"",L-16,Scienze dell’amministrazione e dell’organizzazione
+"",L-6,Geografia
+"",L-33,Scienze economiche
+"",L/DS,Scienze della difesa e della sicurezza
+"",L/GASTR,"Scienze, culture e politiche della gastronomia"
+"",L.11,Lingue e culture modeme
+"",L-12,Mediazione linguistica
+"",L-18,Scienze dell’economia e della gestione aziendale
+Umanistico sociale,| L-19,Scienze dell’educazione e della formazione
+"(C2)",L-20,Scienze della comunicazione
+"",L-24,Scienze e tecniche psicologiche
+"",L-3,"Discipline delle arti figurative, della musica, dello spettacolo e della moda"
+"",L-36,Scienze politiche e delle relazioni internazionali
+"",L-40,Sociologia
+Professionalizzanti,| LP-01,Professioni tecniche ple’r edilizia e il territorio
+"(P)",LP-02,"Professioni tecniche agrarie, alimentari e forestali"
+"",LP-03,Professioni tecniche industriali e dell’informazione
+"",,,CORSI DI LAUREA MAGISTRALE
+AREA,,,CLASSE DENOMINAZIONE
+Medico —,Sanitaria,,| LM/SNTI Scienze infermieristiche e ostetriche
+"(A)",,,LM/SNT2 Scienze riabilitative delle professioni sanitarie
+Numerosità,max,=,| LM/SNT3 Scienze delle professioni sanitarie tecniche
+50,,,LM/SNT4 Scienze delle professioni sanitarie della prevenzione
+"",,,LM-17 Fisica
+"",,,LM-18 Informatica
+"",,,LM 10 Conservazione dei beni architettonici e ambientali
+"",,,LM-11 Scienze per la conservazione dei beni culturali
+"",,,LM-40 Matematica
+"",,,LM-44 Modellistica matematico-fisica per l'ingegneria
+"",,,LM-54 Scienze chimiche
+"",,,LM-58 Scienze dell’universo
+"",,,LM-60 Scienze della natura
+"",,,LM-61 Scienze della nutrizione umana
+"",,,LM-66 Sicurezza informatica
+"",,,LM-69 Scienze e tecnologie agrarie
+"",,,LM-7 Biotecnologie agrarie
+"",,,LM-70 Scienze e tecnologie alimentari
+Scientifico,,—,| LM-71 Scienze e tecnologie della chimica industriale
+Tecnologica (B1),,,LM-73 Scienze e tecnologie forestali ed ambientali
+"",,,LM-74 Scienze e tecnologie geologiche
+"",,,LM-75 Scienze e tecnologie per l’ambiente e il territorio
+"",,,LM-79 Scienze geofisiche
+"",,,LM-8 Biotecnologie industriali
+"",,,LM-82 Scienze statistiche
+"",,,LM-83 Scienze statistiche attuariali e finanziarie
+"",,,LM-86 Scienze zootecniche e tecnologie animali
+"",,,"LM-9 Biotecnologie mediche, veterinarie e farmaceutiche"
+"",,,LM-91 Tecniche e metodi per la società dell’informazione
+"",,,LM-72 Scienze e tecnologie della navigazione
+"",,,LM Sc. Mat. Scienza dei materiali
+"",,,LM Data Data science
+"",,,LM-53* Ingegneria dei materiali
+"",,,LM-12 Design
+"",,,LM-20 Ingegneria aerospaziale e astronautica
+AREA,,CLASSE,DENOMINAZIONE
+". —",,LM-46,Odontoiatria e protesi dentaria
+Medico-Sanitaria,,,= 3 5
+"(A)",,LM-41,Medicina e chirurgia
+"",,LM-42,Medicina veterinaria
+Scientifico,,LMR/02,Conservazione e restauro dei beni culturali _
+Teologica (B),,LM-4 C.U.,Architettura e ingegneria edile-architettura (quinquennale)
+"=",,LM-13,Farmacia e farmacia industriale
+Umanistico —,,LM-85 bis,Scienze della formazione primaria
+Sociale (C ),,LMG/01,Giurisprudenza
