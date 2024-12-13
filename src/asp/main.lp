@@ -63,7 +63,12 @@ X{
 	garante(docente(Matricola), corso(Corso1)),
 	afferisce(corso(Corso1), categoria_corso(Categoria1)).
 
-Rindeterminato(docente(Docente))-
+R{
+	
+	garante(docente(Matricola), corso(Corso)) :
+	afferisce(docente(Matricola), settore(Settore)),
+	di_riferimento(settore(Settore), corso(Corso))
+} :-
 	corso(Corso),
 	min_riferimento(R, corso(Corso)).
 
