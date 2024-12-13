@@ -9,17 +9,13 @@
 	-1@2,
 	Matricola :
 		garante(docente(Matricola), corso(Corso)),
-		afferisce(docente(Matricola), settore(Settore)),
-		di_riferimento(settore(Settore), corso(Corso)),
-		ricercatore(docente(Docente))
+		ricercatore(docente(Matricola))
 }.
 
 #minimize{
 	-1@3,
 	Matricola :
 		garante(docente(Matricola), corso(Corso)),
-		afferisce(docente(Matricola), settore(Settore)),
-		di_riferimento(settore(Settore), corso(Corso)),
-		indeterminato(docente(Docente))
+		indeterminato(docente(Matricola))
 }.
 
