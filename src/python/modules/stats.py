@@ -7,10 +7,10 @@ def elabora_df(mappa_numerosita, df, mappa_corso_max):
         # Aggiungi il valore come intero
         codice = int(codice)
         if codice not in mappa_corso_max:
-            print(f"numerosita max per {codice} non trovata")
-            max=1000
+            max = 250
+            print(f"numerosita max per {codice} non trovata. Assegnata {max}")
         else:
-            max=mappa_corso_max[codice]
+            max = mappa_corso_max[codice]
 
         mappa_numerosita[codice] = [int(valore), max]
 
