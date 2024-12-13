@@ -54,16 +54,22 @@ def categoria_corso(fatti_categorie, mappa_corso_categoria, riga):
     if pd.isna(categoria):
         return None
 
-    if (corso in [3006, 3019]):
-        categoria = 'G5'
+    categoria = normalizza_nome(categoria)
+    if (corso in mappa_corso_categoria):
+        fatto = f"categoria_corso({mappa_corso_categoria[corso][0]})."
+        fatti_categorie[categoria] = fatto
 
-    categoria_norm = normalizza_nome(categoria)
-    mappa_corso_categoria[corso] = categoria_norm
+        mappa_corso_categoria[corso][1] = categoria
+        return fatto
+
+    mappa_corso_categoria[corso] = ['null', 'null']
+    mappa_corso_categoria[corso][0] = categoria
+    mappa_corso_categoria[corso][1] = categoria
 
     if categoria in fatti_categorie:
         return None
 
-    fatto = f"categoria_corso({categoria_norm})."
+    fatto = f"categoria_corso({categoria})."
     fatti_categorie[categoria] = fatto
 
     return fatto
@@ -79,8 +85,8 @@ def corso(fatti_corsi, riga, mappa_corso_categoria):
     valori.append(valore)
 
     # Leggo Cod. Settore Docente
-    valore = mappa_corso_categoria[valori[0]]
-    valori.append(normalizza_nome(valore))
+    valore = mappa_corso_categoria[valori[0]][0]
+    valori.append(valore)
 
     fatto = f"corso({valori[0]}). afferisce(corso({
         valori[0]}), categoria_corso({valori[1]}))."
@@ -257,10 +263,11 @@ def garanti_per_corso(fatti_garanti_per_corso, mappa_corso_categoria, mappa_nume
     }
 
     for corso, categoria in mappa_corso_categoria.items():
+        categoria = categoria[0]
         soglia = soglie[categoria].copy()
 
         if (corso not in mappa_numerosita):
-            print(corso)
+            # print(corso)
             continue
 
         aggiorna_numerosita(soglia, mappa_numerosita[corso])

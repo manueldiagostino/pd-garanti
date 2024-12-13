@@ -81,14 +81,18 @@ def mappa_settori_termini(mappa_ssd):
     return mappa_progressiva
 
 # Funzione per trovare la numerosita massima di un corso
-def genera_mappa_corso_max():
+
+
+def genera_mappa_corso_max(mappa_corso_categoria):
     mappa_corso_max = {}
 
     file_csv_jolly = '../../input/numerosita/jolly.csv'
 
     file_csv_classi = '../../input/numerosita/classi.csv'
 
-    file_csv_numerosita = '../../input/numerosita/numerosita.csv'
+    file_csv_numerosita_l = '../../input/numerosita/numerosita_l.csv'
+    file_csv_numerosita_lm = '../../input/numerosita/numerosita_lm.csv'
+    file_csv_numerosita_cu = '../../input/numerosita/numerosita_cu.csv'
 
     df = carica_dati_csv(file_csv_jolly)
     if df is None:
@@ -96,7 +100,7 @@ def genera_mappa_corso_max():
         return None
 
     # Creazione mappa
-    mappa_corso_classe = {}    
+    mappa_corso_classe = {}
     for _, riga in df.iterrows():
 
         classe = riga['Classe']
@@ -114,7 +118,7 @@ def genera_mappa_corso_max():
         return None
 
     # Creazione mappa
-    mappa_classe_area = {}    
+    mappa_classe_area = {}
     for _, riga in df.iterrows():
 
         classe = riga['CLASSE']
@@ -126,14 +130,13 @@ def genera_mappa_corso_max():
 
         mappa_classe_area[classe] = area
 
-    df = carica_dati_csv(file_csv_numerosita)
-    if df is None:
-        print("Errore nel caricamento dei dati da `numerosita.csv`")
+    df_l = carica_dati_csv(file_csv_numerosita_l)
+    if df_l is None:
+        print("Errore nel caricamento dei dati da `numerosita_l.csv`")
         return None
 
-    # Creazione mappa
-    mappa_area_max = {}    
-    for _, riga in df.iterrows():
+    mappa_area_max_l = {}
+    for _, riga in df_l.iterrows():
 
         area = riga['Cod. Area']
         max = riga['Massimo']
@@ -142,21 +145,66 @@ def genera_mappa_corso_max():
             print(f"area is {area}")
             print(f"max is {max}")
 
-        mappa_area_max[area] = max
+        mappa_area_max_l[area] = max
 
+    df_lm = carica_dati_csv(file_csv_numerosita_lm)
+    if df_lm is None:
+        print("Errore nel caricamento dei dati da `numerosita_lm.csv`")
+        return None
+
+    mappa_area_max_lm = {}
+    for _, riga in df_lm.iterrows():
+
+        area = riga['Cod. Area']
+        max = riga['Massimo']
+
+        if area is None or max is None:
+            print(f"area is {area}")
+            print(f"max is {max}")
+
+        mappa_area_max_lm[area] = max
+
+    df_cu = carica_dati_csv(file_csv_numerosita_cu)
+    if df_cu is None:
+        print("Errore nel caricamento dei dati da `numerosita_cu.csv`")
+        return None
+
+    mappa_area_max_cu = {}
+    for _, riga in df_cu.iterrows():
+
+        area = riga['Cod. Area']
+        max = riga['Massimo']
+
+        if area is None or max is None:
+            print(f"area is {area}")
+            print(f"max is {max}")
+
+        mappa_area_max_cu[area] = max
+
+    print(mappa_corso_categoria)
     for corso, classe in mappa_corso_classe.items():
         try:
+            # print(f"corso: {corso}")
             classe = mappa_corso_classe[corso]
+            # print(f"classe: {classe}")
             area = mappa_classe_area[classe]
-            max = mappa_area_max[area]
+            # print(f"area: {area}")
+
+            categoria = mappa_corso_categoria[corso][1]
+            # print(f"categoria: {categoria}")
+            if categoria == "l":
+                max = mappa_area_max_l[area]
+            elif categoria == "lm":
+                max = mappa_area_max_lm[area]
+            else:
+                max = mappa_area_max_cu[area]
+
             mappa_corso_max[corso] = max
         except Exception as e:
-            print(f"errore su {corso}")
-            print(e)
+            print(f"errore su {corso}: {e}")
             continue
 
     return mappa_corso_max
-
 
 
 # Funzione per trovare la matricola in base al nome del docente
@@ -211,6 +259,39 @@ def genera_mappa_presidenti(mappa_docenti):
     return mappa_presidenti
 
 
+def genera_mappa_corso_categoria():
+    mappa_corso_categoria = {}
+
+    file_csv_jolly = '../../input/numerosita/jolly.csv'
+    df = carica_dati_csv(file_csv_jolly)
+    if df is None:
+        print("Errore nel caricamento dei dati da `jolly.csv`")
+        return None
+
+    categorie_descrizione = {
+        "5 DI CUI 3 PO/PA": "g5",
+        "4 DI CUI 2 PO/PA": "g4",
+        "3 DI CUI 1 PO/PA": "g3"
+    }
+
+    for _, riga in df.iterrows():
+        categoria = riga['Categoria']
+        if (pd.isna(categoria)):
+            continue
+
+        try:
+            corso = int(riga['Cod. Corso di Studio'])
+            categoria = categorie_descrizione[categoria]
+        except Exception as e:
+            print(e)
+            continue
+
+        # print(f"corso:{corso}, categoria: {categoria}")
+        mappa_corso_categoria[corso] = [categoria, 'null']
+
+    return mappa_corso_categoria
+
+
 def genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir):
     """Legge il file CSV, genera i fatti per ogni gruppo e li scrive nel file."""
 
@@ -256,10 +337,11 @@ def genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir):
     fatti_insegna = set()
     fatti_settori_di_riferimento = set()
 
-    mappa_corso_categoria = {}
+    mappa_corso_categoria = genera_mappa_corso_categoria()
 
     for _, riga in df.iterrows():
         cod_corso = riga['Cod. Corso di Studio']
+
         if pd.isna(cod_corso):
             continue
         cod_corso = int(cod_corso)
@@ -289,13 +371,13 @@ def genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir):
         settori_di_riferimento(fatti_settori_di_riferimento, riga,
                                mappa_ssd, mappa_ssd_termine)
 
-    mappa_corso_max = genera_mappa_corso_max()
+    mappa_corso_max = genera_mappa_corso_max(mappa_corso_categoria)
     mappa_numerosita = {}
     carica_numerosita(mappa_numerosita, mappa_corso_max)
 
     fatti_garanti_per_corso = {}
-    garanti_per_corso(fatti_garanti_per_corso, mappa_corso_categoria, 
-                    mappa_numerosita)
+    garanti_per_corso(fatti_garanti_per_corso,
+                      mappa_corso_categoria, mappa_numerosita)
 
     # Stampo i fatti nei rispettivi file
     write_dic(fatti_categorie_corso, dir, 'categorie_corso.asp')
