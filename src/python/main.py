@@ -80,6 +80,84 @@ def mappa_settori_termini(mappa_ssd):
 
     return mappa_progressiva
 
+# Funzione per trovare la numerosita massima di un corso
+def genera_mappa_corso_max():
+    mappa_corso_max = {}
+
+    file_csv_jolly = '../../input/numerosita/jolly.csv'
+
+    file_csv_classi = '../../input/numerosita/classi.csv'
+
+    file_csv_numerosita = '../../input/numerosita/numerosita.csv'
+
+    df = carica_dati_csv(file_csv_jolly)
+    if df is None:
+        print("Errore nel caricamento dei dati da `jolly.csv`")
+        return None
+
+    # Creazione mappa
+    mappa_corso_classe = {}    
+    for _, riga in df.iterrows():
+
+        classe = riga['Classe']
+        corso = int(riga['Cod. Corso di Studio'])
+
+        if corso is None or classe is None:
+            print(f"corso is {corso}")
+            print(f"classe is {classe}")
+
+        mappa_corso_classe[corso] = classe
+
+    df = carica_dati_csv(file_csv_classi)
+    if df is None:
+        print("Errore nel caricamento dei dati da `classi.csv`")
+        return None
+
+    # Creazione mappa
+    mappa_classe_area = {}    
+    for _, riga in df.iterrows():
+
+        classe = riga['CLASSE']
+        area = riga['AREA']
+
+        if classe is None or area is None:
+            print(f"area is {area}")
+            print(f"classe is {classe}")
+
+        mappa_classe_area[classe] = area
+
+    df = carica_dati_csv(file_csv_numerosita)
+    if df is None:
+        print("Errore nel caricamento dei dati da `numerosita.csv`")
+        return None
+
+    # Creazione mappa
+    mappa_area_max = {}    
+    for _, riga in df.iterrows():
+
+        area = riga['Cod. Area']
+        max = riga['Massimo']
+
+        if area is None or max is None:
+            print(f"area is {area}")
+            print(f"max is {max}")
+
+        mappa_area_max[area] = max
+
+    for corso, classe in mappa_corso_classe.items():
+        try:
+            classe = mappa_corso_classe[corso]
+            area = mappa_classe_area[classe]
+            max = mappa_area_max[area]
+            mappa_corso_max[corso] = max
+        except Exception as e:
+            print(f"errore su {corso}")
+            print(e)
+            continue
+
+    return mappa_corso_max
+
+
 
 # Funzione per trovare la matricola in base al nome del docente
 def find_matricola_by_name(nome_docente, mappa_docenti):
@@ -180,9 +258,6 @@ def genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir):
 
     mappa_corso_categoria = {}
 
-    mappa_numerosita = {}
-    carica_numerosita(mappa_numerosita)
-
     for _, riga in df.iterrows():
         cod_corso = riga['Cod. Corso di Studio']
         if pd.isna(cod_corso):
@@ -214,9 +289,13 @@ def genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir):
         settori_di_riferimento(fatti_settori_di_riferimento, riga,
                                mappa_ssd, mappa_ssd_termine)
 
+    mappa_corso_max = genera_mappa_corso_max()
+    mappa_numerosita = {}
+    carica_numerosita(mappa_numerosita, mappa_corso_max)
+
     fatti_garanti_per_corso = {}
-    garanti_per_corso(fatti_garanti_per_corso,
-                      mappa_corso_categoria, mappa_numerosita)
+    garanti_per_corso(fatti_garanti_per_corso, mappa_corso_categoria, 
+                    mappa_numerosita)
 
     # Stampo i fatti nei rispettivi file
     write_dic(fatti_categorie_corso, dir, 'categorie_corso.asp')
