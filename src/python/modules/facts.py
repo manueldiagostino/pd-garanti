@@ -232,17 +232,28 @@ def aggiorna_numerosita(soglia, num_studenti):
     for i in range(3):
         soglia[i] += delta
 
+    soglia[5] = int(soglia[1]/2)
+
 
 def garanti_per_corso(fatti_garanti_per_corso, mappa_corso_categoria, mappa_numerosita):
-
+    """
+    La singola soglia mantiene i seguenti valori:
+        - massimo numero di garanti
+        - minimo numero di garanti
+        - minimo numero di garanti associati o ordinari
+        - minimo numero di garanti ricercatori
+        - minimo numero di garanti a contratto
+        - minimo numero di garanti il cui settore afferisca a quelli di
+          riferimento per quel corso
+    """
     soglie = {
-        "l": [9, 9, 5, 4, 2],
-        "lm": [6, 6, 4, 2, 1],
-        "lm5": [15, 12, 8, 7, 3],
-        "lm6": [18, 12, 10, 8, 4],
-        "g5": [5, 5, 3, 2, 1],
-        "g4": [4, 4, 2, 2, 1],
-        "g3": [3, 3, 1, 2, 1],
+        "l": [9, 9, 5, 4, 2, 4],
+        "lm": [6, 6, 4, 2, 1, 3],
+        "lm5": [15, 12, 8, 7, 3, 6],
+        "lm6": [18, 12, 10, 8, 4, 6],
+        "g5": [5, 5, 3, 2, 1, 2],
+        "g4": [4, 4, 2, 2, 1, 2],
+        "g3": [3, 3, 1, 2, 1, 1]
     }
 
     for corso, categoria in mappa_corso_categoria.items():
@@ -259,17 +270,7 @@ def garanti_per_corso(fatti_garanti_per_corso, mappa_corso_categoria, mappa_nume
         min_indeterminato = soglia[2]
         max_ricercatori = soglia[3]
         max_contratto = soglia[4]
-
-        # fatto = f"min_garanti({
-        #     min}) :- afferisce(corso({corso}), categoria_corso({categoria})).\n"
-        # fatto += f"max_garanti({max}) :- afferisce(corso({
-        #     corso}), categoria_corso({categoria})).\n"
-        # fatto += f"min_indeterminato({min_indeterminato}) :- afferisce(corso({
-        #     corso}), categoria_corso({categoria})).\n"
-        # fatto += f"max_ricercatori({max_ricercatori}) :- afferisce(corso({
-        #     corso}), categoria_corso({categoria})).\n"
-        # fatto += f"max_contratto({max_contratto}) :- afferisce(corso({
-        #     corso}), categoria_corso({categoria})).\n"
+        min_riferimento = soglia[5]
 
         fatto = f"min_garanti({min}, corso({
             corso})) :- afferisce(corso({corso}), categoria_corso({categoria})).\n"
@@ -280,6 +281,8 @@ def garanti_per_corso(fatti_garanti_per_corso, mappa_corso_categoria, mappa_nume
         fatto += f"max_ricercatori({max_ricercatori}, corso({corso})) :- afferisce(corso({
             corso}), categoria_corso({categoria})).\n"
         fatto += f"max_contratto({max_contratto}, corso({corso})) :- afferisce(corso({
+            corso}), categoria_corso({categoria})).\n"
+        fatto += f"min_riferimento({min_riferimento}, corso({corso})) :- afferisce(corso({
             corso}), categoria_corso({categoria})).\n"
 
         fatti_garanti_per_corso[corso] = fatto
