@@ -197,6 +197,11 @@ def normalizza_settore(settore, mappa_ssd, mappa_ssd_termine):
 
 
 def settori_di_riferimento(fatti_settori_di_riferimento, riga, mappa_ssd, mappa_ssd_termine):
+
+    taf = riga['TAF']
+    if (taf != 'A') and (taf != 'B'):
+        return None
+
     af = riga['Cod. Att. Form.']
     if pd.isna(af):
         return None
