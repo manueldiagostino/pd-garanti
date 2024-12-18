@@ -1,6 +1,5 @@
 import argparse
 import os
-import re
 
 from modules.csv_loader import (
     carica_dati_csv,
@@ -32,6 +31,10 @@ from modules.stats import (
     carica_numerosita
 )
 
+from modules.solver import (
+    solve_program
+)
+
 
 from modules.maps import (
     mappa_settori_nuovi_vecchi,
@@ -42,15 +45,23 @@ from modules.maps import (
     genera_mappa_presidenti
 )
 
+base_dir = os.path.abspath(os.path.join(
+    os.path.dirname(__file__), "../../"))
+
+input_dir = os.path.join(base_dir, "input")
+asp_dir = os.path.join(base_dir, "src/asp")
+facts_dir = os.path.join(asp_dir, "facts")
+results_dir = os.path.join(asp_dir, "results")
+
 
 def genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir):
     """Legge il file CSV, genera i fatti per ogni gruppo e li scrive nel file."""
 
     # Carica i dati
-    file_csv_docenti = '../../input/docenti.csv'
+    file_csv_docenti = os.path.join(input_dir, "docenti.csv")
     df = carica_dati_csv(file_csv_docenti)
     if df is None:
-        print("Errore nel caricamento dei dati da `docenti.csv`")
+        print(f"Errore nel caricamento dei dati da {file_csv_docenti}")
         return
 
     mappa_ssd = mappa_settori_nuovi_vecchi(df)
@@ -72,10 +83,10 @@ def genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir):
         docente_indeterminato_ricercatore(
             fatti_docenti_tipo_contratto, riga)
 
-    file_csv_coperture = '../../input/coperture2425.csv'
+    file_csv_coperture = os.path.join(input_dir, "coperture2425.csv")
     df = carica_dati_csv(file_csv_coperture)
     if df is None:
-        print("Errore nel caricamento dei dati da `coperture2425.csv`")
+        print(f"Errore nel caricamento dei dati da {file_csv_coperture}")
         return
 
     fatti_corsi_di_studio = {}
@@ -131,14 +142,15 @@ def genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir):
                       mappa_corso_categoria, mappa_numerosita)
 
     # Stampo i fatti nei rispettivi file
-    write_dic(fatti_categorie_corso, dir, 'categorie_corso.asp')
-    write_dic(fatti_docenti, dir, 'docenti.asp')
-    write_dic(fatti_corsi_di_studio, dir, 'corsi_di_studio.asp')
-    write_dic(fatti_docenti_tipo_contratto, dir, 'contratti.asp')
-    write_dic(fatti_insegnamenti, dir, 'insegnamenti.asp')
-    write_set(fatti_insegna, dir, 'insegna.asp')
-    write_set(fatti_settori_di_riferimento, dir, 'settori_di_riferimento.asp')
-    write_dic(fatti_garanti_per_corso, dir, 'garanti_per_corso.asp')
+    write_dic(fatti_categorie_corso, facts_dir, 'categorie_corso.asp')
+    write_dic(fatti_docenti, facts_dir, 'docenti.asp')
+    write_dic(fatti_corsi_di_studio, facts_dir, 'corsi_di_studio.asp')
+    write_dic(fatti_docenti_tipo_contratto, facts_dir, 'contratti.asp')
+    write_dic(fatti_insegnamenti, facts_dir, 'insegnamenti.asp')
+    write_set(fatti_insegna, facts_dir, 'insegna.asp')
+    write_set(fatti_settori_di_riferimento,
+              facts_dir, 'settori_di_riferimento.asp')
+    write_dic(fatti_garanti_per_corso, facts_dir, 'garanti_per_corso.asp')
 
 
 def main():
@@ -170,6 +182,8 @@ def main():
 
     # Genera i fatti
     genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir)
+
+    solve_program()
 
 
 if __name__ == "__main__":
