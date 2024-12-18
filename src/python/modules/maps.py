@@ -1,4 +1,5 @@
 import re
+import os
 
 from .csv_loader import (
     carica_dati_csv,
@@ -60,16 +61,19 @@ def mappa_settori_termini(mappa_ssd):
 # Funzione per trovare la numerosita massima di un corso
 
 
-def genera_mappa_corso_max(mappa_corso_categoria):
+def genera_mappa_corso_max(mappa_corso_categoria, input_dir):
     mappa_corso_max = {}
 
-    file_csv_jolly = '../../input/numerosita/jolly.csv'
+    file_csv_jolly = os.path.join(input_dir, 'numerosita/jolly.csv')
 
-    file_csv_classi = '../../input/numerosita/classi.csv'
+    file_csv_classi = os.path.join(input_dir, 'numerosita/classi.csv')
 
-    file_csv_numerosita_l = '../../input/numerosita/numerosita_l.csv'
-    file_csv_numerosita_lm = '../../input/numerosita/numerosita_lm.csv'
-    file_csv_numerosita_cu = '../../input/numerosita/numerosita_cu.csv'
+    file_csv_numerosita_l = os.path.join(
+        input_dir, 'numerosita/numerosita_l.csv')
+    file_csv_numerosita_lm = os.path.join(
+        input_dir, 'numerosita/numerosita_lm.csv')
+    file_csv_numerosita_cu = os.path.join(
+        input_dir, 'numerosita/numerosita_cu.csv')
 
     df = carica_dati_csv(file_csv_jolly)
     if df is None:
@@ -206,10 +210,9 @@ def genera_mappa_docenti(df):
     return mappa_docenti
 
 
-def genera_mappa_presidenti(mappa_docenti):
+def genera_mappa_presidenti(mappa_docenti, file_csv_presidenti):
     mappa_presidenti = {}
 
-    file_csv_presidenti = '../../input/presidenti.csv'
     df = carica_dati_csv(file_csv_presidenti)
     if df is None:
         print("Errore nel caricamento dei dati da `presidenti.csv`")
@@ -236,10 +239,10 @@ def genera_mappa_presidenti(mappa_docenti):
     return mappa_presidenti
 
 
-def genera_mappa_corso_categoria():
+def genera_mappa_corso_categoria(input_dir):
     mappa_corso_categoria = {}
 
-    file_csv_jolly = '../../input/numerosita/jolly.csv'
+    file_csv_jolly = os.path.join(input_dir, 'numerosita/jolly.csv')
     df = carica_dati_csv(file_csv_jolly)
     if df is None:
         print("Errore nel caricamento dei dati da `jolly.csv`")

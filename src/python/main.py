@@ -49,6 +49,7 @@ base_dir = os.path.abspath(os.path.join(
     os.path.dirname(__file__), "../../"))
 
 input_dir = os.path.join(base_dir, "input")
+print(input_dir)
 asp_dir = os.path.join(base_dir, "src/asp")
 facts_dir = os.path.join(asp_dir, "facts")
 results_dir = os.path.join(asp_dir, "results")
@@ -72,7 +73,8 @@ def genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir):
     write_dic(fatti_settori, dir, 'settori.asp')
 
     mappa_docenti = genera_mappa_docenti(df)
-    mappa_presidenti = genera_mappa_presidenti(mappa_docenti)
+    mappa_presidenti = genera_mappa_presidenti(
+        mappa_docenti, os.path.join(input_dir, 'presidenti.csv'))
     fatti_presidenti = {}
     presidenti(fatti_presidenti, mappa_presidenti)
     write_dic(fatti_presidenti, dir, 'presidenti.asp')
@@ -99,7 +101,7 @@ def genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir):
     fatti_insegna = set()
     fatti_settori_di_riferimento = set()
 
-    mappa_corso_categoria = genera_mappa_corso_categoria()
+    mappa_corso_categoria = genera_mappa_corso_categoria(input_dir)
 
     for _, riga in df.iterrows():
         cod_corso = riga['Cod. Corso di Studio']
@@ -133,9 +135,9 @@ def genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir):
         settori_di_riferimento(fatti_settori_di_riferimento, riga,
                                mappa_ssd, mappa_ssd_termine)
 
-    mappa_corso_max = genera_mappa_corso_max(mappa_corso_categoria)
+    mappa_corso_max = genera_mappa_corso_max(mappa_corso_categoria, input_dir)
     mappa_numerosita = {}
-    carica_numerosita(mappa_numerosita, mappa_corso_max)
+    carica_numerosita(mappa_numerosita, mappa_corso_max, input_dir)
 
     fatti_garanti_per_corso = {}
     garanti_per_corso(fatti_garanti_per_corso,
@@ -175,13 +177,12 @@ def main():
     ]
     corsi_da_escludere.update(nuovi_2024)
 
-    dir = '../../src/asp/facts/'
     # Creo cartella di output
-    if not os.path.exists(dir):
-        os.makedirs(dir)
+    if not os.path.exists(facts_dir):
+        os.makedirs(facts_dir)
 
     # Genera i fatti
-    genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir)
+    genera_fatti(corsi_da_filtrare, corsi_da_escludere, facts_dir)
 
     solve_program()
 
