@@ -3,6 +3,9 @@ import argparse
 
 from .csv_loader import *  # Importa il modulo per caricare e pulire i dati
 
+from rich.console import Console
+console = Console()
+
 
 def docente(fatti_docenti, riga, mappa_ssd, mappa_ssd_termine):
     valori = []
@@ -272,7 +275,7 @@ def garanti_per_corso(fatti_garanti_per_corso, mappa_corso_categoria, mappa_nume
         soglia = soglie[categoria].copy()
 
         if (corso not in mappa_numerosita):
-            # print(corso)
+            # console.print(corso)
             continue
 
         aggiorna_numerosita(soglia, mappa_numerosita[corso])

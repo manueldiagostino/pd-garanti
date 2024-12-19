@@ -1,15 +1,17 @@
-import argparse
-import os
-
-from modules.csv_loader import (
-    carica_dati_csv,
-    normalizza_nome
+from modules.maps import (
+    mappa_settori_nuovi_vecchi,
+    mappa_settori_termini,
+    genera_mappa_corso_categoria,
+    genera_mappa_corso_max,
+    genera_mappa_docenti,
+    genera_mappa_presidenti
 )
-from modules.wfacts import (
-    write_dic,
-    write_set
+from modules.solver import (
+    solve_program
 )
-
+from modules.stats import (
+    carica_numerosita
+)
 from modules.facts import (
     docente,
     categoria_corso_speciali,
@@ -26,24 +28,20 @@ from modules.facts import (
     garanti_per_corso,
     presidenti
 )
-
-from modules.stats import (
-    carica_numerosita
+from modules.wfacts import (
+    write_dic,
+    write_set
 )
-
-from modules.solver import (
-    solve_program
+from modules.csv_loader import (
+    carica_dati_csv,
+    normalizza_nome
 )
+import argparse
+import os
 
+from rich.console import Console
+console = Console()
 
-from modules.maps import (
-    mappa_settori_nuovi_vecchi,
-    mappa_settori_termini,
-    genera_mappa_corso_categoria,
-    genera_mappa_corso_max,
-    genera_mappa_docenti,
-    genera_mappa_presidenti
-)
 
 base_dir = os.path.abspath(os.path.join(
     os.path.dirname(__file__), "../../"))
@@ -62,7 +60,7 @@ def genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir):
     file_csv_docenti = os.path.join(input_dir, "docenti.csv")
     df = carica_dati_csv(file_csv_docenti)
     if df is None:
-        print(f"Errore nel caricamento dei dati da {file_csv_docenti}")
+        console.print(f"Errore nel caricamento dei dati da {file_csv_docenti}")
         return
 
     mappa_ssd = mappa_settori_nuovi_vecchi(df)
@@ -88,7 +86,8 @@ def genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir):
     file_csv_coperture = os.path.join(input_dir, "coperture2425.csv")
     df = carica_dati_csv(file_csv_coperture)
     if df is None:
-        print(f"Errore nel caricamento dei dati da {file_csv_coperture}")
+        console.print(f"Errore nel caricamento dei dati da {
+                      file_csv_coperture}")
         return
 
     fatti_corsi_di_studio = {}
@@ -112,10 +111,10 @@ def genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir):
 
         # Filtra i corsi
         if corsi_da_filtrare and cod_corso not in corsi_da_filtrare:
-            # print(f'{cod_corso} escluso')
+            # console.print(f'{cod_corso} escluso')
             continue
         if corsi_da_escludere and cod_corso in corsi_da_escludere:
-            # print(f'{cod_corso} escluso')
+            # console.print(f'{cod_corso} escluso')
             continue
 
         # Estraggo i docenti
@@ -155,19 +154,34 @@ def genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir):
     write_dic(fatti_garanti_per_corso, facts_dir, 'garanti_per_corso.asp')
 
 
-def main():
-    # Se un corso è presente in entrambi i filtri viene escluso
+def parse_arguments():
+    """Crea e configura il parser degli argomenti."""
     parser = argparse.ArgumentParser(description="Genera fatti ASP.")
     parser.add_argument(
-        "--filter", type=str, help="Lista di ID di corsi separati da virgola da considerare.", default=None)
+        "--filter", type=str,
+        help="Lista di ID di corsi separati da virgola da considerare.",
+        default=None
+    )
     parser.add_argument(
-        "--exclude", type=str, help="Lista di ID di corsi separati da virgola da escludere.", default=None)
-    args = parser.parse_args()
+        "--exclude", type=str,
+        help="Lista di ID di corsi separati da virgola da escludere.",
+        default=None
+    )
+    parser.add_argument(
+        "--solver", type=str,
+        choices=["verbose", "quiet", "none"],
+        help="Modalità del solver: verbose, quiet, o none.",
+        default="verbose"
+    )
+    return parser.parse_args()
+
+
+def main():
+    args = parse_arguments()
 
     # Ottieni i filtri (se presenti)
     corsi_da_filtrare = set(
         map(int, args.filter.split(','))) if args.filter else set()
-
     corsi_da_escludere = set(
         map(int, args.exclude.split(','))) if args.exclude else set()
 
@@ -184,7 +198,13 @@ def main():
     # Genera i fatti
     genera_fatti(corsi_da_filtrare, corsi_da_escludere, facts_dir)
 
-    solve_program()
+    # Chiamata al solver in base alla modalità specificata
+    if args.solver == "none":
+        console.print(
+            "Solver disabilitato. Fatti generati senza eseguire il solver.")
+    else:
+        verbose = args.solver
+        solve_program(verbose=verbose)
 
 
 if __name__ == "__main__":

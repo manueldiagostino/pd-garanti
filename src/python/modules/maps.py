@@ -1,14 +1,15 @@
-import re
-import os
-
+from .facts import (
+    pd,
+)
 from .csv_loader import (
     carica_dati_csv,
     normalizza_nome
 )
+import re
+import os
 
-from .facts import (
-    pd,
-)
+from rich.console import Console
+console = Console()
 
 
 def mappa_settori_nuovi_vecchi(df):
@@ -77,7 +78,7 @@ def genera_mappa_corso_max(mappa_corso_categoria, input_dir):
 
     df = carica_dati_csv(file_csv_jolly)
     if df is None:
-        print("Errore nel caricamento dei dati da `jolly.csv`")
+        console.print("Errore nel caricamento dei dati da `jolly.csv`")
         return None
 
     # Creazione mappa
@@ -88,14 +89,14 @@ def genera_mappa_corso_max(mappa_corso_categoria, input_dir):
         corso = int(riga['Cod. Corso di Studio'])
 
         if corso is None or classe is None:
-            print(f"corso is {corso}")
-            print(f"classe is {classe}")
+            console.print(f"corso is {corso}")
+            console.print(f"classe is {classe}")
 
         mappa_corso_classe[corso] = classe
 
     df = carica_dati_csv(file_csv_classi)
     if df is None:
-        print("Errore nel caricamento dei dati da `classi.csv`")
+        console.print("Errore nel caricamento dei dati da `classi.csv`")
         return None
 
     # Creazione mappa
@@ -106,14 +107,14 @@ def genera_mappa_corso_max(mappa_corso_categoria, input_dir):
         area = riga['AREA']
 
         if classe is None or area is None:
-            print(f"area is {area}")
-            print(f"classe is {classe}")
+            console.print(f"area is {area}")
+            console.print(f"classe is {classe}")
 
         mappa_classe_area[classe] = area
 
     df_l = carica_dati_csv(file_csv_numerosita_l)
     if df_l is None:
-        print("Errore nel caricamento dei dati da `numerosita_l.csv`")
+        console.print("Errore nel caricamento dei dati da `numerosita_l.csv`")
         return None
 
     mappa_area_max_l = {}
@@ -123,14 +124,14 @@ def genera_mappa_corso_max(mappa_corso_categoria, input_dir):
         max = riga['Massimo']
 
         if area is None or max is None:
-            print(f"area is {area}")
-            print(f"max is {max}")
+            console.print(f"area is {area}")
+            console.print(f"max is {max}")
 
         mappa_area_max_l[area] = max
 
     df_lm = carica_dati_csv(file_csv_numerosita_lm)
     if df_lm is None:
-        print("Errore nel caricamento dei dati da `numerosita_lm.csv`")
+        console.print("Errore nel caricamento dei dati da `numerosita_lm.csv`")
         return None
 
     mappa_area_max_lm = {}
@@ -140,14 +141,14 @@ def genera_mappa_corso_max(mappa_corso_categoria, input_dir):
         max = riga['Massimo']
 
         if area is None or max is None:
-            print(f"area is {area}")
-            print(f"max is {max}")
+            console.print(f"area is {area}")
+            console.print(f"max is {max}")
 
         mappa_area_max_lm[area] = max
 
     df_cu = carica_dati_csv(file_csv_numerosita_cu)
     if df_cu is None:
-        print("Errore nel caricamento dei dati da `numerosita_cu.csv`")
+        console.print("Errore nel caricamento dei dati da `numerosita_cu.csv`")
         return None
 
     mappa_area_max_cu = {}
@@ -157,22 +158,22 @@ def genera_mappa_corso_max(mappa_corso_categoria, input_dir):
         max = riga['Massimo']
 
         if area is None or max is None:
-            print(f"area is {area}")
-            print(f"max is {max}")
+            console.print(f"area is {area}")
+            console.print(f"max is {max}")
 
         mappa_area_max_cu[area] = max
 
-    print(mappa_corso_categoria)
+    console.print(mappa_corso_categoria)
     for corso, classe in mappa_corso_classe.items():
         try:
-            # print(f"corso: {corso}")
+            # console.print(f"corso: {corso}")
             classe = mappa_corso_classe[corso]
-            # print(f"classe: {classe}")
+            # console.print(f"classe: {classe}")
             area = mappa_classe_area[classe]
-            # print(f"area: {area}")
+            # console.print(f"area: {area}")
 
             categoria = mappa_corso_categoria[corso][1]
-            # print(f"categoria: {categoria}")
+            # console.print(f"categoria: {categoria}")
             if categoria == "l":
                 max = mappa_area_max_l[area]
             elif categoria == "lm":
@@ -182,7 +183,8 @@ def genera_mappa_corso_max(mappa_corso_categoria, input_dir):
 
             mappa_corso_max[corso] = max
         except Exception as e:
-            print(f"errore su {corso}: {e}")
+            console.print(f"[red]genera_mappa_corso_max errore su {
+                          corso}: {e}[/red]")
             continue
 
     return mappa_corso_max
@@ -215,7 +217,7 @@ def genera_mappa_presidenti(mappa_docenti, file_csv_presidenti):
 
     df = carica_dati_csv(file_csv_presidenti)
     if df is None:
-        print("Errore nel caricamento dei dati da `presidenti.csv`")
+        console.print("Errore nel caricamento dei dati da `presidenti.csv`")
         return None
 
     for _, riga in df.iterrows():
@@ -231,7 +233,7 @@ def genera_mappa_presidenti(mappa_docenti, file_csv_presidenti):
         matricola = find_matricola_by_name(nome_cognome, mappa_docenti)
 
         if not matricola:
-            print(f"Nome: {nome_cognome}, Matricola non trovata")
+            console.print(f"Nome: {nome_cognome}, Matricola non trovata")
             continue
 
         mappa_presidenti[corso] = matricola
@@ -245,7 +247,7 @@ def genera_mappa_corso_categoria(input_dir):
     file_csv_jolly = os.path.join(input_dir, 'numerosita/jolly.csv')
     df = carica_dati_csv(file_csv_jolly)
     if df is None:
-        print("Errore nel caricamento dei dati da `jolly.csv`")
+        console.print("Errore nel caricamento dei dati da `jolly.csv`")
         return None
 
     categorie_descrizione = {
@@ -263,10 +265,10 @@ def genera_mappa_corso_categoria(input_dir):
             corso = int(riga['Cod. Corso di Studio'])
             categoria = categorie_descrizione[categoria]
         except Exception as e:
-            print(e)
+            console.print(e)
             continue
 
-        # print(f"corso:{corso}, categoria: {categoria}")
+        # console.print(f"corso:{corso}, categoria: {categoria}")
         mappa_corso_categoria[corso] = [categoria, 'null']
 
     return mappa_corso_categoria

@@ -46,25 +46,41 @@ def load_program():
             program_content += f.read() + "\n"
     return program_content + facts_content
 
-# Funzione per risolvere il programma
 
+def solve_program(verbose="verbose"):
+    """
+    Esegue il solver con la modalità specificata.
 
-def solve_program():
+    Args:
+        mode (str): Modalità di esecuzione. Può essere "verbose", "quiet", o "none".
+    """
+    if verbose == "none":
+        return
+
     try:
         complete_program = load_program()
         results_file = os.path.join(results_dir, "solution.txt")
 
+        # Pulisce il file dei risultati se esiste
+        if os.path.exists(results_file):
+            os.remove(results_file)
+
         def on_model(model):
+            model_symbols = model.symbols(atoms=True)
             with open(results_file, "a") as f:
-                f.write(f"Model trovato: {model.symbols(atoms=True)}\n")
-            print(f"Model trovato: {model.symbols(atoms=True)}")
+                f.write(f"Model trovato: {model_symbols}\n")
+            if verbose != "quiet":
+                print(f"Model trovato: {model_symbols}")
 
         ctl = clingo.Control()
         ctl.add("base", [], complete_program)
         ctl.ground([("base", [])])
         result = ctl.solve(on_model=on_model)
+
         if result.satisfiable:
-            print(f"Soluzione trovata! Risultati salvati in: {results_file}")
+            if verbose in ["verbose", "quiet"]:
+                print(f"Soluzione trovata! Risultati salvati in: {
+                      results_file}")
         else:
             print("Nessuna soluzione trovata.")
     except FileNotFoundError as e:
@@ -75,4 +91,5 @@ def solve_program():
 
 # Esegui solo se lo script è chiamato direttamente
 if __name__ == "__main__":
-    solve_program()
+    # Modalità di default
+    solve_program(verbose="verbose")
