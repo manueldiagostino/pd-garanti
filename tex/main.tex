@@ -1,4 +1,4 @@
-\documentclass[draft, journal, onecolumn]{IEEEtran}
+\documentclass[draft,journal]{IEEEtran}
 \usepackage[italian]{babel}
 
 \usepackage[utf8]{inputenc}
@@ -77,7 +77,51 @@ possibili estensioni del progetto.
 
 
 \section{Background}
-Richiami teorici ad ASP, aspetti tecnici e specifiche.
+\subsection{Motivazioni}
+Attualmente, l'Università di Parma gestisce l'assegnazione dei docenti in modo
+manuale, affrontando il processo in maniera incrementale per ciascun corso di
+laurea. Il personale incaricato impiega settimane per ottenere una versione
+soddisfacente della distribuzione, basandosi frequentemente su preferenze
+informali e criteri non documentati. Questo approccio risulta poco flessibile e
+difficilmente adattabile a nuove esigenze. Inoltre, presenta significative
+limitazioni, come la difficoltà nel gestire situazioni complesse e l'incapacità
+di ottimizzare il processo in tempo reale, rendendo il sistema poco efficiente e
+reattivo ai cambiamenti.
+
+\subsection{Answer Set Programming}
+L'Answer Set Programming (ASP) è un paradigma di programmazione logica
+dichiarativa, particolarmente adatto per risolvere problemi complessi di natura
+combinatoria che richiedono soluzioni flessibili e ottimizzate. A differenza
+della programmazione imperativa tradizionale, ASP si concentra sulla descrizione
+del \textit{cosa} deve essere risolto piuttosto che su	\textit{come} farlo,
+utilizzando una forma di logica che rappresenta le conoscenze del problema e le
+sue restrizioni (\textit{vincoli}).
+
+ASP si basa sulla teoria degli \textit{answer sets}, ossia un insieme di atomi
+letterali consistenti con le regole e i fatti che costituiscono il programma. Il
+compito del solver ASP è quello di trovare gli insiemi di valori che risolvono
+il sistema di equazioni logiche, fornendo così soluzioni ottimali o ammissibili.
+
+L'uso di questo paradigma di programmazione è particolarmente indicato in ambiti
+come il nostro, in cui sono presenti vincoli complessi, preferenze multiple e
+soluzioni che devono rispettare determinati criteri. ASP permette di modellare
+in modo naturale problemi che coinvolgono l'ottimizzazione, la pianificazione, e
+la ricerca di soluzioni in scenari combinatori, in cui le variabili e le
+relazioni tra esse sono numerose e intricate.
+
+\subsection{\texttt{Clingo}}
+\texttt{Clingo} è un solver open-source per ASP, sviluppato dal gruppo Potassco.
+È uno degli strumenti più potenti e diffusi per risolvere problemi complessi di
+ottimizzazione e combinazione, combinando un motore di inferenza logica con
+capacità avanzate di ottimizzazione. Nel nostro progetto, è stato integrato
+direttamente in Python utilizzando le API Python ufficiali
+\cite{clingo_python_api}, le quali consentono di interagire facilmente con il
+solver all'interno di ambienti Python. Questa integrazione permette di
+automatizzare il processo di invocazione e gestione delle soluzioni, facilitando
+l'elaborazione dei dati e l'ottimizzazione delle assegnazioni in tempo reale.
+
+\subsection{Provenienza e contenuto dei dati di input}
+AAA
 
 \section{Modellazione del problema}
 \subsection{Esempio giocattolo}
