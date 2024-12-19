@@ -1,6 +1,7 @@
 import signal
 import os
 import clingo
+from threading import Timer
 
 from rich.console import Console
 console = Console()
@@ -62,6 +63,11 @@ def signal_handler(signum, frame):
     console.print(
         "[bold yellow]Ricevuto Ctrl+C: interruzione in corso...[/bold yellow]")
 
+def timeout_handler():
+    global time_out
+    time_out = True 
+    console.print("[bold red]Timeout raggiunto. Interruzione in corso...[/bold red]")
+
 
 def solve_program(mode="full", verbose=True, arguments=[]):
     """
@@ -77,6 +83,9 @@ def solve_program(mode="full", verbose=True, arguments=[]):
     # Imposta il gestore per Ctrl+C
     signal.signal(signal.SIGINT, signal_handler)
 
+    global time_out
+    time_out = False  
+
     try:
         complete_program = load_program()  # Funzione che carica il programma ASP
         results_file = os.path.join(results_dir, "solution.txt")
@@ -90,9 +99,16 @@ def solve_program(mode="full", verbose=True, arguments=[]):
                 ctl.interrupt()  # Interrompe la ricerca in corso
                 raise KeyboardInterrupt  # Genera un'interruzione
 
-            model_symbols = model.symbols(atoms=True)
+            if time_out:
+                ctl.interrupt()
+
+            # model_symbols = model.symbols(atoms=True)
+            model_symbols = model.symbols(shown=True)
+            model_costs = model.cost
             with open(results_file, "a") as f:
-                f.write(f"Model trovato: {model_symbols}\n")
+                f.write(f"{model_symbols}\n")
+                if model_costs:
+                    f.write(f"{model_costs}\n")
             if verbose:
                 console.print(
                     f"[bold green]Model trovato: [/bold green]")
@@ -103,7 +119,15 @@ def solve_program(mode="full", verbose=True, arguments=[]):
         ctl.ground([("base", [])])
 
         console.print("[bold blue]Avvio del solving...[/bold blue]")
+
+        # Imposta il timer per il timeout
+        timer = Timer(30, timeout_handler)
+        timer.start()
+
         result = ctl.solve(on_model=on_model)
+
+        # Ferma il timer se la soluzione termina prima del timeout
+        timer.cancel()
 
         if stop_solving:
             console.print(
