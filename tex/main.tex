@@ -4,7 +4,11 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
-\usepackage[obeyDraft, italian, textsize=small, textwidth=60pt]{todonotes}
+\setlength{\marginparwidth}{2cm}
+\usepackage[italian, textsize=small, textwidth=2cm]{todonotes}
+
+\usepackage{hyperref}
+\usepackage{url}
 
 \renewcommand{\IEEEkeywordsname}{Keywords}
 
@@ -27,16 +31,50 @@ email address or ORCID}
 
 \maketitle
 
-\begin{abstract}
-	Riepilogo del problema (4-5 righe).
+\begin{abstract} La gestione dell'assegnazione dei docenti di riferimento o
+	garanti in ambito universitario è un compito complesso che coinvolge vari
+	fattori organizzativi e un gran numero di dati. L'automazione di questo
+	processo può semplificare notevolmente il lavoro amministrativo e migliorare
+	l'efficienza operativa delle università. In questo progetto, abbiamo
+	sviluppato un sistema basato su \textit{Answer Set Programming} (ASP), un
+	paradigma logico adatto alla risoluzione di problemi combinatori complessi.
+	Utilizzando \texttt{Python} e \texttt{Clingo}, un potente solver ASP, abbiamo
+	progettato una soluzione capace di identificare automaticamente i docenti di
+	riferimento, a partire da un insieme di dati specifici. Il sistema sviluppato
+	è descritto nei suoi dettagli tecnici, con un focus sulla modellazione logica,
+	l'implementazione e l'analisi della complessità computazionale. I risultati
+	ottenuti sono discussi insieme alle potenzialità di estensione del sistema.
 \end{abstract}
 
 \begin{IEEEkeywords}
-AAA\todo{Keywords opzionali}
+Answer Set Programming, Ottimizzazione, Programmazione Dichiarativa, Clingo
 \end{IEEEkeywords}
 
-\section{Introduzione}
-Descrizione del problema.
+\section{Introduzione} L'identificazione dei docenti di riferimento o garanti
+per uno specifico corso di studi rappresenta un processo che annualmente
+coinvolge le università italiane. Tale compito può risultare complesso,
+specialmente in presenza di strutture organizzative articolate e di grandi
+volumi di dati. La necessità di automatizzare e ottimizzare questa ricerca è
+quindi cruciale per migliorare l'efficienza delle attività amministrative e
+accademiche.
+
+In questo progetto, abbiamo affrontato il problema utilizzando \textit{Answer
+Set Programming} (ASP), un paradigma di programmazione logica dichiarativa
+particolarmente adatto alla risoluzione di problemi combinatori complessi.
+L'implementazione è stata realizzata con l'ausilio di \texttt{Python}
+\cite{python} e \texttt{Clingo} \cite{clingo}, un solver open source ASP che
+combina il modello di programmazione logica con strumenti di ottimizzazione
+efficienti.
+
+L'obiettivo principale è stato quello di progettare e implementare un sistema
+che, a partire da un insieme di dati resi disponibili dagli uffici di
+competenza, consenta di individuare in maniera automatica i docenti di
+riferimento o garanti in base a criteri specifici. La relazione descrive le fasi
+del lavoro, dall'analisi dei requisiti del problema alla modellazione logica,
+presentando i dettagli dell'implementazione concreta e un'analisi sulla sua
+complessità computazionale. Infine, vengono discussi i risultati ottenuti e le
+possibili estensioni del progetto.
+
 
 \section{Background}
 Richiami teorici ad ASP, aspetti tecnici e specifiche.
@@ -49,5 +87,8 @@ Richiami teorici ad ASP, aspetti tecnici e specifiche.
 \section{Risultati}
 
 \section{Conclusione}
+
+\bibliographystyle{IEEEtran}
+\bibliography{main}
 
 \end{document}
