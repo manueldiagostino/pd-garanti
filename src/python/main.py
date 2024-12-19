@@ -154,6 +154,15 @@ def genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir):
     write_dic(fatti_garanti_per_corso, facts_dir, 'garanti_per_corso.asp')
 
 
+class ClingoArgsAction(argparse.Action):
+    """
+    Azione personalizzata per convertire gli argomenti di Clingo in una lista.
+    """
+
+    def __call__(self, parser, namespace, values, option_string=None):
+        setattr(namespace, self.dest, values.split() if values else [])
+
+
 def parse_arguments():
     """Crea e configura il parser degli argomenti."""
     parser = argparse.ArgumentParser(description="Genera fatti ASP.")
@@ -168,11 +177,12 @@ def parse_arguments():
         default=None
     )
     parser.add_argument(
-        "--solver", type=str,
-        choices=["verbose", "quiet", "none", "only"],
-        help="Modalità del solver: verbose, quiet, none, only.",
-        default="verbose"
-    )
+        "--verbose", action="store_true", help="Abilita la modalità verbose per il solver.")
+    parser.add_argument(
+        "--mode", type=str, choices=["full", "gringo", "clingo", "none"],
+        default="full", help="Modalità di esecuzione: full (rigenera i fatti), gringo, clingo, none (rigenera solo i fatti).")
+    parser.add_argument(
+        "--clingo-args", action=ClingoArgsAction, type=str, help="Argomenti classici di Clingo separati da spazio.", default="")
     return parser.parse_args()
 
 
@@ -195,17 +205,17 @@ def main():
     if not os.path.exists(facts_dir):
         os.makedirs(facts_dir)
 
-    if args.solver != "only":
+    if args.mode in ["full", "none"]:
         # Genera i fatti
         genera_fatti(corsi_da_filtrare, corsi_da_escludere, facts_dir)
 
     # Chiamata al solver in base alla modalità specificata
-    if args.solver == "none":
+    if args.mode == "none":
         console.print(
             "Solver disabilitato. Fatti generati senza eseguire il solver.")
     else:
-        verbose = args.solver
-        solve_program(verbose=verbose)
+        solve_program(mode=args.mode, verbose=args.verbose,
+                      arguments=args.clingo_args)
 
 
 if __name__ == "__main__":

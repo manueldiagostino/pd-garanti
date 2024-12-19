@@ -1,3 +1,4 @@
+import signal
 import os
 import clingo
 
@@ -50,18 +51,34 @@ def load_program():
     return program_content + facts_content
 
 
-def solve_program(verbose="verbose"):
+# Flag per interrompere il solving
+stop_solving = False
+
+
+def signal_handler(signum, frame):
+    """Gestore dei segnali per Ctrl+C."""
+    global stop_solving
+    stop_solving = True
+    console.print(
+        "[bold yellow]Ricevuto Ctrl+C: interruzione in corso...[/bold yellow]")
+
+
+def solve_program(mode="full", verbose=True, arguments=[]):
     """
     Esegue il solver con la modalità specificata.
 
     Args:
-        mode (str): Modalità di esecuzione. Può essere "verbose", "quiet", o "none".
+        mode (str): Modalità di esecuzione. Può essere "full", "gringo", o "clingo".
+        verbose (bool): Se True, stampa i dettagli delle soluzioni.
+        arguments (list): Argomenti da passare al controllo di Clingo.
     """
-    if verbose == "none":
-        return
+    global stop_solving
+    stop_solving = False  # Resetta il flag all'inizio
+    # Imposta il gestore per Ctrl+C
+    signal.signal(signal.SIGINT, signal_handler)
 
     try:
-        complete_program = load_program()
+        complete_program = load_program()  # Funzione che carica il programma ASP
         results_file = os.path.join(results_dir, "solution.txt")
 
         # Pulisce il file dei risultati se esiste
@@ -69,30 +86,44 @@ def solve_program(verbose="verbose"):
             os.remove(results_file)
 
         def on_model(model):
+            if stop_solving:
+                ctl.interrupt()  # Interrompe la ricerca in corso
+                raise KeyboardInterrupt  # Genera un'interruzione
+
             model_symbols = model.symbols(atoms=True)
             with open(results_file, "a") as f:
-                f.write(f"Model trovato:{model_symbols}\n")
-            if verbose == "verbose":
-                print(
-                    f"Model trovato: {model_symbols}")
+                f.write(f"Model trovato: {model_symbols}\n")
+            if verbose:
+                console.print(
+                    f"[bold green]Model trovato: [/bold green]")
+                print(model_symbols)
 
-        ctl = clingo.Control(
-            arguments=['-n', '2']
-        )
+        ctl = clingo.Control(arguments)
         ctl.add("base", [], complete_program)
         ctl.ground([("base", [])])
+
+        console.print("[bold blue]Avvio del solving...[/bold blue]")
         result = ctl.solve(on_model=on_model)
 
-        if result.satisfiable:
-            if verbose in ["verbose", "quiet"]:
-                console.print(f"Soluzione trovata! Risultati salvati in: [magenta]{
-                              results_file}[/magenta]")
+        if stop_solving:
+            console.print(
+                "[bold yellow]Esecuzione interrotta dall'utente.[/bold yellow]")
+        elif result.satisfiable:
+            console.print(
+                f"[bold green]Soluzione trovata![/bold green] Risultati salvati in: [magenta]{results_file}[/magenta]")
         else:
-            console.print("Nessuna soluzione trovata.")
+            console.print("[bold red]Nessuna soluzione trovata.[/bold red]")
+
+    except KeyboardInterrupt:
+        console.print(
+            "[bold yellow]Esecuzione interrotta manualmente.[/bold yellow]")
     except FileNotFoundError as e:
-        console.print(f"Errore: {e}")
+        console.print(f"[bold red]Errore:[/bold red] {e}")
     except Exception as e:
-        console.print(f"Errore durante il solving: {e}")
+        console.print(f"[bold red]Errore durante il solving:[/bold red] {e}")
+    finally:
+        # Ripristina il comportamento predefinito
+        signal.signal(signal.SIGINT, signal.SIG_DFL)
 
 
 # Esegui solo se lo script è chiamato direttamente
