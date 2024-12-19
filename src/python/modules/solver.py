@@ -1,6 +1,9 @@
 import os
 import clingo
 
+from rich.console import Console
+console = Console()
+
 # Percorso principale del progetto
 base_dir = os.path.abspath(os.path.join(
     os.path.dirname(__file__), "../../../src"))
@@ -23,10 +26,10 @@ files_to_include = [
 
 def read_files(directory):
     content = ""
-    print(f"Lettura file dalla directory: {directory}")
+    console.print(f"Lettura file dalla directory: {directory}")
     for filename in sorted(os.listdir(directory)):  # Ordine deterministico
         if filename.endswith(".asp"):
-            print(f"Leggendo il file: {filename}")
+            console.print(f"Leggendo il file: {filename}")
             with open(os.path.join(directory, filename), "r") as file:
                 content += file.read() + "\n"
     return content
@@ -68,25 +71,28 @@ def solve_program(verbose="verbose"):
         def on_model(model):
             model_symbols = model.symbols(atoms=True)
             with open(results_file, "a") as f:
-                f.write(f"Model trovato: {model_symbols}\n")
-            if verbose != "quiet":
-                print(f"Model trovato: {model_symbols}")
+                f.write(f"Model trovato:{model_symbols}\n")
+            if verbose == "verbose":
+                print(
+                    f"Model trovato: {model_symbols}")
 
-        ctl = clingo.Control()
+        ctl = clingo.Control(
+            arguments=['-n', '2']
+        )
         ctl.add("base", [], complete_program)
         ctl.ground([("base", [])])
         result = ctl.solve(on_model=on_model)
 
         if result.satisfiable:
             if verbose in ["verbose", "quiet"]:
-                print(f"Soluzione trovata! Risultati salvati in: {
-                      results_file}")
+                console.print(f"Soluzione trovata! Risultati salvati in: [magenta]{
+                              results_file}[/magenta]")
         else:
-            print("Nessuna soluzione trovata.")
+            console.print("Nessuna soluzione trovata.")
     except FileNotFoundError as e:
-        print(f"Errore: {e}")
+        console.print(f"Errore: {e}")
     except Exception as e:
-        print(f"Errore durante il solving: {e}")
+        console.print(f"Errore durante il solving: {e}")
 
 
 # Esegui solo se lo script è chiamato direttamente
