@@ -1,11 +1,3 @@
-
-%*
-:- garante(docente(Matricola), corso(Corso)), 
-	not insegna(docente(Matricola), insegnamento(I), corso(Corso)),
-	insegnamento(I).
-*%
-
-%:- garante(docente(Matricola), corso(Corso)), not insegna(docente(Matricola), insegnamento(_), corso(Corso)).
 1{
 	insegnamento(I) : insegna(docente(Matricola), insegnamento(I), corso(Corso))
 } :-
@@ -24,8 +16,7 @@ M{
 % almeno X garanti a tempo indeterminato
 X{
 	garante(docente(Matricola), corso(Corso)) :
-	docente(Matricola),
-	insegna(docente(Matricola), insegnamento(Insegnamento), corso(Corso)),
+	garante(docente(Matricola), corso(Corso)),
 	indeterminato(docente(Matricola))
 } :-
 	min_indeterminato(X, corso(Corso)),
@@ -35,8 +26,7 @@ X{
 % al più X garanti ricercatore
 {
 	garante(docente(Matricola), corso(Corso)) :
-	docente(Matricola),
-	insegna(docente(Matricola), insegnamento(Insegnamento), corso(Corso)),
+	garante(docente(Matricola), corso(Corso)),
 	ricercatore(docente(Matricola))
 }X :-
 	max_ricercatori(X, corso(Corso)),
@@ -46,8 +36,7 @@ X{
 % al più X garanti a contratto
 {
 	garante(docente(Matricola), corso(Corso)) :
-	docente(Matricola),
-	insegna(docente(Matricola), insegnamento(Insegnamento), corso(Corso)),
+	garante(docente(Matricola), corso(Corso)),
 	contratto(docente(Matricola))
 }X :-
 	max_contratto(X, corso(Corso)),
@@ -62,5 +51,14 @@ X{
 }1 :-
 	garante(docente(Matricola), corso(Corso1)),
 	afferisce(corso(Corso1), categoria_corso(Categoria1)).
+
+R{
+	garante(docente(Matricola), corso(Corso)) :
+	garante(docente(Matricola), corso(Corso)),
+	afferisce(docente(Matricola), settore(Settore)),
+	di_riferimento(settore(Settore), corso(Corso))
+} :-
+	corso(Corso),
+	min_riferimento(R, corso(Corso)).
 
 #show garante/2.

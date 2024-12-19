@@ -1,8 +1,6 @@
 import os
 
 from rich.console import Console
-from rich.table import Table
-
 console = Console()
 
 
@@ -13,7 +11,7 @@ def write_dic(fatti, dir_output, nome_file):
     with open(file_output, 'w', encoding='utf-8') as f:
         for fatto in fatti.values():
             f.write(f"{fatto}\n")
-    console.print(f"[bold magenta]{file_output}[/bold magenta] scritto")
+    console.print(f"[bold green]{file_output}[/bold green] scritto")
 
 
 def write_set(fatti, dir_output, nome_file):
@@ -23,4 +21,4 @@ def write_set(fatti, dir_output, nome_file):
     with open(file_output, 'w', encoding='utf-8') as f:
         for fatto in fatti:
             f.write(f"{fatto}\n")
-    console.print(f"[bold magenta]{file_output}[/bold magenta] scritto")
+    console.print(f"[bold green]{file_output}[/bold green] scritto")

@@ -1,15 +1,17 @@
-import argparse
-import os
-
-from modules.csv_loader import (
-    carica_dati_csv,
-    normalizza_nome
+from modules.maps import (
+    mappa_settori_nuovi_vecchi,
+    mappa_settori_termini,
+    genera_mappa_corso_categoria,
+    genera_mappa_corso_max,
+    genera_mappa_docenti,
+    genera_mappa_presidenti
 )
-from modules.wfacts import (
-    write_dic,
-    write_set
+from modules.solver import (
+    solve_program
 )
-
+from modules.stats import (
+    carica_numerosita
+)
 from modules.facts import (
     docente,
     categoria_corso_speciali,
@@ -23,70 +25,42 @@ from modules.facts import (
     settori_di_riferimento,
     settori,
     pd,
-    garanti_per_corso
+    garanti_per_corso,
+    presidenti
 )
-
-from modules.stats import (
-    carica_numerosita
+from modules.wfacts import (
+    write_dic,
+    write_set
 )
+from modules.csv_loader import (
+    carica_dati_csv,
+    normalizza_nome
+)
+import argparse
+import os
+
+from rich.console import Console
+console = Console()
 
 
-def mappa_settori_nuovi_vecchi(df):
-    """
-    Genera una mappa dai settori SSD 2024 ai settori SSD 2015 basandosi sul DataFrame fornito.
+base_dir = os.path.abspath(os.path.join(
+    os.path.dirname(__file__), "../../"))
 
-    :param df: DataFrame contenente le colonne 'SSD 2015' e 'SSD 2024'.
-    :return: Dizionario con chiavi dai valori unici di 'SSD 2015' e valori corrispondenti di 'SSD 2024'.
-    """
-    mappa = {}
-    for _, row in df.iterrows():
-        ssd_2015 = row["SSD 2015"]
-        ssd_2024 = row["SSD 2024"]
-        # Evita valori mancanti
-        if pd.notna(ssd_2015) and pd.notna(ssd_2024):
-            mappa[ssd_2024] = ssd_2015
-    return mappa
-
-
-def mappa_settori_termini(mappa_ssd):
-    """
-    Genera una mappa dove le chiavi sono i codici SSD 2015 senza il suffisso
-    dopo '/' e i valori sono le stesse stringhe in formato modificato:
-    minuscolo e con underscore al posto di trattini o spazi.
-
-    :param mappa_ssd: Dizionario esistente con chiavi e valori SSD (ad esempio: {SSD 2024: SSD 2015}).
-    :return: Dizionario con chiavi come codici SSD 2015 (troncati) e valori formattati.
-    """
-    mappa_progressiva = {}
-
-    # Itera sui valori unici di SSD 2015
-    for ssd_2015 in set(mappa_ssd.values()):
-        if isinstance(ssd_2015, str):
-            # Rimuove tutto ciò che viene dopo '/'
-            codice_troncato = ssd_2015.split('/')[0]
-            # Trasforma il codice in minuscolo e sostituisce spazi o trattini con underscore
-            codice_modificato = normalizza_nome(codice_troncato)
-        else:
-            # Gestisce valori non stringa
-            codice_troncato = codice_modificato = ssd_2015
-
-        if codice_troncato not in mappa_progressiva:  # Evita duplicati
-            mappa_progressiva[codice_troncato] = codice_modificato
-
-    # Aggiungi un valore predefinito per NULL
-    mappa_progressiva['NULL'] = 'null'
-
-    return mappa_progressiva
+input_dir = os.path.join(base_dir, "input")
+print(input_dir)
+asp_dir = os.path.join(base_dir, "src/asp")
+facts_dir = os.path.join(asp_dir, "facts")
+results_dir = os.path.join(asp_dir, "results")
 
 
 def genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir):
     """Legge il file CSV, genera i fatti per ogni gruppo e li scrive nel file."""
 
     # Carica i dati
-    file_csv_docenti = '../../input/docenti.csv'
+    file_csv_docenti = os.path.join(input_dir, "docenti.csv")
     df = carica_dati_csv(file_csv_docenti)
     if df is None:
-        print("Errore nel caricamento dei dati da `docenti.csv`")
+        console.print(f"Errore nel caricamento dei dati da {file_csv_docenti}")
         return
 
     mappa_ssd = mappa_settori_nuovi_vecchi(df)
@@ -96,16 +70,24 @@ def genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir):
     settori(fatti_settori, mappa_ssd_termine)
     write_dic(fatti_settori, dir, 'settori.asp')
 
+    mappa_docenti = genera_mappa_docenti(df)
+    mappa_presidenti = genera_mappa_presidenti(
+        mappa_docenti, os.path.join(input_dir, 'presidenti.csv'))
+    fatti_presidenti = {}
+    presidenti(fatti_presidenti, mappa_presidenti)
+    write_dic(fatti_presidenti, dir, 'presidenti.asp')
+
     fatti_docenti_tipo_contratto = {}
     for _, riga in df.iterrows():
         # Estraggo i docenti ricercatori/tempo indeterminato
         docente_indeterminato_ricercatore(
             fatti_docenti_tipo_contratto, riga)
 
-    file_csv_coperture = '../../input/coperture2425.csv'
+    file_csv_coperture = os.path.join(input_dir, "coperture2425.csv")
     df = carica_dati_csv(file_csv_coperture)
     if df is None:
-        print("Errore nel caricamento dei dati da `coperture2425.csv`")
+        console.print(f"Errore nel caricamento dei dati da {
+                      file_csv_coperture}")
         return
 
     fatti_corsi_di_studio = {}
@@ -118,23 +100,21 @@ def genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir):
     fatti_insegna = set()
     fatti_settori_di_riferimento = set()
 
-    mappa_corso_categoria = {}
-
-    mappa_numerosita = {}
-    carica_numerosita(mappa_numerosita)
+    mappa_corso_categoria = genera_mappa_corso_categoria(input_dir)
 
     for _, riga in df.iterrows():
         cod_corso = riga['Cod. Corso di Studio']
+
         if pd.isna(cod_corso):
             continue
         cod_corso = int(cod_corso)
 
         # Filtra i corsi
         if corsi_da_filtrare and cod_corso not in corsi_da_filtrare:
-            # print(f'{cod_corso} escluso')
+            # console.print(f'{cod_corso} escluso')
             continue
         if corsi_da_escludere and cod_corso in corsi_da_escludere:
-            # print(f'{cod_corso} escluso')
+            # console.print(f'{cod_corso} escluso')
             continue
 
         # Estraggo i docenti
@@ -154,34 +134,54 @@ def genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir):
         settori_di_riferimento(fatti_settori_di_riferimento, riga,
                                mappa_ssd, mappa_ssd_termine)
 
+    mappa_corso_max = genera_mappa_corso_max(mappa_corso_categoria, input_dir)
+    mappa_numerosita = {}
+    carica_numerosita(mappa_numerosita, mappa_corso_max, input_dir)
+
     fatti_garanti_per_corso = {}
     garanti_per_corso(fatti_garanti_per_corso,
                       mappa_corso_categoria, mappa_numerosita)
 
     # Stampo i fatti nei rispettivi file
-    write_dic(fatti_categorie_corso, dir, 'categorie_corso.asp')
-    write_dic(fatti_docenti, dir, 'docenti.asp')
-    write_dic(fatti_corsi_di_studio, dir, 'corsi_di_studio.asp')
-    write_dic(fatti_docenti_tipo_contratto, dir, 'contratti.asp')
-    write_dic(fatti_insegnamenti, dir, 'insegnamenti.asp')
-    write_set(fatti_insegna, dir, 'insegna.asp')
-    write_set(fatti_settori_di_riferimento, dir, 'settori_di_riferimento.asp')
-    write_dic(fatti_garanti_per_corso, dir, 'garanti_per_corso.asp')
+    write_dic(fatti_categorie_corso, facts_dir, 'categorie_corso.asp')
+    write_dic(fatti_docenti, facts_dir, 'docenti.asp')
+    write_dic(fatti_corsi_di_studio, facts_dir, 'corsi_di_studio.asp')
+    write_dic(fatti_docenti_tipo_contratto, facts_dir, 'contratti.asp')
+    write_dic(fatti_insegnamenti, facts_dir, 'insegnamenti.asp')
+    write_set(fatti_insegna, facts_dir, 'insegna.asp')
+    write_set(fatti_settori_di_riferimento,
+              facts_dir, 'settori_di_riferimento.asp')
+    write_dic(fatti_garanti_per_corso, facts_dir, 'garanti_per_corso.asp')
+
+
+def parse_arguments():
+    """Crea e configura il parser degli argomenti."""
+    parser = argparse.ArgumentParser(description="Genera fatti ASP.")
+    parser.add_argument(
+        "--filter", type=str,
+        help="Lista di ID di corsi separati da virgola da considerare.",
+        default=None
+    )
+    parser.add_argument(
+        "--exclude", type=str,
+        help="Lista di ID di corsi separati da virgola da escludere.",
+        default=None
+    )
+    parser.add_argument(
+        "--solver", type=str,
+        choices=["verbose", "quiet", "none"],
+        help="Modalità del solver: verbose, quiet, o none.",
+        default="verbose"
+    )
+    return parser.parse_args()
 
 
 def main():
-    # Se un corso è presente in entrambi i filtri viene escluso
-    parser = argparse.ArgumentParser(description="Genera fatti ASP.")
-    parser.add_argument(
-        "--filter", type=str, help="Lista di ID di corsi separati da virgola da considerare.", default=None)
-    parser.add_argument(
-        "--exclude", type=str, help="Lista di ID di corsi separati da virgola da escludere.", default=None)
-    args = parser.parse_args()
+    args = parse_arguments()
 
     # Ottieni i filtri (se presenti)
     corsi_da_filtrare = set(
         map(int, args.filter.split(','))) if args.filter else set()
-
     corsi_da_escludere = set(
         map(int, args.exclude.split(','))) if args.exclude else set()
 
@@ -191,13 +191,20 @@ def main():
     ]
     corsi_da_escludere.update(nuovi_2024)
 
-    dir = '../../src/asp/facts/'
     # Creo cartella di output
-    if not os.path.exists(dir):
-        os.makedirs(dir)
+    if not os.path.exists(facts_dir):
+        os.makedirs(facts_dir)
 
     # Genera i fatti
-    genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir)
+    genera_fatti(corsi_da_filtrare, corsi_da_escludere, facts_dir)
+
+    # Chiamata al solver in base alla modalità specificata
+    if args.solver == "none":
+        console.print(
+            "Solver disabilitato. Fatti generati senza eseguire il solver.")
+    else:
+        verbose = args.solver
+        solve_program(verbose=verbose)
 
 
 if __name__ == "__main__":
