@@ -169,8 +169,8 @@ def parse_arguments():
     )
     parser.add_argument(
         "--solver", type=str,
-        choices=["verbose", "quiet", "none"],
-        help="Modalità del solver: verbose, quiet, o none.",
+        choices=["verbose", "quiet", "none", "only"],
+        help="Modalità del solver: verbose, quiet, none, only.",
         default="verbose"
     )
     return parser.parse_args()
@@ -195,8 +195,9 @@ def main():
     if not os.path.exists(facts_dir):
         os.makedirs(facts_dir)
 
-    # Genera i fatti
-    genera_fatti(corsi_da_filtrare, corsi_da_escludere, facts_dir)
+    if args.solver != "only":
+        # Genera i fatti
+        genera_fatti(corsi_da_filtrare, corsi_da_escludere, facts_dir)
 
     # Chiamata al solver in base alla modalità specificata
     if args.solver == "none":
