@@ -1,4 +1,4 @@
-\documentclass[draft,journal]{IEEEtran}
+\documentclass[journal]{IEEEtran}
 \usepackage[italian]{babel}
 
 \usepackage[utf8]{inputenc}
@@ -10,17 +10,46 @@
 \usepackage{hyperref}
 \usepackage{url}
 
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=2.5cm, minimum height=0.8cm, text centered, draw=black, fill=red!30]
+\tikzstyle{process} = [rectangle, minimum width=2.5cm, minimum height=0.8cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{listings}
+
+\lstdefinestyle{asp}{
+  language=Prolog, % Linguaggio di base simile ad ASP
+  basicstyle=\ttfamily\small, % Font monospaziato
+  keywordstyle=\color{Blue}\bfseries, % Parole chiave in grassetto blu
+  commentstyle=\color{green!50!black}, % Commenti in verde
+  stringstyle=\color{orange}, % Stringhe in arancione
+  numbers=left, % Numeri di riga a sinistra
+  numberstyle=\tiny, % Stile numeri di riga
+  numbersep=5pt, % Spaziatura dei numeri di riga
+  frame=single, % Cornice intorno al blocco di codice
+  breaklines=true, % Interruzione automatica delle righe lunghe
+  captionpos=b, % Posizione della didascalia sotto il blocco
+	sensitive=true,
+  morekeywords={:-, :, {, }, \#show, garante, docente, corso, afferisce, categoria_corso,
+                insegna, insegnamento, ricercatore, contratto, indeterminato,
+                settore, di_riferimento, min_garanti, max_garanti, min_indeterminato,
+                max_ricercatori, max_contratto, min_riferimento
+	},
+	backgroundcolor=\color{lightgray!10},
+}
 \renewcommand{\IEEEkeywordsname}{Keywords}
 
 \begin{document}
 
 \title{Ottimizzazione Garanti accademici}
 
-\author{\IEEEauthorblockN{1\textsuperscript{st} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}\\
+\author{\IEEEauthorblockN{1\textsuperscript{st} Manuel Di Agostino}
+\IEEEauthorblockA{\textit{Università degli studi di Parma} \\
+Parma, Italia\\
+manuel.diagostino@studenti.unipr.it}\\
 \and
 \IEEEauthorblockN{2\textsuperscript{nd} Given Name Surname}
 \IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
@@ -31,19 +60,20 @@ email address or ORCID}
 
 \maketitle
 
-\begin{abstract} La gestione dell'assegnazione dei docenti di riferimento o
+\begin{abstract} 
+	La gestione dell'assegnazione dei docenti di riferimento o
 	garanti in ambito universitario è un compito complesso che coinvolge vari
 	fattori organizzativi e un gran numero di dati. L'automazione di questo
 	processo può semplificare notevolmente il lavoro amministrativo e migliorare
-	l'efficienza operativa delle università. In questo progetto, abbiamo
-	sviluppato un sistema basato su \textit{Answer Set Programming} (ASP), un
-	paradigma logico adatto alla risoluzione di problemi combinatori complessi.
-	Utilizzando \texttt{Python} e \texttt{Clingo}, un potente solver ASP, abbiamo
-	progettato una soluzione capace di identificare automaticamente i docenti di
-	riferimento, a partire da un insieme di dati specifici. Il sistema sviluppato
-	è descritto nei suoi dettagli tecnici, con un focus sulla modellazione logica,
-	l'implementazione e l'analisi della complessità computazionale. I risultati
-	ottenuti sono discussi insieme alle potenzialità di estensione del sistema.
+	l'efficienza operativa delle università. È stato sviluppato un sistema basato
+	su \textit{Answer Set Programming} (ASP), un paradigma logico adatto alla
+	risoluzione di problemi combinatori complessi. Utilizzando \texttt{Python} e
+	\texttt{Clingo}, un potente solver ASP,  è stata progettata una soluzione
+	capace di identificare automaticamente i docenti di riferimento, a partire da
+	un insieme di dati specifici. Il sistema sviluppato è descritto nei suoi
+	dettagli tecnici, con un focus sulla modellazione logica, l'implementazione e
+	l'analisi della complessità computazionale. I risultati ottenuti sono discussi
+	insieme alle potenzialità di estensione del sistema.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -58,7 +88,7 @@ volumi di dati. La necessità di automatizzare e ottimizzare questa ricerca è
 quindi cruciale per migliorare l'efficienza delle attività amministrative e
 accademiche.
 
-In questo progetto, abbiamo affrontato il problema utilizzando \textit{Answer
+In questo progetto, il problema è stato affrontato utilizzando \textit{Answer
 Set Programming} (ASP), un paradigma di programmazione logica dichiarativa
 particolarmente adatto alla risoluzione di problemi combinatori complessi.
 L'implementazione è stata realizzata con l'ausilio di \texttt{Python}
@@ -110,7 +140,7 @@ la ricerca di soluzioni in scenari combinatori, in cui le variabili e le
 relazioni tra esse sono numerose e intricate.
 
 \subsection{\texttt{Clingo}}
-\texttt{Clingo} è un solver open-source per ASP, sviluppato dal gruppo Potassco.
+\texttt{Clingo} \cite{clingo} è un solver open-source per ASP, sviluppato dal gruppo Potassco.
 È uno degli strumenti più potenti e diffusi per risolvere problemi complessi di
 ottimizzazione e combinazione, combinando un motore di inferenza logica con
 capacità avanzate di ottimizzazione. Nel nostro progetto, è stato integrato
@@ -121,11 +151,129 @@ automatizzare il processo di invocazione e gestione delle soluzioni, facilitando
 l'elaborazione dei dati e l'ottimizzazione delle assegnazioni in tempo reale.
 
 \subsection{Provenienza e contenuto dei dati di input}
-AAA
+
+I dati di input sono stati forniti dall'U.O. Progettazione Didattica e
+Assicurazione della Qualità \cite{unipr_qualita}, in collaborazione con il prof.
+A. Dal Palù dell'Università di Parma. Questi includono un insieme di tabelle e
+documenti eterogenei, comprendenti le coperture dei corsi per l'anno accademico
+corrente, l'elenco del personale docente e le informazioni relative alle
+immatricolazioni nei corsi di laurea. L'elaborazione è stata effettuata
+utilizzando \texttt{Python} e si è rivelata particolarmente complessa a causa
+dell'assenza di una sorgente dati unica e centralizzata.
 
 \section{Modellazione del problema}
+
 \subsection{Esempio giocattolo}
+
+
+\subsection{Strutturazione della soluzione}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[node distance=1.2cm]
+
+% Nodes
+\node (start) [startstop] {Inizio};
+	\node (process1) [process, below of=start] {Elaborazione dati (Python)};
+	\node (generate) [process, below of=process1] {Generazione fatti ground (Python)};
+\node (solve) [process, below of=generate] {Solver Clingo (Python API)};
+	\node (output) [process, below of=solve] {Generazione tabella garanti (Python)};
+\node (end) [startstop, below of=output] {Fine};
+
+% Arrows
+\draw [arrow] (start) -- (process1);
+\draw [arrow] (process1) -- (generate);
+\draw [arrow] (generate) -- (solve);
+\draw [arrow] (solve) -- (output);
+\draw [arrow] (output) -- (end);
+
+\end{tikzpicture}
+\caption{Pipeline del processo di assegnazione dei garanti.}
+\label{fig:pipeline}
+\end{figure}
+
+In Fig. \ref{fig:pipeline}
+è illustrata la
+pipeline di lavoro. Prima dell'elaborazione automatica dei dati, è stato
+necessario effettuarne una normalizzazione manuale. Questo passaggio ha permesso
+di uniformare i formati e risolvere eventuali incongruenze nei dati forniti,
+facilitando così le fasi successive. La generazione dei fatti ground costituisce
+la base di conoscenza positiva, utilizzata dal programma ASP principale per
+calcolare gli answer set. Successivamente, il solver Clingo viene eseguito
+tramite Python e i risultati ottenuti vengono convertiti in formato tabellare
+per facilitarne la visualizzazione.
+
 \subsection{Implementazione}
+
+L'implementazione è stata progettata separando la logica principale per la
+generazione dei garanti accademici da quella relativa alle preferenze
+specifiche. Tra le preferenze considerate figurano:  \begin{itemize} \item
+	assegnazione automatica del ruolo di garante al presidente del corso;  \item
+massimizzazione del numero di docenti con contratto a tempo indeterminato;
+\item minimizzazione del numero di ricercatori e docenti a contratto coinvolti.
+\end{itemize}
+
+Nel Cod. \ref{lst:mainlp} viene illustrato il codice di \texttt{main.lp}. Per
+questioni di ottimizzazione in fase di grounding si è preferito, ove possibile, utilizzare gli
+\textit{aggregati} evitando così l'utilizzo della negazione esplicita.
+
+\begin{lstlisting}[style=asp, caption={Codice ASP del file \texttt{main.lp}}, label={lst:mainlp}]
+% se garante allora insegna almeno una materia
+1 {
+    insegnamento(I) : insegna(docente(Matricola), insegnamento(I), corso(Corso))
+} :-
+    garante(docente(Matricola), corso(Corso)).
+
+% numero garanti
+M {
+    garante(docente(Matricola), corso(Corso)) :
+    docente(Matricola)
+} N :-
+    min_garanti(M, corso(Corso)),
+    max_garanti(N, corso(Corso)),
+    corso(Corso),
+    afferisce(corso(Corso), categoria_corso(Categoria)).
+
+% almeno X garanti a tempo indeterminato
+X {
+    garante(docente(Matricola), corso(Corso)) :
+    garante(docente(Matricola), corso(Corso)),
+    indeterminato(docente(Matricola))
+} :-
+    min_indeterminato(X, corso(Corso)),
+    corso(Corso),
+    afferisce(corso(Corso), categoria_corso(Categoria)).
+
+% al piu' X garanti ricercatore
+% (analogo al precedente)
+
+% al piu' X garanti a contratto
+% (analogo al precedente)
+
+% un docente scelto al piu una volta
+1 {
+    garante(docente(Matricola), corso(Corso2)) :
+    corso(Corso2),
+    afferisce(corso(Corso2), categoria_corso(Categoria2))
+} 1 :-
+    garante(docente(Matricola), corso(Corso1)),
+    afferisce(corso(Corso1), categoria_corso(Categoria1)).
+
+R {
+    garante(docente(Matricola), corso(Corso)) :
+    garante(docente(Matricola), corso(Corso)),
+    afferisce(docente(Matricola), settore(Settore)),
+    di_riferimento(settore(Settore), corso(Corso))
+} :-
+    corso(Corso),
+    min_riferimento(R, corso(Corso)).
+
+#show garante/2.
+\end{lstlisting}
+
+
+
+
 \subsection{Complessità computazionale}
 
 \section{Risultati}
@@ -134,5 +282,10 @@ AAA
 
 \bibliographystyle{IEEEtran}
 \bibliography{main}
+
+
+
+
+
 
 \end{document}
