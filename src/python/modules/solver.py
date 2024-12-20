@@ -64,10 +64,12 @@ def signal_handler(signum, frame):
     console.print(
         "[bold yellow]Ricevuto Ctrl+C: interruzione in corso...[/bold yellow]")
 
+
 def timeout_handler():
     global time_out
-    time_out = True 
-    console.print("[bold red]Timeout raggiunto. Interruzione in corso...[/bold red]")
+    time_out = True
+    console.print(
+        "[bold red]Timeout raggiunto. Interruzione in corso...[/bold red]")
 
 
 def solve_program(mode="full", verbose=True, arguments=[]):
@@ -85,7 +87,7 @@ def solve_program(mode="full", verbose=True, arguments=[]):
     signal.signal(signal.SIGINT, signal_handler)
 
     global time_out
-    time_out = False  
+    time_out = False
 
     try:
         complete_program = load_program()  # Funzione che carica il programma ASP
@@ -151,18 +153,22 @@ def solve_program(mode="full", verbose=True, arguments=[]):
         signal.signal(signal.SIGINT, signal.SIG_DFL)
 
 # Funzione per estrarre i docenti e i corsi dal modello
+
+
 def extract_data(model):
     pattern = r"garante\(docente\((\d+)\),corso\((\d+)\)\)"
     matches = re.findall(pattern, model)
     return matches
 
+
 def write_table(input_file, output_file, mappa_docenti, mappa_ssd,
-    mappa_docenti_settore, mappa_corso_nome):
+                mappa_docenti_settore, mappa_corso_nome):
     input_file = os.path.join(results_dir, input_file)
     output_file = os.path.join(results_dir, output_file)
 
     with open(input_file, "r") as file:
-        model_symbols = file.readline().strip()  # Legge la prima riga e rimuove eventuali spazi bianchi
+        # Legge la prima riga e rimuove eventuali spazi bianchi
+        model_symbols = file.readline().strip()
 
     # Estrai i dati dal modello
     extracted_data = extract_data(model_symbols)
@@ -178,7 +184,8 @@ def write_table(input_file, output_file, mappa_docenti, mappa_ssd,
     ws.title = "Garanti per Corso"
 
     # Scrittura dell'intestazione della tabella
-    headers = ["Docente", "Codice Docente", "Codice Corso", "Nome Corso", "SSD 2015"]
+    headers = ["Docente", "Codice Docente",
+               "Codice Corso", "Nome Corso", "SSD 2015"]
     for col_index, header in enumerate(headers, start=1):
         ws.cell(row=1, column=col_index, value=header)
 
@@ -187,7 +194,7 @@ def write_table(input_file, output_file, mappa_docenti, mappa_ssd,
     for docente, corso in extracted_data:
         docente = int(docente)
         corso = int(corso)
-        
+
         # Ottieni le informazioni dal dizionario
         docente_nome = mappa_docenti[docente]
         if 3027 in mappa_docenti_settore:
@@ -196,9 +203,10 @@ def write_table(input_file, output_file, mappa_docenti, mappa_ssd,
         settore = mappa_docenti_settore[docente]
         settore = mappa_ssd[settore]
         nome_corso = mappa_corso_nome[corso]
-        
+
         # Scrivi i dati in una riga
-        ws.cell(row=row_index, column=1, value=docente_nome)  # Nome del docente
+        # Nome del docente
+        ws.cell(row=row_index, column=1, value=docente_nome)
         ws.cell(row=row_index, column=2, value=docente)       # Codice docente
         ws.cell(row=row_index, column=3, value=corso)         # Codice corso
         ws.cell(row=row_index, column=4, value=nome_corso)       # Nome Corso
@@ -207,9 +215,5 @@ def write_table(input_file, output_file, mappa_docenti, mappa_ssd,
 
     # Salva il file Excel
     wb.save(output_file)
-    console.print(f"[bold green]Tabella generata con successo![/bold green] Risultati salvati in: [magenta]{output_file}[/magenta]")
-    
-# Esegui solo se lo script è chiamato direttamente
-if __name__ == "__main__":
-    # Modalità di default
-    solve_program(verbose="verbose")
+    console.print(
+        f"[bold green]Tabella generata con successo![/bold green] Risultati salvati in: [magenta]{output_file}[/magenta]")
