@@ -4,10 +4,12 @@ from modules.maps import (
     genera_mappa_corso_categoria,
     genera_mappa_corso_max,
     genera_mappa_docenti,
+    genera_mappa_docenti_settore,
     genera_mappa_presidenti
 )
 from modules.solver import (
-    solve_program
+    solve_program,
+    write_table
 )
 from modules.stats import (
     carica_numerosita
@@ -42,7 +44,6 @@ import os
 from rich.console import Console
 console = Console()
 
-
 base_dir = os.path.abspath(os.path.join(
     os.path.dirname(__file__), "../../"))
 
@@ -51,7 +52,6 @@ print(input_dir)
 asp_dir = os.path.join(base_dir, "src/asp")
 facts_dir = os.path.join(asp_dir, "facts")
 results_dir = os.path.join(asp_dir, "results")
-
 
 def genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir):
     """Legge il file CSV, genera i fatti per ogni gruppo e li scrive nel file."""
@@ -63,6 +63,7 @@ def genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir):
         console.print(f"Errore nel caricamento dei dati da {file_csv_docenti}")
         return
 
+    mappa_docenti = genera_mappa_docenti(df)
     mappa_ssd = mappa_settori_nuovi_vecchi(df)
     mappa_ssd_termine = mappa_settori_termini(mappa_ssd)
 
@@ -70,7 +71,6 @@ def genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir):
     settori(fatti_settori, mappa_ssd_termine)
     write_dic(fatti_settori, dir, 'settori.asp')
 
-    mappa_docenti = genera_mappa_docenti(df)
     mappa_presidenti = genera_mappa_presidenti(
         mappa_docenti, os.path.join(input_dir, 'presidenti.csv'))
     fatti_presidenti = {}
@@ -205,6 +205,44 @@ def main():
     if not os.path.exists(facts_dir):
         os.makedirs(facts_dir)
 
+    # Carica i dati
+    file_csv_docenti = os.path.join(input_dir, "docenti.csv")
+    df = carica_dati_csv(file_csv_docenti)
+    if df is None:
+        console.print(f"Errore nel caricamento dei dati da {file_csv_docenti}")
+        return
+    
+    mappa_docenti = genera_mappa_docenti(df)
+    mappa_docenti_settore = genera_mappa_docenti_settore(df)
+    mappa_ssd = mappa_settori_nuovi_vecchi(df)
+
+
+    file_csv_coperture = os.path.join(input_dir, "coperture2425.csv")
+    df = carica_dati_csv(file_csv_coperture)
+    if df is None:
+        console.print(f"Errore nel caricamento dei dati da {
+                      file_csv_coperture}")
+        return
+
+    mappa_corso_nome = {}
+    for _, riga in df.iterrows():
+        cod_corso = riga['Cod. Corso di Studio']
+        nome_corso = riga['Des. Corso di Studio']
+
+        if pd.isna(cod_corso):
+            continue
+        cod_corso = int(cod_corso)
+
+        # Filtra i corsi
+        if corsi_da_filtrare and cod_corso not in corsi_da_filtrare:
+            # console.print(f'{cod_corso} escluso')
+            continue
+        if corsi_da_escludere and cod_corso in corsi_da_escludere:
+            # console.print(f'{cod_corso} escluso')
+            continue
+
+        mappa_corso_nome[cod_corso] = nome_corso
+
     if args.mode in ["full", "none"]:
         # Genera i fatti
         genera_fatti(corsi_da_filtrare, corsi_da_escludere, facts_dir)
@@ -216,7 +254,9 @@ def main():
     else:
         solve_program(mode=args.mode, verbose=args.verbose,
                       arguments=args.clingo_args)
-
+        write_table("solution.txt", "table.xlsx", mappa_docenti, mappa_ssd,
+                    mappa_docenti_settore, mappa_corso_nome)
+        
 
 if __name__ == "__main__":
     main()

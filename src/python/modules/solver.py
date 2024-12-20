@@ -1,8 +1,10 @@
 import signal
 import os
 import clingo
+import re
 from threading import Timer
-
+from collections import defaultdict
+from openpyxl import Workbook
 from rich.console import Console
 console = Console()
 
@@ -10,7 +12,6 @@ console = Console()
 base_dir = os.path.abspath(os.path.join(
     os.path.dirname(__file__), "../../../src"))
 print(base_dir)
-
 
 # Directory per gli script ASP
 asp_dir = os.path.join(base_dir, "asp")
@@ -105,10 +106,10 @@ def solve_program(mode="full", verbose=True, arguments=[]):
             # model_symbols = model.symbols(atoms=True)
             model_symbols = model.symbols(shown=True)
             model_costs = model.cost
-            with open(results_file, "a") as f:
-                f.write(f"{model_symbols}\n")
+            with open(results_file, "w") as f:
+                f.write(f"model: {model_symbols}\n")
                 if model_costs:
-                    f.write(f"{model_costs}\n")
+                    f.write(f"cost: {model_costs}\n")
             if verbose:
                 console.print(
                     f"[bold green]Model trovato: [/bold green]")
@@ -149,7 +150,65 @@ def solve_program(mode="full", verbose=True, arguments=[]):
         # Ripristina il comportamento predefinito
         signal.signal(signal.SIGINT, signal.SIG_DFL)
 
+# Funzione per estrarre i docenti e i corsi dal modello
+def extract_data(model):
+    pattern = r"garante\(docente\((\d+)\),corso\((\d+)\)\)"
+    matches = re.findall(pattern, model)
+    return matches
 
+def write_table(input_file, output_file, mappa_docenti, mappa_ssd,
+    mappa_docenti_settore, mappa_corso_nome):
+    input_file = os.path.join(results_dir, input_file)
+    output_file = os.path.join(results_dir, output_file)
+
+    with open(input_file, "r") as file:
+        model_symbols = file.readline().strip()  # Legge la prima riga e rimuove eventuali spazi bianchi
+
+    # Estrai i dati dal modello
+    extracted_data = extract_data(model_symbols)
+
+    # Raggruppa i docenti per corso
+    grouped_by_course = defaultdict(list)
+    for docente, corso in extracted_data:
+        grouped_by_course[corso].append(docente)
+
+    # Creazione del file Excel
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "Garanti per Corso"
+
+    # Scrittura dell'intestazione della tabella
+    headers = ["Docente", "Codice Docente", "Codice Corso", "Nome Corso", "SSD 2015"]
+    for col_index, header in enumerate(headers, start=1):
+        ws.cell(row=1, column=col_index, value=header)
+
+    # Scrittura dei dati nella tabella
+    row_index = 2
+    for docente, corso in extracted_data:
+        docente = int(docente)
+        corso = int(corso)
+        
+        # Ottieni le informazioni dal dizionario
+        docente_nome = mappa_docenti[docente]
+        if 3027 in mappa_docenti_settore:
+            print("sas")
+
+        settore = mappa_docenti_settore[docente]
+        settore = mappa_ssd[settore]
+        nome_corso = mappa_corso_nome[corso]
+        
+        # Scrivi i dati in una riga
+        ws.cell(row=row_index, column=1, value=docente_nome)  # Nome del docente
+        ws.cell(row=row_index, column=2, value=docente)       # Codice docente
+        ws.cell(row=row_index, column=3, value=corso)         # Codice corso
+        ws.cell(row=row_index, column=4, value=nome_corso)       # Nome Corso
+        ws.cell(row=row_index, column=5, value=settore)       # SSD 2024
+        row_index += 1
+
+    # Salva il file Excel
+    wb.save(output_file)
+    console.print(f"[bold green]Tabella generata con successo![/bold green] Risultati salvati in: [magenta]{output_file}[/magenta]")
+    
 # Esegui solo se lo script è chiamato direttamente
 if __name__ == "__main__":
     # Modalità di default
