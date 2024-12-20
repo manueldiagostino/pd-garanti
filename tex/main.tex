@@ -1,6 +1,7 @@
 \documentclass[journal]{IEEEtran}
-\usepackage[italian]{babel}
+\renewcommand{\IEEEkeywordsname}{Keywords}
 
+\usepackage[italian]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
@@ -19,7 +20,7 @@
 
 \usepackage[dvipsnames]{xcolor}
 \usepackage{listings}
-
+\renewcommand{\lstlistingname}{Codice}
 \lstdefinestyle{asp}{
   language=Prolog, % Linguaggio di base simile ad ASP
   basicstyle=\ttfamily\small, % Font monospaziato
@@ -29,29 +30,32 @@
   numbers=left, % Numeri di riga a sinistra
   numberstyle=\tiny, % Stile numeri di riga
   numbersep=5pt, % Spaziatura dei numeri di riga
-  frame=single, % Cornice intorno al blocco di codice
+	%  frame=single, % Cornice intorno al blocco di codice
+	% framerule=0.1pt,
+	linewidth=0.98\columnwidth,
   breaklines=true, % Interruzione automatica delle righe lunghe
   captionpos=b, % Posizione della didascalia sotto il blocco
 	sensitive=true,
   morekeywords={:-, :, {, }, \#show, garante, docente, corso, afferisce, categoria_corso,
                 insegna, insegnamento, ricercatore, contratto, indeterminato,
                 settore, di_riferimento, min_garanti, max_garanti, min_indeterminato,
-                max_ricercatori, max_contratto, min_riferimento
+                max_ricercatori, max_contratto, min_riferimento, ideale,
+								non_ideale
 	},
-	backgroundcolor=\color{lightgray!10},
+	backgroundcolor=\color{lightgray!20},
 }
-\renewcommand{\IEEEkeywordsname}{Keywords}
+
 
 \begin{document}
 
 \title{Ottimizzazione Garanti accademici}
 
-\author{\IEEEauthorblockN{1\textsuperscript{st} Manuel Di Agostino}
+\author{\IEEEauthorblockN{Manuel Di Agostino}
 \IEEEauthorblockA{\textit{Università degli studi di Parma} \\
 Parma, Italia\\
 manuel.diagostino@studenti.unipr.it}\\
-\and
-\IEEEauthorblockN{2\textsuperscript{nd} Given Name Surname}
+
+\IEEEauthorblockN{Given Name Surname}
 \IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
 \textit{name of organization (of Aff.)}\\
 City, Country \\
@@ -132,14 +136,13 @@ letterali consistenti con le regole e i fatti che costituiscono il programma. Il
 compito del solver ASP è quello di trovare gli insiemi di valori che risolvono
 il sistema di equazioni logiche, fornendo così soluzioni ottimali o ammissibili.
 
-L'uso di questo paradigma di programmazione è particolarmente indicato in ambiti
-come il nostro, in cui sono presenti vincoli complessi, preferenze multiple e
+L'uso di questo paradigma di programmazione è particolarmente indicato in ambiti in cui sono presenti vincoli complessi, preferenze multiple e
 soluzioni che devono rispettare determinati criteri. ASP permette di modellare
 in modo naturale problemi che coinvolgono l'ottimizzazione, la pianificazione, e
 la ricerca di soluzioni in scenari combinatori, in cui le variabili e le
 relazioni tra esse sono numerose e intricate.
 
-\subsection{\texttt{Clingo}}
+\subsection{Il solver}
 \texttt{Clingo} \cite{clingo} è un solver open-source per ASP, sviluppato dal gruppo Potassco.
 È uno degli strumenti più potenti e diffusi per risolvere problemi complessi di
 ottimizzazione e combinazione, combinando un motore di inferenza logica con
@@ -176,7 +179,7 @@ dell'assenza di una sorgente dati unica e centralizzata.
 \node (start) [startstop] {Inizio};
 	\node (process1) [process, below of=start] {Elaborazione dati (Python)};
 	\node (generate) [process, below of=process1] {Generazione fatti ground (Python)};
-\node (solve) [process, below of=generate] {Solver Clingo (Python API)};
+\node (solve) [process, below of=generate] {Solver Clingo (Python API + ASP)};
 	\node (output) [process, below of=solve] {Generazione tabella garanti (Python)};
 \node (end) [startstop, below of=output] {Fine};
 
@@ -217,7 +220,8 @@ Nel Cod. \ref{lst:mainlp} viene illustrato il codice di \texttt{main.lp}. Per
 questioni di ottimizzazione in fase di grounding si è preferito, ove possibile, utilizzare gli
 \textit{aggregati} evitando così l'utilizzo della negazione esplicita.
 
-\begin{lstlisting}[style=asp, caption={Codice ASP del file \texttt{main.lp}}, label={lst:mainlp}]
+\begin{center}
+\begin{lstlisting}[style=asp, caption={Codice ASP del file \texttt{main.lp}.}, label={lst:mainlp}]
 % se garante allora insegna almeno una materia
 1 {
     insegnamento(I) : insegna(docente(Matricola), insegnamento(I), corso(Corso))
@@ -270,7 +274,67 @@ R {
 
 #show garante/2.
 \end{lstlisting}
+\end{center}
 
+Le preferenze (Cod. \ref{lst:preferenzelp}) sono state espresse tramite l'utilizzo di \textit{weak constraint}. In particolare, sono stati definiti quattro livelli di priorità\footnote{Si ricorda che l'ordine di importanza è inverso rispetto al livello di priorità indicato.} sui quali intervenire:
+\begin{itemize}
+    \item priorità 4: massimizzare l'assegnazione dei presidenti di corso come garanti;
+    \item priorità 3: massimizzare il numero di corsi per i quali è soddisfatto il predicato \texttt{ideale/1}, dove i garanti sono esclusivamente docenti a contratto indeterminato;
+    \item priorità 2: massimizzare l'impiego di docenti a contratto indeterminato come garanti;
+    \item priorità 1: minimizzare il numero di corsi per i quali è soddisfatto il predicato \texttt{non\_ideale/1}, i cui garanti comprendono almeno un ricercatore e/o un docente a contratto a tempo determinato.
+\end{itemize}
+
+\begin{center}
+\begin{lstlisting}[style=asp, caption={Codice ASP del file \texttt{preferenze.lp}.}, label={lst:preferenzelp}]
+#minimize{
+	-1@4,
+	Matricola :
+		garante(docente(Matricola), corso(Corso)),
+		presidente(docente(Matricola), corso(Corso))
+}.
+
+#minimize{
+	-1@2,
+	Matricola :
+		garante(docente(Matricola), corso(Corso)),
+		indeterminato(docente(Matricola))
+}.
+
+ideale(corso(Corso)) :-
+	N=#count{
+		docente(Matricola) :
+		garante(docente(Matricola), corso(Corso)),
+		indeterminato(docente(Matricola))
+	},
+	corso(Corso),
+	max_garanti(Max, corso(Corso)),
+	N=Max.
+
+#minimize{
+	-1@3,
+	ideale(corso(Corso)) :
+	ideale(corso(Corso))
+}.
+
+non_ideale(corso(Corso)) :-
+	N=#count{
+		docente(Matricola) :
+		garante(docente(Matricola), corso(Corso)),
+		indeterminato(docente(Matricola))
+	},
+	corso(Corso),
+	max_garanti(Max, corso(Corso)),
+	N<Max.
+
+#minimize{
+	1@1,
+	non_ideale(corso(Corso)) :
+	non_ideale(corso(Corso))
+}.
+
+#show ideale/1.
+\end{lstlisting}\todo{aggiornare con versione definitiva}
+\end{center}
 
 
 
