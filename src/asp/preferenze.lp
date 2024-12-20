@@ -75,5 +75,5 @@ non_ideale(corso(Corso)) :-
 	non_ideale(corso(Corso))
 }.
 
-#show ideale/1.
+% #show ideale/1.
 

@@ -211,6 +211,16 @@ def genera_mappa_docenti(df):
 
     return mappa_docenti
 
+def genera_mappa_docenti_settore(df):
+    mappa_docenti_settore = {}
+
+    for _, riga in df.iterrows():
+        matricola = int(riga['Matricola'])
+        settore = riga['SSD 2024']
+
+        mappa_docenti_settore[matricola] = settore
+
+    return mappa_docenti_settore
 
 def genera_mappa_presidenti(mappa_docenti, file_csv_presidenti):
     mappa_presidenti = {}
