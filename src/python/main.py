@@ -72,25 +72,18 @@ def genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir):
     GestoreMappe.inizializza(input_dir)
     df = GestoreMappe.get_df_docenti()
 
-    mappa_docenti = genera_mappa_docenti(df)
+    mappa_docenti = GestoreMappe.get_mappa_docenti()
     mappa_ssd = GestoreMappe.get_mappa_ssd_2024_2015()
     mappa_ssd_termine = GestoreMappe.get_mappa_ssd_2015_termini()
 
-    fatti_settori = {}
-    settori(fatti_settori, mappa_ssd_termine)
+    fatti_settori = GestoreMappe.get_fatti_settori()
     write_dic(fatti_settori, dir, 'settori.asp')
 
-    mappa_presidenti = genera_mappa_presidenti(
-        mappa_docenti, os.path.join(input_dir, 'presidenti.csv'))
-    fatti_presidenti = {}
-    presidenti(fatti_presidenti, mappa_presidenti)
+    mappa_presidenti = GestoreMappe.get_mappa_presidenti()
+    fatti_presidenti = GestoreMappe.get_fatti_presidenti()
     write_dic(fatti_presidenti, dir, 'presidenti.asp')
 
-    fatti_docenti_tipo_contratto = {}
-    for _, riga in df.iterrows():
-        # Estraggo i docenti ricercatori/tempo indeterminato
-        docente_indeterminato_ricercatore(
-            fatti_docenti_tipo_contratto, riga)
+    fatti_docenti_tipo_contratto = GestoreMappe.get_fatti_contratti()
 
     file_csv_coperture = os.path.join(input_dir, "coperture2425.csv")
     df = carica_dati_csv(file_csv_coperture)
