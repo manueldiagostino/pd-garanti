@@ -21,6 +21,7 @@
 		indeterminato(docente(Matricola))
 }.
 
+%*
 ideale(corso(Corso)) :-
 	N=#count{
 		docente(Matricola) :
@@ -47,7 +48,6 @@ non_ideale(corso(Corso)) :-
 	max_garanti(Max, corso(Corso)),
 	N<Max.
 
-%*
 non_ideale(corso(Corso)) :-
 	N=#count{
 		docente(Matricola) :
@@ -67,13 +67,13 @@ non_ideale(corso(Corso)) :-
 	corso(Corso),
 	max_garanti(Max, corso(Corso)),
 	N>0.
-*%
 
 #minimize{
 	1@1,
 	non_ideale(corso(Corso)) :
 	non_ideale(corso(Corso))
 }.
+*%
 
 % #show ideale/1.
 

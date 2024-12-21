@@ -22,8 +22,9 @@ X{
 	garante(docente(Matricola), corso(Corso)) :
 	garante(docente(Matricola), corso(Corso)),
 	indeterminato(docente(Matricola))
-} :-
+}M :-
 	min_indeterminato(X, corso(Corso)),
+	max_garanti(M, corso(Corso)),
 	corso(Corso),
 	afferisce(corso(Corso), categoria_corso(Categoria)).
 
