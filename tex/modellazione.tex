@@ -1,0 +1,264 @@
+\section{Modellazione del problema}
+
+\subsection{Esempio giocattolo}
+
+
+\subsection{Strutturazione della soluzione}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[node distance=1.2cm]
+
+% Nodes
+\node (start) [startstop] {Inizio};
+	\node (process1) [process, below of=start] {Elaborazione dati (Python)};
+	\node (generate) [process, below of=process1] {Generazione fatti ground (Python)};
+\node (solve) [process, below of=generate] {Solver Clingo (Python API + ASP)};
+	\node (output) [process, below of=solve] {Generazione tabella garanti (Python)};
+\node (end) [startstop, below of=output] {Fine};
+
+% Arrows
+\draw [arrow] (start) -- (process1);
+\draw [arrow] (process1) -- (generate);
+\draw [arrow] (generate) -- (solve);
+\draw [arrow] (solve) -- (output);
+\draw [arrow] (output) -- (end);
+
+\end{tikzpicture}
+\caption{Pipeline del processo di assegnazione dei garanti.}
+\label{fig:pipeline}
+\end{figure}
+
+In Fig. \ref{fig:pipeline}
+è illustrata la
+pipeline di lavoro. Prima dell'elaborazione automatica dei dati, è stato
+necessario effettuarne una normalizzazione manuale. Questo passaggio ha permesso
+di uniformare i formati e risolvere eventuali incongruenze nei dati forniti,
+facilitando così le fasi successive. La generazione dei fatti ground costituisce
+la base di conoscenza positiva, utilizzata dal programma ASP principale per
+calcolare gli answer set. Successivamente, il solver Clingo viene eseguito
+tramite Python e i risultati ottenuti vengono convertiti in formato tabellare
+per facilitarne la visualizzazione.
+
+\subsection{Implementazione}
+
+L'implementazione è stata progettata separando la logica principale per la
+generazione dei garanti accademici da quella relativa alle preferenze
+specifiche. Tra le preferenze considerate figurano:  
+\begin{itemize}
+	\item assegnazione automatica del ruolo di garante al presidente del corso;
+	\item massimizzazione del numero di docenti con contratto a tempo indeterminato;
+	\item minimizzazione del numero di ricercatori e docenti a contratto coinvolti.
+\end{itemize}
+
+Nel Cod. \ref{lst:mainlp} viene illustrato il codice di \texttt{main.lp}. Per
+questioni di ottimizzazione in fase di grounding si è preferito, ove possibile, utilizzare gli
+\textit{aggregati} evitando così l'utilizzo della negazione esplicita.
+
+\begin{center}
+\begin{lstlisting}[style=asp, caption={Codice ASP del file \texttt{main.lp}.}, label={lst:mainlp}]
+% se garante allora insegna almeno una materia
+1 {
+    insegnamento(I) : insegna(docente(Matricola), insegnamento(I), corso(Corso))
+} :-
+    garante(docente(Matricola), corso(Corso)).
+
+scelta(docente(Matricola), corso(Corso)) :-
+	docente(Matricola),
+	insegna(docente(Matricola), insegnamento(_), corso(Corso)).
+
+% numero garanti
+M{
+	garante(docente(Matricola), corso(Corso)) :
+	scelta(docente(Matricola), corso(Corso))
+}N :-
+	min_garanti(M, corso(Corso)),
+  max_garanti(N, corso(Corso)),
+	corso(Corso),
+	afferisce(corso(Corso), categoria_corso(Categoria)).
+
+% almeno X garanti a tempo indeterminato
+X{
+	garante(docente(Matricola), corso(Corso)) :
+	garante(docente(Matricola), corso(Corso)),
+	indeterminato(docente(Matricola))
+}M :-
+	min_indeterminato(X, corso(Corso)),
+	max_garanti(M, corso(Corso)),
+	corso(Corso),
+	afferisce(corso(Corso), categoria_corso(Categoria)).
+
+% al piu' X garanti ricercatore
+% (analogo al precedente, senza minimo)
+
+% al piu' X garanti a contratto
+% (analogo al precedente, senza minimo)
+
+% un docente scelto al piu' una volta
+1 {
+    garante(docente(Matricola), corso(Corso2)) :
+    corso(Corso2),
+    afferisce(corso(Corso2), categoria_corso(Categoria2))
+} 1 :-
+    garante(docente(Matricola), corso(Corso1)),
+    afferisce(corso(Corso1), categoria_corso(Categoria1)).
+
+R {
+    garante(docente(Matricola), corso(Corso)) :
+    garante(docente(Matricola), corso(Corso)),
+    afferisce(docente(Matricola), settore(Settore)),
+    di_riferimento(settore(Settore), corso(Corso))
+} :-
+    corso(Corso),
+    min_riferimento(R, corso(Corso)).
+
+#show garante/2.
+\end{lstlisting}
+\end{center}
+
+Le preferenze (Cod. \ref{lst:preferenzelp}) sono state espresse tramite l'utilizzo di \textit{weak constraint}. In particolare, sono stati definiti quattro livelli di priorità\footnote{Si ricorda che l'ordine di importanza è inverso rispetto al livello di priorità indicato.} sui quali intervenire:
+\begin{itemize}
+    \item priorità 4: massimizzare l'assegnazione dei presidenti di corso come garanti;
+    \item priorità 3: massimizzare il numero di corsi per i quali è soddisfatto il predicato \texttt{ideale/1}, dove i garanti sono esclusivamente docenti a contratto indeterminato;
+    \item priorità 2: massimizzare l'impiego di docenti a contratto indeterminato come garanti;
+    \item priorità 1: minimizzare il numero di corsi per i quali è soddisfatto il predicato \texttt{non\_ideale/1}, i cui garanti comprendono almeno un ricercatore e/o un docente a contratto a tempo determinato.
+\end{itemize}
+
+\begin{lstlisting}[style=asp, caption={Codice ASP del file \texttt{preferenze.lp}.}, label={lst:preferenzelp}]
+#minimize{
+	-1@4,
+	Matricola :
+		garante(docente(Matricola), corso(Corso)),
+		presidente(docente(Matricola), corso(Corso))
+}.
+
+#minimize{
+	-1@2,
+	Matricola :
+		garante(docente(Matricola), corso(Corso)),
+		indeterminato(docente(Matricola))
+}.
+
+ideale(corso(Corso)) :-
+	N=#count{
+		docente(Matricola) :
+		garante(docente(Matricola), corso(Corso)),
+		indeterminato(docente(Matricola))
+	},
+	corso(Corso),
+	max_garanti(Max, corso(Corso)),
+	N=Max.
+
+#minimize{
+	-1@3,
+	ideale(corso(Corso)) :
+	ideale(corso(Corso))
+}.
+
+non_ideale(corso(Corso)) :-
+	N=#count{
+		docente(Matricola) :
+		garante(docente(Matricola), corso(Corso)),
+		indeterminato(docente(Matricola))
+	},
+	corso(Corso),
+	max_garanti(Max, corso(Corso)),
+	N<Max.
+
+#minimize{
+	1@1,
+	non_ideale(corso(Corso)) :
+	non_ideale(corso(Corso))
+}.
+\end{lstlisting}\todo{aggiornare con versione definitiva}
+
+
+\subsection{Spazio delle soluzioni}
+
+Si analizza ora la complessità computazionale in termini di
+possibili configurazioni generate candidate ad essere soluzioni.
+
+\begin{lstlisting}[style=asp, caption={Frammento del file \texttt{main.lp}.}, label={lst:numero_garanti}]
+scelta(docente(Matricola), corso(Corso)) :-
+	docente(Matricola),
+	insegna(docente(Matricola), insegnamento(_), corso(Corso)).
+
+% possibili garanti
+M{
+	garante(docente(Matricola), corso(Corso)) :
+	scelta(docente(Matricola), corso(Corso))
+}N :-
+	min_garanti(M, corso(Corso)),
+	max_garanti(N, corso(Corso)),
+	corso(Corso),
+	afferisce(corso(Corso), categoria_corso(Categoria)).
+\end{lstlisting}
+Nel Cod. \ref{lst:numero_garanti} è illustrata la regola che controlla i garanti
+generati. Per ciascun corso di studi (95 in totale), esiste una sola versione ground che rende veri i
+predicati presenti nel corpo della regola; questo significa che il corpo verrà
+attivato esattamente una volta. Inoltre \texttt{M} e \texttt{N},
+rispettivamente minimo e massimo richiesti, coincidono; quindi l'aggregato
+presente in testa itera sulle possibili scelte per un determinato corso,
+costruendo insiemi di esattamente $N$ elementi. Indicati con $\Delta$ il numero
+medio delle possibili \texttt{scelta} ottenute da ogni corso e con $k$ il numero medio di garanti richiesti, si ottiene che questa regola genera circa
+\[
+	|\mathit{Corsi}| \cdot \binom{\Delta}{k}
+	= 95 \cdot \frac{\Delta !}{k! \cdot (\Delta - k)!}
+\]
+possibili answer set. In media risultano $\Delta = 39 \text{ e } k=10$, ossia
+circa  
+\[
+	95 \cdot \frac{39!}{10! \cdot 29!} = 95 \cdot \frac{39 \cdot 38 \cdot \ldots \cdot 30}{10!}
+	\approx
+	6 \cdot 10^{10}
+\]
+risultati. Lo spazio delle alternative da considerare cresce dunque fattorialmente rispetto al
+numero medio di insegnanti per ciascun corso.
+
+L’impiego di vincoli espressi tramite aggregati consente di escludere una
+significativa quantità di answer set non validi. Ad esempio, la seguente regola:
+\begin{lstlisting}[style=asp, caption={Frammento del file \texttt{main.lp}.}, label={lst:max_volte_garante}]
+% un docente e' scelto al piu' una volta
+0{
+	garante(docente(Matricola), corso(Corso2)) :
+	garante(docente(Matricola), corso(Corso2)),
+	Corso1!=Corso2
+}0 :-
+	garante(docente(Matricola), corso(Corso1)).
+\end{lstlisting}
+esclude tutti gli answer set in cui un docente risulta selezionato come garante
+per più di un corso. 
+
+Le regole riportate nel Cod. \ref{lst:massimi_minimi} stabiliscono invece limiti
+massimi e/o minimi per le sottocategorie di docenza, differenziate in base al
+tipo di contratto.
+\begin{lstlisting}[style=asp, caption={Frammento del file
+\texttt{main.lp}.}, label={lst:massimi_minimi}]
+% almeno X garanti a tempo indeterminato
+X{
+	garante(docente(Matricola), corso(Corso)) :
+	garante(docente(Matricola), corso(Corso)),
+	indeterminato(docente(Matricola))
+}M :-
+	min_indeterminato(X, corso(Corso)),
+	max_garanti(M, corso(Corso)),
+	corso(Corso).
+
+% al piu' X garanti ricercatore
+{
+	garante(docente(Matricola), corso(Corso)) :
+	garante(docente(Matricola), corso(Corso)),
+	ricercatore(docente(Matricola))
+}X :-
+	max_ricercatori(X, corso(Corso)),
+	corso(Corso).
+
+% al piu' X garanti a contratto
+{
+	garante(docente(Matricola), corso(Corso)) :
+	garante(docente(Matricola), corso(Corso)),
+	contratto(docente(Matricola))
+}X :-
+	max_contratto(X, corso(Corso)),
+	corso(Corso).
+\end{lstlisting}
