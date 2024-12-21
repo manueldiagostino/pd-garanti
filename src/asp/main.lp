@@ -3,10 +3,14 @@
 } :-
 	garante(docente(Matricola), corso(Corso)).
 
+scelta(docente(Matricola), corso(Corso)) :-
+	docente(Matricola),
+	insegna(docente(Matricola), insegnamento(_), corso(Corso)).
+
 % numero garanti
 M{
 	garante(docente(Matricola), corso(Corso)) :
-	docente(Matricola)
+	scelta(docente(Matricola), corso(Corso))
 }N :-
 	min_garanti(M, corso(Corso)),
   max_garanti(N, corso(Corso)),
@@ -62,3 +66,4 @@ R{
 	min_riferimento(R, corso(Corso)).
 
 #show garante/2.
+#show scelta/2.
