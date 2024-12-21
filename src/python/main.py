@@ -38,6 +38,11 @@ from modules.csv_loader import (
     carica_dati_csv,
     normalizza_nome
 )
+
+from modules.maps import (
+    GestoreMappe
+)
+
 import argparse
 import os
 
@@ -53,6 +58,7 @@ asp_dir = os.path.join(base_dir, "src/asp")
 facts_dir = os.path.join(asp_dir, "facts")
 results_dir = os.path.join(asp_dir, "results")
 
+
 def genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir):
     """Legge il file CSV, genera i fatti per ogni gruppo e li scrive nel file."""
 
@@ -63,9 +69,12 @@ def genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir):
         console.print(f"Errore nel caricamento dei dati da {file_csv_docenti}")
         return
 
+    GestoreMappe.inizializza(input_dir)
+    df = GestoreMappe.get_df_docenti()
+
     mappa_docenti = genera_mappa_docenti(df)
-    mappa_ssd = mappa_settori_nuovi_vecchi(df)
-    mappa_ssd_termine = mappa_settori_termini(mappa_ssd)
+    mappa_ssd = GestoreMappe.get_mappa_ssd_2024_2015()
+    mappa_ssd_termine = GestoreMappe.get_mappa_ssd_2015_termini()
 
     fatti_settori = {}
     settori(fatti_settori, mappa_ssd_termine)
@@ -211,11 +220,10 @@ def main():
     if df is None:
         console.print(f"Errore nel caricamento dei dati da {file_csv_docenti}")
         return
-    
+
     mappa_docenti = genera_mappa_docenti(df)
     mappa_docenti_settore = genera_mappa_docenti_settore(df)
     mappa_ssd = mappa_settori_nuovi_vecchi(df)
-
 
     file_csv_coperture = os.path.join(input_dir, "coperture2425.csv")
     df = carica_dati_csv(file_csv_coperture)
@@ -256,7 +264,7 @@ def main():
                       arguments=args.clingo_args)
         write_table("solution.txt", "table.xlsx", mappa_docenti, mappa_ssd,
                     mappa_docenti_settore, mappa_corso_nome)
-        
+
 
 if __name__ == "__main__":
     main()
