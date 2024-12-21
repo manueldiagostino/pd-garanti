@@ -1,3 +1,4 @@
+from typing import NoReturn
 import stat
 from .messages import MessaggiErrore
 from .facts import (
@@ -18,15 +19,18 @@ class GestoreSSD:
     _df = None  # Dataframe condiviso da tutti i metodi
     _mappa_ssd_2024_2015 = None
     _mappa_ssd_2015_termini = None
+    _fatti_settori = None
 
     @staticmethod
-    def inizializza(path: str):
+    def inizializza(input_dir):
         """Carica i dati da un file CSV nel DataFrame condiviso."""
+        file_docenti = os.path.join(input_dir, 'docenti.csv')
+
         if GestoreSSD._df is None:
-            df = carica_dati_csv(path)
+            df = carica_dati_csv(file_docenti)
             if df is None:
                 MessaggiErrore.errore(
-                    f"Errore nel caricamento dei dati da {path}")
+                    f"Errore nel caricamento dei dati da {file_docenti}")
 
             GestoreSSD._df = df
 
@@ -87,6 +91,169 @@ class GestoreSSD:
             MessaggiErrore.errore("GestoreSSD._df is None")
         return GestoreSSD._df
 
+    @staticmethod
+    def genera_fatti_settori():
+        fatti_settori = {}
+
+        for ssd_2015, termine in GestoreSSD._mappa_ssd_2015_termini.items():
+            fatti_settori[ssd_2015] = f"settore({termine})."
+
+        GestoreSSD._fatti_settori = fatti_settori
+
+    @staticmethod
+    def get_fatti_settori():
+        if GestoreSSD._fatti_settori is None:
+            GestoreSSD.genera_fatti_settori()
+        return GestoreSSD._fatti_settori
+
+
+class GestoreDocenti:
+    _df_docenti = None
+    _mappa_docenti = None
+    _df_presidenti = None
+    _mappa_presidenti = None
+    _fatti_presidenti = None
+    _fatti_contratti = None
+
+    @staticmethod
+    def inizializza(input_dir):
+        """Carica i dati da un file CSV nel DataFrame condiviso."""
+        file_docenti = os.path.join(input_dir, 'docenti.csv')
+
+        df = carica_dati_csv(file_docenti)
+        if df is None:
+            MessaggiErrore.errore(
+                f"Errore nel caricamento dei dati da {file_docenti}")
+
+        GestoreDocenti._df_docenti = df
+
+        file_presidenti = os.path.join(input_dir, 'presidenti.csv')
+        df = carica_dati_csv(file_presidenti)
+        if df is None:
+            MessaggiErrore.errore(
+                f"Errore nel caricamento dei dati da {file_presidenti}")
+
+        GestoreDocenti._df_presidenti = df
+
+    @staticmethod
+    def genera_mappa_docenti():
+        mappa_docenti = {}
+        df = GestoreDocenti._df_docenti
+
+        for _, riga in df.iterrows():
+            matricola = int(riga['Matricola'])
+            nome = riga['Cognome e Nome']
+
+            mappa_docenti[matricola] = nome
+
+        GestoreDocenti._mappa_docenti = mappa_docenti
+
+    @staticmethod
+    def get_mappa_docenti():
+        if GestoreDocenti._mappa_docenti is None:
+            GestoreDocenti.genera_mappa_docenti()
+
+        return GestoreDocenti._mappa_docenti
+
+    @staticmethod
+    def get_df_docenti():
+        if GestoreDocenti._df_docenti is None:
+            MessaggiErrore.errore("GestoreDocenti._df_docenti is None")
+        return GestoreDocenti._df_docenti
+
+    @staticmethod
+    def get_df_presidenti():
+        if GestoreDocenti._df_presidenti is None:
+            MessaggiErrore.errore("GestoreDocenti._df_presidenti is None")
+        return GestoreDocenti._df_presidenti
+
+    @staticmethod
+    def genera_mappa_presidenti():
+        mappa_presidenti = {}
+        df = GestoreDocenti.get_df_presidenti()
+        mappa_docenti = GestoreDocenti.get_mappa_docenti()
+
+        for _, riga in df.iterrows():
+
+            corso = int(riga['Matricola'])
+
+            # Estrai il nome completo dalla seconda colonna (Nome Cognome)
+            nome_cognome = riga['Nome e Cognome'].strip()
+            if not nome_cognome:
+                continue
+
+            # Trova la matricola corrispondente
+            matricola = find_matricola_by_name(nome_cognome, mappa_docenti)
+
+            if not matricola:
+                console.print(f"Nome: {nome_cognome}, Matricola non trovata")
+                continue
+
+            mappa_presidenti[corso] = matricola
+
+        GestoreDocenti._mappa_presidenti = mappa_presidenti
+
+    @staticmethod
+    def get_mappa_presidenti():
+        if GestoreDocenti._mappa_presidenti is None:
+            GestoreDocenti.genera_mappa_presidenti()
+
+        return GestoreDocenti._mappa_presidenti
+
+    def genera_fatti_presidenti():
+        fatti_presidenti = {}
+        mappa_presidenti = GestoreDocenti._mappa_presidenti
+
+        for corso, matricola in mappa_presidenti.items():
+            fatto = f"presidente(docente({matricola}), corso({corso}))."
+            fatti_presidenti[corso] = fatto
+
+        GestoreDocenti._fatti_presidenti = fatti_presidenti
+
+    @staticmethod
+    def get_fatti_presidenti():
+        if GestoreDocenti._fatti_presidenti is None:
+            GestoreDocenti.genera_fatti_presidenti()
+
+        return GestoreDocenti._fatti_presidenti
+
+    @staticmethod
+    def genera_fatti_contratti():
+        fatti_docenti_tipo_contratto = {}
+        df = GestoreDocenti.get_df_docenti()
+
+        for _, riga in df.iterrows():
+
+            valori = []
+            matricola = riga['Matricola']
+            if pd.isna(matricola):
+                continue
+
+            matricola = int(matricola)
+            if (matricola in fatti_docenti_tipo_contratto and ('contratto' not in fatti_docenti_tipo_contratto[matricola])):
+                continue
+
+            fascia = riga['Fascia']
+            if pd.isna(fascia):
+                continue
+
+            if 'ricercatore' in normalizza_nome(fascia):
+                valori.append('ricercatore')
+            else:
+                valori.append('indeterminato')
+
+            fatto = f"{fascia}(docente({matricola}))."
+            fatti_docenti_tipo_contratto[matricola] = fatto
+
+        GestoreDocenti._fatti_contratti = fatti_docenti_tipo_contratto
+
+    @staticmethod
+    def get_fatti_contratti():
+        if GestoreDocenti._fatti_contratti is None:
+            GestoreDocenti.genera_fatti_contratti()
+
+        return GestoreDocenti._fatti_contratti
+
 
 base_dir = os.path.abspath(os.path.join(
     os.path.dirname(__file__), "../../"))
@@ -102,13 +269,11 @@ class GestoreMappe:
 
     @staticmethod
     def inizializza(input_dir):
-        GestoreSSD.inizializza(os.path.join(input_dir, 'docenti.csv'))
+        GestoreSSD.inizializza(input_dir)
         GestoreSSD.genera_mappa_ssd_2024_2015()
         GestoreSSD.genera_mappa_ssd_2015_termini()
 
-    @staticmethod
-    def get_df_docenti():
-        return GestoreSSD.get_df()
+        GestoreDocenti.inizializza(input_dir)
 
     @staticmethod
     def get_mappa_ssd_2024_2015():
@@ -117,6 +282,30 @@ class GestoreMappe:
     @staticmethod
     def get_mappa_ssd_2015_termini():
         return GestoreSSD.get_mappa_ssd_2015_termini()
+
+    @staticmethod
+    def get_fatti_settori():
+        return GestoreSSD.get_fatti_settori()
+
+    @staticmethod
+    def get_df_docenti():
+        return GestoreDocenti.get_df_docenti()
+
+    @staticmethod
+    def get_mappa_docenti():
+        return GestoreDocenti.get_mappa_docenti()
+
+    @staticmethod
+    def get_mappa_presidenti():
+        return GestoreDocenti.get_mappa_presidenti()
+
+    @staticmethod
+    def get_fatti_presidenti():
+        return GestoreDocenti.get_fatti_presidenti()
+
+    @staticmethod
+    def get_fatti_contratti():
+        return GestoreDocenti.get_fatti_contratti()
 
 
 def mappa_settori_nuovi_vecchi(df):
