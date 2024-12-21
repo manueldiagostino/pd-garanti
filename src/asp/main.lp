@@ -1,3 +1,4 @@
+% se garante, allora insegna almeno una materia in quel corso
 1{
 	insegnamento(I) : insegna(docente(Matricola), insegnamento(I), corso(Corso))
 } :-
@@ -14,8 +15,15 @@ M{
 }N :-
 	min_garanti(M, corso(Corso)),
   max_garanti(N, corso(Corso)),
-	corso(Corso),
-	afferisce(corso(Corso), categoria_corso(Categoria)).
+	corso(Corso).
+
+% un docente è scelto al più una volta
+0{
+	garante(docente(Matricola), corso(Corso2)) :
+	garante(docente(Matricola), corso(Corso2)),
+	Corso1!=Corso2
+}0 :-
+	garante(docente(Matricola), corso(Corso1)).
 
 % almeno X garanti a tempo indeterminato
 X{
@@ -25,8 +33,7 @@ X{
 }M :-
 	min_indeterminato(X, corso(Corso)),
 	max_garanti(M, corso(Corso)),
-	corso(Corso),
-	afferisce(corso(Corso), categoria_corso(Categoria)).
+	corso(Corso).
 
 % al più X garanti ricercatore
 {
@@ -35,8 +42,7 @@ X{
 	ricercatore(docente(Matricola))
 }X :-
 	max_ricercatori(X, corso(Corso)),
-	corso(Corso),
-	afferisce(corso(Corso), categoria_corso(Categoria)).
+	corso(Corso).
 
 % al più X garanti a contratto
 {
@@ -45,17 +51,7 @@ X{
 	contratto(docente(Matricola))
 }X :-
 	max_contratto(X, corso(Corso)),
-	corso(Corso),
-	afferisce(corso(Corso), categoria_corso(Categoria)).
-
-% un docente è scelto al più una volta
-1{
-	garante(docente(Matricola), corso(Corso2)) :
-	corso(Corso2),
-	afferisce(corso(Corso2), categoria_corso(Categoria2))
-}1 :-
-	garante(docente(Matricola), corso(Corso1)),
-	afferisce(corso(Corso1), categoria_corso(Categoria1)).
+	corso(Corso).
 
 R{
 	garante(docente(Matricola), corso(Corso)) :
