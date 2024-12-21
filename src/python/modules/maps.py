@@ -1,3 +1,5 @@
+import stat
+from .messages import MessaggiErrore
 from .facts import (
     pd,
 )
@@ -10,6 +12,111 @@ import os
 
 from rich.console import Console
 console = Console()
+
+
+class GestoreSSD:
+    _df = None  # Dataframe condiviso da tutti i metodi
+    _mappa_ssd_2024_2015 = None
+    _mappa_ssd_2015_termini = None
+
+    @staticmethod
+    def inizializza(path: str):
+        """Carica i dati da un file CSV nel DataFrame condiviso."""
+        if GestoreSSD._df is None:
+            df = carica_dati_csv(path)
+            if df is None:
+                MessaggiErrore.errore(
+                    f"Errore nel caricamento dei dati da {path}")
+
+            GestoreSSD._df = df
+
+    @staticmethod
+    def genera_mappa_ssd_2024_2015():
+        GestoreSSD._mappa_ssd_2024_2015 = {}
+
+        for _, row in GestoreSSD._df.iterrows():
+            ssd_2015 = row["SSD 2015"]
+            ssd_2024 = row["SSD 2024"]
+
+            # Evita valori mancanti
+            if pd.notna(ssd_2015) and pd.notna(ssd_2024):
+                GestoreSSD._mappa_ssd_2024_2015[ssd_2024] = ssd_2015
+
+    @staticmethod
+    def genera_mappa_ssd_2015_termini():
+        if GestoreSSD.genera_mappa_ssd_2024_2015 is None:
+            MessaggiErrore.errore(
+                f"GestoreSSD.mappa_ssd_2024_2015 non inizializzata")
+
+        GestoreSSD._mappa_ssd_2015_termini = {}
+
+        # Itera sui valori unici di SSD 2015
+        for ssd_2015 in set(GestoreSSD._mappa_ssd_2024_2015.values()):
+            if isinstance(ssd_2015, str):
+                # Rimuove tutto ciò che viene dopo '/'
+                codice_troncato = ssd_2015.split('/')[0]
+                # Trasforma il codice in minuscolo e sostituisce spazi o trattini con underscore
+                codice_modificato = normalizza_nome(codice_troncato)
+            else:
+                # Gestisce valori non stringa
+                codice_troncato = codice_modificato = ssd_2015
+
+            if codice_troncato not in GestoreSSD._mappa_ssd_2024_2015:  # Evita duplicati
+                GestoreSSD._mappa_ssd_2015_termini[codice_troncato] = codice_modificato
+
+        # Aggiungi un valore predefinito per NULL
+        GestoreSSD._mappa_ssd_2015_termini['NULL'] = 'null'
+
+    @staticmethod
+    def get_mappa_ssd_2024_2015():
+        if GestoreSSD._mappa_ssd_2024_2015 is None:
+            GestoreSSD.genera_mappa_ssd_2024_2015()
+
+        return GestoreSSD._mappa_ssd_2024_2015
+
+    @staticmethod
+    def get_mappa_ssd_2015_termini():
+        if GestoreSSD.genera_mappa_ssd_2015_termini is None:
+            GestoreSSD.genera_mappa_ssd_2015_termini()
+
+        return GestoreSSD._mappa_ssd_2015_termini
+
+    @staticmethod
+    def get_df():
+        if GestoreSSD._df is None:
+            MessaggiErrore.errore("GestoreSSD._df is None")
+        return GestoreSSD._df
+
+
+base_dir = os.path.abspath(os.path.join(
+    os.path.dirname(__file__), "../../"))
+
+input_dir = os.path.join(base_dir, "input")
+print(input_dir)
+asp_dir = os.path.join(base_dir, "src/asp")
+facts_dir = os.path.join(asp_dir, "facts")
+results_dir = os.path.join(asp_dir, "results")
+
+
+class GestoreMappe:
+
+    @staticmethod
+    def inizializza(input_dir):
+        GestoreSSD.inizializza(os.path.join(input_dir, 'docenti.csv'))
+        GestoreSSD.genera_mappa_ssd_2024_2015()
+        GestoreSSD.genera_mappa_ssd_2015_termini()
+
+    @staticmethod
+    def get_df_docenti():
+        return GestoreSSD.get_df()
+
+    @staticmethod
+    def get_mappa_ssd_2024_2015():
+        return GestoreSSD.get_mappa_ssd_2024_2015()
+
+    @staticmethod
+    def get_mappa_ssd_2015_termini():
+        return GestoreSSD.get_mappa_ssd_2015_termini()
 
 
 def mappa_settori_nuovi_vecchi(df):
@@ -211,6 +318,7 @@ def genera_mappa_docenti(df):
 
     return mappa_docenti
 
+
 def genera_mappa_docenti_settore(df):
     mappa_docenti_settore = {}
 
@@ -221,6 +329,7 @@ def genera_mappa_docenti_settore(df):
         mappa_docenti_settore[matricola] = settore
 
     return mappa_docenti_settore
+
 
 def genera_mappa_presidenti(mappa_docenti, file_csv_presidenti):
     mappa_presidenti = {}
