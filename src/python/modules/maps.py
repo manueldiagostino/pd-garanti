@@ -1,6 +1,3 @@
-import stat
-from typing import NoReturn
-import stat
 from .messages import MessaggiErrore
 from .facts import (
     pd,
@@ -11,19 +8,16 @@ from .csv_loader import (
 )
 from .facts import (
     docente,
-    categoria_corso_speciali,
     categoria_corso,
     corso,
-    docente_indeterminato_ricercatore,
     docente_contratto,
     insegnamento,
     insegna,
-    normalizza_settore,
     settori_di_riferimento,
-    settori,
-    pd,
     garanti_per_corso,
-    presidenti
+)
+from .stats import (
+    carica_numerosita
 )
 import re
 import os
@@ -255,9 +249,9 @@ class GestoreDocenti:
                 continue
 
             if 'ricercatore' in normalizza_nome(fascia):
-                valori.append('ricercatore')
+                fascia = 'ricercatore'
             else:
-                valori.append('indeterminato')
+                fascia = 'indeterminato'
 
             fatto = f"{fascia}(docente({matricola}))."
             fatti_docenti_tipo_contratto[matricola] = fatto
@@ -483,14 +477,197 @@ class GestoreCoperture:
         return GestoreCoperture._fatti_settori_di_riferimento
 
 
-base_dir = os.path.abspath(os.path.join(
-    os.path.dirname(__file__), "../../"))
+class GestoreNumerosita:
+    _input_dir = None
+    _df_jolly = None
+    _df_classi = None
+    _df_numerosita_l = None
+    _df_numerosita_lm = None
+    _df_numerosita_cu = None
 
-input_dir = os.path.join(base_dir, "input")
-print(input_dir)
-asp_dir = os.path.join(base_dir, "src/asp")
-facts_dir = os.path.join(asp_dir, "facts")
-results_dir = os.path.join(asp_dir, "results")
+    _mappa_corsi_max = None
+    _mappa_numerosita = None
+    _fatti_garanti_per_corso = None
+
+    @staticmethod
+    def inizializza(input_dir):
+        GestoreNumerosita._input_dir = input_dir
+
+        file_csv_jolly = os.path.join(input_dir, 'numerosita/jolly.csv')
+        file_csv_classi = os.path.join(input_dir, 'numerosita/classi.csv')
+        file_csv_numerosita_l = os.path.join(
+            input_dir, 'numerosita/numerosita_l.csv')
+        file_csv_numerosita_lm = os.path.join(
+            input_dir, 'numerosita/numerosita_lm.csv')
+        file_csv_numerosita_cu = os.path.join(
+            input_dir, 'numerosita/numerosita_cu.csv')
+
+        # Caricamento jolly.csv
+        df = carica_dati_csv(file_csv_jolly)
+        if df is None:
+            MessaggiErrore.errore(
+                "Errore nel caricamento dei dati da `jolly.csv`")
+        else:
+            GestoreNumerosita._df_jolly = df
+
+        # Caricamento classi.csv
+        df = carica_dati_csv(file_csv_classi)
+        if df is None:
+            MessaggiErrore.errore(
+                "Errore nel caricamento dei dati da `classi.csv`")
+        else:
+            GestoreNumerosita._df_classi = df
+
+        # Caricamento numerosita_l.csv
+        df = carica_dati_csv(file_csv_numerosita_l)
+        if df is None:
+            MessaggiErrore.errore(
+                "Errore nel caricamento dei dati da `numerosita_l.csv`")
+        else:
+            GestoreNumerosita._df_numerosita_l = df
+
+        # Caricamento numerosita_lm.csv
+        df = carica_dati_csv(file_csv_numerosita_lm)
+        if df is None:
+            MessaggiErrore.errore(
+                "Errore nel caricamento dei dati da `numerosita_lm.csv`")
+        else:
+            GestoreNumerosita._df_numerosita_lm = df
+
+        # Caricamento numerosita_cu.csv
+        df = carica_dati_csv(file_csv_numerosita_cu)
+        if df is None:
+            MessaggiErrore.errore(
+                "Errore nel caricamento dei dati da `numerosita_cu.csv`")
+        else:
+            GestoreNumerosita._df_numerosita_cu = df
+
+    @staticmethod
+    def genera():
+        df = GestoreNumerosita._df_jolly
+        mappa_corso_classe = {}
+        for _, riga in df.iterrows():
+
+            classe = riga['Classe']
+            corso = int(riga['Cod. Corso di Studio'])
+
+            if corso is None or classe is None:
+                console.print(f"corso is {corso}")
+                console.print(f"classe is {classe}")
+
+            mappa_corso_classe[corso] = classe
+
+        df = GestoreNumerosita._df_classi
+        mappa_classe_area = {}
+        for _, riga in df.iterrows():
+
+            classe = riga['CLASSE']
+            area = riga['AREA']
+
+            if classe is None or area is None:
+                console.print(f"area is {area}")
+                console.print(f"classe is {classe}")
+
+            mappa_classe_area[classe] = area
+
+        df_l = GestoreNumerosita._df_numerosita_l
+        mappa_area_max_l = {}
+        for _, riga in df_l.iterrows():
+
+            area = riga['Cod. Area']
+            max = riga['Massimo']
+
+            if area is None or max is None:
+                console.print(f"area is {area}")
+                console.print(f"max is {max}")
+
+            mappa_area_max_l[area] = max
+
+        df_lm = GestoreNumerosita._df_numerosita_lm
+        mappa_area_max_lm = {}
+        for _, riga in df_lm.iterrows():
+
+            area = riga['Cod. Area']
+            max = riga['Massimo']
+
+            if area is None or max is None:
+                console.print(f"area is {area}")
+                console.print(f"max is {max}")
+
+            mappa_area_max_lm[area] = max
+
+        df_cu = GestoreNumerosita._df_numerosita_cu
+        mappa_area_max_cu = {}
+        for _, riga in df_cu.iterrows():
+
+            area = riga['Cod. Area']
+            max = riga['Massimo']
+
+            if area is None or max is None:
+                console.print(f"area is {area}")
+                console.print(f"max is {max}")
+
+            mappa_area_max_cu[area] = max
+
+        mappa_corsi_max = {}
+        mappa_corsi_categorie = GestoreMappe.get_mappa_corsi_categorie()
+        for corso, classe in mappa_corso_classe.items():
+            try:
+                # console.print(f"corso: {corso}")
+                classe = mappa_corso_classe[corso]
+                # console.print(f"classe: {classe}")
+                area = mappa_classe_area[classe]
+                # console.print(f"area: {area}")
+
+                categoria = mappa_corsi_categorie[corso][1]
+                # console.print(f"categoria: {categoria}")
+                if categoria == "l":
+                    max = mappa_area_max_l[area]
+                elif categoria == "lm":
+                    max = mappa_area_max_lm[area]
+                else:
+                    max = mappa_area_max_cu[area]
+
+                mappa_corsi_max[corso] = max
+            except Exception as e:
+                console.print(f"[red]genera_mappa_corsi_max errore su {
+                    corso}: {e}[/red]")
+                continue
+
+        GestoreNumerosita._mappa_corsi_max = mappa_corsi_max
+
+        mappa_numerosita = {}
+        carica_numerosita(mappa_numerosita, GestoreNumerosita._mappa_corsi_max,
+                          GestoreNumerosita._input_dir)
+        GestoreNumerosita._mappa_numerosita = mappa_numerosita
+
+        GestoreNumerosita.genera_fatti_garanti_per_corso()
+
+    @staticmethod
+    def genera_fatti_garanti_per_corso():
+        fatti_garanti_per_corso = {}
+
+        garanti_per_corso(fatti_garanti_per_corso, GestoreMappe.get_mappa_corsi_categorie(
+        ), GestoreNumerosita.get_mappa_numerosita())
+        GestoreNumerosita._fatti_garanti_per_corso = fatti_garanti_per_corso
+
+    @staticmethod
+    def get_mappa_corsi_max():
+        if GestoreNumerosita._mappa_corsi_max is None:
+            GestoreNumerosita.genera()
+        return GestoreNumerosita._mappa_corsi_max
+
+    @staticmethod
+    def get_mappa_numerosita():
+        if GestoreNumerosita._mappa_numerosita is None:
+            GestoreNumerosita.genera()
+        return GestoreNumerosita._mappa_numerosita
+
+    @staticmethod
+    def get_fatti_garanti_per_corso():
+        if GestoreNumerosita._fatti_garanti_per_corso is None:
+            GestoreNumerosita.genera()
+        return GestoreNumerosita._fatti_garanti_per_corso
 
 
 class GestoreMappe:
@@ -502,11 +679,15 @@ class GestoreMappe:
         GestoreSSD.genera_mappa_ssd_2015_termini()
 
         GestoreDocenti.inizializza(input_dir)
+
         GestoreCategorie.inizializza(os.path.join(input_dir, 'numerosita'))
         GestoreCategorie.genera_mappa_corsi_categorie()
         GestoreCoperture.inizializza(
             input_dir, corsi_da_filtrare, corsi_da_escludere)
         GestoreCoperture.genera()
+
+        GestoreNumerosita.inizializza(input_dir)
+        GestoreNumerosita.genera()
 
     @staticmethod
     def get_mappa_ssd_2024_2015():
@@ -568,183 +749,17 @@ class GestoreMappe:
     def get_fatti_insegnamenti():
         return GestoreCoperture.get_fatti_insegnamenti()
 
+    @staticmethod
+    def get_mappa_corsi_max():
+        return GestoreNumerosita.get_mappa_corsi_max()
 
-def mappa_settori_nuovi_vecchi(df):
-    """
-    Genera una mappa dai settori SSD 2024 ai settori SSD 2015 basandosi sul DataFrame fornito.
+    @staticmethod
+    def get_mappa_numerosita():
+        return GestoreNumerosita.get_mappa_numerosita()
 
-    :param df: DataFrame contenente le colonne 'SSD 2015' e 'SSD 2024'.
-    :return: Dizionario con chiavi dai valori unici di 'SSD 2015' e valori corrispondenti di 'SSD 2024'.
-    """
-    mappa = {}
-    for _, row in df.iterrows():
-        ssd_2015 = row["SSD 2015"]
-        ssd_2024 = row["SSD 2024"]
-        # Evita valori mancanti
-        if pd.notna(ssd_2015) and pd.notna(ssd_2024):
-            mappa[ssd_2024] = ssd_2015
-    return mappa
-
-
-def mappa_settori_termini(mappa_ssd):
-    """
-    Genera una mappa dove le chiavi sono i codici SSD 2015 senza il suffisso
-    dopo '/' e i valori sono le stesse stringhe in formato modificato:
-    minuscolo e con underscore al posto di trattini o spazi.
-
-    :param mappa_ssd: Dizionario esistente con chiavi e valori SSD (ad esempio: {SSD 2024: SSD 2015}).
-    :return: Dizionario con chiavi come codici SSD 2015 (troncati) e valori formattati.
-    """
-    mappa_progressiva = {}
-
-    # Itera sui valori unici di SSD 2015
-    for ssd_2015 in set(mappa_ssd.values()):
-        if isinstance(ssd_2015, str):
-            # Rimuove tutto ciò che viene dopo '/'
-            codice_troncato = ssd_2015.split('/')[0]
-            # Trasforma il codice in minuscolo e sostituisce spazi o trattini con underscore
-            codice_modificato = normalizza_nome(codice_troncato)
-        else:
-            # Gestisce valori non stringa
-            codice_troncato = codice_modificato = ssd_2015
-
-        if codice_troncato not in mappa_progressiva:  # Evita duplicati
-            mappa_progressiva[codice_troncato] = codice_modificato
-
-    # Aggiungi un valore predefinito per NULL
-    mappa_progressiva['NULL'] = 'null'
-
-    return mappa_progressiva
-
-# Funzione per trovare la numerosita massima di un corso
-
-
-def genera_mappa_corso_max(mappa_corso_categoria, input_dir):
-    mappa_corso_max = {}
-
-    file_csv_jolly = os.path.join(input_dir, 'numerosita/jolly.csv')
-
-    file_csv_classi = os.path.join(input_dir, 'numerosita/classi.csv')
-
-    file_csv_numerosita_l = os.path.join(
-        input_dir, 'numerosita/numerosita_l.csv')
-    file_csv_numerosita_lm = os.path.join(
-        input_dir, 'numerosita/numerosita_lm.csv')
-    file_csv_numerosita_cu = os.path.join(
-        input_dir, 'numerosita/numerosita_cu.csv')
-
-    df = carica_dati_csv(file_csv_jolly)
-    if df is None:
-        console.print("Errore nel caricamento dei dati da `jolly.csv`")
-        return None
-
-    # Creazione mappa
-    mappa_corso_classe = {}
-    for _, riga in df.iterrows():
-
-        classe = riga['Classe']
-        corso = int(riga['Cod. Corso di Studio'])
-
-        if corso is None or classe is None:
-            console.print(f"corso is {corso}")
-            console.print(f"classe is {classe}")
-
-        mappa_corso_classe[corso] = classe
-
-    df = carica_dati_csv(file_csv_classi)
-    if df is None:
-        console.print("Errore nel caricamento dei dati da `classi.csv`")
-        return None
-
-    # Creazione mappa
-    mappa_classe_area = {}
-    for _, riga in df.iterrows():
-
-        classe = riga['CLASSE']
-        area = riga['AREA']
-
-        if classe is None or area is None:
-            console.print(f"area is {area}")
-            console.print(f"classe is {classe}")
-
-        mappa_classe_area[classe] = area
-
-    df_l = carica_dati_csv(file_csv_numerosita_l)
-    if df_l is None:
-        console.print("Errore nel caricamento dei dati da `numerosita_l.csv`")
-        return None
-
-    mappa_area_max_l = {}
-    for _, riga in df_l.iterrows():
-
-        area = riga['Cod. Area']
-        max = riga['Massimo']
-
-        if area is None or max is None:
-            console.print(f"area is {area}")
-            console.print(f"max is {max}")
-
-        mappa_area_max_l[area] = max
-
-    df_lm = carica_dati_csv(file_csv_numerosita_lm)
-    if df_lm is None:
-        console.print("Errore nel caricamento dei dati da `numerosita_lm.csv`")
-        return None
-
-    mappa_area_max_lm = {}
-    for _, riga in df_lm.iterrows():
-
-        area = riga['Cod. Area']
-        max = riga['Massimo']
-
-        if area is None or max is None:
-            console.print(f"area is {area}")
-            console.print(f"max is {max}")
-
-        mappa_area_max_lm[area] = max
-
-    df_cu = carica_dati_csv(file_csv_numerosita_cu)
-    if df_cu is None:
-        console.print("Errore nel caricamento dei dati da `numerosita_cu.csv`")
-        return None
-
-    mappa_area_max_cu = {}
-    for _, riga in df_cu.iterrows():
-
-        area = riga['Cod. Area']
-        max = riga['Massimo']
-
-        if area is None or max is None:
-            console.print(f"area is {area}")
-            console.print(f"max is {max}")
-
-        mappa_area_max_cu[area] = max
-
-    console.print(mappa_corso_categoria)
-    for corso, classe in mappa_corso_classe.items():
-        try:
-            # console.print(f"corso: {corso}")
-            classe = mappa_corso_classe[corso]
-            # console.print(f"classe: {classe}")
-            area = mappa_classe_area[classe]
-            # console.print(f"area: {area}")
-
-            categoria = mappa_corso_categoria[corso][1]
-            # console.print(f"categoria: {categoria}")
-            if categoria == "l":
-                max = mappa_area_max_l[area]
-            elif categoria == "lm":
-                max = mappa_area_max_lm[area]
-            else:
-                max = mappa_area_max_cu[area]
-
-            mappa_corso_max[corso] = max
-        except Exception as e:
-            console.print(f"[red]genera_mappa_corso_max errore su {
-                          corso}: {e}[/red]")
-            continue
-
-    return mappa_corso_max
+    @staticmethod
+    def get_fatti_garanti_per_corso():
+        return GestoreNumerosita.get_fatti_garanti_per_corso()
 
 
 # Funzione per trovare la matricola in base al nome del docente
@@ -755,89 +770,3 @@ def find_matricola_by_name(nome_docente, mappa_docenti):
         if re.search(r'\b' + re.escape(nome_docente) + r'\b', nome, re.IGNORECASE):
             return matricola
     return None  # Nessun match trovato
-
-
-def genera_mappa_docenti(df):
-    mappa_docenti = {}
-
-    for _, riga in df.iterrows():
-        matricola = int(riga['Matricola'])
-        nome = riga['Cognome e Nome']
-
-        mappa_docenti[matricola] = nome
-
-    return mappa_docenti
-
-
-def genera_mappa_docenti_settore(df):
-    mappa_docenti_settore = {}
-
-    for _, riga in df.iterrows():
-        matricola = int(riga['Matricola'])
-        settore = riga['SSD 2024']
-
-        mappa_docenti_settore[matricola] = settore
-
-    return mappa_docenti_settore
-
-
-def genera_mappa_presidenti(mappa_docenti, file_csv_presidenti):
-    mappa_presidenti = {}
-
-    df = carica_dati_csv(file_csv_presidenti)
-    if df is None:
-        console.print("Errore nel caricamento dei dati da `presidenti.csv`")
-        return None
-
-    for _, riga in df.iterrows():
-
-        corso = int(riga['Matricola'])
-
-        # Estrai il nome completo dalla seconda colonna (Nome Cognome)
-        nome_cognome = riga['Nome e Cognome'].strip()
-        if not nome_cognome:
-            continue
-
-        # Trova la matricola corrispondente
-        matricola = find_matricola_by_name(nome_cognome, mappa_docenti)
-
-        if not matricola:
-            console.print(f"Nome: {nome_cognome}, Matricola non trovata")
-            continue
-
-        mappa_presidenti[corso] = matricola
-
-    return mappa_presidenti
-
-
-def genera_mappa_corso_categoria(input_dir):
-    mappa_corso_categoria = {}
-
-    file_csv_jolly = os.path.join(input_dir, 'numerosita/jolly.csv')
-    df = carica_dati_csv(file_csv_jolly)
-    if df is None:
-        console.print("Errore nel caricamento dei dati da `jolly.csv`")
-        return None
-
-    categorie_descrizione = {
-        "5 DI CUI 3 PO/PA": "g5",
-        "4 DI CUI 2 PO/PA": "g4",
-        "3 DI CUI 1 PO/PA": "g3"
-    }
-
-    for _, riga in df.iterrows():
-        categoria = riga['Categoria']
-        if (pd.isna(categoria)):
-            continue
-
-        try:
-            corso = int(riga['Cod. Corso di Studio'])
-            categoria = categorie_descrizione[categoria]
-        except Exception as e:
-            console.print(e)
-            continue
-
-        # console.print(f"corso:{corso}, categoria: {categoria}")
-        mappa_corso_categoria[corso] = [categoria, 'null']
-
-    return mappa_corso_categoria
