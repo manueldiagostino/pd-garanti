@@ -30,7 +30,7 @@ from modules.csv_loader import (
     normalizza_nome
 )
 
-from modules.maps import (
+from modules.gestori import (
     GestoreMappe
 )
 
