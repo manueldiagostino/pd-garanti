@@ -1,12 +1,3 @@
-from modules.maps import (
-    mappa_settori_nuovi_vecchi,
-    mappa_settori_termini,
-    genera_mappa_corso_categoria,
-    genera_mappa_corso_max,
-    genera_mappa_docenti,
-    genera_mappa_docenti_settore,
-    genera_mappa_presidenti
-)
 from modules.solver import (
     solve_program,
     write_table
@@ -103,13 +94,10 @@ def genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir):
 
     mappa_corso_categoria = GestoreMappe.get_mappa_corsi_categorie()
 
-    mappa_corso_max = genera_mappa_corso_max(mappa_corso_categoria, input_dir)
-    mappa_numerosita = {}
-    carica_numerosita(mappa_numerosita, mappa_corso_max, input_dir)
+    mappa_corso_max = GestoreMappe.get_mappa_corsi_max()
+    mappa_numerosita = GestoreMappe.get_mappa_numerosita()
 
-    fatti_garanti_per_corso = {}
-    garanti_per_corso(fatti_garanti_per_corso,
-                      mappa_corso_categoria, mappa_numerosita)
+    fatti_garanti_per_corso = GestoreMappe.get_fatti_garanti_per_corso()
 
     # Stampo i fatti nei rispettivi file
     write_dic(fatti_categorie_corso, facts_dir, 'categorie_corso.asp')
@@ -181,9 +169,9 @@ def main():
         console.print(f"Errore nel caricamento dei dati da {file_csv_docenti}")
         return
 
-    mappa_docenti = genera_mappa_docenti(df)
-    mappa_docenti_settore = genera_mappa_docenti_settore(df)
-    mappa_ssd = mappa_settori_nuovi_vecchi(df)
+    # mappa_docenti = genera_mappa_docenti(df)
+    # mappa_docenti_settore = genera_mappa_docenti_settore(df)
+    # mappa_ssd = mappa_settori_nuovi_vecchi(df)
 
     file_csv_coperture = os.path.join(input_dir, "coperture2425.csv")
     df = carica_dati_csv(file_csv_coperture)
@@ -222,8 +210,8 @@ def main():
     else:
         solve_program(mode=args.mode, verbose=args.verbose,
                       arguments=args.clingo_args)
-        write_table("solution.txt", "table.xlsx", mappa_docenti, mappa_ssd,
-                    mappa_docenti_settore, mappa_corso_nome)
+        # write_table("solution.txt", "table.xlsx", mappa_docenti, mappa_ssd,
+        # mappa_docenti_settore, mappa_corso_nome)
 
 
 if __name__ == "__main__":
