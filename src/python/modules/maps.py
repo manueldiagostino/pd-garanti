@@ -1,3 +1,4 @@
+import stat
 from typing import NoReturn
 import stat
 from .messages import MessaggiErrore
@@ -7,6 +8,22 @@ from .facts import (
 from .csv_loader import (
     carica_dati_csv,
     normalizza_nome
+)
+from .facts import (
+    docente,
+    categoria_corso_speciali,
+    categoria_corso,
+    corso,
+    docente_indeterminato_ricercatore,
+    docente_contratto,
+    insegnamento,
+    insegna,
+    normalizza_settore,
+    settori_di_riferimento,
+    settori,
+    pd,
+    garanti_per_corso,
+    presidenti
 )
 import re
 import os
@@ -255,6 +272,217 @@ class GestoreDocenti:
         return GestoreDocenti._fatti_contratti
 
 
+class GestoreCategorie:
+    _df = None
+    _mappa_corsi_categorie = None
+
+    @staticmethod
+    def inizializza(input_dir):
+        """Carica i dati da un file CSV nel DataFrame condiviso."""
+        file_jolly = os.path.join(input_dir, 'jolly.csv')
+
+        df = carica_dati_csv(file_jolly)
+        if df is None:
+            MessaggiErrore.errore(
+                f"Errore nel caricamento dei dati da {file_jolly}")
+
+        GestoreCategorie._df = df
+
+        mappa_corsi_categorie = {}
+        categorie_descrizioni = {
+            "5 DI CUI 3 PO/PA": "g5",
+            "4 DI CUI 2 PO/PA": "g4",
+            "3 DI CUI 1 PO/PA": "g3"
+        }
+
+        for _, riga in df.iterrows():
+            categoria = riga['Categoria']
+            if (pd.isna(categoria)):
+                continue
+
+            try:
+                corso = int(riga['Cod. Corso di Studio'])
+                categoria = categorie_descrizioni[categoria]
+            except Exception as e:
+                # console.print(e)
+                continue
+
+            mappa_corsi_categorie[corso] = [categoria, 'null']
+
+        GestoreCategorie._mappa_corsi_categorie = mappa_corsi_categorie
+
+    @staticmethod
+    def genera_mappa_corsi_categorie():
+        mappa_corsi_categorie = {}
+        categorie_descrizioni = {
+            "5 DI CUI 3 PO/PA": "g5",
+            "4 DI CUI 2 PO/PA": "g4",
+            "3 DI CUI 1 PO/PA": "g3"
+        }
+
+        for _, riga in GestoreCategorie._df.iterrows():
+            categoria = riga['Categoria']
+            if (pd.isna(categoria)):
+                continue
+
+            try:
+                corso = int(riga['Cod. Corso di Studio'])
+                categoria = categorie_descrizioni[categoria]
+            except Exception as e:
+                # console.print(e)
+                continue
+
+            mappa_corsi_categorie[corso] = [categoria, 'null']
+
+        GestoreCategorie._mappa_corsi_categorie = mappa_corsi_categorie
+
+    @staticmethod
+    def get_mappa_corsi_categorie():
+        if GestoreCategorie._mappa_corsi_categorie is None:
+            GestoreCategorie.genera_mappa_corsi_categorie()
+
+        return GestoreCategorie._mappa_corsi_categorie
+
+
+class GestoreCoperture:
+    _df_coperture = None
+    _corsi_da_filtrare = None
+    _corsi_da_escludere = None
+
+    _mappa_corsi_categorie = None
+
+    _fatti_docenti = None
+    _fatti_categorie_corsi = None
+    _fatti_corsi = None
+    _fatti_contratti = None
+    _fatti_insegnamenti = None
+    _fatti_insegna = None
+    _fatti_settori_di_riferimento = None
+
+    @staticmethod
+    def inizializza(input_dir, corsi_da_filtrare, corsi_da_escludere):
+        """Carica i dati da un file CSV nel DataFrame condiviso."""
+        GestoreCoperture._corsi_da_filtrare = corsi_da_filtrare
+        GestoreCoperture._corsi_da_escludere = corsi_da_escludere
+
+        file_coperture = os.path.join(input_dir, 'coperture2425.csv')
+
+        df = carica_dati_csv(file_coperture)
+        if df is None:
+            MessaggiErrore.errore(
+                f"Errore nel caricamento dei dati da {file_coperture}")
+
+        GestoreCoperture._df_coperture = df
+
+    @staticmethod
+    def genera():
+        df = GestoreCoperture._df_coperture
+        corsi_da_filtrare = GestoreCoperture._corsi_da_filtrare
+        corsi_da_escludere = GestoreCoperture._corsi_da_escludere
+
+        fatti_corsi = {}
+
+        fatti_categorie_corsi = {}
+        # carico le categorie speciali
+        fatti_categorie_corsi['g5'] = 'categoria_corso(g5).'
+        fatti_categorie_corsi['g4'] = 'categoria_corso(g4).'
+        fatti_categorie_corsi['g3'] = 'categoria_corso(g3).'
+
+        mappa_ssd_2024_2015 = GestoreMappe.get_mappa_ssd_2024_2015()
+        mappa_ssd_2015_termini = GestoreMappe.get_mappa_ssd_2015_termini()
+        mappa_corsi_categorie = GestoreMappe.get_mappa_corsi_categorie()
+
+        fatti_contratti = GestoreMappe.get_fatti_contratti()
+
+        fatti_docenti = {}
+        fatti_insegnamenti = {}
+        fatti_insegna = set()
+        fatti_settori_di_riferimento = set()
+        for _, riga in df.iterrows():
+            cod_corso = riga['Cod. Corso di Studio']
+
+            if pd.isna(cod_corso):
+                continue
+            cod_corso = int(cod_corso)
+
+            # Filtra i corsi
+            if corsi_da_filtrare and cod_corso not in corsi_da_filtrare:
+                # console.print(f'{cod_corso} escluso')
+                continue
+            if corsi_da_escludere and cod_corso in corsi_da_escludere:
+                # console.print(f'{cod_corso} escluso')
+                continue
+
+            docente(fatti_docenti, riga, mappa_ssd_2024_2015,
+                    mappa_ssd_2015_termini)
+            categoria_corso(fatti_categorie_corsi, mappa_corsi_categorie, riga)
+            corso(fatti_corsi, riga, mappa_corsi_categorie)
+            docente_contratto(
+                fatti_contratti, riga, fatti_docenti)
+            insegnamento(fatti_insegnamenti, riga)
+            insegna(fatti_insegna, riga)
+            settori_di_riferimento(fatti_settori_di_riferimento, riga,
+                                   mappa_ssd_2024_2015, mappa_ssd_2015_termini)
+
+        GestoreCoperture._fatti_docenti = fatti_docenti
+        GestoreCoperture._fatti_categorie_corsi = fatti_categorie_corsi
+        GestoreCoperture._fatti_corsi = fatti_corsi
+        GestoreCoperture._fatti_contratti = fatti_contratti
+        GestoreCoperture._fatti_insegna = fatti_insegna
+        GestoreCoperture._fatti_insegnamenti = fatti_insegnamenti
+        GestoreCoperture._fatti_settori_di_riferimento = fatti_settori_di_riferimento
+
+        GestoreCoperture._mappa_corsi_categorie = mappa_corsi_categorie
+
+    @staticmethod
+    def get_mappa_corsi_categorie():
+        if GestoreCoperture._mappa_corsi_categorie is None:
+            GestoreCoperture.genera()
+        return GestoreCoperture._mappa_corsi_categorie
+
+    @staticmethod
+    def get_fatti_docenti():
+        if GestoreCoperture._fatti_docenti is None:
+            GestoreCoperture.genera()
+        return GestoreCoperture._fatti_docenti
+
+    @staticmethod
+    def get_fatti_categorie_corsi():
+        if GestoreCoperture._fatti_categorie_corsi is None:
+            GestoreCoperture.genera()
+        return GestoreCoperture._fatti_categorie_corsi
+
+    @staticmethod
+    def get_fatti_corsi():
+        if GestoreCoperture._fatti_corsi is None:
+            GestoreCoperture.genera()
+        return GestoreCoperture._fatti_corsi
+
+    @staticmethod
+    def get_fatti_contratti():
+        if GestoreCoperture._fatti_contratti is None:
+            GestoreCoperture.genera()
+        return GestoreCoperture._fatti_contratti
+
+    @staticmethod
+    def get_fatti_insegnamenti():
+        if GestoreCoperture._fatti_insegnamenti is None:
+            GestoreCoperture.genera()
+        return GestoreCoperture._fatti_insegnamenti
+
+    @staticmethod
+    def get_fatti_insegna():
+        if GestoreCoperture._fatti_insegna is None:
+            GestoreCoperture.genera()
+        return GestoreCoperture._fatti_insegna
+
+    @staticmethod
+    def get_fatti_settori_di_riferimento():
+        if GestoreCoperture._fatti_settori_di_riferimento is None:
+            GestoreCoperture.genera()
+        return GestoreCoperture._fatti_settori_di_riferimento
+
+
 base_dir = os.path.abspath(os.path.join(
     os.path.dirname(__file__), "../../"))
 
@@ -268,12 +496,17 @@ results_dir = os.path.join(asp_dir, "results")
 class GestoreMappe:
 
     @staticmethod
-    def inizializza(input_dir):
+    def inizializza(input_dir, corsi_da_filtrare, corsi_da_escludere):
         GestoreSSD.inizializza(input_dir)
         GestoreSSD.genera_mappa_ssd_2024_2015()
         GestoreSSD.genera_mappa_ssd_2015_termini()
 
         GestoreDocenti.inizializza(input_dir)
+        GestoreCategorie.inizializza(os.path.join(input_dir, 'numerosita'))
+        GestoreCategorie.genera_mappa_corsi_categorie()
+        GestoreCoperture.inizializza(
+            input_dir, corsi_da_filtrare, corsi_da_escludere)
+        GestoreCoperture.genera()
 
     @staticmethod
     def get_mappa_ssd_2024_2015():
@@ -306,6 +539,34 @@ class GestoreMappe:
     @staticmethod
     def get_fatti_contratti():
         return GestoreDocenti.get_fatti_contratti()
+
+    @staticmethod
+    def get_mappa_corsi_categorie():
+        return GestoreCategorie.get_mappa_corsi_categorie()
+
+    @staticmethod
+    def get_fatti_categorie_corsi():
+        return GestoreCoperture.get_fatti_categorie_corsi()
+
+    @staticmethod
+    def get_fatti_docenti():
+        return GestoreCoperture.get_fatti_docenti()
+
+    @staticmethod
+    def get_fatti_settori_di_riferimento():
+        return GestoreCoperture.get_fatti_settori_di_riferimento()
+
+    @staticmethod
+    def get_fatti_corsi():
+        return GestoreCoperture.get_fatti_corsi()
+
+    @staticmethod
+    def get_fatti_insegna():
+        return GestoreCoperture.get_fatti_insegna()
+
+    @staticmethod
+    def get_fatti_insegnamenti():
+        return GestoreCoperture.get_fatti_insegnamenti()
 
 
 def mappa_settori_nuovi_vecchi(df):
