@@ -69,7 +69,7 @@ def genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir):
         console.print(f"Errore nel caricamento dei dati da {file_csv_docenti}")
         return
 
-    GestoreMappe.inizializza(input_dir)
+    GestoreMappe.inizializza(input_dir, corsi_da_filtrare, corsi_da_escludere)
     df = GestoreMappe.get_df_docenti()
 
     mappa_docenti = GestoreMappe.get_mappa_docenti()
@@ -92,49 +92,16 @@ def genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir):
                       file_csv_coperture}")
         return
 
-    fatti_corsi_di_studio = {}
+    fatti_corsi_di_studio = GestoreMappe.get_fatti_corsi()
 
-    fatti_categorie_corso = {}
-    categoria_corso_speciali(fatti_categorie_corso)
+    fatti_categorie_corso = GestoreMappe.get_fatti_categorie_corsi()
 
-    fatti_docenti = {}
-    fatti_insegnamenti = {}
-    fatti_insegna = set()
-    fatti_settori_di_riferimento = set()
+    fatti_docenti = GestoreMappe.get_fatti_docenti()
+    fatti_insegnamenti = GestoreMappe.get_fatti_insegnamenti()
+    fatti_insegna = GestoreMappe.get_fatti_insegna()
+    fatti_settori_di_riferimento = GestoreMappe.get_fatti_settori_di_riferimento()
 
-    mappa_corso_categoria = genera_mappa_corso_categoria(input_dir)
-
-    for _, riga in df.iterrows():
-        cod_corso = riga['Cod. Corso di Studio']
-
-        if pd.isna(cod_corso):
-            continue
-        cod_corso = int(cod_corso)
-
-        # Filtra i corsi
-        if corsi_da_filtrare and cod_corso not in corsi_da_filtrare:
-            # console.print(f'{cod_corso} escluso')
-            continue
-        if corsi_da_escludere and cod_corso in corsi_da_escludere:
-            # console.print(f'{cod_corso} escluso')
-            continue
-
-        # Estraggo i docenti
-        docente(fatti_docenti, riga, mappa_ssd, mappa_ssd_termine)
-        # Estraggo le categoria_corso
-        categoria_corso(fatti_categorie_corso, mappa_corso_categoria, riga)
-        # Estraggo i corsi
-        corso(fatti_corsi_di_studio, riga, mappa_corso_categoria)
-        # Estraggo docenti a contratto
-        docente_contratto(
-            fatti_docenti_tipo_contratto, riga, fatti_docenti)
-        # Estraggo insegnamenti
-        insegnamento(fatti_insegnamenti, riga)
-        # Estraggo fatti insegna
-        insegna(fatti_insegna, riga)
-        # Estraggo i settori di riferimento per i corsi
-        settori_di_riferimento(fatti_settori_di_riferimento, riga,
-                               mappa_ssd, mappa_ssd_termine)
+    mappa_corso_categoria = GestoreMappe.get_mappa_corsi_categorie()
 
     mappa_corso_max = genera_mappa_corso_max(mappa_corso_categoria, input_dir)
     mappa_numerosita = {}
