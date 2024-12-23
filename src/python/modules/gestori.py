@@ -121,6 +121,7 @@ class GestoreSSD:
 class GestoreDocenti:
     _df_docenti = None
     _mappa_docenti = None
+    _mappa_docenti_settori = None
     _df_presidenti = None
     _mappa_presidenti = None
     _fatti_presidenti = None
@@ -147,24 +148,41 @@ class GestoreDocenti:
         GestoreDocenti._df_presidenti = df
 
     @staticmethod
-    def genera_mappa_docenti():
+    def genera():
         mappa_docenti = {}
+        mappa_docenti_settori = {}
+
         df = GestoreDocenti._df_docenti
 
         for _, riga in df.iterrows():
             matricola = int(riga['Matricola'])
+            if pd.isna(matricola):
+                continue
             nome = riga['Cognome e Nome']
+            settore = riga['SSD 2024']
 
             mappa_docenti[matricola] = nome
+            mappa_docenti_settori[matricola] = settore
+
+        mappa_docenti = GestoreMappe.update_mappa_docenti(mappa_docenti)
+        mappa_docenti_settori = GestoreMappe.update_mappa_docenti_settori(mappa_docenti_settori)
 
         GestoreDocenti._mappa_docenti = mappa_docenti
+        GestoreDocenti._mappa_docenti_settori = mappa_docenti_settori
 
     @staticmethod
     def get_mappa_docenti():
         if GestoreDocenti._mappa_docenti is None:
-            GestoreDocenti.genera_mappa_docenti()
+            GestoreDocenti.genera()
 
         return GestoreDocenti._mappa_docenti
+    
+    @staticmethod
+    def get_mappa_docenti_settori():
+        if GestoreDocenti._mappa_docenti_settori is None:
+            GestoreDocenti.genera()
+
+        return GestoreDocenti._mappa_docenti_settori
 
     @staticmethod
     def get_df_docenti():
@@ -211,6 +229,7 @@ class GestoreDocenti:
 
         return GestoreDocenti._mappa_presidenti
 
+    # ? @staticmethod 
     def genera_fatti_presidenti():
         fatti_presidenti = {}
         mappa_presidenti = GestoreDocenti._mappa_presidenti
@@ -344,6 +363,7 @@ class GestoreCoperture:
     _corsi_da_escludere = None
 
     _mappa_corsi_categorie = None
+    _mappa_corsi_nomi = None
 
     _fatti_docenti = None
     _fatti_categorie_corsi = None
@@ -385,6 +405,8 @@ class GestoreCoperture:
         mappa_ssd_2024_2015 = GestoreMappe.get_mappa_ssd_2024_2015()
         mappa_ssd_2015_termini = GestoreMappe.get_mappa_ssd_2015_termini()
         mappa_corsi_categorie = GestoreMappe.get_mappa_corsi_categorie()
+        mappa_docenti_settori = {}
+        mappa_corsi_nomi = {}
 
         fatti_contratti = GestoreMappe.get_fatti_contratti()
 
@@ -394,10 +416,26 @@ class GestoreCoperture:
         fatti_settori_di_riferimento = set()
         for _, riga in df.iterrows():
             cod_corso = riga['Cod. Corso di Studio']
+            nome_corso = riga['Des. Corso di Studio']
 
             if pd.isna(cod_corso):
                 continue
             cod_corso = int(cod_corso)
+
+            if cod_corso not in mappa_corsi_nomi:
+                mappa_corsi_nomi.update({cod_corso: nome_corso})
+
+            cod_docente = riga['Matricola']
+            settore = riga['Cod. Settore Docente']
+
+            if pd.isna(settore):
+                if cod_docente in mappa_docenti_settori:
+                    continue
+                else:
+                    settore = 'null'                
+
+            if cod_docente not in mappa_docenti_settori:
+                mappa_docenti_settori.update({cod_docente: settore})
 
             # Filtra i corsi
             if corsi_da_filtrare and cod_corso not in corsi_da_filtrare:
@@ -425,14 +463,21 @@ class GestoreCoperture:
         GestoreCoperture._fatti_insegna = fatti_insegna
         GestoreCoperture._fatti_insegnamenti = fatti_insegnamenti
         GestoreCoperture._fatti_settori_di_riferimento = fatti_settori_di_riferimento
-
+        GestoreCoperture._mappa_docenti_settori = mappa_docenti_settori
         GestoreCoperture._mappa_corsi_categorie = mappa_corsi_categorie
+        GestoreCoperture._mappa_corsi_nomi = mappa_corsi_nomi
 
     @staticmethod
     def get_mappa_corsi_categorie():
         if GestoreCoperture._mappa_corsi_categorie is None:
             GestoreCoperture.genera()
         return GestoreCoperture._mappa_corsi_categorie
+
+    @staticmethod
+    def get_mappa_corsi_nomi():
+        if GestoreCoperture._mappa_corsi_nomi is None:
+            GestoreCoperture.genera()
+        return GestoreCoperture._mappa_corsi_nomi
 
     @staticmethod
     def get_fatti_docenti():
@@ -475,6 +520,35 @@ class GestoreCoperture:
         if GestoreCoperture._fatti_settori_di_riferimento is None:
             GestoreCoperture.genera()
         return GestoreCoperture._fatti_settori_di_riferimento
+
+    @staticmethod
+    def update_mappa_docenti(mappa_docenti):
+        df = GestoreCoperture._df_coperture
+        
+        for _, riga in df.iterrows():
+            cod_docente = riga['Matricola']
+
+            if cod_docente not in mappa_docenti:
+                cognome = riga['Cognome']
+                nome = riga['Nome']
+                if pd.isna(cognome) or pd.isna(nome):
+                    continue
+                valore = cognome + ' ' + nome
+                mappa_docenti.update({cod_docente: valore})  
+
+        return mappa_docenti 
+
+    @staticmethod
+    def update_mappa_docenti_settori(mappa_docenti_settori):
+        df = GestoreCoperture._df_coperture
+        
+        for _, riga in df.iterrows():
+            cod_docente = riga['Matricola']
+
+            if cod_docente not in mappa_docenti_settori:
+                mappa_docenti_settori[cod_docente] = 'null'
+
+        return mappa_docenti_settori
 
 
 class GestoreNumerosita:
@@ -682,6 +756,7 @@ class GestoreMappe:
 
         GestoreCategorie.inizializza(os.path.join(input_dir, 'numerosita'))
         GestoreCategorie.genera_mappa_corsi_categorie()
+
         GestoreCoperture.inizializza(
             input_dir, corsi_da_filtrare, corsi_da_escludere)
         GestoreCoperture.genera()
@@ -696,6 +771,14 @@ class GestoreMappe:
     @staticmethod
     def get_mappa_ssd_2015_termini():
         return GestoreSSD.get_mappa_ssd_2015_termini()
+
+    @staticmethod
+    def get_mappa_docenti_settori():
+        return GestoreDocenti.get_mappa_docenti_settori()
+
+    @staticmethod
+    def get_mappa_corsi_nomi():
+        return GestoreCoperture.get_mappa_corsi_nomi()
 
     @staticmethod
     def get_fatti_settori():
@@ -761,6 +844,13 @@ class GestoreMappe:
     def get_fatti_garanti_per_corso():
         return GestoreNumerosita.get_fatti_garanti_per_corso()
 
+    @staticmethod
+    def update_mappa_docenti(mappa_docenti):
+        return GestoreCoperture.update_mappa_docenti(mappa_docenti)
+
+    @staticmethod
+    def update_mappa_docenti_settori(mappa_docenti_settori):
+        return GestoreCoperture.update_mappa_docenti_settori(mappa_docenti_settori)
 
 # Funzione per trovare la matricola in base al nome del docente
 def find_matricola_by_name(nome_docente, mappa_docenti):
