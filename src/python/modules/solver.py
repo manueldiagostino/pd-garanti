@@ -8,6 +8,10 @@ from openpyxl import Workbook
 from rich.console import Console
 console = Console()
 
+from modules.gestori import (
+    GestoreMappe
+)
+
 # Percorso principale del progetto
 base_dir = os.path.abspath(os.path.join(
     os.path.dirname(__file__), "../../../src"))
@@ -161,8 +165,8 @@ def extract_data(model):
     return matches
 
 
-def write_table(input_file, output_file, mappa_docenti, mappa_ssd,
-                mappa_docenti_settore, mappa_corso_nome):
+def write_table(input_file, output_file):
+
     input_file = os.path.join(results_dir, input_file)
     output_file = os.path.join(results_dir, output_file)
 
@@ -189,6 +193,12 @@ def write_table(input_file, output_file, mappa_docenti, mappa_ssd,
     for col_index, header in enumerate(headers, start=1):
         ws.cell(row=1, column=col_index, value=header)
 
+    # GestoreMappe.inizializza()
+    mappa_docenti = GestoreMappe.get_mappa_docenti()
+    mappa_docenti_settori = GestoreMappe.get_mappa_docenti_settori()
+    mappa_ssd = GestoreMappe.get_mappa_ssd_2024_2015()
+    mappa_corsi_nomi = GestoreMappe.get_mappa_corsi_nomi()
+
     # Scrittura dei dati nella tabella
     row_index = 2
     for docente, corso in extracted_data:
@@ -197,12 +207,10 @@ def write_table(input_file, output_file, mappa_docenti, mappa_ssd,
 
         # Ottieni le informazioni dal dizionario
         docente_nome = mappa_docenti[docente]
-        if 3027 in mappa_docenti_settore:
-            print("sas")
-
-        settore = mappa_docenti_settore[docente]
-        settore = mappa_ssd[settore]
-        nome_corso = mappa_corso_nome[corso]
+        settore = mappa_docenti_settori[docente]
+        if settore != 'null':
+            settore = mappa_ssd[settore]
+        nome_corso = mappa_corsi_nomi[corso]
 
         # Scrivi i dati in una riga
         # Nome del docente

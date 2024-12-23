@@ -64,7 +64,7 @@ def genera_fatti(corsi_da_filtrare, corsi_da_escludere, dir):
     df = GestoreMappe.get_df_docenti()
 
     mappa_docenti = GestoreMappe.get_mappa_docenti()
-    mappa_ssd = GestoreMappe.get_mappa_ssd_2024_2015()
+    mappa_ssd = GestoreMappe.get_mappa_ssd_2024_2015() # serve?
     mappa_ssd_termine = GestoreMappe.get_mappa_ssd_2015_termini()
 
     fatti_settori = GestoreMappe.get_fatti_settori()
@@ -180,24 +180,24 @@ def main():
                       file_csv_coperture}")
         return
 
-    mappa_corso_nome = {}
-    for _, riga in df.iterrows():
-        cod_corso = riga['Cod. Corso di Studio']
-        nome_corso = riga['Des. Corso di Studio']
+    # mappa_corso_nome = {}
+    # for _, riga in df.iterrows():
+    #     cod_corso = riga['Cod. Corso di Studio']
+    #     nome_corso = riga['Des. Corso di Studio']
 
-        if pd.isna(cod_corso):
-            continue
-        cod_corso = int(cod_corso)
+    #     if pd.isna(cod_corso):
+    #         continue
+    #     cod_corso = int(cod_corso)
 
-        # Filtra i corsi
-        if corsi_da_filtrare and cod_corso not in corsi_da_filtrare:
-            # console.print(f'{cod_corso} escluso')
-            continue
-        if corsi_da_escludere and cod_corso in corsi_da_escludere:
-            # console.print(f'{cod_corso} escluso')
-            continue
+    #     # Filtra i corsi
+    #     if corsi_da_filtrare and cod_corso not in corsi_da_filtrare:
+    #         # console.print(f'{cod_corso} escluso')
+    #         continue
+    #     if corsi_da_escludere and cod_corso in corsi_da_escludere:
+    #         # console.print(f'{cod_corso} escluso')
+    #         continue
 
-        mappa_corso_nome[cod_corso] = nome_corso
+    #     mappa_corso_nome[cod_corso] = nome_corso
 
     if args.mode in ["full", "none"]:
         # Genera i fatti
@@ -210,8 +210,7 @@ def main():
     else:
         solve_program(mode=args.mode, verbose=args.verbose,
                       arguments=args.clingo_args)
-        # write_table("solution.txt", "table.xlsx", mappa_docenti, mappa_ssd,
-        # mappa_docenti_settore, mappa_corso_nome)
+        write_table("solution.txt", "table.xlsx")
 
 
 if __name__ == "__main__":
