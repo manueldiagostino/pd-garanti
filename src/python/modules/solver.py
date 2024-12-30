@@ -60,7 +60,6 @@ def load_program():
 # Flag per interrompere il solving
 stop_solving = False
 
-
 def signal_handler(signum, frame):
     """Gestore dei segnali per Ctrl+C."""
     global stop_solving
@@ -69,11 +68,10 @@ def signal_handler(signum, frame):
         "[bold yellow]Ricevuto Ctrl+C: interruzione in corso...[/bold yellow]")
 
 
-def timeout_handler():
-    global time_out
-    time_out = True
+def timeout_handler(ctl):
     console.print(
         "[bold red]Timeout raggiunto. Interruzione in corso...[/bold red]")
+    ctl.interrupt()
 
 
 def solve_program(mode="full", verbose=True, arguments=[]):
@@ -90,9 +88,6 @@ def solve_program(mode="full", verbose=True, arguments=[]):
     # Imposta il gestore per Ctrl+C
     signal.signal(signal.SIGINT, signal_handler)
 
-    global time_out
-    time_out = False
-
     try:
         complete_program = load_program()  # Funzione che carica il programma ASP
         results_file = os.path.join(results_dir, "solution.txt")
@@ -105,9 +100,6 @@ def solve_program(mode="full", verbose=True, arguments=[]):
             if stop_solving:
                 ctl.interrupt()  # Interrompe la ricerca in corso
                 raise KeyboardInterrupt  # Genera un'interruzione
-
-            if time_out:
-                ctl.interrupt()
 
             # model_symbols = model.symbols(atoms=True)
             model_symbols = model.symbols(shown=True)
@@ -128,7 +120,7 @@ def solve_program(mode="full", verbose=True, arguments=[]):
         console.print("[bold blue]Avvio del solving...[/bold blue]")
 
         # Imposta il timer per il timeout
-        timer = Timer(30, timeout_handler)
+        timer = Timer(5, timeout_handler, args=(ctl,))
         timer.start()
 
         result = ctl.solve(on_model=on_model)
