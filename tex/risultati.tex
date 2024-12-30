@@ -1,1 +1,93 @@
 \section{Risultati}
+
+\subsection{Punti chiave}
+In questa sezione vengono esposti i principali indicatori di qualità 
+relativi ai risultati ottenuti in varie casistiche.
+
+Un primo fattore caratterizzante è emerso valutando le 4 preferenze espresse 
+tramite i \textit{weak constraints}. La generazione di \textit{Answer Sets} 
+tenendo conto di tutti i vincoli risulta molto pesante e il programma non è 
+in grado di fornire il risultato ottimo in tempo utile.
+Tuttavia, dopo circa 30 secondi di esecuzione (tempo impostato manualmente come limite),
+si ottiene un risultato esaustivo in termini di configurazioni dei vari docenti.
+
+\subsection{Preferenze}
+È possibile ottenere risultati ottimi in tempi ristretti, eliminando alcune 
+preferenze per facilitare il processo di ottimizzazione. In particolare, si raggiungono
+prestazioni elevate se non vengono considerati i vincoli relativi ai predicati 
+\texttt{ideale/1} e \texttt{non\_ideale/1}.
+
+\subsection{Input ridotto}
+I primi test sono stati eseguiti ponendo come obiettivo la generazione di 
+configurazioni solo per corsi di studio singoli o a coppie, per verificare 
+rapidamente la correttezza dei risultati.
+Per fare un esempio pratico, il corso di laurea triennale in informatica (3027)
+offre 26 insegnamenti, distribuiti su 20 docenti.
+La categoria del corso e le numerosità di immatricolazioni richiedono 
+la presenza di almeno 9 garanti, tra cui:
+\begin{itemize}
+    \item non meno di 5 professori a tempo indeterminato;
+    \item non più di 4 ricercatori;
+    \item non più di 2 professori a contratto.
+\end{itemize}
+
+\begin{table}[!ht]
+    \caption{Garanti generati per il corso 3027}
+    \centering
+    \begin{tabular}{|l|l|l|}
+    \hline
+        Docente & Matricola & SSD 2015 \\ \hline
+        DAL PALU' A. & 6625 & INF/01 \\ \hline
+        DE FILIPPIS C. & 34499 & MAT/05 \\ \hline
+        BONNICI V. & 34181 & INF/01 \\ \hline
+        GUARDASONI C. & 6801 & MAT/08 \\ \hline
+        BENINI A. & 26131 & MAT/03 \\ \hline
+        DE PIETRI R. & 5536 & FIS/02 \\ \hline
+        ZAFFANELLA E. & 5602 & INF/01 \\ \hline
+        BERGENTI F. & 204741 & INF/01 \\ \hline
+        BAGNARA R. & 5145 & INF/01 \\ \hline
+    \end{tabular}
+\end{table}
+
+La soluzione ottima, in questo caso, viene generata in meno di 1 secondo, 
+quasi in maniera istantanea. 
+Nonostante l'esempio sia banale, i vincoli imposti sono stati rispettati 
+e la soluzione è facilmente consultabile da parte dell'utente.
+
+In alcuni casi, come per il corso di laurea triennale in chimica (3024), 
+il numero di insegnamenti (e di conseguenza il numero di docenti) è molto 
+alto, specialmente per i professori a tempo indeterminato. 
+
+In questi casi il programma finisce per valutare una quantità elevatissima 
+di modelli, potenzialmente ottimi, tutti tra loro equivalenti. Per questo 
+motivo il solver potrebbe evolvere in una situazione di ``stallo'', non 
+riuscendo a dimostrare di aver trovato un modello ottimo.
+
+Nel codice \ref{lst:stat_3024} è riportato l'output in questione, da cui è 
+possibile notare come la maggior parte del tempo di risoluzione sia impiegato nella 
+ricerca (senza successo) di un modello migliore.
+
+Il tempo indicato nel campo \texttt{Unsat} indica, infatti, il tempo trascorso tra 
+l'istante in cui è stato trovato l'ultimo modello e la terminazione \cite{gebser2015potassco}.
+
+\begin{lstlisting}[language=bash, captionpos=b, 
+    caption={Statistiche clingo per il corso 3024}, 
+    label={lst:stat_3024},
+    backgroundcolor=\color{lightgray!20},
+    basicstyle=\ttfamily\footnotesize]
+    Models       : 6
+    Optimum      : yes
+    Optimization : -1 -9
+    Calls        : 1
+    Time         : 76.021s 
+                    (Solving: 76.01s 
+                     1st Model: 0.00s 
+                     Unsat: 76.00s)
+    CPU Time     : 75.992s
+\end{lstlisting}
+
+A questo scopo, è stato introdotto l'utilizzo di un \textit{timer} all'interno 
+del codice Python, della durata di 5 secondi.
+Nei test eseguiti, questa durata si è rivelata sufficiente per fornire soluzioni 
+che rispettassero i vincoli prestabiliti.
+
