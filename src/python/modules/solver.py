@@ -174,6 +174,9 @@ def write_table(input_file, output_file):
     for docente, corso in extracted_data:
         grouped_by_course[corso].append(docente)
 
+    # Ordina i dati per codice corso
+    extracted_data = sorted(extracted_data, key=lambda x: int(x[1]))
+
     # Creazione del file Excel
     wb = Workbook()
     ws = wb.active
