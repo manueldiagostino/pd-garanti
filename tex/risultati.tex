@@ -8,14 +8,18 @@ Un primo fattore caratterizzante è emerso valutando le 4 preferenze espresse
 tramite i weak constraint. La generazione di Answer Set,
 tenuto conto di tutti i vincoli, risulta molto esosa e il programma non è 
 in grado di fornire il risultato ottimo in tempo utile.
-Tuttavia, dopo circa 30 secondi di esecuzione (tempo impostato manualmente come limite),
-si ottiene un risultato esaustivo in termini di configurazioni dei vari docenti.
+Nonostante non sia possibile garantire la produzione della soluzione migliore a causa
+dei tempi di esecuzione, le soluzioni fornite dal programma sono da considerare 
+corrette ed esaustive, in termini di configurazioni dei docenti.
+A questo proposito è stato introdotto un limite di tempo di 5 secondi per 
+fermare il risolutore e procedere con l'analisi dell'output.
 
 \subsection{Preferenze}
-È possibile ottenere risultati ottimali in tempi brevi (breve quanto?\todo{Quanto tempo?}), eliminando alcune 
-preferenze per facilitare il processo di ottimizzazione. In particolare, si raggiungono
-prestazioni elevate se non vengono considerati i vincoli relativi ai predicati 
-\texttt{ideale/1} e \texttt{non\_ideale/1}.
+È possibile ottenere risultati ottimali in tempi brevi (qualche secondo) eliminando alcune 
+preferenze, per facilitare il processo di ottimizzazione. In particolare, si raggiungono
+prestazioni elevate se vengono tenuti in considerazione solo i vincoli relativi ai 
+presidenti e ai professori a tempo indeterminato.
+Gli esempi riportati in questa sezione sono stati svolti secondo questa logica.
 
 \subsection{Input ridotto}
 I primi test sono stati eseguiti ponendo come obiettivo la generazione di 
@@ -66,6 +70,8 @@ riuscendo a dimostrare di aver trovato un modello ottimale. Nel Cod.~\ref{lst:st
 possibile notare come la maggior parte del tempo di risoluzione sia impiegato nella 
 ricerca (senza successo) di un modello migliore. Il tempo indicato nel campo \texttt{Unsat} indica, infatti, il tempo trascorso tra 
 l'istante in cui è stato trovato l'ultimo modello e la terminazione \cite{gebser2015potassco}.
+Sono riportati, cambiati di segno, i valori di ottimizzazione raggiunti, ovvero 1 (presidente) e 
+9 (professori a tempo indeterminato), che rappresentano i valori migliori per il corso di laurea in questione. 
 
 \begin{lstlisting}[language=bash, captionpos=b, 
     caption={Statistiche clingo per il corso 3024.}, 
@@ -83,8 +89,67 @@ l'istante in cui è stato trovato l'ultimo modello e la terminazione \cite{gebse
     CPU Time     : 75.992s
 \end{lstlisting}
 
-A questo scopo, è stato introdotto l'utilizzo di un \textit{timer} all'interno 
+Anche per questo motivo, è stato introdotto l'utilizzo di un \textit{timer} all'interno 
 del codice Python, della durata di 5 secondi.
-Nei test eseguiti, questa durata si è rivelata sufficiente per fornire soluzioni 
+Nei test eseguiti, questo limite si è rivelato sufficiente per fornire soluzioni 
 che rispettassero i vincoli prestabiliti.
 
+\subsection{Input completo}
+La discrepanza tra i due esempi riportati nei test sui corsi singoli mette in 
+mostra la complessità del modello, tipica dei problemi affrontati tramite il 
+paradigma di programmazione \textit{Answer Set}.
+
+Un'ulteriore conferma si ottiene con l'esecuzione del programma tenendo in 
+considerazione tutti i corsi dell'ateneo. La ricerca del modello ottimo 
+si conclude, infatti, quasi in maniera istantanea, contrariamente a quanto 
+ci si possa aspettare.
+Il fatto di avere più corsi e professori a disposizione rende alcune soluzioni 
+meno ottimali in maniera naturale e alleggerisce il carico di lavoro del solver.
+
+\begin{lstlisting}[language=bash, captionpos=b, 
+    caption={Statistiche clingo per tutti i corsi.}, 
+    label={lst:stat_all},
+    backgroundcolor=\color{lightgray!20},
+    basicstyle=\ttfamily\footnotesize]
+    Models       : 196
+    Optimum      : yes
+    Optimization : -76 -705
+    Calls        : 1
+    Time         : 0.800s 
+                    (Solving: 0.65s 
+                     1st Model: 0.36s 
+                     Unsat: 0.00s)
+    CPU Time     : 0.714s
+\end{lstlisting}
+
+\subsubsection*{Preferenze massime}
+Utilizzando tutti i vincoli presenti nel file delle preferenze, si ottengono 
+configurazioni più specifiche, in base alle proprietà descritte in dettaglio
+alla sezione \ref{implementazione}. 
+Nel codice \ref{lst:stat_all_pref} viene mostrato un esempio, con un limite 
+di tempo impostato a 5 secondi. Si notano alcune proprietà a riguardo:
+\begin{itemize}
+    \item la risoluzione richiede in generale più tempo;
+    \item i livelli di ottimizzazione raggiunti relativi a presidenti e 
+        professori a tempo indeterminato non cambiano di molto rispetto 
+        all'esempio mostrato nel codice \ref{lst:stat_all};
+    \item i livelli di ottimizzazione relativi ai predicati \texttt{ideale/1} e 
+        \texttt{non\_ideale/1} si possono considerare bilanciati.
+\end{itemize}
+
+\begin{lstlisting}[language=bash, captionpos=b, 
+    caption={Statistiche clingo per tutti i corsi con preferenze massime.}, 
+    label={lst:stat_all_pref},
+    backgroundcolor=\color{lightgray!20},
+    basicstyle=\ttfamily\footnotesize]
+    TIME LIMIT   : 1
+    Models       : 238+
+      Optimum    : unknown
+    Optimization : -68 -43 -702 52
+    Calls        : 1
+    Time         : 5.003s 
+                    (Solving: 4.82s 
+                     1st Model: 1.38s 
+                     Unsat: 0.00s)
+    CPU Time     : 4.870s
+\end{lstlisting}
