@@ -97,7 +97,7 @@ che rispettassero i vincoli prestabiliti.
 \subsection{Input completo}
 La discrepanza tra i due esempi riportati nei test sui corsi singoli mette in 
 mostra la complessità del modello, tipica dei problemi affrontati tramite il 
-paradigma di programmazione \textit{Answer Set}.
+paradigma di programmazione Answer Set.
 
 Un'ulteriore conferma si ottiene con l'esecuzione del programma tenendo in 
 considerazione tutti i corsi dell'ateneo. La ricerca del modello ottimo 
@@ -126,13 +126,13 @@ meno ottimali in maniera naturale e alleggerisce il carico di lavoro del solver.
 Utilizzando tutti i vincoli presenti nel file delle preferenze, si ottengono 
 configurazioni più specifiche, in base alle proprietà descritte in dettaglio
 alla sezione \ref{implementazione}. 
-Nel codice \ref{lst:stat_all_pref} viene mostrato un esempio, con un limite 
+Nel Cod. \ref{lst:stat_all_pref} viene mostrato un esempio, con un limite 
 di tempo impostato a 5 secondi. Si notano alcune proprietà a riguardo:
 \begin{itemize}
     \item la risoluzione richiede in generale più tempo;
     \item i livelli di ottimizzazione raggiunti relativi a presidenti e 
         professori a tempo indeterminato non cambiano di molto rispetto 
-        all'esempio mostrato nel codice \ref{lst:stat_all};
+        all'esempio mostrato nel Cod. \ref{lst:stat_all};
     \item i livelli di ottimizzazione relativi ai predicati \texttt{ideale/1} e 
         \texttt{non\_ideale/1} si possono considerare bilanciati.
 \end{itemize}
