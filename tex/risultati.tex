@@ -60,7 +60,7 @@ La soluzione ottimale, in questo caso, viene generata in meno di 1 secondo.
 Nonostante l'esempio sia banale, i vincoli imposti sono stati rispettati 
 e la soluzione è facilmente consultabile da parte dell'utente.
 
-In alcuni casi, come per il Corso di Laurea Triennale in Chimica (codice 3024), 
+\subsubsection*{Eccezioni di rilievo} Per il Corso di Laurea Triennale in Chimica (codice 3024), 
 il numero di insegnamenti (e di conseguenza il numero di docenti) è molto 
 alto; in particolare, si riscontra un elevato numero di professori con contratto
 a tempo indeterminato. In queste casistiche, il programma finisce per valutare una quantità elevatissima 
@@ -103,8 +103,9 @@ Un'ulteriore conferma si ottiene con l'esecuzione del programma tenendo in
 considerazione tutti i corsi dell'ateneo. La ricerca del modello ottimo 
 si conclude, infatti, quasi in maniera istantanea, contrariamente a quanto 
 ci si possa aspettare.
-Il fatto di avere più corsi e professori a disposizione rende alcune soluzioni 
-meno ottimali in maniera naturale e alleggerisce il carico di lavoro del solver.
+L'ipotesi è che avere più corsi e professori a disposizione renda alcune soluzioni 
+meno ottimali in maniera naturale, alleggerendo il carico di lavoro
+dell'ottimizzatore.
 
 \begin{lstlisting}[language=bash, captionpos=b, 
     caption={Statistiche clingo per tutti i corsi.}, 
@@ -122,7 +123,7 @@ meno ottimali in maniera naturale e alleggerisce il carico di lavoro del solver.
     CPU Time     : 0.714s
 \end{lstlisting}
 
-\subsubsection*{Preferenze massime}
+\subsubsection*{Massimizzazione delle preferenze}
 Utilizzando tutti i vincoli presenti nel file delle preferenze, si ottengono 
 configurazioni più specifiche, in base alle proprietà descritte in dettaglio
 alla sezione \ref{implementazione}. 
@@ -133,8 +134,9 @@ di tempo impostato a 5 secondi. Si notano alcune proprietà a riguardo:
     \item i livelli di ottimizzazione raggiunti relativi a presidenti e 
         professori a tempo indeterminato non cambiano di molto rispetto 
         all'esempio mostrato nel Cod. \ref{lst:stat_all};
-    \item i livelli di ottimizzazione relativi ai predicati \texttt{ideale/1} e 
-        \texttt{non\_ideale/1} si possono considerare bilanciati.
+		\item il numero di corsi per i quali risulta vero il predicato
+		\texttt{ideale/1} (43 corsi) è leggermente inferiore alla sua controparte
+		\texttt{non\_ideale/1} (52 corsi).
 \end{itemize}
 
 \begin{lstlisting}[language=bash, captionpos=b, 
