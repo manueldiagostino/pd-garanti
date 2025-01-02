@@ -218,4 +218,4 @@ def write_table(input_file, output_file):
     # Salva il file Excel
     wb.save(output_file)
     console.print(
-        f"[bold green]Tabella generata con successo![/bold green] Risultati salvati in: [magenta]{output_file}[/magenta]")
+        f"[bold green]Tabella generata con successo![/bold green] Salvata in: [magenta]{output_file}[/magenta]")

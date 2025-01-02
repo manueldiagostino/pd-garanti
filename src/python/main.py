@@ -135,10 +135,10 @@ def parse_arguments():
     parser.add_argument(
         "--verbose", action="store_true", help="Abilita la modalità verbose per il solver.")
     parser.add_argument(
-        "--mode", type=str, choices=["full", "gringo", "clingo", "none"],
-        default="full", help="Modalità di esecuzione: full (rigenera i fatti), gringo, clingo, none (rigenera solo i fatti).")
+        "--mode", type=str, choices=["full", "clingo", "none"],
+        default="full", help="Modalità di esecuzione: full (rigenera i fatti), clingo (esegue solo il solver), none (rigenera solo i fatti).")
     parser.add_argument(
-        "--clingo-args", action=ClingoArgsAction, type=str, help="Argomenti classici di Clingo separati da spazio.", default="")
+        "--clingo-args", action=ClingoArgsAction, type=str, help="Argomenti per Clingo separati da spazio.", default="")
     return parser.parse_args()
 
 
