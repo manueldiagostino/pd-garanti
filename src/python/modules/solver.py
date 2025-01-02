@@ -15,7 +15,6 @@ from modules.gestori import (
 # Percorso principale del progetto
 base_dir = os.path.abspath(os.path.join(
     os.path.dirname(__file__), "../../../src"))
-print(base_dir)
 
 # Directory per gli script ASP
 asp_dir = os.path.join(base_dir, "asp")

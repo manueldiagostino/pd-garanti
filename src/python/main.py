@@ -44,7 +44,6 @@ base_dir = os.path.abspath(os.path.join(
     os.path.dirname(__file__), "../../"))
 
 input_dir = os.path.join(base_dir, "input")
-print(input_dir)
 asp_dir = os.path.join(base_dir, "src/asp")
 facts_dir = os.path.join(asp_dir, "facts")
 results_dir = os.path.join(asp_dir, "results")
