@@ -120,7 +120,7 @@ def solve_program(mode="full", verbose=True, arguments=[]):
         console.print("[bold blue]Avvio del solving...[/bold blue]")
 
         # Imposta il timer per il timeout
-        timer = Timer(15, timeout_handler, args=(ctl,))
+        timer = Timer(5, timeout_handler, args=(ctl,))
         timer.start()
 
         result = ctl.solve(on_model=on_model)

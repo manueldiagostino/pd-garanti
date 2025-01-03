@@ -21,7 +21,7 @@
 		indeterminato(docente(Matricola))
 }.
 
-
+%*
 ideale(corso(Corso)) :-
 	N=#count{
 		docente(Matricola) :
@@ -74,6 +74,6 @@ non_ideale(corso(Corso)) :-
 	non_ideale(corso(Corso))
 }.
 
-
+*%
 % #show ideale/1.
 
