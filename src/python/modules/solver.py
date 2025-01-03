@@ -89,6 +89,7 @@ def solve_program(mode="full", verbose=True, arguments=[]):
 
     try:
         complete_program = load_program()  # Funzione che carica il programma ASP
+        os.makedirs(results_dir, exist_ok=True)
         results_file = os.path.join(results_dir, "solution.txt")
 
         # Pulisce il file dei risultati se esiste
@@ -119,7 +120,7 @@ def solve_program(mode="full", verbose=True, arguments=[]):
         console.print("[bold blue]Avvio del solving...[/bold blue]")
 
         # Imposta il timer per il timeout
-        timer = Timer(5, timeout_handler, args=(ctl,))
+        timer = Timer(15, timeout_handler, args=(ctl,))
         timer.start()
 
         result = ctl.solve(on_model=on_model)
@@ -158,6 +159,7 @@ def extract_data(model):
 
 def write_table(input_file, output_file):
 
+    os.makedirs(results_dir, exist_ok=True)
     input_file = os.path.join(results_dir, input_file)
     output_file = os.path.join(results_dir, output_file)
 
